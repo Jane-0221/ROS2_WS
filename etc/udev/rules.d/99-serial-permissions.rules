@@ -1,0 +1,12 @@
+# USB串口设备权限和映射规则 - 简化版本
+# 基于设备ID直接创建符号链接，无需额外脚本
+
+# CH341设备 (STM32通讯) - 基于设备ID
+SUBSYSTEM=="tty", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="5523", SYMLINK+="ttySTM32", MODE="0666", GROUP="dialout"
+
+# CH340设备 (电池电量) - 基于设备ID  
+SUBSYSTEM=="tty", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="7523", SYMLINK+="ttyBattery", MODE="0666", GROUP="dialout"
+
+# 通用权限设置
+SUBSYSTEM=="tty", KERNEL=="ttyUSB*", MODE="0666", GROUP="dialout"
+SUBSYSTEM=="tty", KERNEL=="ttyACM*", MODE="0666", GROUP="dialout"

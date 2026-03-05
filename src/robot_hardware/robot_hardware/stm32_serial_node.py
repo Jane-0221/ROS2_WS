@@ -13,7 +13,7 @@ UP_FRAME_TYPE = 0x01        # 上行帧（STM32→主机）
 DN_FRAME_TYPE = 0x02        # 下行帧（主机→STM32）
 UP_DATA_LEN = 28            # 上行数据域字节数
 DN_DATA_LEN = 27            # 下行数据域字节数
-SERIAL_PORT = "/dev/ttyUSB0"# USB转TTL设备名（根据实际修改）
+SERIAL_PORT = "/dev/ttySTM32"  # 而不是 "/dev/ttyUSB0"
 BAUDRATE = 115200           # 波特率
 
 # -------------------------- CRC16-CCITT校验实现 --------------------------

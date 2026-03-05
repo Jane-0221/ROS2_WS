@@ -1,0 +1,16 @@
+[Unit]
+Description=USB Device Auto Configuration Service
+After=multi-user.target
+Wants=network.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/home/jszn/robot_ros2_ws/src/robot_hardware/robot_hardware/usb_auto_config.sh --systemd
+ExecStartPost=/bin/sleep 2
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=no
+User=root
+
+[Install]
+WantedBy=multi-user.target
