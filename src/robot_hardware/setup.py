@@ -1,6 +1,6 @@
 from setuptools import find_packages, setup
 
-package_name = 'stm32_serial_py'
+package_name = 'robot_hardware'
 
 setup(
     name=package_name,
@@ -15,15 +15,14 @@ setup(
     zip_safe=True,
     maintainer='jszn',
     maintainer_email='jszn@todo.todo',
-    description='TODO: Package description',
-    license='TODO: License declaration',
-    extras_require={
-        'test': [
-            'pytest',
-        ],
-    },
+    description='ROS2 hardware interface package',
+    license='Apache-2.0',
     entry_points={
         'console_scripts': [
+            'bms_soc_reader_node = robot_hardware.bms_soc_reader_node:main',
+            'stm32_serial_node = robot_hardware.stm32_serial_node:main',
+            'bms_height_controller_node = robot_hardware.bms_height_controller_node:main',
         ],
     },
+
 )

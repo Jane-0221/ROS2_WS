@@ -5,7 +5,7 @@ import serial
 import struct
 import time
 from typing import List
-
+from std_msgs.msg import Float32
 # -------------------------- 协议常量定义（与STM32完全一致） --------------------------
 FRAME_HEADER = b'\xAA\x55'  # 帧头
 FRAME_TAIL = b'\xEE\xFF'    # 帧尾
@@ -78,11 +78,27 @@ class STM32SerialNode(Node):
         # 示例：设置默认下行指令
         self.dn_data.target_angles[0] = 45.0  # 第1路电机目标45°
         self.dn_data.pump_state = 1           # 气泵开启
-        self.dn_data.target_lift_height = 333.0  # 升降杆333mm
+        self.dn_data.target_lift_height = 300.0  # 默认高度300mm
       
-        # 3. 创建定时器：定时发送下行帧（100ms）
+        # 3. 创建订阅：接收高度设置指令
+        try:
+            self.get_logger().info("开始创建高度设置订阅...")
+            self.height_sub = self.create_subscription(
+                Float32, 
+                "stm32/target_height", 
+                self.height_callback, 
+                10
+            )
+            self.get_logger().info("高度设置订阅创建成功")
+            self.get_logger().info(f"订阅话题: stm32/target_height")
+        except Exception as e:
+            self.get_logger().error(f"高度设置订阅创建失败: {str(e)}")
+            import traceback
+            self.get_logger().error(f"详细错误: {traceback.format_exc()}")
+        
+        # 4. 创建定时器：定时发送下行帧（100ms）
         self.send_timer = self.create_timer(0.1, self.send_down_frame)
-        # 4. 创建定时器：定时接收上行帧（10ms）
+        # 5. 创建定时器：定时接收上行帧（10ms）
         self.recv_timer = self.create_timer(0.01, self.recv_up_frame)
 
     def pack_down_frame(self) -> bytes:
@@ -196,7 +212,15 @@ class STM32SerialNode(Node):
             )
         except Exception as e:
             self.get_logger().error(f"接收/解析帧失败：{str(e)}")
-
+    def height_callback(self, msg):
+        """高度设置回调函数"""
+        target_height = msg.data
+        
+        # 设置新的目标高度
+        self.dn_data.target_lift_height = target_height
+        
+        self.get_logger().info(f"接收到高度设置指令: {target_height}mm")
+ 
     def destroy_node(self):
         """节点销毁时关闭串口"""
         if self.ser and self.ser.is_open:
