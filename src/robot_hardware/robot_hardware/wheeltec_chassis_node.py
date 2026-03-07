@@ -38,7 +38,7 @@ class WheeltecChassisNode(Node):
             parameters=[
                 ('protocol', 'serial'),  # 通信协议: serial/can
                 ('robot_type', 'diff'),  # 底盘类型: diff/ackermann/omni
-                ('port', '/dev/ttyUSB0'),  # 串口设备
+                ('port', '/dev/ttyACM0'),  # 串口设备
                 ('baudrate', 115200),     # 波特率
                 ('max_vx', 500.0),        # 最大线速度 mm/s
                 ('max_vy', 500.0),        # 最大侧向速度 mm/s
@@ -99,7 +99,7 @@ class WheeltecChassisNode(Node):
         )
         
         # 控制状态
-        self.motors_enabled = False
+        self.motors_enabled = True  # 默认使能电机
         self.last_cmd_time = None
         self.cmd_timeout = self.get_parameter('cmd_timeout').value
         
