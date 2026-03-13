@@ -1,0 +1,2 @@
+model_name: iic/speech_paraformer-large_asr_nat-zh-cn-16k-common-vocab8404-pytorch
+input: test.wav

@@ -10,6 +10,12 @@
   <depend>rclpy</depend>
   <depend>std_msgs</depend>
   <depend>python3-can</depend>
+  
+  <!-- 语音识别相关依赖 -->
+  <exec_depend>python3-sounddevice</exec_depend>
+  <exec_depend>python3-vosk</exec_depend>
+  <exec_depend>python3-speechrecognition</exec_depend>
+  <exec_depend>python3-pyaudio</exec_depend>
 
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>
