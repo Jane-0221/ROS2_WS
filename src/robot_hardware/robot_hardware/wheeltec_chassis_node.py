@@ -125,7 +125,8 @@ class WheeltecChassisNode(Node):
         
         # 将Twist消息转换为归一化速度
         # 注意：ROS2的Twist使用m/s和rad/s，需要转换为mm/s
-        kx = msg.linear.x * 1000.0 / self.controller.max_speeds[0]  # m/s -> mm/s
+        # 方向修正：将x和y方向取反以修正运动方向
+        kx = -msg.linear.x * 1000.0 / self.controller.max_speeds[0]  # m/s -> mm/s，方向取反
         kz = msg.angular.z / self.controller.max_speeds[2]          # rad/s -> 比例
         
         # 限制在[-1, 1]范围内
