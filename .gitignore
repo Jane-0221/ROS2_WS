@@ -37,3 +37,38 @@ Thumbs.db
 *.egg-info/
 dist/
 build/
+# VSCode相关文件
+.vscode/
+*.vc.db
+
+# ROS2构建文件（已存在，确认包含）
+build/
+install/
+log/
+
+# Python缓存文件（已存在，确认包含）
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 临时文件
+*.swp
+*.swo
+*~
+# VSCode相关文件
+.vscode/
+*.vc.db
+
+# ROS2构建文件
+build/
+install/
+log/
+
+# 其他不需要版本控制的文件
+*.pyc
+__pycache__/
