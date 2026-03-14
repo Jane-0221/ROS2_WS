@@ -22,6 +22,8 @@ setup(
             'bms_soc_reader_node = robot_hardware.bms_soc_reader_node:main',
             'stm32_serial_node = robot_hardware.stm32_serial_node:main',
             'bms_height_controller_node = robot_hardware.bms_height_controller_node:main',
+            'funasr_speech_recognition_node = robot_hardware.funasr_speech_recognition_node:main',
+            'speech_subscriber_node = robot_hardware.speech_subscriber_node:main',
         ],
     },
 
