@@ -1,0 +1,17 @@
+[Unit]
+Description=Robot ROS2 Nodes Auto-start
+After=network.target
+Wants=network.target
+
+[Service]
+Type=forking
+User=jszn
+Group=jszn
+WorkingDirectory=/home/jszn/robot_ros2_ws
+ExecStart=/home/jszn/robot_ros2_ws/start_robot_nodes.sh
+ExecStop=/bin/kill -TERM $MAINPID
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

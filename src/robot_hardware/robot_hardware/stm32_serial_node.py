@@ -5,7 +5,7 @@ import serial
 import struct
 import time
 from typing import List
-from std_msgs.msg import Float32
+from std_msgs.msg import Float32, Bool
 # -------------------------- 协议常量定义（与STM32完全一致） --------------------------
 FRAME_HEADER = b'\xAA\x55'  # 帧头
 FRAME_TAIL = b'\xEE\xFF'    # 帧尾
@@ -95,6 +95,20 @@ class STM32SerialNode(Node):
             self.get_logger().error(f"高度设置订阅创建失败: {str(e)}")
             import traceback
             self.get_logger().error(f"详细错误: {traceback.format_exc()}")
+        
+        # 3.1 创建订阅：接收气泵控制指令
+        try:
+            self.get_logger().info("开始创建气泵控制订阅...")
+            self.pump_sub = self.create_subscription(
+                Bool,
+                "stm32/pump_control",
+                self.pump_callback,
+                10
+            )
+            self.get_logger().info("气泵控制订阅创建成功")
+            self.get_logger().info(f"订阅话题: stm32/pump_control")
+        except Exception as e:
+            self.get_logger().error(f"气泵控制订阅创建失败: {str(e)}")
         
         # 4. 创建定时器：定时发送下行帧（100ms）
         self.send_timer = self.create_timer(0.1, self.send_down_frame)
@@ -220,6 +234,16 @@ class STM32SerialNode(Node):
         self.dn_data.target_lift_height = target_height
         
         self.get_logger().info(f"接收到高度设置指令: {target_height}mm")
+    
+    def pump_callback(self, msg):
+        """气泵控制回调函数"""
+        pump_state = 1 if msg.data else 0
+        
+        # 设置气泵状态
+        self.dn_data.pump_state = pump_state
+        
+        state_str = "打开" if pump_state else "关闭"
+        self.get_logger().info(f"接收到气泵控制指令: {state_str}")
  
     def destroy_node(self):
         """节点销毁时关闭串口"""

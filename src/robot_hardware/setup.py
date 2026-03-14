@@ -24,7 +24,10 @@ setup(
             'bms_height_controller_node = robot_hardware.bms_height_controller_node:main',
             'funasr_speech_recognition_node = robot_hardware.funasr_speech_recognition_node:main',
             'speech_subscriber_node = robot_hardware.speech_subscriber_node:main',
+            'qwen_asr_node = robot_hardware.qwen_asr_node:main',
+            'intent_understanding_node = robot_hardware.intent_understanding_node:main',
+            'qwen_tts_player_node = robot_hardware.qwen_tts_player_node:main',
+            'command_dispatcher_node = robot_hardware.command_dispatcher_node:main',
         ],
     },
-
 )
