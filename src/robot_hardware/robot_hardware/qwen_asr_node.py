@@ -273,12 +273,13 @@ class QwenASRNode(Node):
                 input_audio_format='pcm'
             )
             
+            # 优化 VAD 参数以降低延迟
             self.conversation.update_session(
                 output_modalities=[MultiModality.TEXT],
                 enable_turn_detection=True,
                 turn_detection_type='server_vad',
                 turn_detection_threshold=0.0,
-                turn_detection_silence_duration_ms=400,
+                turn_detection_silence_duration_ms=200,  # 减少静音检测时间，更快结束识别
                 enable_input_audio_transcription=True,
                 transcription_params=transcription_params
             )
@@ -312,22 +313,28 @@ class QwenASRNode(Node):
             
             self.get_logger().info(f'音频配置: 通道数={channels}, 采样率={self.sample_rate}')
             
-            # 打开音频流 - 使用更大的缓冲区避免溢出
+            # 计算合适的缓冲区大小：约 30ms 的音频数据
+            # 16000Hz * 0.03s = 480, 44100Hz * 0.03s = 1323
+            chunk_size = int(self.sample_rate * 0.03)  # 约 30ms
+            # 确保 chunk_size 是 2 的幂次方，便于处理
+            chunk_size = max(512, min(1024, chunk_size))
+            
+            # 打开音频流 - 使用较小的缓冲区降低延迟
             stream = p.open(
                 format=pyaudio.paInt16,
                 channels=channels,
                 rate=self.sample_rate,
                 input=True,
-                frames_per_buffer=4096,  # 增大缓冲区避免溢出
+                frames_per_buffer=chunk_size,
                 input_device_index=self.device_index
             )
             
-            self.get_logger().info('开始录音并识别...')
+            self.get_logger().info(f'开始录音并识别... (缓冲区: {chunk_size} 样本, 约 {chunk_size/self.sample_rate*1000:.1f}ms)')
             
             while self.is_recording:
                 try:
                     # 录制音频，忽略溢出错误
-                    audio_data = stream.read(4096, exception_on_overflow=False)
+                    audio_data = stream.read(chunk_size, exception_on_overflow=False)
                     
                     # 如果是多声道，转换为单声道（取左声道或平均）
                     if channels > 1:
