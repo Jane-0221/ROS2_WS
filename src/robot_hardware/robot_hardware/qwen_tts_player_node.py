@@ -17,11 +17,8 @@ import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String
 import base64
-import os
 import threading
 import time
-import wave
-import tempfile
 
 try:
     import dashscope
@@ -170,6 +167,12 @@ class QwenTTSPlayerNode(Node):
         self.pending_text = None
         self.lock = threading.Lock()
         
+        # ===== 防重复播放机制 =====
+        self.last_tts_text = ""
+        self.last_tts_time = 0
+        self.tts_dedup_window = 5.0  # 5秒内相同文本不重复播放
+        self.playing_lock = threading.Lock()  # 播放锁，防止并发处理
+        
         # 启动TTS连接
         self.connect_tts()
         
@@ -213,10 +216,31 @@ class QwenTTSPlayerNode(Node):
         if not text:
             return
         
-        self.get_logger().info(f'收到TTS文本: "{text}"')
+        # ===== 防重复播放检查 =====
+        current_time = time.time()
         
-        # 合成并播放语音
-        self.synthesize_and_play(text)
+        # 使用锁防止并发处理
+        if not self.playing_lock.acquire(blocking=False):
+            self.get_logger().debug(f'正在处理其他TTS请求，跳过: "{text}"')
+            return
+        
+        try:
+            # 检查是否在时间窗口内重复
+            if text == self.last_tts_text and (current_time - self.last_tts_time) < self.tts_dedup_window:
+                self.get_logger().info(f'重复TTS文本，跳过: "{text}"')
+                return
+            
+            # 更新最后处理的文本和时间
+            self.last_tts_text = text
+            self.last_tts_time = current_time
+            
+            self.get_logger().info(f'收到TTS文本: "{text}"')
+            
+            # 合成并播放语音
+            self.synthesize_and_play(text)
+        
+        finally:
+            self.playing_lock.release()
     
     def synthesize_and_play(self, text):
         """合成语音并播放"""
