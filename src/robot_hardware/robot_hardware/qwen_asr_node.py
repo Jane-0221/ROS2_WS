@@ -198,27 +198,61 @@ class QwenASRNode(Node):
         try:
             self.get_logger().info('正在检测音频设备...')
             
-            # 查找USB音频设备
-            usb_device_index = None
+            # 查找可用的输入设备
+            available_input_devices = []
+            default_input_device = self.p.get_default_input_device_info()
+            
             for i in range(self.p.get_device_count()):
                 device_info = self.p.get_device_info_by_index(i)
-                if device_info['maxInputChannels'] > 0:
+                max_input_channels = device_info['maxInputChannels']
+                
+                if max_input_channels > 0:
                     self.get_logger().info(
                         f'设备 [{i}]: {device_info["name"]} - '
+                        f'输入通道数: {max_input_channels}, '
                         f'采样率: {device_info.get("defaultSampleRate", "未知")}Hz'
                     )
+                    available_input_devices.append({
+                        'index': i,
+                        'name': device_info['name'],
+                        'channels': max_input_channels,
+                        'sample_rate': int(device_info.get('defaultSampleRate', 16000))
+                    })
+                    
                     if "USB" in device_info['name']:
-                        usb_device_index = i
-                        self.get_logger().info(f'找到USB设备: 索引 {i}')
+                        self.get_logger().info(f'找到USB音频设备: 索引 {i}')
             
-            # 使用USB设备或默认设备
-            self.device_index = usb_device_index if usb_device_index is not None else 0
+            # 优先选择USB设备，否则选择默认输入设备
+            selected_device = None
+            for dev in available_input_devices:
+                if "USB" in dev['name']:
+                    selected_device = dev
+                    break
             
-            # 获取设备支持的采样率
-            device_info = self.p.get_device_info_by_index(self.device_index)
-            self.sample_rate = int(device_info.get('defaultSampleRate', 16000))
+            if selected_device is None and available_input_devices:
+                # 尝试使用默认设备
+                for dev in available_input_devices:
+                    if dev['index'] == default_input_device['index']:
+                        selected_device = dev
+                        break
+                # 如果默认设备不在列表中，使用第一个可用设备
+                if selected_device is None:
+                    selected_device = available_input_devices[0]
             
-            self.get_logger().info(f'使用设备: 索引 {self.device_index}, 采样率: {self.sample_rate}Hz')
+            if selected_device is None:
+                self.get_logger().error('未找到可用的音频输入设备！')
+                return
+            
+            self.device_index = selected_device['index']
+            self.sample_rate = selected_device['sample_rate']
+            self.max_channels = selected_device['channels']
+            
+            self.get_logger().info(
+                f'使用设备: 索引 {self.device_index}, '
+                f'名称: {selected_device["name"]}, '
+                f'采样率: {self.sample_rate}Hz, '
+                f'最大通道数: {self.max_channels}'
+            )
             
         except Exception as e:
             self.get_logger().error(f'音频设备检测失败: {e}')
@@ -266,10 +300,22 @@ class QwenASRNode(Node):
         stream = None
         
         try:
+            # 获取设备信息
+            device_info = p.get_device_info_by_index(self.device_index)
+            max_channels = int(device_info['maxInputChannels'])
+            
+            # 确定使用的通道数：优先使用单声道，但如果设备不支持则使用设备支持的通道数
+            channels = 1 if max_channels >= 1 else max_channels
+            if channels < 1:
+                self.get_logger().error(f'设备不支持音频输入: 通道数={max_channels}')
+                return
+            
+            self.get_logger().info(f'音频配置: 通道数={channels}, 采样率={self.sample_rate}')
+            
             # 打开音频流 - 使用更大的缓冲区避免溢出
             stream = p.open(
                 format=pyaudio.paInt16,
-                channels=1,
+                channels=channels,
                 rate=self.sample_rate,
                 input=True,
                 frames_per_buffer=4096,  # 增大缓冲区避免溢出
@@ -282,6 +328,15 @@ class QwenASRNode(Node):
                 try:
                     # 录制音频，忽略溢出错误
                     audio_data = stream.read(4096, exception_on_overflow=False)
+                    
+                    # 如果是多声道，转换为单声道（取左声道或平均）
+                    if channels > 1:
+                        audio_array = np.frombuffer(audio_data, dtype=np.int16)
+                        # 重塑为 (样本数, 通道数)
+                        audio_array = audio_array.reshape(-1, channels)
+                        # 取所有通道的平均值转换为单声道
+                        audio_mono = np.mean(audio_array, axis=1).astype(np.int16)
+                        audio_data = audio_mono.tobytes()
                     
                     # 转换为base64并发送
                     audio_b64 = base64.b64encode(audio_data).decode('utf-8')
