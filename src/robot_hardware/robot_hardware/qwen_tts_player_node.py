@@ -5,6 +5,14 @@
 订阅需要语音合成的文本，使用qwen3-tts-flash-realtime合成语音并播放到喇叭
 """
 
+# 重要：在导入pyaudio之前定义此宏，解决Python 3.10+兼容性问题
+import sys
+sys.setrecursionlimit(2000)
+
+import os
+# 必须在导入pyaudio之前设置
+os.environ['PY_SSIZE_T_CLEAN'] = '1'
+
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String

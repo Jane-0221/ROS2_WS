@@ -113,6 +113,11 @@ class QwenASRNode(Node):
         self.audio_thread = None
         self.p = None
         
+        # 连接状态和重连控制
+        self.is_connected = False
+        self.reconnect_timer = None
+        self.reconnect_delay = 3.0  # 重连延迟秒数
+        
         # 初始化ASR
         self.conversation = None
         self.callback = None
@@ -155,7 +160,10 @@ class QwenASRNode(Node):
         self.node.get_logger().info('千问ASR连接已打开')
     
     def _callback_on_close(self, code, msg):
-        self.node.get_logger().info(f'千问ASR连接已关闭: code={code}, msg={msg}')
+        self.node.get_logger().warning(f'千问ASR连接已关闭: code={code}, msg={msg}')
+        self.node.is_connected = False
+        # 触发重连
+        self.node.schedule_reconnect()
     
     def _callback_on_event(self, response):
         try:
@@ -371,6 +379,68 @@ class QwenASRNode(Node):
                     pass
             p.terminate()
     
+    def schedule_reconnect(self):
+        """安排重连任务"""
+        if self.reconnect_timer is not None:
+            return  # 已经在等待重连
+        
+        self.get_logger().info(f'将在 {self.reconnect_delay} 秒后尝试重新连接...')
+        self.reconnect_timer = threading.Timer(self.reconnect_delay, self.reconnect)
+        self.reconnect_timer.daemon = True
+        self.reconnect_timer.start()
+    
+    def reconnect(self):
+        """重新连接ASR服务"""
+        self.reconnect_timer = None
+        
+        if not self.is_recording:
+            return  # 节点正在关闭
+        
+        try:
+            self.get_logger().info('正在重新连接ASR服务...')
+            
+            # 关闭旧连接
+            if self.conversation:
+                try:
+                    self.conversation.close()
+                except:
+                    pass
+            
+            # 创建新会话
+            self.conversation = OmniRealtimeConversation(
+                model='qwen3-asr-flash-realtime',
+                url='wss://dashscope.aliyuncs.com/api-ws/v1/realtime',
+                callback=self.callback
+            )
+            
+            # 连接
+            self.conversation.connect()
+            
+            # 配置会话
+            transcription_params = TranscriptionParams(
+                language='zh',
+                sample_rate=self.sample_rate,
+                input_audio_format='pcm'
+            )
+            
+            self.conversation.update_session(
+                output_modalities=[MultiModality.TEXT],
+                enable_turn_detection=True,
+                turn_detection_type='server_vad',
+                turn_detection_threshold=0.0,
+                turn_detection_silence_duration_ms=200,
+                enable_input_audio_transcription=True,
+                transcription_params=transcription_params
+            )
+            
+            self.is_connected = True
+            self.get_logger().info('ASR重连成功！')
+            
+        except Exception as e:
+            self.get_logger().error(f'ASR重连失败: {e}')
+            # 继续安排重连
+            self.schedule_reconnect()
+    
     def publish_text(self, text):
         """发布识别文本"""
         msg = String()
@@ -387,6 +457,12 @@ class QwenASRNode(Node):
     def destroy_node(self):
         """销毁节点"""
         self.is_recording = False
+        
+        # 取消重连计时器
+        if self.reconnect_timer is not None:
+            self.reconnect_timer.cancel()
+            self.reconnect_timer = None
+        
         if self.audio_thread:
             self.audio_thread.join(timeout=2)
         if self.conversation:

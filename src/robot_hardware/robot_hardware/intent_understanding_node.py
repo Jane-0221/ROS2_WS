@@ -107,7 +107,7 @@ class IntentUnderstandingNode(Node):
         # 设置API Key
         dashscope.api_key = api_key
         
-        self.declare_parameter('llm_model', 'qwen-plus')
+        self.declare_parameter('llm_model', 'qwen-turbo')  # 使用更经济的模型
         self.llm_model = self.get_parameter('llm_model').value
         
         # ===== 上下文对话管理 =====
