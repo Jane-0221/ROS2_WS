@@ -6,6 +6,14 @@
 将识别结果发布到 /speech/text 话题
 """
 
+import sys
+import os
+
+# 重要：在导入其他模块之前先添加用户Python包路径
+_user_python_path = "/home/jszn/.local/lib/python3.10/site-packages"
+if _user_python_path not in sys.path:
+    sys.path.insert(0, _user_python_path)
+
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String
@@ -15,36 +23,141 @@ import time
 import pyaudio
 import numpy as np
 import threading
-import os
 
-try:
-    import dashscope
-    from dashscope.audio.qwen_omni import OmniRealtimeConversation, OmniRealtimeCallback, TranscriptionParams, MultiModality
-    DASHSCOPE_AVAILABLE = True
-except ImportError:
-    DASHSCOPE_AVAILABLE = False
-    print("❌ dashscope未安装，请运行: pip install dashscope")
+# 全局变量存储dashscope导入状态
+DASHSCOPE_AVAILABLE = False
+dashscope = None
+OmniRealtimeConversation = None
+OmniRealtimeCallback = None
+TranscriptionParams = None
+MultiModality = None
 
 
-class QwenASRCallback(OmniRealtimeCallback):
-    """ASR回调处理类"""
+def _try_import_dashscope():
+    """尝试动态导入dashscope"""
+    global DASHSCOPE_AVAILABLE, dashscope, OmniRealtimeConversation, OmniRealtimeCallback, TranscriptionParams, MultiModality
     
-    def __init__(self, node):
+    if DASHSCOPE_AVAILABLE:
+        return True
+    
+    try:
+        import dashscope as _ds
+        dashscope = _ds
+        from dashscope.audio.qwen_omni import (
+            OmniRealtimeConversation as _Conv,
+            OmniRealtimeCallback as _Cb,
+            MultiModality as _Mm
+        )
+        from dashscope.audio.qwen_omni.omni_realtime import TranscriptionParams as _Tp
+        OmniRealtimeConversation = _Conv
+        OmniRealtimeCallback = _Cb
+        TranscriptionParams = _Tp
+        MultiModality = _Mm
+        DASHSCOPE_AVAILABLE = True
+        return True
+    except ImportError as e:
+        print(f"❌ 导入dashscope失败: {e}")
+        return False
+
+
+# 回调类将在运行时动态创建
+QwenASRCallback = None
+
+
+class QwenASRNode(Node):
+    """千问实时语音识别节点"""
+    
+    def __init__(self):
+        super().__init__('qwen_asr_node')
+        
+        # 尝试导入dashscope
+        if not _try_import_dashscope():
+            self.get_logger().error('dashscope未安装，节点将退出')
+            return
+        
+        # 动态创建回调类（因为OmniRealtimeCallback需要从dashscope导入）
+        global QwenASRCallback
+        if QwenASRCallback is None:
+            QwenASRCallback = type('QwenASRCallback', (OmniRealtimeCallback,), {
+                '__init__': self._callback_init,
+                'on_open': self._callback_on_open,
+                'on_close': self._callback_on_close,
+                'on_event': self._callback_on_event,
+            })
+        
+        # 参数配置 - 直接从环境变量获取，如果没有则使用默认值
+        api_key = os.environ.get('DASHSCOPE_API_KEY')
+        if not api_key:
+            api_key = 'sk-2cab9b4a77914400b0f504817b8fc0ae'
+        os.environ['DASHSCOPE_API_KEY'] = api_key
+        
+        self.declare_parameter('sample_rate', 16000)
+        self.declare_parameter('device_index', 0)
+        
+        self.sample_rate = self.get_parameter('sample_rate').value
+        self.device_index = self.get_parameter('device_index').value
+        
+        # 设置API Key
+        if api_key and dashscope:
+            dashscope.api_key = api_key
+        
+        # 创建发布者
+        self.speech_publisher = self.create_publisher(
+            String,
+            '/speech/text',
+            10
+        )
+        
+        # 音频录制相关
+        self.is_recording = False
+        self.audio_thread = None
+        self.p = None
+        
+        # 初始化ASR
+        self.conversation = None
+        self.callback = None
+        
+        # 回调数据
+        self.final_text = ""
+        self.text_lock = threading.Lock()
+        
+        # 创建回调
+        self.callback = QwenASRCallback(self)
+        
+        # 创建对话会话
+        try:
+            self.conversation = OmniRealtimeConversation(
+                model='qwen3-asr-flash-realtime',
+                url='wss://dashscope.aliyuncs.com/api-ws/v1/realtime',
+                callback=self.callback
+            )
+            self.get_logger().info('千问ASR会话创建成功')
+        except Exception as e:
+            self.get_logger().error(f'创建ASR会话失败: {e}')
+            return
+        
+        # 检测音频设备
+        self.detect_audio_device()
+        
+        # 启动识别
+        self.start_asr()
+        
+        self.get_logger().info('千问语音识别节点已启动')
+        self.get_logger().info(f'发布话题: /speech/text')
+    
+    def _callback_init(self, node):
         self.node = node
         self.conversation = None
         self.final_text = ""
         self.text_lock = threading.Lock()
     
-    def set_conversation(self, conv):
-        self.conversation = conv
-    
-    def on_open(self):
+    def _callback_on_open(self):
         self.node.get_logger().info('千问ASR连接已打开')
     
-    def on_close(self, code, msg):
+    def _callback_on_close(self, code, msg):
         self.node.get_logger().info(f'千问ASR连接已关闭: code={code}, msg={msg}')
     
-    def on_event(self, response):
+    def _callback_on_event(self, response):
         try:
             response_type = response.get('type', '')
             
@@ -77,71 +190,6 @@ class QwenASRCallback(OmniRealtimeCallback):
         
         except Exception as e:
             self.node.get_logger().error(f'ASR回调处理错误: {e}')
-
-
-class QwenASRNode(Node):
-    """千问实时语音识别节点"""
-    
-    def __init__(self):
-        super().__init__('qwen_asr_node')
-        
-        # 参数配置
-        self.declare_parameter('api_key', os.environ.get('DASHSCOPE_API_KEY', 'sk-2cab9b4a77914400b0f504817b8fc0ae'))
-        self.declare_parameter('sample_rate', 16000)
-        self.declare_parameter('device_index', 0)
-        
-        self.api_key = self.get_parameter('api_key').value
-        self.sample_rate = self.get_parameter('sample_rate').value
-        self.device_index = self.get_parameter('device_index').value
-        
-        # 设置API Key
-        if self.api_key:
-            dashscope.api_key = self.api_key
-        
-        # 创建发布者
-        self.speech_publisher = self.create_publisher(
-            String,
-            '/speech/text',
-            10
-        )
-        
-        # 音频录制相关 - 必须在return之前初始化
-        self.is_recording = False
-        self.audio_thread = None
-        self.p = None
-        
-        # 初始化ASR
-        self.conversation = None  # 确保在return之前初始化
-        self.callback = None
-        
-        if not DASHSCOPE_AVAILABLE:
-            self.get_logger().error('dashscope未安装，节点将退出')
-            return
-        
-        # 创建回调
-        self.callback = QwenASRCallback(self)
-        
-        # 创建对话会话
-        try:
-            self.conversation = OmniRealtimeConversation(
-                model='qwen3-asr-flash-realtime',
-                url='wss://dashscope.aliyuncs.com/api-ws/v1/realtime',
-                callback=self.callback
-            )
-            self.callback.set_conversation(self.conversation)
-            self.get_logger().info('千问ASR会话创建成功')
-        except Exception as e:
-            self.get_logger().error(f'创建ASR会话失败: {e}')
-            return
-        
-        # 检测音频设备
-        self.detect_audio_device()
-        
-        # 启动识别
-        self.start_asr()
-        
-        self.get_logger().info('千问语音识别节点已启动')
-        self.get_logger().info(f'发布话题: /speech/text')
     
     def detect_audio_device(self):
         """检测音频设备"""

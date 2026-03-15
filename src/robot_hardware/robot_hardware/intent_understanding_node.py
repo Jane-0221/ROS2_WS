@@ -7,20 +7,43 @@
 发布语音回复文本到 /robot/tts_text
 """
 
+import sys
+import os
+
+# 重要：在导入其他模块之前先添加用户Python包路径
+_user_python_path = "/home/jszn/.local/lib/python3.10/site-packages"
+if _user_python_path not in sys.path:
+    sys.path.insert(0, _user_python_path)
+
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String
 import json
 import re
-import os
 
-try:
-    import dashscope
-    from dashscope import Generation
-    DASHSCOPE_AVAILABLE = True
-except ImportError:
-    DASHSCOPE_AVAILABLE = False
-    print("❌ dashscope未安装")
+# 全局变量
+DASHSCOPE_AVAILABLE = False
+dashscope = None
+Generation = None
+
+
+def _try_import_dashscope():
+    """尝试动态导入dashscope"""
+    global DASHSCOPE_AVAILABLE, dashscope, Generation
+    
+    if DASHSCOPE_AVAILABLE:
+        return True
+    
+    try:
+        import dashscope as _ds
+        dashscope = _ds
+        from dashscope import Generation as _Gen
+        Generation = _Gen
+        DASHSCOPE_AVAILABLE = True
+        return True
+    except ImportError as e:
+        print(f"❌ 导入dashscope失败: {e}")
+        return False
 
 
 # 系统提示词
@@ -49,16 +72,22 @@ class IntentUnderstandingNode(Node):
     def __init__(self):
         super().__init__('intent_understanding_node')
         
-        # 参数配置
-        self.declare_parameter('api_key', os.environ.get('DASHSCOPE_API_KEY', 'sk-2cab9b4a77914400b0f504817b8fc0ae'))
-        self.declare_parameter('llm_model', 'qwen-plus')
+        # 尝试导入dashscope
+        if not _try_import_dashscope():
+            self.get_logger().error('dashscope未安装，节点将退出')
+            return
         
-        self.api_key = self.get_parameter('api_key').value
-        self.llm_model = self.get_parameter('llm_model').value
+        # 参数配置 - 直接从环境变量获取
+        api_key = os.environ.get('DASHSCOPE_API_KEY')
+        if not api_key:
+            api_key = 'sk-2cab9b4a77914400b0f504817b8fc0ae'
+        os.environ['DASHSCOPE_API_KEY'] = api_key
         
         # 设置API Key
-        if self.api_key:
-            dashscope.api_key = self.api_key
+        dashscope.api_key = api_key
+        
+        self.declare_parameter('llm_model', 'qwen-plus')
+        self.llm_model = self.get_parameter('llm_model').value
         
         # 创建订阅者 - 订阅语音识别结果
         self.speech_sub = self.create_subscription(
@@ -114,7 +143,7 @@ class IntentUnderstandingNode(Node):
             
             # 调用LLM
             response = Generation.call(
-                api_key=self.api_key,
+                api_key=dashscope.api_key,
                 model=self.llm_model,
                 messages=messages,
                 result_format='message'
