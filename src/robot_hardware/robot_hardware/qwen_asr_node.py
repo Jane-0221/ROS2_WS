@@ -263,15 +263,16 @@ class QwenASRNode(Node):
     def record_and_send_audio(self):
         """录制音频并发送到ASR"""
         p = pyaudio.PyAudio()
+        stream = None
         
         try:
-            # 打开音频流
+            # 打开音频流 - 使用更大的缓冲区避免溢出
             stream = p.open(
                 format=pyaudio.paInt16,
                 channels=1,
                 rate=self.sample_rate,
                 input=True,
-                frames_per_buffer=1024,
+                frames_per_buffer=4096,  # 增大缓冲区避免溢出
                 input_device_index=self.device_index
             )
             
@@ -279,13 +280,20 @@ class QwenASRNode(Node):
             
             while self.is_recording:
                 try:
-                    # 录制音频 (每次100ms)
-                    audio_data = stream.read(1024)
+                    # 录制音频，忽略溢出错误
+                    audio_data = stream.read(4096, exception_on_overflow=False)
                     
                     # 转换为base64并发送
                     audio_b64 = base64.b64encode(audio_data).decode('utf-8')
                     self.conversation.append_audio(audio_b64)
                     
+                except IOError as e:
+                    # 音频溢出警告，继续录音
+                    if e.errno == -9981:  # Input overflowed
+                        self.get_logger().warn('音频缓冲区溢出，继续录音...')
+                        continue
+                    else:
+                        raise
                 except Exception as e:
                     self.get_logger().error(f'录音/发送失败: {e}')
                     break
@@ -293,8 +301,12 @@ class QwenASRNode(Node):
         except Exception as e:
             self.get_logger().error(f'录音线程错误: {e}')
         finally:
-            stream.stop_stream()
-            stream.close()
+            if stream is not None:
+                try:
+                    stream.stop_stream()
+                    stream.close()
+                except:
+                    pass
             p.terminate()
     
     def publish_text(self, text):

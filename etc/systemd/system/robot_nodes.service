@@ -4,7 +4,7 @@ After=network.target
 Wants=network.target
 
 [Service]
-Type=forking
+Type=simple
 User=jszn
 Group=jszn
 WorkingDirectory=/home/jszn/robot_ros2_ws

@@ -35,7 +35,6 @@ sleep 2
 
 # 前台运行高度控制器节点（可以查看实时日志）
 # python3 src/robot_hardware/robot_hardware/bms_height_controller_node.py
-
 # 当高度控制器节点停止时，停止其他节点
 # echo "正在停止所有节点..."
 # kill $BMS_PID 2>/dev/null

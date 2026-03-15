@@ -78,7 +78,9 @@ class STM32SerialNode(Node):
         # 示例：设置默认下行指令
         self.dn_data.target_angles[0] = 45.0  # 第1路电机目标45°
         self.dn_data.pump_state = 1           # 气泵开启
-        self.dn_data.target_lift_height = 300.0  # 默认高度1000mm
+        # 注意：target_lift_height 默认为0，不主动设置高度
+        # 高度应由 bms_height_controller_node 或其他控制节点设置
+        # self.dn_data.target_lift_height = 0.0  # 不设置默认高度
       
         # 3. 创建订阅：接收高度设置指令
         try:
