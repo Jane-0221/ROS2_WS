@@ -333,7 +333,34 @@ class IntentUnderstandingNode(Node):
     
     def handle_simple_command(self, text):
         """处理简单命令匹配"""
+        import re
         text_lower = text.lower()
+        
+        # 舵机控制匹配 - 支持多种格式
+        # 格式1: "舵机X已转到Y弧度" 或 "舵机X转到Y"
+        servo_match = re.search(r'舵机(\d+)[已]?转到[负\-]?([零一二三四五六七八九十\d.]+)弧?度?', text)
+        if servo_match:
+            servo_id = int(servo_match.group(1))
+            angle_str = servo_match.group(2)
+            
+            # 中文数字转换
+            cn_nums = {'零': 0, '一': 1, '二': 2, '三': 3, '四': 4, '五': 5, '六': 6, '七': 7, '八': 8, '九': 9, '十': 10}
+            if angle_str in cn_nums:
+                angle = float(cn_nums[angle_str])
+            else:
+                try:
+                    angle = float(angle_str)
+                except:
+                    angle = 0.0
+            
+            # 检查是否是负数
+            if '负' in text or '-' in servo_match.group(0):
+                angle = -abs(angle)
+            
+            self.publish_command({'action': 'servo', 'id': servo_id, 'angle': angle})
+            reply = f'舵机{servo_id}已转到{angle}弧度'
+            self.publish_tts(reply)
+            return reply
         
         # 简单匹配
         if '打开气泵' in text or '气泵开' in text:
