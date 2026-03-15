@@ -5,14 +5,15 @@ import serial
 import struct
 import time
 from typing import List
-from std_msgs.msg import Float32, Bool
+from std_msgs.msg import Float32, Bool, Float32MultiArray
+import math
 # -------------------------- 协议常量定义（与STM32完全一致） --------------------------
 FRAME_HEADER = b'\xAA\x55'  # 帧头
 FRAME_TAIL = b'\xEE\xFF'    # 帧尾
 UP_FRAME_TYPE = 0x01        # 上行帧（STM32→主机）
 DN_FRAME_TYPE = 0x02        # 下行帧（主机→STM32）
 UP_DATA_LEN = 28            # 上行数据域字节数
-DN_DATA_LEN = 27            # 下行数据域字节数
+DN_DATA_LEN = 51            # 下行数据域字节数：12*4(float) + 1(pump) + 2(height)
 SERIAL_PORT = "/dev/ttySTM32"  # 而不是 "/dev/ttyUSB0"
 BAUDRATE = 115200           # 波特率
 
@@ -112,6 +113,20 @@ class STM32SerialNode(Node):
         except Exception as e:
             self.get_logger().error(f"气泵控制订阅创建失败: {str(e)}")
         
+        # 3.2 创建订阅：接收单个舵机角度控制指令（弧度制）
+        try:
+            self.get_logger().info("开始创建舵机角度控制订阅...")
+            self.servo_sub = self.create_subscription(
+                Float32MultiArray,
+                "/stm32/servo_control",
+                self.servo_callback,
+                10
+            )
+            self.get_logger().info("舵机角度控制订阅创建成功")
+            self.get_logger().info(f"订阅话题: /stm32/servo_control (格式: [舵机ID, 角度弧度])")
+        except Exception as e:
+            self.get_logger().error(f"舵机角度控制订阅创建失败: {str(e)}")
+        
         # 4. 创建定时器：定时发送下行帧（100ms）
         self.send_timer = self.create_timer(0.1, self.send_down_frame)
         # 5. 创建定时器：定时接收上行帧（10ms）
@@ -128,11 +143,10 @@ class STM32SerialNode(Node):
         # 3. 数据长度
         frame.append(DN_DATA_LEN)
         
-        # 4. 数据域：转换为协议规定的格式（0.1°/0.1mm，小端）
-        # 12路目标角度（转int16，0.1°单位）
+        # 4. 数据域：根据STM32解析协议
+        # 12路目标角度（直接发送float32类型，弧度值）
         for angle in self.dn_data.target_angles:
-            angle_int = int(angle * 10)
-            frame.extend(struct.pack('<h', angle_int))  # <h：小端int16
+            frame.extend(struct.pack('<f', angle))  # <f：小端float32
         # 气泵状态
         frame.append(self.dn_data.pump_state)
         # 升降杆目标高度（转uint16，0.1mm单位）
@@ -142,7 +156,7 @@ class STM32SerialNode(Node):
         # 5. CRC16校验（校验范围：帧类型+数据长度+数据域）
         crc_data = frame[2:]  # 跳过帧头，取后续数据
         crc = crc16_ccitt(crc_data)
-        frame.extend(struct.pack('<H', crc))  # 小端存储CRC
+        frame.extend(struct.pack('>H', crc))  # 大端存储CRC（高字节在前）
         
         # 6. 帧尾
         frame.extend(FRAME_TAIL)
@@ -246,6 +260,26 @@ class STM32SerialNode(Node):
         
         state_str = "打开" if pump_state else "关闭"
         self.get_logger().info(f"接收到气泵控制指令: {state_str}")
+    
+    def servo_callback(self, msg):
+        """舵机角度控制回调函数（直接发送弧度值）"""
+        if len(msg.data) < 2:
+            self.get_logger().error("舵机控制数据格式错误，需要 [舵机ID, 角度弧度]")
+            return
+        
+        servo_id = int(msg.data[0])  # 舵机ID (0-11)
+        angle_rad = msg.data[1]       # 角度（弧度），直接使用
+        
+        # 检查舵机ID范围
+        if servo_id < 0 or servo_id >= 12:
+            self.get_logger().error(f"舵机ID超出范围: {servo_id}，有效范围: 0-11")
+            return
+        
+        # 直接使用弧度值，不转换为角度
+        # STM32接收的值就是弧度（取整后发送）
+        self.dn_data.target_angles[servo_id] = angle_rad
+        
+        self.get_logger().info(f"舵机{servo_id}设置弧度值: {angle_rad:.4f}")
  
     def destroy_node(self):
         """节点销毁时关闭串口"""

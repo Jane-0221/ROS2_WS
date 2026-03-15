@@ -10,9 +10,10 @@
 
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import String, Float32, Bool
+from std_msgs.msg import String, Float32, Bool, Float32MultiArray
 from geometry_msgs.msg import Twist
 import json
+import math
 
 
 class CommandDispatcherNode(Node):
@@ -50,6 +51,13 @@ class CommandDispatcherNode(Node):
             10
         )
         
+        # 创建发布者 - 舵机角度控制（弧度制）
+        self.servo_pub = self.create_publisher(
+            Float32MultiArray,
+            '/stm32/servo_control',
+            10
+        )
+        
         # 移动命令定时器
         self.is_moving = False
         self.current_direction = None
@@ -59,7 +67,7 @@ class CommandDispatcherNode(Node):
         
         self.get_logger().info('指令分发节点已启动')
         self.get_logger().info(f'订阅话题: /robot/commands')
-        self.get_logger().info(f'发布话题: /stm32/pump_control, cmd_vel, /stm32/target_height')
+        self.get_logger().info(f'发布话题: /stm32/pump_control, cmd_vel, /stm32/target_height, /stm32/servo_control')
     
     def command_callback(self, msg):
         """处理控制指令"""
@@ -88,6 +96,13 @@ class CommandDispatcherNode(Node):
                 # 升降杆控制
                 direction = command.get('direction', 'stop')
                 self.control_lift(direction)
+                
+            elif action == 'servo':
+                # 舵机角度控制
+                servo_id = command.get('id', 0)
+                angle_rad = command.get('angle', 0.0)  # 角度（弧度）
+                self.get_logger().info(f'收到舵机控制指令: ID={servo_id}, 角度={angle_rad}弧度')
+                self.control_servo(servo_id, angle_rad)
                 
             else:
                 self.get_logger().warning(f'未知指令: {action}')
@@ -156,6 +171,22 @@ class CommandDispatcherNode(Node):
         
         self.control_height(new_height)
         self.get_logger().info(f'升降杆{direction}: {new_height}mm')
+    
+    def control_servo(self, servo_id, angle_rad):
+        """控制舵机角度（弧度制）"""
+        # 检查舵机ID范围
+        if servo_id < 0 or servo_id >= 12:
+            self.get_logger().error(f'舵机ID超出范围: {servo_id}，有效范围: 0-11')
+            return
+        
+        # 发布舵机控制消息
+        msg = Float32MultiArray()
+        msg.data = [float(servo_id), angle_rad]
+        self.servo_pub.publish(msg)
+        
+        # 弧度转角度用于日志
+        angle_deg = math.degrees(angle_rad)
+        self.get_logger().info(f'舵机{servo_id}设置角度: {angle_rad:.3f}弧度 ({angle_deg:.1f}°)')
 
 
 def main(args=None):
