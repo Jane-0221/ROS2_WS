@@ -1,0 +1,137 @@
+Panels:
+  - Class: rviz_common/Displays
+    Name: Displays
+  - Class: rviz_common/Views
+    Name: Views
+  - Class: rviz_common/Time
+    Name: Time
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Class: rviz_default_plugins/Grid
+      Enabled: true
+      Name: Grid
+      Plane: XY
+      Plane Cell Count: 20
+      Reference Frame: world
+    - Class: rviz_default_plugins/RobotModel
+      Enabled: true
+      Name: RobotModel
+      Robot Description: robot_description
+    - Class: moveit_rviz_plugin/MotionPlanning
+      Enabled: true
+      Name: MotionPlanning
+      Planning Scene Topic: monitored_planning_scene
+      Robot Description: robot_description
+    - Class: rviz_default_plugins/PointCloud2
+      Enabled: true
+      Name: MockPointCloud
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /medipick/mock_pointcloud
+      Size (Pixels): 3
+      Style: Flat Squares
+      Color Transformer: AxisColor
+      Axis: Z
+      Use Fixed Frame: true
+    - Class: rviz_default_plugins/Pose
+      Enabled: true
+      Name: TaskPreparePose
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /medipick/task/prepare_pose
+      Shaft Length: 0.12
+      Head Length: 0.04
+      Shape: Arrow
+      Color: 255; 255; 0
+    - Class: rviz_default_plugins/Pose
+      Enabled: true
+      Name: TaskFinalPose
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /medipick/task/final_pose
+      Shaft Length: 0.12
+      Head Length: 0.04
+      Shape: Arrow
+      Color: 255; 0; 0
+    - Class: rviz_default_plugins/Pose
+      Enabled: true
+      Name: AchievedToolPose
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /medipick/task/achieved_pose
+      Shaft Length: 0.12
+      Head Length: 0.04
+      Shape: Arrow
+      Color: 0; 255; 0
+    - Class: rviz_default_plugins/Path
+      Enabled: true
+      Name: TaskStagePath
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /medipick/task/stage_path
+      Line Style: Lines
+      Line Width: 0.03
+      Color: 0; 220; 255
+      Pose Style: None
+    - Class: rviz_default_plugins/Path
+      Enabled: true
+      Name: MockPickPath
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /medipick/mock_pick_path
+      Line Style: Lines
+      Line Width: 0.02
+      Color: 120; 120; 120
+      Pose Style: None
+    - Class: rviz_default_plugins/MarkerArray
+      Enabled: true
+      Name: TaskDebugMarkers
+      Namespaces:
+        prepare_candidate_heading: true
+        prepare_candidate_text: true
+        prepare_candidates: true
+        task_stage: true
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /medipick/task/debug_markers
+  Enabled: true
+  Global Options:
+    Fixed Frame: world
+  Name: root
+  Tools:
+    - Class: rviz_default_plugins/Interact
+    - Class: rviz_default_plugins/MoveCamera
+    - Class: rviz_default_plugins/Select
+  Views:
+    Current:
+      Class: rviz_default_plugins/Orbit
+      Distance: 2.2
+      Focal Point:
+        X: 0.75
+        Y: 0.0
+        Z: 0.95
+Window Geometry:
+  Height: 900
+  Width: 1440

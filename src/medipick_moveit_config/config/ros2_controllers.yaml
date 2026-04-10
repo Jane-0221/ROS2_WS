@@ -1,0 +1,92 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 100
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+mobile_arm_controller:
+  ros__parameters:
+    joints:
+      - base_x
+      - base_y
+      - base_theta
+      - raise_joint
+      - r1_joint
+      - r2_joint
+      - r3_joint
+      - r4_joint
+      - r5_joint
+      - r6_joint
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+    allow_partial_joints_goal: true
+
+/controller_manager/mobile_arm_controller:
+  ros__parameters:
+    joints:
+      - base_x
+      - base_y
+      - base_theta
+      - raise_joint
+      - r1_joint
+      - r2_joint
+      - r3_joint
+      - r4_joint
+      - r5_joint
+      - r6_joint
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+    allow_partial_joints_goal: true
+
+tool_controller:
+  ros__parameters:
+    joints:
+      - sucker_joint
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+    allow_partial_joints_goal: true
+
+/controller_manager/tool_controller:
+  ros__parameters:
+    joints:
+      - sucker_joint
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+    allow_partial_joints_goal: true
+
+head_controller:
+  ros__parameters:
+    joints:
+      - h1_joint
+      - h2_joint
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+    allow_partial_joints_goal: true
+
+/controller_manager/head_controller:
+  ros__parameters:
+    joints:
+      - h1_joint
+      - h2_joint
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+    allow_partial_joints_goal: true

@@ -1,0 +1,38 @@
+moveit_controller_manager: moveit_simple_controller_manager/MoveItSimpleControllerManager
+
+moveit_simple_controller_manager:
+  controller_names:
+    - mobile_arm_controller
+    - tool_controller
+    - head_controller
+
+  mobile_arm_controller:
+    type: FollowJointTrajectory
+    action_ns: follow_joint_trajectory
+    default: true
+    joints:
+      - base_x
+      - base_y
+      - base_theta
+      - raise_joint
+      - r1_joint
+      - r2_joint
+      - r3_joint
+      - r4_joint
+      - r5_joint
+      - r6_joint
+
+  tool_controller:
+    type: FollowJointTrajectory
+    action_ns: follow_joint_trajectory
+    default: false
+    joints:
+      - sucker_joint
+
+  head_controller:
+    type: FollowJointTrajectory
+    action_ns: follow_joint_trajectory
+    default: false
+    joints:
+      - h1_joint
+      - h2_joint

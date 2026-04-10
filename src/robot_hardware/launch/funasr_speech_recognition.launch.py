@@ -1,36 +1,22 @@
 #!/usr/bin/env python3
-"""
-FunASR语音识别系统启动文件
+"""兼容入口：转发到 voice_control 目录下的语音 launch。"""
 
-同时启动语音识别节点和订阅节点
-"""
+import os
 
+from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
-from launch_ros.actions import Node
+from launch.actions import IncludeLaunchDescription
+from launch.launch_description_sources import PythonLaunchDescriptionSource
+
 
 def generate_launch_description():
-    # FunASR语音识别节点
-    funasr_node = Node(
-        package='robot_hardware',
-        executable='funasr_speech_recognition_node',
-        name='funasr_speech_recognition_node',
-        output='screen',
-        parameters=[{
-            'sample_rate': 16000,
-            'record_duration': 3,
-            'device_index': 0
-        }]
+    launch_file = os.path.join(
+        get_package_share_directory('robot_hardware'),
+        'launch',
+        'voice_control',
+        'funasr_speech_recognition.launch.py',
     )
-    
-    # 语音识别结果订阅节点
-    subscriber_node = Node(
-        package='robot_hardware',
-        executable='speech_subscriber_node',
-        name='speech_subscriber_node',
-        output='screen'
-    )
-    
+
     return LaunchDescription([
-        funasr_node,
-        subscriber_node
+        IncludeLaunchDescription(PythonLaunchDescriptionSource(launch_file)),
     ])

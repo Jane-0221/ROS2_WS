@@ -1,0 +1,72 @@
+base_joints:
+  base_x: 0.0
+  base_y: 0.0
+  base_theta: 0.0
+
+fixed_joints:
+  sucker_joint: 0.0
+  h1_joint: -0.424124
+  h2_joint: 0.432157
+
+lift:
+  direction: 1.0
+  mm_per_joint: 1000.0
+  joint_offset: 0.0
+  min_mm: 0.0
+  max_mm: 1500.0
+
+motor_arm_joint_mappings:
+  r1_joint:
+    command_index: 4
+    feedback_index: 4
+    direction: 1.0
+    command_scale: 1.0
+    feedback_scale: 0.017453292519943295
+    joint_offset: 0.0
+    min_position: -6.283185307179586
+    max_position: 6.283185307179586
+  r2_joint:
+    command_index: 5
+    feedback_index: 5
+    direction: 1.0
+    command_scale: 1.0
+    feedback_scale: 0.017453292519943295
+    joint_offset: 0.0
+    min_position: -6.283185307179586
+    max_position: 6.283185307179586
+  r3_joint:
+    command_index: 6
+    feedback_index: 6
+    direction: 1.0
+    command_scale: 1.0
+    feedback_scale: 0.017453292519943295
+    joint_offset: 0.0
+    min_position: -6.283185307179586
+    max_position: 6.283185307179586
+  r4_joint:
+    command_index: 7
+    feedback_index: 7
+    direction: 1.0
+    command_scale: 1.0
+    feedback_scale: 0.017453292519943295
+    joint_offset: 0.0
+    min_position: -6.283185307179586
+    max_position: 6.283185307179586
+  r5_joint:
+    command_index: 8
+    feedback_index: 8
+    direction: 1.0
+    command_scale: 1.0
+    feedback_scale: 0.017453292519943295
+    joint_offset: 0.0
+    min_position: -6.283185307179586
+    max_position: 6.283185307179586
+  r6_joint:
+    command_index: 9
+    feedback_index: 9
+    direction: 1.0
+    command_scale: 1.0
+    feedback_scale: 0.017453292519943295
+    joint_offset: 0.0
+    min_position: -6.283185307179586
+    max_position: 6.283185307179586

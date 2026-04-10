@@ -25,16 +25,16 @@ export DASHSCOPE_API_KEY="sk-dd0137dc3fec464d86de6c57406ed624"
 
 # 启动各个节点 - 直接使用python3运行
 echo "启动千问ASR语音识别节点..."
-python3 -m robot_hardware.qwen_asr_node &
+python3 -m robot_hardware.voice_control.qwen_asr_node &
 
 echo "启动意图理解节点..."
-python3 -m robot_hardware.intent_understanding_node &
+python3 -m robot_hardware.voice_control.intent_understanding_node &
 
 echo "启动TTS语音合成节点..."
-python3 -m robot_hardware.qwen_tts_player_node &
+python3 -m robot_hardware.voice_control.qwen_tts_player_node &
 
 echo "启动指令分发节点..."
-python3 -m robot_hardware.command_dispatcher_node &
+python3 -m robot_hardware.voice_control.command_dispatcher_node &
 
 echo ""
 echo "所有节点已启动！"

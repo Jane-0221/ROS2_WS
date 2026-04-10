@@ -1,294 +1,326 @@
 #!/usr/bin/env python3
-import rclpy
-from rclpy.node import Node
-import serial
-import struct
-import time
-from typing import List
-from std_msgs.msg import Float32, Bool, Float32MultiArray
-import math
-# -------------------------- 协议常量定义（与STM32完全一致） --------------------------
-FRAME_HEADER = b'\xAA\x55'  # 帧头
-FRAME_TAIL = b'\xEE\xFF'    # 帧尾
-UP_FRAME_TYPE = 0x01        # 上行帧（STM32→主机）
-DN_FRAME_TYPE = 0x02        # 下行帧（主机→STM32）
-UP_DATA_LEN = 28            # 上行数据域字节数
-DN_DATA_LEN = 51            # 下行数据域字节数：12*4(float) + 1(pump) + 2(height)
-SERIAL_PORT = "/dev/ttySTM32"  # 而不是 "/dev/ttyUSB0"
-BAUDRATE = 115200           # 波特率
 
-# -------------------------- CRC16-CCITT校验实现 --------------------------
+from __future__ import annotations
+
+import struct
+from dataclasses import dataclass, field
+from typing import Optional
+
+import rclpy
+import serial
+from rclpy.node import Node
+from sensor_msgs.msg import JointState
+from std_msgs.msg import Bool, Float32, Float32MultiArray
+
+from robot_hardware.medipick_hardware_calibration import (
+    REQUIRED_ARM_JOINTS,
+    HardwareCalibration,
+    load_hardware_calibration,
+)
+
+
+FRAME_HEADER = b"\xAA\x55"
+FRAME_TAIL = b"\xEE\xFF"
+UP_FRAME_SIZE = 34
+DN_FRAME_TYPE = 0x02
+DN_DATA_LEN = 51
+
+
 def crc16_ccitt(data: bytes) -> int:
-    """
-    计算CRC16-CCITT校验值（多项式0x1021，初始值0xFFFF）
-    :param data: 待校验的字节数据
-    :return: 16位校验值
-    """
     crc = 0xFFFF
     for byte in data:
-        crc ^= (byte << 8)
+        crc ^= byte << 8
         for _ in range(8):
             if crc & 0x8000:
                 crc = (crc << 1) ^ 0x1021
             else:
                 crc <<= 1
-        crc &= 0xFFFF  # 保持16位
+        crc &= 0xFFFF
     return crc
 
-# -------------------------- 数据结构体定义 --------------------------
+
+@dataclass
 class UpData:
-    """上行数据（STM32→主机）"""
-    def __init__(self):
-        self.air_path_state: int = 0    # 气路状态：0=关，1=开
-        self.suck_state: int = 0        # 吸附状态：0=未吸住，1=吸住
-        self.head_motor_angle: float = 0.0  # 头部电机角度（°）
-        self.arm_servo_angles: List[float] = [0.0]*11  # 11路机械臂/舵机角度（°）
-        self.lift_height: float = 0.0   # 升降杆高度（mm）
+    air_path_state: int = 0
+    suck_state: int = 0
+    head_motor_angle: float = 0.0
+    motor_arm_joint_feedback: list[float] = field(default_factory=lambda: [0.0] * 11)
+    lift_height: float = 0.0
 
+
+@dataclass
 class DnData:
-    """下行数据（主机→STM32）"""
-    def __init__(self):
-        self.target_angles: List[float] = [0.0]*12  # 12路电机/舵机目标角度（°）
-        self.pump_state: int = 0        # 气泵状态：0=关，1=开
-        self.target_lift_height: float = 0.0  # 升降杆目标高度（mm）
+    motor_arm_joint_targets: list[float] = field(default_factory=lambda: [0.0] * 12)
+    pump_state: int = 0
+    target_lift_height: float = 0.0
 
-# -------------------------- ROS2串口节点 --------------------------
+
 class STM32SerialNode(Node):
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__("stm32_serial_node")
-        
-        # 1. 初始化串口
-        self.ser = None
+
+        self.declare_parameter("serial_port", "/dev/ttySTM32")
+        self.declare_parameter("baudrate", 115200)
+        self.declare_parameter("calibration_file", "")
+        self.declare_parameter("joint_states_topic", "/joint_states")
+        self.declare_parameter(
+            "motor_arm_joint_command_topic",
+            "/medipick/hardware/motor_arm_joint_command",
+        )
+        self.declare_parameter(
+            "legacy_arm_joint_command_topic",
+            "",
+        )
+        self.declare_parameter(
+            "motor_arm_joint_feedback_topic",
+            "/medipick/hardware/motor_arm_joint_feedback",
+        )
+        self.declare_parameter("lift_height_topic", "/medipick/hardware/raw_lift_height_mm")
+        self.declare_parameter("raw_suction_topic", "/medipick/hardware/raw_suction_state")
+        self.declare_parameter("legacy_servo_control_topic", "/stm32/servo_control")
+        self.declare_parameter("enable_legacy_servo_control_topic", False)
+        self.declare_parameter("send_period_sec", 0.05)
+        self.declare_parameter("recv_period_sec", 0.01)
+
+        calibration_file = str(self.get_parameter("calibration_file").value).strip()
+        self._calibration = load_hardware_calibration(calibration_file)
+        self._validate_calibration(self._calibration)
+
+        serial_port = str(self.get_parameter("serial_port").value)
+        baudrate = int(self.get_parameter("baudrate").value)
         try:
             self.ser = serial.Serial(
-                port=SERIAL_PORT,
-                baudrate=BAUDRATE,
-                timeout=0.01,  # 非阻塞读取
+                port=serial_port,
+                baudrate=baudrate,
+                timeout=0.01,
                 bytesize=serial.EIGHTBITS,
                 parity=serial.PARITY_NONE,
-                stopbits=serial.STOPBITS_ONE
+                stopbits=serial.STOPBITS_ONE,
             )
-            self.get_logger().info(f"串口 {SERIAL_PORT} 打开成功！")
-        except Exception as e:
-            self.get_logger().error(f"串口打开失败：{str(e)}")
-            return
-        
-        # 2. 初始化数据缓存
+            self.get_logger().info(f"Opened STM32 serial port {serial_port} @ {baudrate}.")
+        except Exception as exc:  # pragma: no cover - hardware dependent
+            raise RuntimeError(f"Failed to open STM32 serial port {serial_port}: {exc}") from exc
+
         self.up_data = UpData()
         self.dn_data = DnData()
-        # 示例：设置默认下行指令
-        self.dn_data.target_angles[0] = 45.0  # 第1路电机目标45°
-        self.dn_data.pump_state = 1           # 气泵开启
-        # 注意：target_lift_height 默认为0，不主动设置高度
-        # 高度应由 bms_height_controller_node 或其他控制节点设置
-        # self.dn_data.target_lift_height = 0.0  # 不设置默认高度
-      
-        # 3. 创建订阅：接收高度设置指令
-        try:
-            self.get_logger().info("开始创建高度设置订阅...")
-            self.height_sub = self.create_subscription(
-                Float32, 
-                "stm32/target_height", 
-                self.height_callback, 
-                10
+        self._recv_buffer = bytearray()
+
+        self._joint_state_publisher = self.create_publisher(
+            JointState,
+            str(self.get_parameter("joint_states_topic").value),
+            20,
+        )
+        self._lift_height_publisher = self.create_publisher(
+            Float32,
+            str(self.get_parameter("lift_height_topic").value),
+            20,
+        )
+        self._raw_suction_publisher = self.create_publisher(
+            Bool,
+            str(self.get_parameter("raw_suction_topic").value),
+            20,
+        )
+        self._motor_arm_feedback_publisher = self.create_publisher(
+            JointState,
+            str(self.get_parameter("motor_arm_joint_feedback_topic").value),
+            20,
+        )
+
+        self.create_subscription(Float32, "stm32/target_height", self.height_callback, 10)
+        self.create_subscription(Bool, "stm32/pump_control", self.pump_callback, 10)
+        self.create_subscription(
+            JointState,
+            str(self.get_parameter("motor_arm_joint_command_topic").value),
+            self.motor_arm_joint_command_callback,
+            10,
+        )
+        legacy_joint_command_topic = str(self.get_parameter("legacy_arm_joint_command_topic").value)
+        primary_joint_command_topic = str(self.get_parameter("motor_arm_joint_command_topic").value)
+        if legacy_joint_command_topic and legacy_joint_command_topic != primary_joint_command_topic:
+            self.create_subscription(
+                JointState,
+                legacy_joint_command_topic,
+                self.motor_arm_joint_command_callback,
+                10,
             )
-            self.get_logger().info("高度设置订阅创建成功")
-            self.get_logger().info(f"订阅话题: stm32/target_height")
-        except Exception as e:
-            self.get_logger().error(f"高度设置订阅创建失败: {str(e)}")
-            import traceback
-            self.get_logger().error(f"详细错误: {traceback.format_exc()}")
-        
-        # 3.1 创建订阅：接收气泵控制指令
-        try:
-            self.get_logger().info("开始创建气泵控制订阅...")
-            self.pump_sub = self.create_subscription(
-                Bool,
-                "stm32/pump_control",
-                self.pump_callback,
-                10
-            )
-            self.get_logger().info("气泵控制订阅创建成功")
-            self.get_logger().info(f"订阅话题: stm32/pump_control")
-        except Exception as e:
-            self.get_logger().error(f"气泵控制订阅创建失败: {str(e)}")
-        
-        # 3.2 创建订阅：接收单个舵机角度控制指令（弧度制）
-        try:
-            self.get_logger().info("开始创建舵机角度控制订阅...")
-            self.servo_sub = self.create_subscription(
+        if bool(self.get_parameter("enable_legacy_servo_control_topic").value):
+            self.create_subscription(
                 Float32MultiArray,
-                "/stm32/servo_control",
-                self.servo_callback,
-                10
+                str(self.get_parameter("legacy_servo_control_topic").value),
+                self.legacy_servo_callback,
+                10,
             )
-            self.get_logger().info("舵机角度控制订阅创建成功")
-            self.get_logger().info(f"订阅话题: /stm32/servo_control (格式: [舵机ID, 角度弧度])")
-        except Exception as e:
-            self.get_logger().error(f"舵机角度控制订阅创建失败: {str(e)}")
-        
-        # 4. 创建定时器：定时发送下行帧（100ms）
-        self.send_timer = self.create_timer(0.1, self.send_down_frame)
-        # 5. 创建定时器：定时接收上行帧（10ms）
-        self.recv_timer = self.create_timer(0.01, self.recv_up_frame)
+
+        self.create_timer(float(self.get_parameter("send_period_sec").value), self.send_down_frame)
+        self.create_timer(float(self.get_parameter("recv_period_sec").value), self.recv_up_frame)
+
+    @staticmethod
+    def _validate_calibration(calibration: HardwareCalibration) -> None:
+        for joint_name in REQUIRED_ARM_JOINTS:
+            mapping = calibration.arm_joint_mappings[joint_name]
+            if mapping.command_index < 0 or mapping.command_index >= 12:
+                raise ValueError(
+                    f"Joint '{joint_name}' command_index={mapping.command_index} is outside 0..11."
+                )
+            if mapping.feedback_index < 0 or mapping.feedback_index >= 11:
+                raise ValueError(
+                    f"Joint '{joint_name}' feedback_index={mapping.feedback_index} is outside 0..10."
+                )
 
     def pack_down_frame(self) -> bytes:
-        """打包下行帧（主机→STM32）"""
-        # 初始化帧缓冲区
         frame = bytearray()
-        # 1. 帧头
         frame.extend(FRAME_HEADER)
-        # 2. 帧类型
         frame.append(DN_FRAME_TYPE)
-        # 3. 数据长度
         frame.append(DN_DATA_LEN)
-        
-        # 4. 数据域：根据STM32解析协议
-        # 12路目标角度（直接发送float32类型，弧度值）
-        for angle in self.dn_data.target_angles:
-            frame.extend(struct.pack('<f', angle))  # <f：小端float32
-        # 气泵状态
+
+        for angle in self.dn_data.motor_arm_joint_targets:
+            frame.extend(struct.pack("<f", angle))
         frame.append(self.dn_data.pump_state)
-        # 升降杆目标高度（转uint16，0.1mm单位）
-        height_int = int(self.dn_data.target_lift_height * 10)
-        frame.extend(struct.pack('<H', height_int))  # <H：小端uint16
-        
-        # 5. CRC16校验（校验范围：帧类型+数据长度+数据域）
-        crc_data = frame[2:]  # 跳过帧头，取后续数据
-        crc = crc16_ccitt(crc_data)
-        frame.extend(struct.pack('>H', crc))  # 大端存储CRC（高字节在前）
-        
-        # 6. 帧尾
+        height_int = int(self.dn_data.target_lift_height * 10.0)
+        frame.extend(struct.pack("<H", height_int))
+
+        crc = crc16_ccitt(frame[2:])
+        frame.extend(struct.pack(">H", crc))
         frame.extend(FRAME_TAIL)
-        
         return bytes(frame)
 
-    def send_down_frame(self):
-        """发送下行帧"""
+    def send_down_frame(self) -> None:
         if not self.ser or not self.ser.is_open:
             return
         try:
-            frame = self.pack_down_frame()
-            self.ser.write(frame)
-            # self.get_logger().debug(f"发送下行帧：{frame.hex()}")
-        except Exception as e:
-            self.get_logger().error(f"发送帧失败：{str(e)}")
+            self.ser.write(self.pack_down_frame())
+        except Exception as exc:  # pragma: no cover - hardware dependent
+            self.get_logger().error(f"Failed to send STM32 frame: {exc}")
 
-    def unpack_up_frame(self, frame: bytes) -> UpData:
-        """解析上行帧（STM32→主机）"""
+    def recv_up_frame(self) -> None:
+        if not self.ser or not self.ser.is_open:
+            return
+        try:
+            if self.ser.in_waiting:
+                self._recv_buffer.extend(self.ser.read(self.ser.in_waiting))
+        except Exception as exc:  # pragma: no cover - hardware dependent
+            self.get_logger().error(f"Failed to read STM32 data: {exc}")
+            return
+
+        while len(self._recv_buffer) >= UP_FRAME_SIZE:
+            header_index = self._recv_buffer.find(FRAME_HEADER)
+            if header_index < 0:
+                self._recv_buffer.clear()
+                return
+            if header_index > 0:
+                del self._recv_buffer[:header_index]
+            if len(self._recv_buffer) < UP_FRAME_SIZE:
+                return
+
+            frame = bytes(self._recv_buffer[:UP_FRAME_SIZE])
+            if frame[-2:] != FRAME_TAIL:
+                del self._recv_buffer[0]
+                continue
+
+            crc_data = frame[2:-4]
+            crc_calc = crc16_ccitt(crc_data)
+            crc_recv = struct.unpack("<H", frame[-4:-2])[0]
+            if crc_calc != crc_recv:
+                del self._recv_buffer[0]
+                continue
+
+            del self._recv_buffer[:UP_FRAME_SIZE]
+            self.up_data = self.unpack_up_frame(frame)
+            self.publish_feedback()
+
+    @staticmethod
+    def unpack_up_frame(frame: bytes) -> UpData:
         up_data = UpData()
-        # 跳过帧头(2)+帧类型(1)+数据长度(1)，从第4字节开始解析
         offset = 4
-        
-        # 气路状态
         up_data.air_path_state = frame[offset]
         offset += 1
-        # 吸附状态
         up_data.suck_state = frame[offset]
         offset += 1
-        # 头部电机角度（int16，0.1°→转°）
-        head_angle_int = struct.unpack('<h', frame[offset:offset+2])[0]
+        head_angle_int = struct.unpack("<h", frame[offset:offset + 2])[0]
         up_data.head_motor_angle = head_angle_int / 10.0
         offset += 2
-        # 11路机械臂/舵机角度
-        for i in range(11):
-            angle_int = struct.unpack('<h', frame[offset:offset+2])[0]
-            up_data.arm_servo_angles[i] = angle_int / 10.0
+        for index in range(11):
+            angle_int = struct.unpack("<h", frame[offset:offset + 2])[0]
+            up_data.motor_arm_joint_feedback[index] = angle_int / 10.0
             offset += 2
-        # 升降杆高度（uint16，0.1mm→转mm）
-        height_int = struct.unpack('<H', frame[offset:offset+2])[0]
+        height_int = struct.unpack("<H", frame[offset:offset + 2])[0]
         up_data.lift_height = height_int / 10.0
-        
         return up_data
 
-    def recv_up_frame(self):
-        """接收并解析上行帧"""
-        if not self.ser or not self.ser.is_open:
-            return
-        try:
-            # 读取串口所有可用数据
-            recv_data = self.ser.read(self.ser.in_waiting)
-            if len(recv_data) < 34:  # 上行帧总长度34字节（2+1+1+28+2+2）
-                return
-            
-            # 查找帧头位置（处理粘包）
-            header_idx = recv_data.find(FRAME_HEADER)
-            if header_idx == -1:
-                return
-            # 截取完整帧（从帧头开始取34字节）
-            frame = recv_data[header_idx:header_idx+34]
-            if len(frame) != 34:
-                return
-            
-            # 校验帧尾
-            if frame[-2:] != FRAME_TAIL:
-                self.get_logger().warn("帧尾校验失败")
-                return
-            
-            # 校验CRC16
-            crc_data = frame[2:-4]  # 帧类型+数据长度+数据域（跳过帧头、CRC、帧尾）
-            crc_calc = crc16_ccitt(crc_data)
-            crc_recv = struct.unpack('<H', frame[-4:-2])[0]  # 提取接收的CRC
-            if crc_calc != crc_recv:
-                self.get_logger().warn(f"CRC校验失败：计算值={crc_calc:04X}，接收值={crc_recv:04X}")
-                return
-            
-            # 解析数据
-            self.up_data = self.unpack_up_frame(frame)
-            # 打印解析结果（可替换为ROS2话题发布）
-            self.get_logger().info(
-                f"气路状态：{self.up_data.air_path_state} | 吸附状态：{self.up_data.suck_state} | "
-                f"头部角度：{self.up_data.head_motor_angle:.1f}° | 升降高度：{self.up_data.lift_height:.1f}mm"
-            )
-        except Exception as e:
-            self.get_logger().error(f"接收/解析帧失败：{str(e)}")
-    def height_callback(self, msg):
-        """高度设置回调函数"""
-        target_height = msg.data
-        
-        # 设置新的目标高度
-        self.dn_data.target_lift_height = target_height
-        
-        self.get_logger().info(f"接收到高度设置指令: {target_height}mm")
-    
-    def pump_callback(self, msg):
-        """气泵控制回调函数"""
-        pump_state = 1 if msg.data else 0
-        
-        # 设置气泵状态
-        self.dn_data.pump_state = pump_state
-        
-        state_str = "打开" if pump_state else "关闭"
-        self.get_logger().info(f"接收到气泵控制指令: {state_str}")
-    
-    def servo_callback(self, msg):
-        """舵机角度控制回调函数（直接发送弧度值）"""
-        if len(msg.data) < 2:
-            self.get_logger().error("舵机控制数据格式错误，需要 [舵机ID, 角度弧度]")
-            return
-        
-        servo_id = int(msg.data[0])  # 舵机ID (0-11)
-        angle_rad = msg.data[1]       # 角度（弧度），直接使用
-        
-        # 检查舵机ID范围
-        if servo_id < 0 or servo_id >= 12:
-            self.get_logger().error(f"舵机ID超出范围: {servo_id}，有效范围: 0-11")
-            return
-        
-        # 直接使用弧度值，不转换为角度
-        # STM32接收的值就是弧度（取整后发送）
-        self.dn_data.target_angles[servo_id] = angle_rad
-        
-        self.get_logger().info(f"舵机{servo_id}设置弧度值: {angle_rad:.4f}")
- 
-    def destroy_node(self):
-        """节点销毁时关闭串口"""
-        if self.ser and self.ser.is_open:
-            self.ser.close()
-            self.get_logger().info("串口已关闭")
-        super().destroy_node()
+    def publish_feedback(self) -> None:
+        lift_height_mm = float(self.up_data.lift_height)
+        self._lift_height_publisher.publish(Float32(data=lift_height_mm))
+        self._raw_suction_publisher.publish(Bool(data=bool(self.up_data.suck_state)))
 
-def main(args=None):
+        joint_state = JointState()
+        joint_state.header.stamp = self.get_clock().now().to_msg()
+        ordered_joint_names = [
+            "base_x",
+            "base_y",
+            "base_theta",
+            "raise_joint",
+            "r1_joint",
+            "r2_joint",
+            "r3_joint",
+            "r4_joint",
+            "r5_joint",
+            "r6_joint",
+            "sucker_joint",
+            "h1_joint",
+            "h2_joint",
+        ]
+
+        joint_positions = dict(self._calibration.base_joints)
+        joint_positions["raise_joint"] = self._calibration.lift.mm_to_joint(lift_height_mm)
+        for joint_name, mapping in self._calibration.arm_joint_mappings.items():
+            raw_feedback = self.up_data.motor_arm_joint_feedback[mapping.feedback_index]
+            joint_positions[joint_name] = mapping.feedback_to_joint(raw_feedback)
+        joint_positions.update(self._calibration.fixed_joints)
+
+        joint_state.name = ordered_joint_names
+        joint_state.position = [joint_positions.get(joint_name, 0.0) for joint_name in ordered_joint_names]
+        self._joint_state_publisher.publish(joint_state)
+
+        motor_arm_feedback = JointState()
+        motor_arm_feedback.header = joint_state.header
+        motor_arm_feedback.name = list(self._calibration.arm_joint_mappings.keys())
+        motor_arm_feedback.position = [joint_positions[joint_name] for joint_name in motor_arm_feedback.name]
+        self._motor_arm_feedback_publisher.publish(motor_arm_feedback)
+
+    def height_callback(self, msg: Float32) -> None:
+        self.dn_data.target_lift_height = float(msg.data)
+
+    def pump_callback(self, msg: Bool) -> None:
+        self.dn_data.pump_state = 1 if msg.data else 0
+
+    def legacy_servo_callback(self, msg: Float32MultiArray) -> None:
+        if len(msg.data) < 2:
+            self.get_logger().error("Legacy servo control payload must be [channel_id, command_value].")
+            return
+        servo_id = int(msg.data[0])
+        if servo_id < 0 or servo_id >= len(self.dn_data.motor_arm_joint_targets):
+            self.get_logger().error(f"Motor-arm channel id {servo_id} is outside 0..11.")
+            return
+        self.dn_data.motor_arm_joint_targets[servo_id] = float(msg.data[1])
+
+    def motor_arm_joint_command_callback(self, msg: JointState) -> None:
+        joint_count = min(len(msg.name), len(msg.position))
+        for index in range(joint_count):
+            joint_name = msg.name[index]
+            mapping = self._calibration.arm_joint_mappings.get(joint_name)
+            if mapping is None:
+                continue
+            self.dn_data.motor_arm_joint_targets[mapping.command_index] = mapping.joint_to_command(
+                msg.position[index]
+            )
+
+    def destroy_node(self) -> bool:
+        if getattr(self, "ser", None) is not None and self.ser.is_open:
+            self.ser.close()
+        return super().destroy_node()
+
+
+def main(args: Optional[list[str]] = None) -> None:
     rclpy.init(args=args)
     node = STM32SerialNode()
     try:
@@ -297,7 +329,9 @@ def main(args=None):
         pass
     finally:
         node.destroy_node()
-        rclpy.shutdown()
+        if rclpy.ok():
+            rclpy.shutdown()
+
 
 if __name__ == "__main__":
     main()

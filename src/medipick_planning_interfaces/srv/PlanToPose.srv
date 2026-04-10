@@ -1,0 +1,22 @@
+string request_id
+string group_name
+string pose_link
+string planner_id
+bool use_start_joint_state
+sensor_msgs/JointState start_joint_state
+geometry_msgs/PoseStamped target_pose
+float64 allowed_planning_time
+int32 num_planning_attempts
+float64 max_velocity_scaling
+float64 max_acceleration_scaling
+---
+bool success
+string message
+string backend_name
+string resolved_group_name
+string resolved_pose_link
+string planning_frame
+int32 moveit_error_code
+float64 planning_time
+trajectory_msgs/JointTrajectory joint_trajectory
+sensor_msgs/JointState final_joint_state
