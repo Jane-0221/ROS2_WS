@@ -1,0 +1,2 @@
+case,seed,success,final_stage,total_stage_time_sec,video_recorded,video_duration_sec,failure_message
+case_001,5004,False,FAILED,18.448,False,,No feasible outside-cabinet pre-insert candidate found.

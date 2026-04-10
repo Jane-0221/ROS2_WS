@@ -1,0 +1,38 @@
+task_name: plan_to_pre_insert
+variant: fixed_base_v1
+
+robot:
+  pose_link: sucker_link
+  ik_pose_link: r6_link
+  controlled_joints:
+    - raise_joint
+    - r1_joint
+    - r2_joint
+    - r3_joint
+    - r4_joint
+    - r5_joint
+    - r6_joint
+  optional_residual_base_joints:
+    - base_x
+    - base_y
+    - base_theta
+
+success:
+  position_tolerance_m: 0.02
+  orientation_tolerance_rad: 0.10
+  outside_margin_m: 0.01
+  terminal_speed_threshold: 0.05
+
+constraints:
+  limit_base_motion: true
+  max_base_planar_motion_m: 0.20
+  max_base_yaw_motion_deg: 20.0
+  soft_base_planar_motion_m: 0.10
+  soft_base_yaw_motion_deg: 10.0
+  max_r1_motion_deg: 100.0
+  soft_r1_motion_deg: 70.0
+
+episode:
+  control_hz: 10
+  max_steps: 80
+  frame: stage_start_base

@@ -1,0 +1,57 @@
+planner_configs:
+  RRTConnectkConfigDefault:
+    type: geometric::RRTConnect
+    range: 0.0
+  RRTstarkConfigDefault:
+    type: geometric::RRTstar
+    range: 0.3
+    goal_bias: 0.05
+    delay_collision_checking: 1
+  PRMkConfigDefault:
+    type: geometric::PRM
+    max_nearest_neighbors: 10
+
+arm:
+  default_planner_config: RRTstarkConfigDefault
+  planner_configs:
+    - RRTConnectkConfigDefault
+    - RRTstarkConfigDefault
+    - PRMkConfigDefault
+  projection_evaluator: joints(raise_joint,r2_joint)
+  longest_valid_segment_fraction: 0.005
+
+arm_no_lift:
+  default_planner_config: RRTstarkConfigDefault
+  planner_configs:
+    - RRTConnectkConfigDefault
+    - RRTstarkConfigDefault
+    - PRMkConfigDefault
+  projection_evaluator: joints(r2_joint,r4_joint)
+  longest_valid_segment_fraction: 0.005
+
+car:
+  default_planner_config: RRTstarkConfigDefault
+  planner_configs:
+    - RRTConnectkConfigDefault
+    - RRTstarkConfigDefault
+    - PRMkConfigDefault
+  projection_evaluator: joints(base_x,base_y)
+  longest_valid_segment_fraction: 0.01
+
+mobile_arm:
+  default_planner_config: RRTstarkConfigDefault
+  planner_configs:
+    - RRTConnectkConfigDefault
+    - RRTstarkConfigDefault
+    - PRMkConfigDefault
+  projection_evaluator: joints(base_x,base_y,raise_joint)
+  longest_valid_segment_fraction: 0.005
+
+whole_body:
+  default_planner_config: RRTstarkConfigDefault
+  planner_configs:
+    - RRTConnectkConfigDefault
+    - RRTstarkConfigDefault
+    - PRMkConfigDefault
+  projection_evaluator: joints(base_x,base_y,raise_joint,sucker_joint)
+  longest_valid_segment_fraction: 0.005

@@ -1,0 +1,287 @@
+{
+  "success": false,
+  "final_stage": "FAILED",
+  "failure_message": "Pre-insert planning failed: arm: MoveIt failed to produce a valid trajectory (INVALID_MOTION_PLAN, code=-2).; retry failed: MoveIt failed to produce a valid trajectory (INVALID_MOTION_PLAN, code=-2).; mobile_arm: MoveIt failed to produce a valid trajectory (INVALID_MOTION_PLAN, code=-2).; retry failed: MoveIt failed to produce a valid trajectory (INVALID_MOTION_PLAN, code=-2).",
+  "stage_transitions": [
+    {
+      "stage": "ACQUIRE_TARGET",
+      "timestamp": 1775665404.3417163
+    },
+    {
+      "stage": "ARM_STOW_SAFE",
+      "timestamp": 1775665404.9963334
+    },
+    {
+      "stage": "BASE_ENTER_WORKSPACE",
+      "timestamp": 1775665407.3045154
+    },
+    {
+      "stage": "LIFT_TO_BAND",
+      "timestamp": 1775665410.019257
+    },
+    {
+      "stage": "SELECT_PRE_INSERT",
+      "timestamp": 1775665412.2301195
+    },
+    {
+      "stage": "PLAN_TO_PRE_INSERT",
+      "timestamp": 1775665412.6280177
+    },
+    {
+      "stage": "FAILED",
+      "timestamp": 1775665423.4929762
+    }
+  ],
+  "stage_timeline": [
+    {
+      "stage": "ACQUIRE_TARGET",
+      "started_at": 1775665404.3417163,
+      "ended_at": 1775665404.9963334,
+      "duration_sec": 0.6546170711517334
+    },
+    {
+      "stage": "ARM_STOW_SAFE",
+      "started_at": 1775665404.9963334,
+      "ended_at": 1775665407.3045154,
+      "duration_sec": 2.3081820011138916
+    },
+    {
+      "stage": "BASE_ENTER_WORKSPACE",
+      "started_at": 1775665407.3045154,
+      "ended_at": 1775665410.019257,
+      "duration_sec": 2.7147417068481445
+    },
+    {
+      "stage": "LIFT_TO_BAND",
+      "started_at": 1775665410.019257,
+      "ended_at": 1775665412.2301195,
+      "duration_sec": 2.210862398147583
+    },
+    {
+      "stage": "SELECT_PRE_INSERT",
+      "started_at": 1775665412.2301195,
+      "ended_at": 1775665412.6280177,
+      "duration_sec": 0.39789819717407227
+    },
+    {
+      "stage": "PLAN_TO_PRE_INSERT",
+      "started_at": 1775665412.6280177,
+      "ended_at": 1775665423.4929762,
+      "duration_sec": 10.86495852470398
+    }
+  ],
+  "stage_totals": {
+    "ACQUIRE_TARGET": {
+      "attempts": 1,
+      "total_duration_sec": 0.6546170711517334
+    },
+    "ARM_STOW_SAFE": {
+      "attempts": 1,
+      "total_duration_sec": 2.3081820011138916
+    },
+    "BASE_ENTER_WORKSPACE": {
+      "attempts": 1,
+      "total_duration_sec": 2.7147417068481445
+    },
+    "LIFT_TO_BAND": {
+      "attempts": 1,
+      "total_duration_sec": 2.210862398147583
+    },
+    "SELECT_PRE_INSERT": {
+      "attempts": 1,
+      "total_duration_sec": 0.39789819717407227
+    },
+    "PLAN_TO_PRE_INSERT": {
+      "attempts": 1,
+      "total_duration_sec": 10.86495852470398
+    }
+  },
+  "errors": [
+    {
+      "timestamp": 1775665403.5453262,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 1"
+    },
+    {
+      "timestamp": 1775665403.5454953,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 2"
+    },
+    {
+      "timestamp": 1775665403.5455203,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 7"
+    },
+    {
+      "timestamp": 1775665407.4411504,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 1"
+    },
+    {
+      "timestamp": 1775665412.8069642,
+      "logger": "moveit.ros_planning.planning_pipeline",
+      "message": "Computed path is not valid. Invalid states at index locations: [ 0 1 2 3 4 ] out of 100. Explanations follow in command line. Contacts are published on /display_contacts"
+    },
+    {
+      "timestamp": 1775665412.8117318,
+      "logger": "moveit.ros_planning.planning_pipeline",
+      "message": "Completed listing of explanations for invalid states."
+    },
+    {
+      "timestamp": 1775665413.2834566,
+      "logger": "moveit.ros_planning.planning_pipeline",
+      "message": "Computed path is not valid. Invalid states at index locations: [ 0 1 2 3 4 ] out of 116. Explanations follow in command line. Contacts are published on /display_contacts"
+    },
+    {
+      "timestamp": 1775665413.2864301,
+      "logger": "moveit.ros_planning.planning_pipeline",
+      "message": "Completed listing of explanations for invalid states."
+    },
+    {
+      "timestamp": 1775665417.519957,
+      "logger": "moveit.ros_planning.planning_pipeline",
+      "message": "Computed path is not valid. Invalid states at index locations: [ 0 1 2 3 4 ] out of 274. Explanations follow in command line. Contacts are published on /display_contacts"
+    },
+    {
+      "timestamp": 1775665417.5220513,
+      "logger": "moveit.ros_planning.planning_pipeline",
+      "message": "Completed listing of explanations for invalid states."
+    },
+    {
+      "timestamp": 1775665417.820458,
+      "logger": "moveit.ros_planning.planning_pipeline",
+      "message": "Computed path is not valid. Invalid states at index locations: [ 0 1 2 3 4 ] out of 57. Explanations follow in command line. Contacts are published on /display_contacts"
+    },
+    {
+      "timestamp": 1775665417.8223348,
+      "logger": "moveit.ros_planning.planning_pipeline",
+      "message": "Completed listing of explanations for invalid states."
+    },
+    {
+      "timestamp": 1775665418.4441552,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 1"
+    },
+    {
+      "timestamp": 1775665422.5174654,
+      "logger": "moveit.ros_planning.planning_pipeline",
+      "message": "Computed path is not valid. Invalid states at index locations: [ 0 1 2 3 4 5 6 7 8 ] out of 106. Explanations follow in command line. Contacts are published on /display_contacts"
+    },
+    {
+      "timestamp": 1775665422.5222566,
+      "logger": "moveit.ros_planning.planning_pipeline",
+      "message": "Completed listing of explanations for invalid states."
+    },
+    {
+      "timestamp": 1775665422.6905265,
+      "logger": "moveit.ros_planning.planning_pipeline",
+      "message": "Computed path is not valid. Invalid states at index locations: [ 0 1 2 ] out of 161. Explanations follow in command line. Contacts are published on /display_contacts"
+    },
+    {
+      "timestamp": 1775665422.6922882,
+      "logger": "moveit.ros_planning.planning_pipeline",
+      "message": "Completed listing of explanations for invalid states."
+    },
+    {
+      "timestamp": 1775665423.367194,
+      "logger": "moveit.ros_planning.planning_pipeline",
+      "message": "Computed path is not valid. Invalid states at index locations: [ 0 1 2 3 ] out of 87. Explanations follow in command line. Contacts are published on /display_contacts"
+    },
+    {
+      "timestamp": 1775665423.3713303,
+      "logger": "moveit.ros_planning.planning_pipeline",
+      "message": "Completed listing of explanations for invalid states."
+    },
+    {
+      "timestamp": 1775665423.4815843,
+      "logger": "moveit.ros_planning.planning_pipeline",
+      "message": "Computed path is not valid. Invalid states at index locations: [ 0 1 2 3 ] out of 324. Explanations follow in command line. Contacts are published on /display_contacts"
+    },
+    {
+      "timestamp": 1775665423.4841592,
+      "logger": "moveit.ros_planning.planning_pipeline",
+      "message": "Completed listing of explanations for invalid states."
+    },
+    {
+      "timestamp": 1775665423.4925013,
+      "message": "Pre-insert planning failed: arm: MoveIt failed to produce a valid trajectory (INVALID_MOTION_PLAN, code=-2).; retry failed: MoveIt failed to produce a valid trajectory (INVALID_MOTION_PLAN, code=-2).; mobile_arm: MoveIt failed to produce a valid trajectory (INVALID_MOTION_PLAN, code=-2).; retry failed: MoveIt failed to produce a valid trajectory (INVALID_MOTION_PLAN, code=-2)."
+    },
+    {
+      "timestamp": 1775665432.4509606,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 1"
+    },
+    {
+      "timestamp": 1775665435.446034,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 1"
+    },
+    {
+      "timestamp": 1775665443.4398215,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 1"
+    },
+    {
+      "timestamp": 1775665445.4484084,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 1"
+    },
+    {
+      "timestamp": 1775665453.4508889,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 1"
+    },
+    {
+      "timestamp": 1775665454.4518275,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 1"
+    },
+    {
+      "timestamp": 1775665455.4519854,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 1"
+    },
+    {
+      "timestamp": 1775665458.450708,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 1"
+    }
+  ],
+  "warnings": [
+    {
+      "timestamp": 1775665401.0392709,
+      "logger": "move_group.move_group",
+      "message": "Falling back to using the the move_group node namespace (deprecated behavior)."
+    },
+    {
+      "timestamp": 1775665403.5616937,
+      "logger": "rcl.logging_rosout",
+      "message": "Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic."
+    },
+    {
+      "timestamp": 1775665412.3651872,
+      "logger": "medipick_pick_task_manager",
+      "message": "pre_insert_select_arm_insert_ik: IK failed with code=-31."
+    },
+    {
+      "timestamp": 1775665412.4950507,
+      "logger": "medipick_pick_task_manager",
+      "message": "pre_insert_select_arm_insert_ik: IK failed with code=-31."
+    },
+    {
+      "timestamp": 1775665412.6271555,
+      "logger": "medipick_pick_task_manager",
+      "message": "pre_insert_select_arm_insert_ik: IK failed with code=-31."
+    },
+    {
+      "timestamp": 1775665414.3226123,
+      "logger": "moveit.ompl_planning.model_based_planning_context",
+      "message": "Planning timed out: 1.0s ≥ 1.0s"
+    },
+    {
+      "timestamp": 1775665418.8510911,
+      "logger": "moveit.ompl_planning.model_based_planning_context",
+      "message": "Planning timed out: 1.0s ≥ 1.0s"
+    }
+  ]
+}

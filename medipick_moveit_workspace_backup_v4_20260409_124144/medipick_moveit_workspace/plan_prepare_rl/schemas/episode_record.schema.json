@@ -1,0 +1,29 @@
+{
+  "title": "PrepareEpisodeRecord",
+  "type": "object",
+  "required": [
+    "episode_id",
+    "seed",
+    "scene",
+    "stage_start",
+    "goal_pose",
+    "result"
+  ],
+  "properties": {
+    "episode_id": { "type": "string" },
+    "seed": { "type": "integer" },
+    "scene": { "type": "object" },
+    "stage_start": { "type": "object" },
+    "goal_pose": { "type": "object" },
+    "result": {
+      "type": "object",
+      "required": ["success", "termination_reason"],
+      "properties": {
+        "success": { "type": "boolean" },
+        "termination_reason": { "type": "string" },
+        "episode_return": { "type": "number" },
+        "steps": { "type": "integer" }
+      }
+    }
+  }
+}

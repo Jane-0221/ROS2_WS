@@ -1,0 +1,9 @@
+case,seed,success,final_stage,total_stage_time_sec,video_recorded,video_duration_sec,failure_message
+case_001,4001,False,ACQUIRE_TARGET,0.000,False,,
+case_002,4002,True,COMPLETED,15.699,False,,
+case_003,4003,False,ACQUIRE_TARGET,0.000,False,,
+case_004,4004,True,COMPLETED,11.499,False,,
+case_005,4005,True,COMPLETED,11.345,False,,
+case_006,4006,True,COMPLETED,10.591,False,,
+case_007,4007,False,FAILED,9.847,False,,Pre-insert trajectory violates the R1 stage-motion limit.
+case_008,4008,False,FAILED,11.515,False,,"Pre-insert planning failed: MoveIt failed to produce a valid trajectory (INVALID_MOTION_PLAN, code=-2).; retry failed: MoveIt failed to produce a valid trajectory (FAILURE, code=99999)."

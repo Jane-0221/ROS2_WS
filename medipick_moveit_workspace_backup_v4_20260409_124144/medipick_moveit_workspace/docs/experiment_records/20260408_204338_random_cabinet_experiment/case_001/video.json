@@ -1,0 +1,15 @@
+{
+  "success": false,
+  "reason": "capture_failed",
+  "output": "/home/lzoolloozl/projects/medipick_moveit_workspace/docs/experiment_records/20260408_204338_random_cabinet_experiment/case_001/rviz_capture.avi",
+  "window_pattern": "RViz|rviz",
+  "fps": 2.0,
+  "max_width": 640,
+  "max_height": 360,
+  "wait_timeout": 30.0,
+  "capture_timeout": 120.0,
+  "frames": 0,
+  "window_id": "0x600004",
+  "window_title": "Qt Selection Owner for rviz2",
+  "last_capture_error": "Command '['xwd', '-silent', '-id', '0x600004']' returned non-zero exit status 1."
+}

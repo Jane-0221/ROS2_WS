@@ -1,0 +1,165 @@
+{
+  "success": true,
+  "final_stage": "COMPLETED",
+  "failure_message": null,
+  "stage_transitions": [
+    {
+      "stage": "ACQUIRE_TARGET",
+      "timestamp": 1775700751.191681
+    },
+    {
+      "stage": "ARM_STOW_SAFE",
+      "timestamp": 1775700753.6571376
+    },
+    {
+      "stage": "BASE_ENTER_WORKSPACE",
+      "timestamp": 1775700755.8887691
+    },
+    {
+      "stage": "LIFT_TO_BAND",
+      "timestamp": 1775700758.6021526
+    },
+    {
+      "stage": "SELECT_PRE_INSERT",
+      "timestamp": 1775700760.8170109
+    },
+    {
+      "stage": "PLAN_TO_PRE_INSERT",
+      "timestamp": 1775700761.214814
+    },
+    {
+      "stage": "INSERT_AND_SUCTION",
+      "timestamp": 1775700767.676116
+    },
+    {
+      "stage": "SAFE_RETREAT",
+      "timestamp": 1775700769.4237432
+    },
+    {
+      "stage": "COMPLETED",
+      "timestamp": 1775700773.0474646
+    }
+  ],
+  "stage_timeline": [
+    {
+      "stage": "ACQUIRE_TARGET",
+      "started_at": 1775700751.191681,
+      "ended_at": 1775700753.6571376,
+      "duration_sec": 2.46545672416687
+    },
+    {
+      "stage": "ARM_STOW_SAFE",
+      "started_at": 1775700753.6571376,
+      "ended_at": 1775700755.8887691,
+      "duration_sec": 2.2316315174102783
+    },
+    {
+      "stage": "BASE_ENTER_WORKSPACE",
+      "started_at": 1775700755.8887691,
+      "ended_at": 1775700758.6021526,
+      "duration_sec": 2.713383436203003
+    },
+    {
+      "stage": "LIFT_TO_BAND",
+      "started_at": 1775700758.6021526,
+      "ended_at": 1775700760.8170109,
+      "duration_sec": 2.214858293533325
+    },
+    {
+      "stage": "SELECT_PRE_INSERT",
+      "started_at": 1775700760.8170109,
+      "ended_at": 1775700761.214814,
+      "duration_sec": 0.39780306816101074
+    },
+    {
+      "stage": "PLAN_TO_PRE_INSERT",
+      "started_at": 1775700761.214814,
+      "ended_at": 1775700767.676116,
+      "duration_sec": 6.461302042007446
+    },
+    {
+      "stage": "INSERT_AND_SUCTION",
+      "started_at": 1775700767.676116,
+      "ended_at": 1775700769.4237432,
+      "duration_sec": 1.7476272583007812
+    },
+    {
+      "stage": "SAFE_RETREAT",
+      "started_at": 1775700769.4237432,
+      "ended_at": 1775700773.0474646,
+      "duration_sec": 3.6237213611602783
+    }
+  ],
+  "stage_totals": {
+    "ACQUIRE_TARGET": {
+      "attempts": 1,
+      "total_duration_sec": 2.46545672416687
+    },
+    "ARM_STOW_SAFE": {
+      "attempts": 1,
+      "total_duration_sec": 2.2316315174102783
+    },
+    "BASE_ENTER_WORKSPACE": {
+      "attempts": 1,
+      "total_duration_sec": 2.713383436203003
+    },
+    "LIFT_TO_BAND": {
+      "attempts": 1,
+      "total_duration_sec": 2.214858293533325
+    },
+    "SELECT_PRE_INSERT": {
+      "attempts": 1,
+      "total_duration_sec": 0.39780306816101074
+    },
+    "PLAN_TO_PRE_INSERT": {
+      "attempts": 1,
+      "total_duration_sec": 6.461302042007446
+    },
+    "INSERT_AND_SUCTION": {
+      "attempts": 1,
+      "total_duration_sec": 1.7476272583007812
+    },
+    "SAFE_RETREAT": {
+      "attempts": 1,
+      "total_duration_sec": 3.6237213611602783
+    }
+  },
+  "errors": [],
+  "warnings": [
+    {
+      "timestamp": 1775700748.7800171,
+      "logger": "move_group.move_group",
+      "message": "Falling back to using the the move_group node namespace (deprecated behavior)."
+    },
+    {
+      "timestamp": 1775700748.2734084,
+      "logger": "rcl.logging_rosout",
+      "message": "Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic."
+    },
+    {
+      "timestamp": 1775700760.9518135,
+      "logger": "medipick_pick_task_manager",
+      "message": "pre_insert_select_arm_insert_ik: IK failed with code=-31."
+    },
+    {
+      "timestamp": 1775700761.0786765,
+      "logger": "medipick_pick_task_manager",
+      "message": "pre_insert_select_arm_insert_ik: IK failed with code=-31."
+    },
+    {
+      "timestamp": 1775700761.2137704,
+      "logger": "medipick_pick_task_manager",
+      "message": "pre_insert_select_arm_insert_ik: IK failed with code=-31."
+    },
+    {
+      "timestamp": 1775700762.2861834,
+      "logger": "moveit.ompl_planning.model_based_planning_context",
+      "message": "Solution is approximate"
+    },
+    {
+      "timestamp": 1775700767.9286718,
+      "logger": "medipick_pick_task_manager",
+      "message": "insert_local_seeded[arm]_ik: IK failed with code=-31."
+    }
+  ]
+}

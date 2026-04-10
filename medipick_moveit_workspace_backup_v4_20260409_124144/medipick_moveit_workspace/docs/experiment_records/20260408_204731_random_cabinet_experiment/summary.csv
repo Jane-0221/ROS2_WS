@@ -1,0 +1,2 @@
+case,seed,success,final_stage,total_stage_time_sec,video_recorded,video_duration_sec,failure_message
+case_001,1001,True,COMPLETED,12.787,True,81.500,

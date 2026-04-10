@@ -1,0 +1,35 @@
+{
+  "summary": {
+    "total_cases": 1,
+    "successful_cases": 1,
+    "failed_cases": 0,
+    "success_ratio": 100.0,
+    "failure_type_counter": {},
+    "avg_stage_duration_sec": {
+      "ACQUIRE_TARGET": 0.667,
+      "ARM_STOW_SAFE": 2.308,
+      "BASE_ENTER_WORKSPACE": 2.717,
+      "INSERT_AND_SUCTION": 1.688,
+      "LIFT_TO_BAND": 2.218,
+      "PLAN_TO_PRE_INSERT": 6.542,
+      "SAFE_RETREAT": 3.622,
+      "SELECT_PRE_INSERT": 0.429
+    },
+    "slow_stage_counter_over_2s": {
+      "ARM_STOW_SAFE": 1,
+      "BASE_ENTER_WORKSPACE": 1,
+      "LIFT_TO_BAND": 1,
+      "PLAN_TO_PRE_INSERT": 1,
+      "SAFE_RETREAT": 1
+    }
+  },
+  "failures": [],
+  "successes": [
+    {
+      "case": "case_001",
+      "seed": 5004,
+      "final_stage": "COMPLETED",
+      "total_stage_time_sec": 20.189
+    }
+  ]
+}

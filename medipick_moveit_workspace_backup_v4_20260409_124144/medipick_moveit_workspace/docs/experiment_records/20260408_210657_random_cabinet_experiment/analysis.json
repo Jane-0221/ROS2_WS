@@ -1,0 +1,1034 @@
+{
+  "summary": {
+    "total_cases": 8,
+    "successful_cases": 4,
+    "failed_cases": 4,
+    "success_ratio": 50.0,
+    "failure_type_counter": {
+      "startup_fk_or_scene_sync": 2,
+      "pre_insert_r1_motion_limit": 1,
+      "pre_insert_invalid_motion": 1
+    },
+    "avg_stage_duration_sec": {
+      "ACQUIRE_TARGET": 1.239,
+      "ARM_STOW_SAFE": 1.958,
+      "BASE_ENTER_WORKSPACE": 2.712,
+      "INSERT_AND_SUCTION": 0.645,
+      "LIFT_TO_BAND": 1.585,
+      "PLAN_TO_PRE_INSERT": 1.99,
+      "SAFE_RETREAT": 2.745,
+      "SELECT_PRE_INSERT": 0.005
+    },
+    "slow_stage_counter_over_2s": {
+      "ACQUIRE_TARGET": 2,
+      "ARM_STOW_SAFE": 5,
+      "BASE_ENTER_WORKSPACE": 6,
+      "SAFE_RETREAT": 3,
+      "LIFT_TO_BAND": 4,
+      "PLAN_TO_PRE_INSERT": 2
+    }
+  },
+  "failures": [
+    {
+      "case": "case_001",
+      "seed": 4001,
+      "success": false,
+      "final_stage": "ACQUIRE_TARGET",
+      "failure_message": null,
+      "total_stage_time_sec": 0.0,
+      "params": {
+        "random_seed": 4001,
+        "shelf_levels": 7,
+        "shelf_width": 0.806,
+        "shelf_depth": 0.24,
+        "shelf_center_x": 0.888,
+        "shelf_center_y": -0.0,
+        "shelf_bottom_z": 0.555,
+        "shelf_level_gap": 0.279,
+        "shelf_board_thickness": 0.039,
+        "shelf_side_thickness": 0.058,
+        "shelf_back_thickness": 0.037,
+        "target_depth_ratio": 0.117,
+        "target_lateral_margin": 0.087,
+        "target_lateral_span": 0.046,
+        "target_box_size_x": 0.077,
+        "target_box_size_y": 0.134,
+        "target_box_size_z": 0.087,
+        "clutter_count": 0,
+        "target_gap_index": 1,
+        "target_level": 3
+      },
+      "result": {
+        "success": false,
+        "final_stage": "ACQUIRE_TARGET",
+        "failure_message": null,
+        "stage_transitions": [
+          {
+            "stage": "ACQUIRE_TARGET",
+            "timestamp": 1775653622.7616117
+          }
+        ],
+        "stage_timeline": [],
+        "stage_totals": {},
+        "errors": [
+          {
+            "timestamp": 1775653622.8557975,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653623.8553486,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653634.858634,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653637.8575394,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653639.8632283,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653643.8525574,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653644.8627117,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653650.8631458,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653672.8625374,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          }
+        ],
+        "warnings": [
+          {
+            "timestamp": 1775653620.0618033,
+            "logger": "move_group.move_group",
+            "message": "Falling back to using the the move_group node namespace (deprecated behavior)."
+          },
+          {
+            "timestamp": 1775653622.3105516,
+            "logger": "rcl.logging_rosout",
+            "message": "Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic."
+          },
+          {
+            "timestamp": 1775653622.8904514,
+            "logger": "move_group.rclcpp",
+            "message": "failed to send response to /compute_fk (timeout): client will not receive response, at ./src/rmw_response.cpp:154, at ./src/rcl/service.c:314"
+          }
+        ]
+      },
+      "video": null,
+      "failure_type": "startup_fk_or_scene_sync",
+      "suggestions": [
+        "在 `ACQUIRE_TARGET` 前增加对 `/compute_fk`、`/check_state_validity` 等 MoveIt service 的 readiness 检查，不要只靠节点启动完成就立即进主流程。",
+        "把 mock 货架/点云发布后的短暂稳定窗口显式化，例如在首帧目标 pose 和点云都到齐后再允许 `ACQUIRE_TARGET` 调 FK。",
+        "优先处理反复出现的 `shape_mask: Missing transform for shape mesh`，这更像是场景物体 frame 或发布时间早于 TF 稳定的同步问题。"
+      ]
+    },
+    {
+      "case": "case_003",
+      "seed": 4003,
+      "success": false,
+      "final_stage": "ACQUIRE_TARGET",
+      "failure_message": null,
+      "total_stage_time_sec": 0.0,
+      "params": {
+        "random_seed": 4003,
+        "shelf_levels": 5,
+        "shelf_width": 0.857,
+        "shelf_depth": 0.199,
+        "shelf_center_x": 0.952,
+        "shelf_center_y": 0.086,
+        "shelf_bottom_z": 0.539,
+        "shelf_level_gap": 0.246,
+        "shelf_board_thickness": 0.037,
+        "shelf_side_thickness": 0.042,
+        "shelf_back_thickness": 0.041,
+        "target_depth_ratio": 0.114,
+        "target_lateral_margin": 0.083,
+        "target_lateral_span": 0.026,
+        "target_box_size_x": 0.101,
+        "target_box_size_y": 0.154,
+        "target_box_size_z": 0.083,
+        "clutter_count": 0,
+        "target_gap_index": 3,
+        "target_level": 2
+      },
+      "result": {
+        "success": false,
+        "final_stage": "ACQUIRE_TARGET",
+        "failure_message": null,
+        "stage_transitions": [
+          {
+            "stage": "ACQUIRE_TARGET",
+            "timestamp": 1775653736.5426958
+          }
+        ],
+        "stage_timeline": [],
+        "stage_totals": {},
+        "errors": [
+          {
+            "timestamp": 1775653738.6364222,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653740.6364872,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653741.636479,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653742.6462696,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653743.6371238,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653744.6383395,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653746.6461911,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653747.637022,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653748.646397,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653752.646338,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653755.6460083,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653756.6347318,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653758.6453214,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653760.6348877,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653761.6444654,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653762.6347625,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653763.6387334,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653764.6435182,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653771.634339,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653774.6344123,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653777.6404524,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653779.6370163,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653782.6354542,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653783.640173,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653786.6352916,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          }
+        ],
+        "warnings": [
+          {
+            "timestamp": 1775653733.9113722,
+            "logger": "move_group.move_group",
+            "message": "Falling back to using the the move_group node namespace (deprecated behavior)."
+          },
+          {
+            "timestamp": 1775653735.9779716,
+            "logger": "rcl.logging_rosout",
+            "message": "Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic."
+          },
+          {
+            "timestamp": 1775653743.1055052,
+            "logger": "move_group.rclcpp",
+            "message": "failed to send response to /compute_fk (timeout): client will not receive response, at ./src/rmw_response.cpp:154, at ./src/rcl/service.c:314"
+          }
+        ]
+      },
+      "video": null,
+      "failure_type": "startup_fk_or_scene_sync",
+      "suggestions": [
+        "在 `ACQUIRE_TARGET` 前增加对 `/compute_fk`、`/check_state_validity` 等 MoveIt service 的 readiness 检查，不要只靠节点启动完成就立即进主流程。",
+        "把 mock 货架/点云发布后的短暂稳定窗口显式化，例如在首帧目标 pose 和点云都到齐后再允许 `ACQUIRE_TARGET` 调 FK。",
+        "优先处理反复出现的 `shape_mask: Missing transform for shape mesh`，这更像是场景物体 frame 或发布时间早于 TF 稳定的同步问题。"
+      ]
+    },
+    {
+      "case": "case_007",
+      "seed": 4007,
+      "success": false,
+      "final_stage": "FAILED",
+      "failure_message": "Pre-insert trajectory violates the R1 stage-motion limit.",
+      "total_stage_time_sec": 9.847,
+      "params": {
+        "random_seed": 4007,
+        "shelf_levels": 5,
+        "shelf_width": 0.675,
+        "shelf_depth": 0.202,
+        "shelf_center_x": 0.968,
+        "shelf_center_y": 0.07,
+        "shelf_bottom_z": 0.475,
+        "shelf_level_gap": 0.299,
+        "shelf_board_thickness": 0.027,
+        "shelf_side_thickness": 0.034,
+        "shelf_back_thickness": 0.031,
+        "target_depth_ratio": 0.112,
+        "target_lateral_margin": 0.107,
+        "target_lateral_span": 0.058,
+        "target_box_size_x": 0.064,
+        "target_box_size_y": 0.152,
+        "target_box_size_z": 0.055,
+        "clutter_count": 0,
+        "target_gap_index": 0,
+        "target_level": 2
+      },
+      "result": {
+        "success": false,
+        "final_stage": "FAILED",
+        "failure_message": "Pre-insert trajectory violates the R1 stage-motion limit.",
+        "stage_transitions": [
+          {
+            "stage": "ACQUIRE_TARGET",
+            "timestamp": 1775653962.52592
+          },
+          {
+            "stage": "ARM_STOW_SAFE",
+            "timestamp": 1775653964.5447953
+          },
+          {
+            "stage": "BASE_ENTER_WORKSPACE",
+            "timestamp": 1775653966.8506904
+          },
+          {
+            "stage": "LIFT_TO_BAND",
+            "timestamp": 1775653969.561893
+          },
+          {
+            "stage": "SELECT_PRE_INSERT",
+            "timestamp": 1775653971.7714105
+          },
+          {
+            "stage": "PLAN_TO_PRE_INSERT",
+            "timestamp": 1775653971.7766075
+          },
+          {
+            "stage": "FAILED",
+            "timestamp": 1775653972.3725576
+          }
+        ],
+        "stage_timeline": [
+          {
+            "stage": "ACQUIRE_TARGET",
+            "started_at": 1775653962.52592,
+            "ended_at": 1775653964.5447953,
+            "duration_sec": 2.0188753604888916
+          },
+          {
+            "stage": "ARM_STOW_SAFE",
+            "started_at": 1775653964.5447953,
+            "ended_at": 1775653966.8506904,
+            "duration_sec": 2.3058950901031494
+          },
+          {
+            "stage": "BASE_ENTER_WORKSPACE",
+            "started_at": 1775653966.8506904,
+            "ended_at": 1775653969.561893,
+            "duration_sec": 2.711202621459961
+          },
+          {
+            "stage": "LIFT_TO_BAND",
+            "started_at": 1775653969.561893,
+            "ended_at": 1775653971.7714105,
+            "duration_sec": 2.209517478942871
+          },
+          {
+            "stage": "SELECT_PRE_INSERT",
+            "started_at": 1775653971.7714105,
+            "ended_at": 1775653971.7766075,
+            "duration_sec": 0.005197048187255859
+          },
+          {
+            "stage": "PLAN_TO_PRE_INSERT",
+            "started_at": 1775653971.7766075,
+            "ended_at": 1775653972.3725576,
+            "duration_sec": 0.5959501266479492
+          }
+        ],
+        "stage_totals": {
+          "ACQUIRE_TARGET": {
+            "attempts": 1,
+            "total_duration_sec": 2.0188753604888916
+          },
+          "ARM_STOW_SAFE": {
+            "attempts": 1,
+            "total_duration_sec": 2.3058950901031494
+          },
+          "BASE_ENTER_WORKSPACE": {
+            "attempts": 1,
+            "total_duration_sec": 2.711202621459961
+          },
+          "LIFT_TO_BAND": {
+            "attempts": 1,
+            "total_duration_sec": 2.209517478942871
+          },
+          "SELECT_PRE_INSERT": {
+            "attempts": 1,
+            "total_duration_sec": 0.005197048187255859
+          },
+          "PLAN_TO_PRE_INSERT": {
+            "attempts": 1,
+            "total_duration_sec": 0.5959501266479492
+          }
+        },
+        "errors": [
+          {
+            "timestamp": 1775653966.6170628,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653968.6095462,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653969.6085742,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653970.6082919,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653971.6160116,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653972.372146,
+            "message": "Pre-insert trajectory violates the R1 stage-motion limit."
+          },
+          {
+            "timestamp": 1775653972.608525,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653974.6165118,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653982.6162782,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653983.616447,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653986.618002,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653987.6159964,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653988.61459,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653990.6159568,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653992.6164994,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653993.617366,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653994.6147125,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653995.6095405,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653996.6160905,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775653997.6180573,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775654001.6156344,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775654002.618482,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775654003.6154218,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775654004.6157975,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775654005.6171722,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775654007.6174629,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775654008.6160514,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775654009.6174455,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775654010.617534,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775654011.6155636,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          }
+        ],
+        "warnings": [
+          {
+            "timestamp": 1775653960.2452836,
+            "logger": "move_group.move_group",
+            "message": "Falling back to using the the move_group node namespace (deprecated behavior)."
+          },
+          {
+            "timestamp": 1775653961.927915,
+            "logger": "rcl.logging_rosout",
+            "message": "Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic."
+          },
+          {
+            "timestamp": 1775653972.3684592,
+            "logger": "medipick_pick_task_manager",
+            "message": "plan_to_pre_insert_r1_limit: rejecting trajectory because r1 stage motion reached 103.7 deg from start -39.0 deg (limit 100.0 deg)"
+          },
+          {
+            "timestamp": 1775653972.371827,
+            "logger": "medipick_pick_task_manager",
+            "message": "plan_to_pre_insert_r1_limit: rejecting trajectory because r1 stage motion reached 103.7 deg from start -39.0 deg (limit 100.0 deg)"
+          }
+        ]
+      },
+      "video": null,
+      "failure_type": "pre_insert_r1_motion_limit",
+      "suggestions": [
+        "把 `PLAN_TO_PRE_INSERT` 的 seeded IK 终点筛选也接入 `r1` 阶段位移代价，提前避开接近 100 度阈值的解，而不是规划完再拒绝。",
+        "对这类柜型给 `pre-insert` 加一个更偏向当前 `r1` 半空间的小候选偏置，减少 `mobile_arm` 为了够到柜口而反向大摆。",
+        "必要时把 `r1` 限制从硬阈值拆成两级：90 度以上重罚，100 度以上拒绝。"
+      ]
+    },
+    {
+      "case": "case_008",
+      "seed": 4008,
+      "success": false,
+      "final_stage": "FAILED",
+      "failure_message": "Pre-insert planning failed: MoveIt failed to produce a valid trajectory (INVALID_MOTION_PLAN, code=-2).; retry failed: MoveIt failed to produce a valid trajectory (FAILURE, code=99999).",
+      "total_stage_time_sec": 11.515,
+      "params": {
+        "random_seed": 4008,
+        "shelf_levels": 4,
+        "shelf_width": 0.822,
+        "shelf_depth": 0.227,
+        "shelf_center_x": 0.807,
+        "shelf_center_y": -0.01,
+        "shelf_bottom_z": 0.516,
+        "shelf_level_gap": 0.232,
+        "shelf_board_thickness": 0.044,
+        "shelf_side_thickness": 0.047,
+        "shelf_back_thickness": 0.032,
+        "target_depth_ratio": 0.135,
+        "target_lateral_margin": 0.115,
+        "target_lateral_span": 0.044,
+        "target_box_size_x": 0.104,
+        "target_box_size_y": 0.099,
+        "target_box_size_z": 0.063,
+        "clutter_count": 0,
+        "target_gap_index": 0,
+        "target_level": 2
+      },
+      "result": {
+        "success": false,
+        "final_stage": "FAILED",
+        "failure_message": "Pre-insert planning failed: MoveIt failed to produce a valid trajectory (INVALID_MOTION_PLAN, code=-2).; retry failed: MoveIt failed to produce a valid trajectory (FAILURE, code=99999).",
+        "stage_transitions": [
+          {
+            "stage": "ACQUIRE_TARGET",
+            "timestamp": 1775654018.891666
+          },
+          {
+            "stage": "ARM_STOW_SAFE",
+            "timestamp": 1775654018.9208367
+          },
+          {
+            "stage": "BASE_ENTER_WORKSPACE",
+            "timestamp": 1775654021.2236092
+          },
+          {
+            "stage": "LIFT_TO_BAND",
+            "timestamp": 1775654023.9321606
+          },
+          {
+            "stage": "SELECT_PRE_INSERT",
+            "timestamp": 1775654026.1420531
+          },
+          {
+            "stage": "PLAN_TO_PRE_INSERT",
+            "timestamp": 1775654026.1505299
+          },
+          {
+            "stage": "FAILED",
+            "timestamp": 1775654030.406694
+          }
+        ],
+        "stage_timeline": [
+          {
+            "stage": "ACQUIRE_TARGET",
+            "started_at": 1775654018.891666,
+            "ended_at": 1775654018.9208367,
+            "duration_sec": 0.029170751571655273
+          },
+          {
+            "stage": "ARM_STOW_SAFE",
+            "started_at": 1775654018.9208367,
+            "ended_at": 1775654021.2236092,
+            "duration_sec": 2.3027725219726562
+          },
+          {
+            "stage": "BASE_ENTER_WORKSPACE",
+            "started_at": 1775654021.2236092,
+            "ended_at": 1775654023.9321606,
+            "duration_sec": 2.7085514068603516
+          },
+          {
+            "stage": "LIFT_TO_BAND",
+            "started_at": 1775654023.9321606,
+            "ended_at": 1775654026.1420531,
+            "duration_sec": 2.209892511367798
+          },
+          {
+            "stage": "SELECT_PRE_INSERT",
+            "started_at": 1775654026.1420531,
+            "ended_at": 1775654026.1505299,
+            "duration_sec": 0.008476734161376953
+          },
+          {
+            "stage": "PLAN_TO_PRE_INSERT",
+            "started_at": 1775654026.1505299,
+            "ended_at": 1775654030.406694,
+            "duration_sec": 4.256164073944092
+          }
+        ],
+        "stage_totals": {
+          "ACQUIRE_TARGET": {
+            "attempts": 1,
+            "total_duration_sec": 0.029170751571655273
+          },
+          "ARM_STOW_SAFE": {
+            "attempts": 1,
+            "total_duration_sec": 2.3027725219726562
+          },
+          "BASE_ENTER_WORKSPACE": {
+            "attempts": 1,
+            "total_duration_sec": 2.7085514068603516
+          },
+          "LIFT_TO_BAND": {
+            "attempts": 1,
+            "total_duration_sec": 2.209892511367798
+          },
+          "SELECT_PRE_INSERT": {
+            "attempts": 1,
+            "total_duration_sec": 0.008476734161376953
+          },
+          "PLAN_TO_PRE_INSERT": {
+            "attempts": 1,
+            "total_duration_sec": 4.256164073944092
+          }
+        },
+        "errors": [
+          {
+            "timestamp": 1775654018.9811609,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775654019.9858859,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775654020.982167,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775654021.9823635,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775654022.982237,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775654023.9805048,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775654025.9807827,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775654026.3694494,
+            "logger": "moveit.ros_planning.planning_pipeline",
+            "message": "Computed path is not valid. Invalid states at index locations: [ 11 12 13 ] out of 186. Explanations follow in command line. Contacts are published on /display_contacts"
+          },
+          {
+            "timestamp": 1775654026.3721254,
+            "logger": "moveit.ros_planning.planning_pipeline",
+            "message": "Completed listing of explanations for invalid states."
+          },
+          {
+            "timestamp": 1775654030.4061933,
+            "message": "Pre-insert planning failed: MoveIt failed to produce a valid trajectory (INVALID_MOTION_PLAN, code=-2).; retry failed: MoveIt failed to produce a valid trajectory (FAILURE, code=99999)."
+          },
+          {
+            "timestamp": 1775654030.9809194,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775654032.9794736,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775654033.9809706,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775654034.9810417,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775654035.9794583,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775654036.9795048,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775654037.987968,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775654038.9782188,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775654039.9792082,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775654040.980091,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775654041.9789934,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775654042.9801135,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775654043.979232,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775654044.9796321,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775654045.98119,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775654046.9812577,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775654047.982374,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775654048.9792159,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775654049.9828293,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775654050.9831126,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775654052.9827762,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775654055.9889839,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775654056.98425,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775654057.9828963,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775654060.9849515,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775654062.9836926,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775654063.9812675,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775654064.979996,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775654065.978775,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775654066.9790993,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775654068.9790266,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775654069.9795418,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          }
+        ],
+        "warnings": [
+          {
+            "timestamp": 1775654016.0439446,
+            "logger": "move_group.move_group",
+            "message": "Falling back to using the the move_group node namespace (deprecated behavior)."
+          },
+          {
+            "timestamp": 1775654017.8936987,
+            "logger": "rcl.logging_rosout",
+            "message": "Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic."
+          }
+        ]
+      },
+      "video": null,
+      "failure_type": "pre_insert_invalid_motion",
+      "suggestions": [
+        "给 `PLAN_TO_PRE_INSERT` 增加按目标高度和柜口几何自适应的站位/升降预调，而不是固定常数。",
+        "把 `pre-insert` 从单 pose 再扩成少量 2-3 个候选，但仍保持 seeded IK 优先，兼顾速度和兜底能力。"
+      ]
+    }
+  ],
+  "successes": [
+    {
+      "case": "case_002",
+      "seed": 4002,
+      "final_stage": "COMPLETED",
+      "total_stage_time_sec": 15.699
+    },
+    {
+      "case": "case_004",
+      "seed": 4004,
+      "final_stage": "COMPLETED",
+      "total_stage_time_sec": 11.499
+    },
+    {
+      "case": "case_005",
+      "seed": 4005,
+      "final_stage": "COMPLETED",
+      "total_stage_time_sec": 11.345
+    },
+    {
+      "case": "case_006",
+      "seed": 4006,
+      "final_stage": "COMPLETED",
+      "total_stage_time_sec": 10.591
+    }
+  ]
+}

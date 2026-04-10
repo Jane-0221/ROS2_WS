@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="900" viewBox="0 0 1500 900">
+<rect width="100%" height="100%" fill="#f7f4ef" />
+<text x="50.00" y="45.00" font-size="28" font-weight="700" fill="#1f2a36" font-family="DejaVu Sans Mono, monospace">Random Cabinet Experiment Case | seed=6008</text>
+<text x="50.00" y="88.00" font-size="22" font-weight="700" fill="#8a4f00" font-family="DejaVu Sans Mono, monospace">Front View</text>
+<text x="670.00" y="88.00" font-size="22" font-weight="700" fill="#8a4f00" font-family="DejaVu Sans Mono, monospace">Side View</text>
+<rect x="50.00" y="110.00" width="560.00" height="700.00" fill="#fff7e7" fill-opacity="1.00" stroke="#7b5c3d" stroke-width="3.00" rx="4" ry="4" />
+<rect x="50.00" y="110.00" width="40.59" height="700.00" fill="#d9d1c7" fill-opacity="1.00" stroke="#222" stroke-width="2.00" rx="4" ry="4" />
+<rect x="569.41" y="110.00" width="40.59" height="700.00" fill="#d9d1c7" fill-opacity="1.00" stroke="#222" stroke-width="2.00" rx="4" ry="4" />
+<rect x="50.00" y="786.26" width="560.00" height="23.74" fill="#d7b98e" fill-opacity="1.00" stroke="#9b7a54" stroke-width="1.50" rx="4" ry="4" />
+<rect x="50.00" y="617.20" width="560.00" height="23.74" fill="#d7b98e" fill-opacity="1.00" stroke="#9b7a54" stroke-width="1.50" rx="4" ry="4" />
+<rect x="50.00" y="448.13" width="560.00" height="23.74" fill="#d7b98e" fill-opacity="1.00" stroke="#9b7a54" stroke-width="1.50" rx="4" ry="4" />
+<rect x="50.00" y="279.07" width="560.00" height="23.74" fill="#d7b98e" fill-opacity="1.00" stroke="#9b7a54" stroke-width="1.50" rx="4" ry="4" />
+<rect x="50.00" y="110.00" width="560.00" height="23.74" fill="#d7b98e" fill-opacity="1.00" stroke="#9b7a54" stroke-width="1.50" rx="4" ry="4" />
+<rect x="334.51" y="405.86" width="111.25" height="42.27" fill="#ffb347" fill-opacity="1.00" stroke="#d65a00" stroke-width="2.50" rx="4" ry="4" />
+<line x1="393.01" y1="526.53" x2="393.01" y2="562.53" stroke="#00a36c" stroke-width="3.00" />
+<line x1="375.01" y1="544.53" x2="411.01" y2="544.53" stroke="#00a36c" stroke-width="3.00" />
+<rect x="670.00" y="110.00" width="430.00" height="700.00" fill="#fff7e7" fill-opacity="1.00" stroke="#7b5c3d" stroke-width="3.00" rx="4" ry="4" />
+<rect x="1022.68" y="110.00" width="77.32" height="700.00" fill="#d9d1c7" fill-opacity="1.00" stroke="#222" stroke-width="2.00" rx="4" ry="4" />
+<rect x="670.00" y="786.26" width="430.00" height="23.74" fill="#d7b98e" fill-opacity="1.00" stroke="#9b7a54" stroke-width="1.50" rx="4" ry="4" />
+<rect x="670.00" y="617.20" width="430.00" height="23.74" fill="#d7b98e" fill-opacity="1.00" stroke="#9b7a54" stroke-width="1.50" rx="4" ry="4" />
+<rect x="670.00" y="448.13" width="430.00" height="23.74" fill="#d7b98e" fill-opacity="1.00" stroke="#9b7a54" stroke-width="1.50" rx="4" ry="4" />
+<rect x="670.00" y="279.07" width="430.00" height="23.74" fill="#d7b98e" fill-opacity="1.00" stroke="#9b7a54" stroke-width="1.50" rx="4" ry="4" />
+<rect x="670.00" y="110.00" width="430.00" height="23.74" fill="#d7b98e" fill-opacity="1.00" stroke="#9b7a54" stroke-width="1.50" rx="4" ry="4" />
+<rect x="837.85" y="405.86" width="165.96" height="42.27" fill="#ffb347" fill-opacity="1.00" stroke="#d65a00" stroke-width="2.50" rx="4" ry="4" />
+<g><line x1="661.83" y1="544.53" x2="733.83" y2="544.53" stroke="#00a36c" stroke-width="4"/><polygon points="733.83,544.53 719.83,536.53 719.83,552.53" fill="#00a36c"/></g>
+<line x1="670.00" y1="544.53" x2="1100.00" y2="544.53" stroke="#00a36c" stroke-width="1.50" stroke-dasharray="6 6" />
+<text x="1140.00" y="120.00" font-size="22" font-weight="700" fill="#1f2a36" font-family="DejaVu Sans Mono, monospace">Scenario Parameters</text>
+<text x="1140.00" y="156.00" font-size="16" font-weight="400" fill="#2f3d4a" font-family="DejaVu Sans Mono, monospace">levels=5 gap=1 target_level=2</text>
+<text x="1140.00" y="192.00" font-size="16" font-weight="400" fill="#2f3d4a" font-family="DejaVu Sans Mono, monospace">center=(0.913, -0.059)</text>
+<text x="1140.00" y="228.00" font-size="16" font-weight="400" fill="#2f3d4a" font-family="DejaVu Sans Mono, monospace">size=(0.228, 0.745)</text>
+<text x="1140.00" y="264.00" font-size="16" font-weight="400" fill="#2f3d4a" font-family="DejaVu Sans Mono, monospace">bottom_z=0.551 level_gap=0.292</text>
+<text x="1140.00" y="300.00" font-size="16" font-weight="400" fill="#2f3d4a" font-family="DejaVu Sans Mono, monospace">board/side/back=(0.041, 0.054, 0.041)</text>
+<text x="1140.00" y="336.00" font-size="16" font-weight="400" fill="#2f3d4a" font-family="DejaVu Sans Mono, monospace">target_box=(0.088, 0.148, 0.073)</text>
+<text x="1140.00" y="372.00" font-size="16" font-weight="400" fill="#2f3d4a" font-family="DejaVu Sans Mono, monospace">target_depth_ratio=0.094</text>
+<text x="1140.00" y="408.00" font-size="16" font-weight="400" fill="#2f3d4a" font-family="DejaVu Sans Mono, monospace">target_lateral_margin=0.100</text>
+<text x="1140.00" y="444.00" font-size="16" font-weight="400" fill="#2f3d4a" font-family="DejaVu Sans Mono, monospace">target_lateral_span=0.098</text>
+<text x="1140.00" y="480.00" font-size="16" font-weight="400" fill="#2f3d4a" font-family="DejaVu Sans Mono, monospace">target_pose=(0.814, 0.025, 0.989)</text>
+<text x="1140.00" y="516.00" font-size="16" font-weight="400" fill="#2f3d4a" font-family="DejaVu Sans Mono, monospace">clutter_count=0</text>
+<text x="1140.00" y="620.00" font-size="22" font-weight="700" fill="#1f2a36" font-family="DejaVu Sans Mono, monospace">Legend</text>
+<rect x="1140.00" y="644.00" width="28.00" height="18.00" fill="#ffb347" fill-opacity="1.00" stroke="#d65a00" stroke-width="1.80" rx="4" ry="4" />
+<text x="1182.00" y="658.00" font-size="16" font-weight="400" fill="#111" font-family="DejaVu Sans Mono, monospace">Target medicine box</text>
+<line x1="1140.00" y1="690.00" x2="1168.00" y2="690.00" stroke="#00a36c" stroke-width="3.00" />
+<text x="1182.00" y="696.00" font-size="16" font-weight="400" fill="#111" font-family="DejaVu Sans Mono, monospace">Target pick pose / cabinet entry direction</text>
+<rect x="1140.00" y="724.00" width="28.00" height="18.00" fill="#c6d8ff" fill-opacity="0.85" stroke="#5a78b5" stroke-width="1.80" rx="4" ry="4" />
+<text x="1182.00" y="738.00" font-size="16" font-weight="400" fill="#111" font-family="DejaVu Sans Mono, monospace">Clutter box (if enabled)</text>
+</svg>

@@ -1,0 +1,285 @@
+{
+  "summary": {
+    "total_cases": 1,
+    "successful_cases": 0,
+    "failed_cases": 1,
+    "success_ratio": 0.0,
+    "failure_type_counter": {
+      "pre_insert_timeout": 1
+    },
+    "avg_stage_duration_sec": {
+      "ACQUIRE_TARGET": 0.624,
+      "ARM_STOW_SAFE": 0.128,
+      "BASE_ENTER_WORKSPACE": 2.777,
+      "LIFT_TO_BAND": 2.218,
+      "PLAN_TO_PRE_INSERT": 11.391,
+      "SELECT_PRE_INSERT": 0.035
+    },
+    "slow_stage_counter_over_2s": {
+      "BASE_ENTER_WORKSPACE": 1,
+      "LIFT_TO_BAND": 1,
+      "PLAN_TO_PRE_INSERT": 1
+    }
+  },
+  "failures": [
+    {
+      "case": "case_001",
+      "seed": 4007,
+      "success": false,
+      "final_stage": "FAILED",
+      "failure_message": "Pre-insert planning failed: MoveIt failed to produce a valid trajectory (TIMED_OUT, code=-6).; retry failed: MoveIt failed to produce a valid trajectory (INVALID_MOTION_PLAN, code=-2).",
+      "total_stage_time_sec": 17.173,
+      "params": {
+        "random_seed": 4007,
+        "shelf_levels": 5,
+        "shelf_width": 0.675,
+        "shelf_depth": 0.202,
+        "shelf_center_x": 0.968,
+        "shelf_center_y": 0.07,
+        "shelf_bottom_z": 0.475,
+        "shelf_level_gap": 0.299,
+        "shelf_board_thickness": 0.027,
+        "shelf_side_thickness": 0.034,
+        "shelf_back_thickness": 0.031,
+        "target_depth_ratio": 0.112,
+        "target_lateral_margin": 0.107,
+        "target_lateral_span": 0.058,
+        "target_box_size_x": 0.064,
+        "target_box_size_y": 0.152,
+        "target_box_size_z": 0.055,
+        "clutter_count": 0,
+        "target_gap_index": 0,
+        "target_level": 2
+      },
+      "result": {
+        "success": false,
+        "final_stage": "FAILED",
+        "failure_message": "Pre-insert planning failed: MoveIt failed to produce a valid trajectory (TIMED_OUT, code=-6).; retry failed: MoveIt failed to produce a valid trajectory (INVALID_MOTION_PLAN, code=-2).",
+        "stage_transitions": [
+          {
+            "stage": "ACQUIRE_TARGET",
+            "timestamp": 1775661795.552658
+          },
+          {
+            "stage": "ARM_STOW_SAFE",
+            "timestamp": 1775661796.1770024
+          },
+          {
+            "stage": "BASE_ENTER_WORKSPACE",
+            "timestamp": 1775661796.3051114
+          },
+          {
+            "stage": "LIFT_TO_BAND",
+            "timestamp": 1775661799.0822527
+          },
+          {
+            "stage": "SELECT_PRE_INSERT",
+            "timestamp": 1775661801.2999256
+          },
+          {
+            "stage": "PLAN_TO_PRE_INSERT",
+            "timestamp": 1775661801.3345015
+          },
+          {
+            "stage": "FAILED",
+            "timestamp": 1775661812.7258284
+          }
+        ],
+        "stage_timeline": [
+          {
+            "stage": "ACQUIRE_TARGET",
+            "started_at": 1775661795.552658,
+            "ended_at": 1775661796.1770024,
+            "duration_sec": 0.6243443489074707
+          },
+          {
+            "stage": "ARM_STOW_SAFE",
+            "started_at": 1775661796.1770024,
+            "ended_at": 1775661796.3051114,
+            "duration_sec": 0.12810897827148438
+          },
+          {
+            "stage": "BASE_ENTER_WORKSPACE",
+            "started_at": 1775661796.3051114,
+            "ended_at": 1775661799.0822527,
+            "duration_sec": 2.7771413326263428
+          },
+          {
+            "stage": "LIFT_TO_BAND",
+            "started_at": 1775661799.0822527,
+            "ended_at": 1775661801.2999256,
+            "duration_sec": 2.217672824859619
+          },
+          {
+            "stage": "SELECT_PRE_INSERT",
+            "started_at": 1775661801.2999256,
+            "ended_at": 1775661801.3345015,
+            "duration_sec": 0.0345759391784668
+          },
+          {
+            "stage": "PLAN_TO_PRE_INSERT",
+            "started_at": 1775661801.3345015,
+            "ended_at": 1775661812.7258284,
+            "duration_sec": 11.391326904296875
+          }
+        ],
+        "stage_totals": {
+          "ACQUIRE_TARGET": {
+            "attempts": 1,
+            "total_duration_sec": 0.6243443489074707
+          },
+          "ARM_STOW_SAFE": {
+            "attempts": 1,
+            "total_duration_sec": 0.12810897827148438
+          },
+          "BASE_ENTER_WORKSPACE": {
+            "attempts": 1,
+            "total_duration_sec": 2.7771413326263428
+          },
+          "LIFT_TO_BAND": {
+            "attempts": 1,
+            "total_duration_sec": 2.217672824859619
+          },
+          "SELECT_PRE_INSERT": {
+            "attempts": 1,
+            "total_duration_sec": 0.0345759391784668
+          },
+          "PLAN_TO_PRE_INSERT": {
+            "attempts": 1,
+            "total_duration_sec": 11.391326904296875
+          }
+        },
+        "errors": [
+          {
+            "timestamp": 1775661791.206628,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775661791.2069411,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 2"
+          },
+          {
+            "timestamp": 1775661791.20695,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 6"
+          },
+          {
+            "timestamp": 1775661791.2069566,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 7"
+          },
+          {
+            "timestamp": 1775661791.2069643,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 9"
+          },
+          {
+            "timestamp": 1775661791.2069705,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 4"
+          },
+          {
+            "timestamp": 1775661791.2069771,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 8"
+          },
+          {
+            "timestamp": 1775661791.2069836,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 5"
+          },
+          {
+            "timestamp": 1775661791.2069907,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 10"
+          },
+          {
+            "timestamp": 1775661791.2069967,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 3"
+          },
+          {
+            "timestamp": 1775661791.2070029,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 11"
+          },
+          {
+            "timestamp": 1775661796.620762,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775661812.7083063,
+            "logger": "moveit.ros_planning.planning_pipeline",
+            "message": "Computed path is not valid. Invalid states at index locations: [ 144 145 146 ] out of 154. Explanations follow in command line. Contacts are published on /display_contacts"
+          },
+          {
+            "timestamp": 1775661812.709455,
+            "logger": "moveit.ros_planning.planning_pipeline",
+            "message": "Completed listing of explanations for invalid states."
+          },
+          {
+            "timestamp": 1775661812.7226877,
+            "message": "Pre-insert planning failed: MoveIt failed to produce a valid trajectory (TIMED_OUT, code=-6).; retry failed: MoveIt failed to produce a valid trajectory (INVALID_MOTION_PLAN, code=-2)."
+          },
+          {
+            "timestamp": 1775661832.620195,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          }
+        ],
+        "warnings": [
+          {
+            "timestamp": 1775661787.3653843,
+            "logger": "move_group.move_group",
+            "message": "Falling back to using the the move_group node namespace (deprecated behavior)."
+          },
+          {
+            "timestamp": 1775661791.8328793,
+            "logger": "rcl.logging_rosout",
+            "message": "Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic."
+          },
+          {
+            "timestamp": 1775661802.4184515,
+            "logger": "moveit.ompl_planning.model_based_planning_context",
+            "message": "Planning timed out: 1.0s ≥ 1.0s"
+          },
+          {
+            "timestamp": 1775661806.5050623,
+            "logger": "medipick_pick_task_manager",
+            "message": "plan_to_pre_insert_r1_limit: rejecting trajectory because base yaw stage motion reached 155.0 deg (limit 40.0 deg)"
+          },
+          {
+            "timestamp": 1775661806.5137224,
+            "logger": "medipick_pick_task_manager",
+            "message": "plan_to_pre_insert_r1_limit: rejecting trajectory because base yaw stage motion reached 155.0 deg (limit 40.0 deg)"
+          },
+          {
+            "timestamp": 1775661807.5430565,
+            "logger": "medipick_pick_task_manager",
+            "message": "plan_to_pre_insert_r1_limit: rejecting trajectory because base planar stage motion reached 0.796 m (limit 0.500 m)"
+          },
+          {
+            "timestamp": 1775661807.543887,
+            "logger": "medipick_pick_task_manager",
+            "message": "plan_to_pre_insert_r1_limit: rejecting trajectory because base planar stage motion reached 0.796 m (limit 0.500 m)"
+          },
+          {
+            "timestamp": 1775661808.5862975,
+            "logger": "moveit.ompl_planning.model_based_planning_context",
+            "message": "Planning timed out: 1.0s ≥ 1.0s"
+          }
+        ]
+      },
+      "video": null,
+      "failure_type": "pre_insert_timeout",
+      "suggestions": [
+        "让 `PLAN_TO_PRE_INSERT` 对深柜或窄柜自适应增大 `candidate_retry_planning_time` 和 `candidate_retry_num_planning_attempts`，而不是固定 1 次快速尝试。",
+        "按柜深动态增大 `pre_insert_offset` 和 `base_standoff`，减少手臂在柜口外就需要大折叠的情况。"
+      ]
+    }
+  ],
+  "successes": []
+}

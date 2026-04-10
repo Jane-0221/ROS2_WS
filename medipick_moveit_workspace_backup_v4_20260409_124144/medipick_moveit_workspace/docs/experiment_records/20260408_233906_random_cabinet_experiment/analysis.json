@@ -1,0 +1,707 @@
+{
+  "summary": {
+    "total_cases": 10,
+    "successful_cases": 7,
+    "failed_cases": 3,
+    "success_ratio": 70.0,
+    "failure_type_counter": {
+      "pre_insert_r1_motion_limit": 1,
+      "pre_insert_timeout": 2
+    },
+    "avg_stage_duration_sec": {
+      "ACQUIRE_TARGET": 0.89,
+      "ARM_STOW_SAFE": 2.645,
+      "BASE_ENTER_WORKSPACE": 2.464,
+      "INSERT_AND_SUCTION": 0.638,
+      "LIFT_TO_BAND": 1.99,
+      "PLAN_TO_PRE_INSERT": 5.339,
+      "SAFE_RETREAT": 2.767,
+      "SELECT_PRE_INSERT": 0.057
+    },
+    "slow_stage_counter_over_2s": {
+      "ARM_STOW_SAFE": 10,
+      "BASE_ENTER_WORKSPACE": 9,
+      "LIFT_TO_BAND": 9,
+      "SAFE_RETREAT": 7,
+      "PLAN_TO_PRE_INSERT": 4
+    }
+  },
+  "failures": [
+    {
+      "case": "case_003",
+      "seed": 5003,
+      "success": false,
+      "final_stage": "FAILED",
+      "failure_message": "Retreat trajectory violates the R1 reasonable-angle limit.",
+      "total_stage_time_sec": 20.049,
+      "params": {
+        "random_seed": 5003,
+        "shelf_levels": 5,
+        "shelf_width": 0.841,
+        "shelf_depth": 0.237,
+        "shelf_center_x": 0.896,
+        "shelf_center_y": 0.018,
+        "shelf_bottom_z": 0.507,
+        "shelf_level_gap": 0.238,
+        "shelf_board_thickness": 0.032,
+        "shelf_side_thickness": 0.046,
+        "shelf_back_thickness": 0.026,
+        "target_depth_ratio": 0.135,
+        "target_lateral_margin": 0.136,
+        "target_lateral_span": 0.044,
+        "target_box_size_x": 0.079,
+        "target_box_size_y": 0.157,
+        "target_box_size_z": 0.073,
+        "clutter_count": 0,
+        "target_gap_index": 0,
+        "target_level": 2
+      },
+      "result": {
+        "success": false,
+        "final_stage": "FAILED",
+        "failure_message": "Retreat trajectory violates the R1 reasonable-angle limit.",
+        "stage_transitions": [
+          {
+            "stage": "ACQUIRE_TARGET",
+            "timestamp": 1775662863.1798062
+          },
+          {
+            "stage": "ARM_STOW_SAFE",
+            "timestamp": 1775662863.8419917
+          },
+          {
+            "stage": "BASE_ENTER_WORKSPACE",
+            "timestamp": 1775662866.1405077
+          },
+          {
+            "stage": "LIFT_TO_BAND",
+            "timestamp": 1775662868.8537667
+          },
+          {
+            "stage": "SELECT_PRE_INSERT",
+            "timestamp": 1775662871.0650232
+          },
+          {
+            "stage": "PLAN_TO_PRE_INSERT",
+            "timestamp": 1775662871.0885253
+          },
+          {
+            "stage": "INSERT_AND_SUCTION",
+            "timestamp": 1775662882.6259184
+          },
+          {
+            "stage": "SAFE_RETREAT",
+            "timestamp": 1775662883.1980033
+          },
+          {
+            "stage": "FAILED",
+            "timestamp": 1775662883.2285855
+          }
+        ],
+        "stage_timeline": [
+          {
+            "stage": "ACQUIRE_TARGET",
+            "started_at": 1775662863.1798062,
+            "ended_at": 1775662863.8419917,
+            "duration_sec": 0.6621854305267334
+          },
+          {
+            "stage": "ARM_STOW_SAFE",
+            "started_at": 1775662863.8419917,
+            "ended_at": 1775662866.1405077,
+            "duration_sec": 2.298516035079956
+          },
+          {
+            "stage": "BASE_ENTER_WORKSPACE",
+            "started_at": 1775662866.1405077,
+            "ended_at": 1775662868.8537667,
+            "duration_sec": 2.713258981704712
+          },
+          {
+            "stage": "LIFT_TO_BAND",
+            "started_at": 1775662868.8537667,
+            "ended_at": 1775662871.0650232,
+            "duration_sec": 2.211256504058838
+          },
+          {
+            "stage": "SELECT_PRE_INSERT",
+            "started_at": 1775662871.0650232,
+            "ended_at": 1775662871.0885253,
+            "duration_sec": 0.023502111434936523
+          },
+          {
+            "stage": "PLAN_TO_PRE_INSERT",
+            "started_at": 1775662871.0885253,
+            "ended_at": 1775662882.6259184,
+            "duration_sec": 11.53739309310913
+          },
+          {
+            "stage": "INSERT_AND_SUCTION",
+            "started_at": 1775662882.6259184,
+            "ended_at": 1775662883.1980033,
+            "duration_sec": 0.572084903717041
+          },
+          {
+            "stage": "SAFE_RETREAT",
+            "started_at": 1775662883.1980033,
+            "ended_at": 1775662883.2285855,
+            "duration_sec": 0.030582189559936523
+          }
+        ],
+        "stage_totals": {
+          "ACQUIRE_TARGET": {
+            "attempts": 1,
+            "total_duration_sec": 0.6621854305267334
+          },
+          "ARM_STOW_SAFE": {
+            "attempts": 1,
+            "total_duration_sec": 2.298516035079956
+          },
+          "BASE_ENTER_WORKSPACE": {
+            "attempts": 1,
+            "total_duration_sec": 2.713258981704712
+          },
+          "LIFT_TO_BAND": {
+            "attempts": 1,
+            "total_duration_sec": 2.211256504058838
+          },
+          "SELECT_PRE_INSERT": {
+            "attempts": 1,
+            "total_duration_sec": 0.023502111434936523
+          },
+          "PLAN_TO_PRE_INSERT": {
+            "attempts": 1,
+            "total_duration_sec": 11.53739309310913
+          },
+          "INSERT_AND_SUCTION": {
+            "attempts": 1,
+            "total_duration_sec": 0.572084903717041
+          },
+          "SAFE_RETREAT": {
+            "attempts": 1,
+            "total_duration_sec": 0.030582189559936523
+          }
+        },
+        "errors": [
+          {
+            "timestamp": 1775662864.2795799,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775662865.2809079,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775662866.282453,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775662867.2815166,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775662868.2751951,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775662869.281997,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775662870.2757142,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775662872.2771707,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775662877.0713775,
+            "logger": "moveit.ros_planning.planning_pipeline",
+            "message": "Computed path is not valid. Invalid states at index locations: [ 30 ] out of 128. Explanations follow in command line. Contacts are published on /display_contacts"
+          },
+          {
+            "timestamp": 1775662877.0752993,
+            "logger": "moveit.ros_planning.planning_pipeline",
+            "message": "Completed listing of explanations for invalid states."
+          },
+          {
+            "timestamp": 1775662877.2833905,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775662883.22813,
+            "message": "Retreat trajectory violates the R1 reasonable-angle limit."
+          },
+          {
+            "timestamp": 1775662884.2819145,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775662887.2741878,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775662899.2830389,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775662903.275682,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775662906.285665,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775662907.2830794,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          }
+        ],
+        "warnings": [
+          {
+            "timestamp": 1775662862.945983,
+            "logger": "move_group.move_group",
+            "message": "Falling back to using the the move_group node namespace (deprecated behavior)."
+          },
+          {
+            "timestamp": 1775662862.4688299,
+            "logger": "rcl.logging_rosout",
+            "message": "Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic."
+          },
+          {
+            "timestamp": 1775662872.2095187,
+            "logger": "moveit.ompl_planning.model_based_planning_context",
+            "message": "Planning timed out: 1.0s ≥ 1.0s"
+          },
+          {
+            "timestamp": 1775662883.2276115,
+            "logger": "medipick_pick_task_manager",
+            "message": "retreat_r1_limit: rejecting trajectory because r1 stage motion reached 176.7 deg from start -17.7 deg (limit 100.0 deg)"
+          }
+        ]
+      },
+      "video": null,
+      "failure_type": "pre_insert_r1_motion_limit",
+      "suggestions": [
+        "把 `PLAN_TO_PRE_INSERT` 的 seeded IK 终点筛选也接入 `r1` 阶段位移代价，提前避开接近 100 度阈值的解，而不是规划完再拒绝。",
+        "对这类柜型给 `pre-insert` 加一个更偏向当前 `r1` 半空间的小候选偏置，减少 `mobile_arm` 为了够到柜口而反向大摆。",
+        "必要时把 `r1` 限制从硬阈值拆成两级：90 度以上重罚，100 度以上拒绝。"
+      ]
+    },
+    {
+      "case": "case_004",
+      "seed": 5004,
+      "success": false,
+      "final_stage": "FAILED",
+      "failure_message": "Pre-insert planning failed: MoveIt failed to produce a valid trajectory (TIMED_OUT, code=-6).; retry failed: MoveIt failed to produce a valid trajectory (INVALID_MOTION_PLAN, code=-2).",
+      "total_stage_time_sec": 26.117,
+      "params": {
+        "random_seed": 5004,
+        "shelf_levels": 6,
+        "shelf_width": 0.885,
+        "shelf_depth": 0.227,
+        "shelf_center_x": 0.905,
+        "shelf_center_y": -0.003,
+        "shelf_bottom_z": 0.411,
+        "shelf_level_gap": 0.262,
+        "shelf_board_thickness": 0.026,
+        "shelf_side_thickness": 0.033,
+        "shelf_back_thickness": 0.024,
+        "target_depth_ratio": 0.071,
+        "target_lateral_margin": 0.118,
+        "target_lateral_span": 0.075,
+        "target_box_size_x": 0.105,
+        "target_box_size_y": 0.111,
+        "target_box_size_z": 0.094,
+        "clutter_count": 0,
+        "target_gap_index": 0,
+        "target_level": 3
+      },
+      "result": {
+        "success": false,
+        "final_stage": "FAILED",
+        "failure_message": "Pre-insert planning failed: MoveIt failed to produce a valid trajectory (TIMED_OUT, code=-6).; retry failed: MoveIt failed to produce a valid trajectory (INVALID_MOTION_PLAN, code=-2).",
+        "stage_transitions": [
+          {
+            "stage": "ACQUIRE_TARGET",
+            "timestamp": 1775662922.1819193
+          },
+          {
+            "stage": "ARM_STOW_SAFE",
+            "timestamp": 1775662921.3749053
+          },
+          {
+            "stage": "BASE_ENTER_WORKSPACE",
+            "timestamp": 1775662927.1850545
+          },
+          {
+            "stage": "LIFT_TO_BAND",
+            "timestamp": 1775662929.9023287
+          },
+          {
+            "stage": "SELECT_PRE_INSERT",
+            "timestamp": 1775662932.1169782
+          },
+          {
+            "stage": "PLAN_TO_PRE_INSERT",
+            "timestamp": 1775662932.1401465
+          },
+          {
+            "stage": "FAILED",
+            "timestamp": 1775662947.4915388
+          }
+        ],
+        "stage_timeline": [
+          {
+            "stage": "ACQUIRE_TARGET",
+            "started_at": 1775662922.1819193,
+            "ended_at": 1775662921.3749053,
+            "duration_sec": 0.0
+          },
+          {
+            "stage": "ARM_STOW_SAFE",
+            "started_at": 1775662921.3749053,
+            "ended_at": 1775662927.1850545,
+            "duration_sec": 5.810149192810059
+          },
+          {
+            "stage": "BASE_ENTER_WORKSPACE",
+            "started_at": 1775662927.1850545,
+            "ended_at": 1775662929.9023287,
+            "duration_sec": 2.7172741889953613
+          },
+          {
+            "stage": "LIFT_TO_BAND",
+            "started_at": 1775662929.9023287,
+            "ended_at": 1775662932.1169782,
+            "duration_sec": 2.2146494388580322
+          },
+          {
+            "stage": "SELECT_PRE_INSERT",
+            "started_at": 1775662932.1169782,
+            "ended_at": 1775662932.1401465,
+            "duration_sec": 0.023168325424194336
+          },
+          {
+            "stage": "PLAN_TO_PRE_INSERT",
+            "started_at": 1775662932.1401465,
+            "ended_at": 1775662947.4915388,
+            "duration_sec": 15.351392269134521
+          }
+        ],
+        "stage_totals": {
+          "ACQUIRE_TARGET": {
+            "attempts": 1,
+            "total_duration_sec": 0.0
+          },
+          "ARM_STOW_SAFE": {
+            "attempts": 1,
+            "total_duration_sec": 5.810149192810059
+          },
+          "BASE_ENTER_WORKSPACE": {
+            "attempts": 1,
+            "total_duration_sec": 2.7172741889953613
+          },
+          "LIFT_TO_BAND": {
+            "attempts": 1,
+            "total_duration_sec": 2.2146494388580322
+          },
+          "SELECT_PRE_INSERT": {
+            "attempts": 1,
+            "total_duration_sec": 0.023168325424194336
+          },
+          "PLAN_TO_PRE_INSERT": {
+            "attempts": 1,
+            "total_duration_sec": 15.351392269134521
+          }
+        },
+        "errors": [
+          {
+            "timestamp": 1775662921.3740396,
+            "message": "lift_reference_tool_height: FK request timed out."
+          },
+          {
+            "timestamp": 1775662947.4715056,
+            "logger": "moveit.ros_planning.planning_pipeline",
+            "message": "Computed path is not valid. Invalid states at index locations: [ 0 1 2 3 4 5 6 ] out of 561. Explanations follow in command line. Contacts are published on /display_contacts"
+          },
+          {
+            "timestamp": 1775662947.4763227,
+            "logger": "moveit.ros_planning.planning_pipeline",
+            "message": "Completed listing of explanations for invalid states."
+          },
+          {
+            "timestamp": 1775662947.490968,
+            "message": "Pre-insert planning failed: MoveIt failed to produce a valid trajectory (TIMED_OUT, code=-6).; retry failed: MoveIt failed to produce a valid trajectory (INVALID_MOTION_PLAN, code=-2)."
+          }
+        ],
+        "warnings": [
+          {
+            "timestamp": 1775662918.5306106,
+            "logger": "move_group.move_group",
+            "message": "Falling back to using the the move_group node namespace (deprecated behavior)."
+          },
+          {
+            "timestamp": 1775662920.9255896,
+            "logger": "rcl.logging_rosout",
+            "message": "Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic."
+          },
+          {
+            "timestamp": 1775662933.2007275,
+            "logger": "moveit.ompl_planning.model_based_planning_context",
+            "message": "Planning timed out: 1.0s ≥ 1.0s"
+          },
+          {
+            "timestamp": 1775662938.246098,
+            "logger": "moveit.ompl_planning.model_based_planning_context",
+            "message": "Planning timed out: 1.0s ≥ 1.0s"
+          },
+          {
+            "timestamp": 1775662943.296408,
+            "logger": "moveit.ompl_planning.model_based_planning_context",
+            "message": "Planning timed out: 1.0s ≥ 1.0s"
+          }
+        ]
+      },
+      "video": null,
+      "failure_type": "pre_insert_timeout",
+      "suggestions": [
+        "让 `PLAN_TO_PRE_INSERT` 对深柜或窄柜自适应增大 `candidate_retry_planning_time` 和 `candidate_retry_num_planning_attempts`，而不是固定 1 次快速尝试。",
+        "按柜深动态增大 `pre_insert_offset` 和 `base_standoff`，减少手臂在柜口外就需要大折叠的情况。"
+      ]
+    },
+    {
+      "case": "case_008",
+      "seed": 5008,
+      "success": false,
+      "final_stage": "FAILED",
+      "failure_message": "Pre-insert planning failed: MoveIt failed to produce a valid trajectory (INVALID_MOTION_PLAN, code=-2).; retry failed: MoveIt failed to produce a valid trajectory (FAILURE, code=99999).",
+      "total_stage_time_sec": 20.07,
+      "params": {
+        "random_seed": 5008,
+        "shelf_levels": 4,
+        "shelf_width": 0.778,
+        "shelf_depth": 0.282,
+        "shelf_center_x": 0.843,
+        "shelf_center_y": 0.09,
+        "shelf_bottom_z": 0.402,
+        "shelf_level_gap": 0.234,
+        "shelf_board_thickness": 0.026,
+        "shelf_side_thickness": 0.052,
+        "shelf_back_thickness": 0.036,
+        "target_depth_ratio": 0.094,
+        "target_lateral_margin": 0.126,
+        "target_lateral_span": 0.093,
+        "target_box_size_x": 0.08,
+        "target_box_size_y": 0.101,
+        "target_box_size_z": 0.054,
+        "clutter_count": 0,
+        "target_gap_index": 0,
+        "target_level": 2
+      },
+      "result": {
+        "success": false,
+        "final_stage": "FAILED",
+        "failure_message": "Pre-insert planning failed: MoveIt failed to produce a valid trajectory (INVALID_MOTION_PLAN, code=-2).; retry failed: MoveIt failed to produce a valid trajectory (FAILURE, code=99999).",
+        "stage_transitions": [
+          {
+            "stage": "ACQUIRE_TARGET",
+            "timestamp": 1775663144.1551805
+          },
+          {
+            "stage": "ARM_STOW_SAFE",
+            "timestamp": 1775663144.7994828
+          },
+          {
+            "stage": "BASE_ENTER_WORKSPACE",
+            "timestamp": 1775663147.1045399
+          },
+          {
+            "stage": "LIFT_TO_BAND",
+            "timestamp": 1775663147.3201182
+          },
+          {
+            "stage": "SELECT_PRE_INSERT",
+            "timestamp": 1775663149.5294464
+          },
+          {
+            "stage": "PLAN_TO_PRE_INSERT",
+            "timestamp": 1775663149.5511851
+          },
+          {
+            "stage": "FAILED",
+            "timestamp": 1775663164.2255383
+          }
+        ],
+        "stage_timeline": [
+          {
+            "stage": "ACQUIRE_TARGET",
+            "started_at": 1775663144.1551805,
+            "ended_at": 1775663144.7994828,
+            "duration_sec": 0.6443023681640625
+          },
+          {
+            "stage": "ARM_STOW_SAFE",
+            "started_at": 1775663144.7994828,
+            "ended_at": 1775663147.1045399,
+            "duration_sec": 2.3050570487976074
+          },
+          {
+            "stage": "BASE_ENTER_WORKSPACE",
+            "started_at": 1775663147.1045399,
+            "ended_at": 1775663147.3201182,
+            "duration_sec": 0.21557831764221191
+          },
+          {
+            "stage": "LIFT_TO_BAND",
+            "started_at": 1775663147.3201182,
+            "ended_at": 1775663149.5294464,
+            "duration_sec": 2.2093281745910645
+          },
+          {
+            "stage": "SELECT_PRE_INSERT",
+            "started_at": 1775663149.5294464,
+            "ended_at": 1775663149.5511851,
+            "duration_sec": 0.021738767623901367
+          },
+          {
+            "stage": "PLAN_TO_PRE_INSERT",
+            "started_at": 1775663149.5511851,
+            "ended_at": 1775663164.2255383,
+            "duration_sec": 14.674353122711182
+          }
+        ],
+        "stage_totals": {
+          "ACQUIRE_TARGET": {
+            "attempts": 1,
+            "total_duration_sec": 0.6443023681640625
+          },
+          "ARM_STOW_SAFE": {
+            "attempts": 1,
+            "total_duration_sec": 2.3050570487976074
+          },
+          "BASE_ENTER_WORKSPACE": {
+            "attempts": 1,
+            "total_duration_sec": 0.21557831764221191
+          },
+          "LIFT_TO_BAND": {
+            "attempts": 1,
+            "total_duration_sec": 2.2093281745910645
+          },
+          "SELECT_PRE_INSERT": {
+            "attempts": 1,
+            "total_duration_sec": 0.021738767623901367
+          },
+          "PLAN_TO_PRE_INSERT": {
+            "attempts": 1,
+            "total_duration_sec": 14.674353122711182
+          }
+        },
+        "errors": [
+          {
+            "timestamp": 1775663160.2008188,
+            "logger": "moveit.ros_planning.planning_pipeline",
+            "message": "Computed path is not valid. Invalid states at index locations: [ 0 1 2 3 4 ] out of 163. Explanations follow in command line. Contacts are published on /display_contacts"
+          },
+          {
+            "timestamp": 1775663160.2027428,
+            "logger": "moveit.ros_planning.planning_pipeline",
+            "message": "Completed listing of explanations for invalid states."
+          },
+          {
+            "timestamp": 1775663164.2248187,
+            "message": "Pre-insert planning failed: MoveIt failed to produce a valid trajectory (INVALID_MOTION_PLAN, code=-2).; retry failed: MoveIt failed to produce a valid trajectory (FAILURE, code=99999)."
+          }
+        ],
+        "warnings": [
+          {
+            "timestamp": 1775663141.6890488,
+            "logger": "move_group.move_group",
+            "message": "Falling back to using the the move_group node namespace (deprecated behavior)."
+          },
+          {
+            "timestamp": 1775663143.4718604,
+            "logger": "rcl.logging_rosout",
+            "message": "Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic."
+          },
+          {
+            "timestamp": 1775663150.6160684,
+            "logger": "moveit.ompl_planning.model_based_planning_context",
+            "message": "Planning timed out: 1.0s ≥ 1.0s"
+          },
+          {
+            "timestamp": 1775663155.6594083,
+            "logger": "moveit.ompl_planning.model_based_planning_context",
+            "message": "Planning timed out: 1.0s ≥ 1.0s"
+          }
+        ]
+      },
+      "video": null,
+      "failure_type": "pre_insert_timeout",
+      "suggestions": [
+        "让 `PLAN_TO_PRE_INSERT` 对深柜或窄柜自适应增大 `candidate_retry_planning_time` 和 `candidate_retry_num_planning_attempts`，而不是固定 1 次快速尝试。",
+        "按柜深动态增大 `pre_insert_offset` 和 `base_standoff`，减少手臂在柜口外就需要大折叠的情况。"
+      ]
+    }
+  ],
+  "successes": [
+    {
+      "case": "case_001",
+      "seed": 5001,
+      "final_stage": "COMPLETED",
+      "total_stage_time_sec": 14.276
+    },
+    {
+      "case": "case_002",
+      "seed": 5002,
+      "final_stage": "COMPLETED",
+      "total_stage_time_sec": 14.602
+    },
+    {
+      "case": "case_005",
+      "seed": 5005,
+      "final_stage": "COMPLETED",
+      "total_stage_time_sec": 13.344
+    },
+    {
+      "case": "case_006",
+      "seed": 5006,
+      "final_stage": "COMPLETED",
+      "total_stage_time_sec": 13.367
+    },
+    {
+      "case": "case_007",
+      "seed": 5007,
+      "final_stage": "COMPLETED",
+      "total_stage_time_sec": 14.258
+    },
+    {
+      "case": "case_009",
+      "seed": 5009,
+      "final_stage": "COMPLETED",
+      "total_stage_time_sec": 11.959
+    },
+    {
+      "case": "case_010",
+      "seed": 5010,
+      "final_stage": "COMPLETED",
+      "total_stage_time_sec": 13.059
+    }
+  ]
+}

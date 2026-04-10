@@ -1,0 +1,166 @@
+{
+  "success": true,
+  "final_stage": "COMPLETED",
+  "failure_message": null,
+  "stage_transitions": [
+    {
+      "stage": "ACQUIRE_TARGET",
+      "timestamp": 1775666285.1191685
+    },
+    {
+      "stage": "ARM_STOW_SAFE",
+      "timestamp": 1775666285.73336
+    },
+    {
+      "stage": "BASE_ENTER_WORKSPACE",
+      "timestamp": 1775666288.0339255
+    },
+    {
+      "stage": "LIFT_TO_BAND",
+      "timestamp": 1775666290.7454588
+    },
+    {
+      "stage": "SELECT_PRE_INSERT",
+      "timestamp": 1775666292.9635124
+    },
+    {
+      "stage": "PLAN_TO_PRE_INSERT",
+      "timestamp": 1775666293.356665
+    },
+    {
+      "stage": "INSERT_AND_SUCTION",
+      "timestamp": 1775666292.4045236
+    },
+    {
+      "stage": "SAFE_RETREAT",
+      "timestamp": 1775666294.455457
+    },
+    {
+      "stage": "COMPLETED",
+      "timestamp": 1775666297.688993
+    }
+  ],
+  "stage_timeline": [
+    {
+      "stage": "ACQUIRE_TARGET",
+      "started_at": 1775666285.1191685,
+      "ended_at": 1775666285.73336,
+      "duration_sec": 0.6141915321350098
+    },
+    {
+      "stage": "ARM_STOW_SAFE",
+      "started_at": 1775666285.73336,
+      "ended_at": 1775666288.0339255,
+      "duration_sec": 2.300565481185913
+    },
+    {
+      "stage": "BASE_ENTER_WORKSPACE",
+      "started_at": 1775666288.0339255,
+      "ended_at": 1775666290.7454588,
+      "duration_sec": 2.711533308029175
+    },
+    {
+      "stage": "LIFT_TO_BAND",
+      "started_at": 1775666290.7454588,
+      "ended_at": 1775666292.9635124,
+      "duration_sec": 2.2180535793304443
+    },
+    {
+      "stage": "SELECT_PRE_INSERT",
+      "started_at": 1775666292.9635124,
+      "ended_at": 1775666293.356665,
+      "duration_sec": 0.39315247535705566
+    },
+    {
+      "stage": "PLAN_TO_PRE_INSERT",
+      "started_at": 1775666293.356665,
+      "ended_at": 1775666292.4045236,
+      "duration_sec": 0.0
+    },
+    {
+      "stage": "INSERT_AND_SUCTION",
+      "started_at": 1775666292.4045236,
+      "ended_at": 1775666294.455457,
+      "duration_sec": 2.050933361053467
+    },
+    {
+      "stage": "SAFE_RETREAT",
+      "started_at": 1775666294.455457,
+      "ended_at": 1775666297.688993,
+      "duration_sec": 3.2335360050201416
+    }
+  ],
+  "stage_totals": {
+    "ACQUIRE_TARGET": {
+      "attempts": 1,
+      "total_duration_sec": 0.6141915321350098
+    },
+    "ARM_STOW_SAFE": {
+      "attempts": 1,
+      "total_duration_sec": 2.300565481185913
+    },
+    "BASE_ENTER_WORKSPACE": {
+      "attempts": 1,
+      "total_duration_sec": 2.711533308029175
+    },
+    "LIFT_TO_BAND": {
+      "attempts": 1,
+      "total_duration_sec": 2.2180535793304443
+    },
+    "SELECT_PRE_INSERT": {
+      "attempts": 1,
+      "total_duration_sec": 0.39315247535705566
+    },
+    "PLAN_TO_PRE_INSERT": {
+      "attempts": 1,
+      "total_duration_sec": 0.0
+    },
+    "INSERT_AND_SUCTION": {
+      "attempts": 1,
+      "total_duration_sec": 2.050933361053467
+    },
+    "SAFE_RETREAT": {
+      "attempts": 1,
+      "total_duration_sec": 3.2335360050201416
+    }
+  },
+  "errors": [
+    {
+      "timestamp": 1775666315.886284,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 1"
+    },
+    {
+      "timestamp": 1775666320.8903706,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 1"
+    }
+  ],
+  "warnings": [
+    {
+      "timestamp": 1775666280.5435166,
+      "logger": "move_group.move_group",
+      "message": "Falling back to using the the move_group node namespace (deprecated behavior)."
+    },
+    {
+      "timestamp": 1775666283.8188007,
+      "logger": "rcl.logging_rosout",
+      "message": "Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic."
+    },
+    {
+      "timestamp": 1775666293.095556,
+      "logger": "medipick_pick_task_manager",
+      "message": "pre_insert_select_arm_insert_ik: IK failed with code=-31."
+    },
+    {
+      "timestamp": 1775666293.222211,
+      "logger": "medipick_pick_task_manager",
+      "message": "pre_insert_select_arm_insert_ik: IK failed with code=-31."
+    },
+    {
+      "timestamp": 1775666293.3542302,
+      "logger": "medipick_pick_task_manager",
+      "message": "pre_insert_select_arm_insert_ik: IK failed with code=-31."
+    }
+  ]
+}

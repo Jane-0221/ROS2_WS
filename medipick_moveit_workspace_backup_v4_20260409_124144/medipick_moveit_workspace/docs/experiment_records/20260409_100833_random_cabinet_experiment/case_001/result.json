@@ -1,0 +1,176 @@
+{
+  "success": true,
+  "final_stage": "COMPLETED",
+  "failure_message": null,
+  "stage_transitions": [
+    {
+      "stage": "ACQUIRE_TARGET",
+      "timestamp": 1775700519.1136317
+    },
+    {
+      "stage": "ARM_STOW_SAFE",
+      "timestamp": 1775700519.7801445
+    },
+    {
+      "stage": "BASE_ENTER_WORKSPACE",
+      "timestamp": 1775700522.0882113
+    },
+    {
+      "stage": "LIFT_TO_BAND",
+      "timestamp": 1775700524.8047242
+    },
+    {
+      "stage": "SELECT_PRE_INSERT",
+      "timestamp": 1775700527.0223627
+    },
+    {
+      "stage": "PLAN_TO_PRE_INSERT",
+      "timestamp": 1775700527.4515195
+    },
+    {
+      "stage": "INSERT_AND_SUCTION",
+      "timestamp": 1775700533.993055
+    },
+    {
+      "stage": "SAFE_RETREAT",
+      "timestamp": 1775700535.680687
+    },
+    {
+      "stage": "COMPLETED",
+      "timestamp": 1775700539.3023646
+    }
+  ],
+  "stage_timeline": [
+    {
+      "stage": "ACQUIRE_TARGET",
+      "started_at": 1775700519.1136317,
+      "ended_at": 1775700519.7801445,
+      "duration_sec": 0.6665127277374268
+    },
+    {
+      "stage": "ARM_STOW_SAFE",
+      "started_at": 1775700519.7801445,
+      "ended_at": 1775700522.0882113,
+      "duration_sec": 2.3080668449401855
+    },
+    {
+      "stage": "BASE_ENTER_WORKSPACE",
+      "started_at": 1775700522.0882113,
+      "ended_at": 1775700524.8047242,
+      "duration_sec": 2.71651291847229
+    },
+    {
+      "stage": "LIFT_TO_BAND",
+      "started_at": 1775700524.8047242,
+      "ended_at": 1775700527.0223627,
+      "duration_sec": 2.2176384925842285
+    },
+    {
+      "stage": "SELECT_PRE_INSERT",
+      "started_at": 1775700527.0223627,
+      "ended_at": 1775700527.4515195,
+      "duration_sec": 0.4291567802429199
+    },
+    {
+      "stage": "PLAN_TO_PRE_INSERT",
+      "started_at": 1775700527.4515195,
+      "ended_at": 1775700533.993055,
+      "duration_sec": 6.5415356159210205
+    },
+    {
+      "stage": "INSERT_AND_SUCTION",
+      "started_at": 1775700533.993055,
+      "ended_at": 1775700535.680687,
+      "duration_sec": 1.6876318454742432
+    },
+    {
+      "stage": "SAFE_RETREAT",
+      "started_at": 1775700535.680687,
+      "ended_at": 1775700539.3023646,
+      "duration_sec": 3.6216776371002197
+    }
+  ],
+  "stage_totals": {
+    "ACQUIRE_TARGET": {
+      "attempts": 1,
+      "total_duration_sec": 0.6665127277374268
+    },
+    "ARM_STOW_SAFE": {
+      "attempts": 1,
+      "total_duration_sec": 2.3080668449401855
+    },
+    "BASE_ENTER_WORKSPACE": {
+      "attempts": 1,
+      "total_duration_sec": 2.71651291847229
+    },
+    "LIFT_TO_BAND": {
+      "attempts": 1,
+      "total_duration_sec": 2.2176384925842285
+    },
+    "SELECT_PRE_INSERT": {
+      "attempts": 1,
+      "total_duration_sec": 0.4291567802429199
+    },
+    "PLAN_TO_PRE_INSERT": {
+      "attempts": 1,
+      "total_duration_sec": 6.5415356159210205
+    },
+    "INSERT_AND_SUCTION": {
+      "attempts": 1,
+      "total_duration_sec": 1.6876318454742432
+    },
+    "SAFE_RETREAT": {
+      "attempts": 1,
+      "total_duration_sec": 3.6216776371002197
+    }
+  },
+  "errors": [
+    {
+      "timestamp": 1775700531.6879323,
+      "logger": "moveit.ros_planning.planning_pipeline",
+      "message": "Computed path is not valid. Invalid states at index locations: [ 0 1 2 3 4 5 6 ] out of 209. Explanations follow in command line. Contacts are published on /display_contacts"
+    },
+    {
+      "timestamp": 1775700531.6918952,
+      "logger": "moveit.ros_planning.planning_pipeline",
+      "message": "Completed listing of explanations for invalid states."
+    }
+  ],
+  "warnings": [
+    {
+      "timestamp": 1775700514.5919597,
+      "logger": "move_group.move_group",
+      "message": "Falling back to using the the move_group node namespace (deprecated behavior)."
+    },
+    {
+      "timestamp": 1775700517.7134004,
+      "logger": "rcl.logging_rosout",
+      "message": "Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic."
+    },
+    {
+      "timestamp": 1775700527.1666534,
+      "logger": "medipick_pick_task_manager",
+      "message": "pre_insert_select_arm_insert_ik: IK failed with code=-31."
+    },
+    {
+      "timestamp": 1775700527.3070276,
+      "logger": "medipick_pick_task_manager",
+      "message": "pre_insert_select_arm_insert_ik: IK failed with code=-31."
+    },
+    {
+      "timestamp": 1775700527.4492722,
+      "logger": "medipick_pick_task_manager",
+      "message": "pre_insert_select_arm_insert_ik: IK failed with code=-31."
+    },
+    {
+      "timestamp": 1775700528.5261047,
+      "logger": "moveit.ompl_planning.model_based_planning_context",
+      "message": "Planning timed out: 1.0s ≥ 1.0s"
+    },
+    {
+      "timestamp": 1775700534.22816,
+      "logger": "medipick_pick_task_manager",
+      "message": "insert_local_seeded[arm]_ik: IK failed with code=-31."
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "success": true,
+  "final_stage": "COMPLETED",
+  "failure_message": null,
+  "stage_transitions": [
+    {
+      "stage": "ACQUIRE_TARGET",
+      "timestamp": 1775657233.9250896
+    },
+    {
+      "stage": "ARM_STOW_SAFE",
+      "timestamp": 1775657234.571179
+    },
+    {
+      "stage": "BASE_ENTER_WORKSPACE",
+      "timestamp": 1775657236.8910813
+    },
+    {
+      "stage": "LIFT_TO_BAND",
+      "timestamp": 1775657239.6039193
+    },
+    {
+      "stage": "SELECT_PRE_INSERT",
+      "timestamp": 1775657241.8208275
+    },
+    {
+      "stage": "PLAN_TO_PRE_INSERT",
+      "timestamp": 1775657241.8242774
+    },
+    {
+      "stage": "INSERT_AND_SUCTION",
+      "timestamp": 1775657243.390655
+    },
+    {
+      "stage": "SAFE_RETREAT",
+      "timestamp": 1775657244.0188084
+    },
+    {
+      "stage": "COMPLETED",
+      "timestamp": 1775657247.2703972
+    }
+  ],
+  "stage_timeline": [
+    {
+      "stage": "ACQUIRE_TARGET",
+      "started_at": 1775657233.9250896,
+      "ended_at": 1775657234.571179,
+      "duration_sec": 0.6460893154144287
+    },
+    {
+      "stage": "ARM_STOW_SAFE",
+      "started_at": 1775657234.571179,
+      "ended_at": 1775657236.8910813,
+      "duration_sec": 2.3199024200439453
+    },
+    {
+      "stage": "BASE_ENTER_WORKSPACE",
+      "started_at": 1775657236.8910813,
+      "ended_at": 1775657239.6039193,
+      "duration_sec": 2.7128379344940186
+    },
+    {
+      "stage": "LIFT_TO_BAND",
+      "started_at": 1775657239.6039193,
+      "ended_at": 1775657241.8208275,
+      "duration_sec": 2.2169082164764404
+    },
+    {
+      "stage": "SELECT_PRE_INSERT",
+      "started_at": 1775657241.8208275,
+      "ended_at": 1775657241.8242774,
+      "duration_sec": 0.0034499168395996094
+    },
+    {
+      "stage": "PLAN_TO_PRE_INSERT",
+      "started_at": 1775657241.8242774,
+      "ended_at": 1775657243.390655,
+      "duration_sec": 1.5663776397705078
+    },
+    {
+      "stage": "INSERT_AND_SUCTION",
+      "started_at": 1775657243.390655,
+      "ended_at": 1775657244.0188084,
+      "duration_sec": 0.6281533241271973
+    },
+    {
+      "stage": "SAFE_RETREAT",
+      "started_at": 1775657244.0188084,
+      "ended_at": 1775657247.2703972,
+      "duration_sec": 3.251588821411133
+    }
+  ],
+  "stage_totals": {
+    "ACQUIRE_TARGET": {
+      "attempts": 1,
+      "total_duration_sec": 0.6460893154144287
+    },
+    "ARM_STOW_SAFE": {
+      "attempts": 1,
+      "total_duration_sec": 2.3199024200439453
+    },
+    "BASE_ENTER_WORKSPACE": {
+      "attempts": 1,
+      "total_duration_sec": 2.7128379344940186
+    },
+    "LIFT_TO_BAND": {
+      "attempts": 1,
+      "total_duration_sec": 2.2169082164764404
+    },
+    "SELECT_PRE_INSERT": {
+      "attempts": 1,
+      "total_duration_sec": 0.0034499168395996094
+    },
+    "PLAN_TO_PRE_INSERT": {
+      "attempts": 1,
+      "total_duration_sec": 1.5663776397705078
+    },
+    "INSERT_AND_SUCTION": {
+      "attempts": 1,
+      "total_duration_sec": 0.6281533241271973
+    },
+    "SAFE_RETREAT": {
+      "attempts": 1,
+      "total_duration_sec": 3.251588821411133
+    }
+  },
+  "errors": [],
+  "warnings": [
+    {
+      "timestamp": 1775657231.1870155,
+      "logger": "move_group.move_group",
+      "message": "Falling back to using the the move_group node namespace (deprecated behavior)."
+    },
+    {
+      "timestamp": 1775657231.1225896,
+      "logger": "robot_state_publisher",
+      "message": "Moved backwards in time, re-publishing joint transforms!"
+    },
+    {
+      "timestamp": 1775657231.4860516,
+      "logger": "rcl.logging_rosout",
+      "message": "Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic."
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "success": true,
+  "reason": "stop_file",
+  "output": "/home/lzoolloozl/projects/medipick_moveit_workspace/docs/experiment_records/20260408_204731_random_cabinet_experiment/case_001/rviz_capture.avi",
+  "window_pattern": "RViz|rviz",
+  "fps": 2.0,
+  "max_width": 640,
+  "max_height": 360,
+  "wait_timeout": 30.0,
+  "capture_timeout": 120.0,
+  "frames": 163,
+  "window_id": "0x600011",
+  "window_title": "rviz2",
+  "video_width": 400,
+  "video_height": 287,
+  "recording_started_at": 1775652455.5690384,
+  "last_capture_error": "Command '['xwd', '-silent', '-id', '0x600006']' returned non-zero exit status 1.",
+  "duration_sec": 81.5,
+  "file_size_bytes": 56141344
+}

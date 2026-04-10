@@ -1,0 +1,32 @@
+stages:
+  - name: fixed_base_easy
+    residual_base: false
+    clutter: false
+    observation_noise: false
+    actuation_noise: false
+    shelf_depth_range: [0.20, 0.26]
+    target_lateral_span_range: [0.02, 0.05]
+
+  - name: fixed_base_full_random
+    residual_base: false
+    clutter: false
+    observation_noise: false
+    actuation_noise: false
+    shelf_depth_range: [0.18, 0.32]
+    target_lateral_span_range: [0.02, 0.10]
+
+  - name: residual_base_noisy
+    residual_base: true
+    clutter: false
+    observation_noise: true
+    actuation_noise: true
+    shelf_depth_range: [0.18, 0.32]
+    target_lateral_span_range: [0.02, 0.10]
+
+  - name: residual_base_clutter
+    residual_base: true
+    clutter: true
+    observation_noise: true
+    actuation_noise: true
+    shelf_depth_range: [0.18, 0.32]
+    target_lateral_span_range: [0.02, 0.10]

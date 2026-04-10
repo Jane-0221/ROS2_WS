@@ -1,0 +1,213 @@
+{
+  "success": false,
+  "final_stage": "FAILED",
+  "failure_message": "No feasible outside-cabinet pre-insert candidate found.",
+  "stage_transitions": [
+    {
+      "stage": "ACQUIRE_TARGET",
+      "timestamp": 1775661869.5576692
+    },
+    {
+      "stage": "ARM_STOW_SAFE",
+      "timestamp": 1775661870.1850586
+    },
+    {
+      "stage": "BASE_ENTER_WORKSPACE",
+      "timestamp": 1775661872.4898841
+    },
+    {
+      "stage": "LIFT_TO_BAND",
+      "timestamp": 1775661872.1832178
+    },
+    {
+      "stage": "SELECT_PRE_INSERT",
+      "timestamp": 1775661874.7864127
+    },
+    {
+      "stage": "FAILED",
+      "timestamp": 1775661875.1159537
+    }
+  ],
+  "stage_timeline": [
+    {
+      "stage": "ACQUIRE_TARGET",
+      "started_at": 1775661869.5576692,
+      "ended_at": 1775661870.1850586,
+      "duration_sec": 0.6273894309997559
+    },
+    {
+      "stage": "ARM_STOW_SAFE",
+      "started_at": 1775661870.1850586,
+      "ended_at": 1775661872.4898841,
+      "duration_sec": 2.3048255443573
+    },
+    {
+      "stage": "BASE_ENTER_WORKSPACE",
+      "started_at": 1775661872.4898841,
+      "ended_at": 1775661872.1832178,
+      "duration_sec": 0.0
+    },
+    {
+      "stage": "LIFT_TO_BAND",
+      "started_at": 1775661872.1832178,
+      "ended_at": 1775661874.7864127,
+      "duration_sec": 2.6031949520111084
+    },
+    {
+      "stage": "SELECT_PRE_INSERT",
+      "started_at": 1775661874.7864127,
+      "ended_at": 1775661875.1159537,
+      "duration_sec": 0.3295409679412842
+    }
+  ],
+  "stage_totals": {
+    "ACQUIRE_TARGET": {
+      "attempts": 1,
+      "total_duration_sec": 0.6273894309997559
+    },
+    "ARM_STOW_SAFE": {
+      "attempts": 1,
+      "total_duration_sec": 2.3048255443573
+    },
+    "BASE_ENTER_WORKSPACE": {
+      "attempts": 1,
+      "total_duration_sec": 0.0
+    },
+    "LIFT_TO_BAND": {
+      "attempts": 1,
+      "total_duration_sec": 2.6031949520111084
+    },
+    "SELECT_PRE_INSERT": {
+      "attempts": 1,
+      "total_duration_sec": 0.3295409679412842
+    }
+  },
+  "errors": [
+    {
+      "timestamp": 1775661867.6521628,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 1"
+    },
+    {
+      "timestamp": 1775661869.6532488,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 1"
+    },
+    {
+      "timestamp": 1775661870.6643713,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 1"
+    },
+    {
+      "timestamp": 1775661872.653899,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 1"
+    },
+    {
+      "timestamp": 1775661873.6650903,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 1"
+    },
+    {
+      "timestamp": 1775661874.6518664,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 1"
+    },
+    {
+      "timestamp": 1775661875.1153483,
+      "message": "No feasible outside-cabinet pre-insert candidate found."
+    },
+    {
+      "timestamp": 1775661876.6538403,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 1"
+    },
+    {
+      "timestamp": 1775661879.6613083,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 1"
+    },
+    {
+      "timestamp": 1775661880.654246,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 1"
+    },
+    {
+      "timestamp": 1775661883.6534865,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 1"
+    },
+    {
+      "timestamp": 1775661885.6604466,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 1"
+    },
+    {
+      "timestamp": 1775661888.6554205,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 1"
+    },
+    {
+      "timestamp": 1775661896.6539736,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 1"
+    },
+    {
+      "timestamp": 1775661897.6574602,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 1"
+    },
+    {
+      "timestamp": 1775661900.6516564,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 1"
+    },
+    {
+      "timestamp": 1775661904.660821,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 1"
+    },
+    {
+      "timestamp": 1775661905.6571693,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 1"
+    },
+    {
+      "timestamp": 1775661906.654319,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 1"
+    },
+    {
+      "timestamp": 1775661908.6570327,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 1"
+    }
+  ],
+  "warnings": [
+    {
+      "timestamp": 1775661863.962815,
+      "logger": "move_group.move_group",
+      "message": "Falling back to using the the move_group node namespace (deprecated behavior)."
+    },
+    {
+      "timestamp": 1775661866.4452062,
+      "logger": "rcl.logging_rosout",
+      "message": "Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic."
+    },
+    {
+      "timestamp": 1775661874.8991337,
+      "logger": "medipick_pick_task_manager",
+      "message": "pre_insert_select_ik: IK failed with code=-31."
+    },
+    {
+      "timestamp": 1775661875.0105338,
+      "logger": "medipick_pick_task_manager",
+      "message": "pre_insert_select_ik: IK failed with code=-31."
+    },
+    {
+      "timestamp": 1775661875.1147308,
+      "logger": "medipick_pick_task_manager",
+      "message": "pre_insert_select_ik: IK failed with code=-31."
+    }
+  ]
+}

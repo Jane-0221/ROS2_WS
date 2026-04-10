@@ -1,0 +1,252 @@
+{
+  "success": false,
+  "final_stage": "ACQUIRE_TARGET",
+  "failure_message": null,
+  "stage_transitions": [
+    {
+      "stage": "ACQUIRE_TARGET",
+      "timestamp": 1775701944.3452332
+    }
+  ],
+  "stage_timeline": [],
+  "stage_totals": {},
+  "errors": [
+    {
+      "timestamp": 1775701939.4517574,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 1"
+    },
+    {
+      "timestamp": 1775701939.4520016,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 2"
+    },
+    {
+      "timestamp": 1775701939.4520113,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 6"
+    },
+    {
+      "timestamp": 1775701939.4520164,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 7"
+    },
+    {
+      "timestamp": 1775701939.4520216,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 9"
+    },
+    {
+      "timestamp": 1775701939.4520261,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 4"
+    },
+    {
+      "timestamp": 1775701939.4520307,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 8"
+    },
+    {
+      "timestamp": 1775701939.452035,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 5"
+    },
+    {
+      "timestamp": 1775701939.4520397,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 10"
+    },
+    {
+      "timestamp": 1775701939.4520438,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 3"
+    },
+    {
+      "timestamp": 1775701939.452048,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 11"
+    },
+    {
+      "timestamp": 1775701949.4354093,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 1"
+    },
+    {
+      "timestamp": 1775701949.4356499,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 2"
+    },
+    {
+      "timestamp": 1775701949.435658,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 6"
+    },
+    {
+      "timestamp": 1775701949.435663,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 7"
+    },
+    {
+      "timestamp": 1775701949.4356682,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 9"
+    },
+    {
+      "timestamp": 1775701949.4356723,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 4"
+    },
+    {
+      "timestamp": 1775701949.4356766,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 8"
+    },
+    {
+      "timestamp": 1775701949.4356809,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 5"
+    },
+    {
+      "timestamp": 1775701949.4356852,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 10"
+    },
+    {
+      "timestamp": 1775701949.4356892,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 3"
+    },
+    {
+      "timestamp": 1775701949.4356935,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 11"
+    },
+    {
+      "timestamp": 1775701959.4524126,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 1"
+    },
+    {
+      "timestamp": 1775701959.4527488,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 2"
+    },
+    {
+      "timestamp": 1775701959.4527614,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 6"
+    },
+    {
+      "timestamp": 1775701959.4527693,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 7"
+    },
+    {
+      "timestamp": 1775701959.4527774,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 9"
+    },
+    {
+      "timestamp": 1775701959.4527853,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 4"
+    },
+    {
+      "timestamp": 1775701959.4527926,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 8"
+    },
+    {
+      "timestamp": 1775701959.4527998,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 5"
+    },
+    {
+      "timestamp": 1775701959.452808,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 10"
+    },
+    {
+      "timestamp": 1775701959.4528153,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 3"
+    },
+    {
+      "timestamp": 1775701959.4528227,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 11"
+    },
+    {
+      "timestamp": 1775701969.4634607,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 1"
+    },
+    {
+      "timestamp": 1775701969.463566,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 2"
+    },
+    {
+      "timestamp": 1775701969.4635744,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 6"
+    },
+    {
+      "timestamp": 1775701969.4635806,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 7"
+    },
+    {
+      "timestamp": 1775701969.463587,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 9"
+    },
+    {
+      "timestamp": 1775701969.4635928,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 4"
+    },
+    {
+      "timestamp": 1775701969.4635983,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 8"
+    },
+    {
+      "timestamp": 1775701969.4636037,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 5"
+    },
+    {
+      "timestamp": 1775701969.463612,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 10"
+    },
+    {
+      "timestamp": 1775701969.463619,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 3"
+    },
+    {
+      "timestamp": 1775701969.463627,
+      "logger": "moveit.ros.perception.shape_mask",
+      "message": "Missing transform for shape mesh with handle 11"
+    }
+  ],
+  "warnings": [
+    {
+      "timestamp": 1775701932.3183916,
+      "logger": "move_group.move_group",
+      "message": "Falling back to using the the move_group node namespace (deprecated behavior)."
+    },
+    {
+      "timestamp": 1775701934.35511,
+      "logger": "robot_state_publisher",
+      "message": "Moved backwards in time, re-publishing joint transforms!"
+    },
+    {
+      "timestamp": 1775701934.7659419,
+      "logger": "rcl.logging_rosout",
+      "message": "Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic."
+    }
+  ]
+}

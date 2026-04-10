@@ -1,0 +1,223 @@
+{
+  "summary": {
+    "total_cases": 1,
+    "successful_cases": 0,
+    "failed_cases": 1,
+    "success_ratio": 0.0,
+    "failure_type_counter": {
+      "pre_insert_r1_motion_limit": 1
+    },
+    "avg_stage_duration_sec": {
+      "ACQUIRE_TARGET": 2.46,
+      "ARM_STOW_SAFE": 2.3,
+      "BASE_ENTER_WORKSPACE": 2.713,
+      "LIFT_TO_BAND": 2.209,
+      "PLAN_TO_PRE_INSERT": 5.272,
+      "SELECT_PRE_INSERT": 0.028
+    },
+    "slow_stage_counter_over_2s": {
+      "ACQUIRE_TARGET": 1,
+      "ARM_STOW_SAFE": 1,
+      "BASE_ENTER_WORKSPACE": 1,
+      "LIFT_TO_BAND": 1,
+      "PLAN_TO_PRE_INSERT": 1
+    }
+  },
+  "failures": [
+    {
+      "case": "case_001",
+      "seed": 4007,
+      "success": false,
+      "final_stage": "FAILED",
+      "failure_message": "Pre-insert trajectory violates the R1 stage-motion limit.",
+      "total_stage_time_sec": 14.981,
+      "params": {
+        "random_seed": 4007,
+        "shelf_levels": 5,
+        "shelf_width": 0.675,
+        "shelf_depth": 0.202,
+        "shelf_center_x": 0.968,
+        "shelf_center_y": 0.07,
+        "shelf_bottom_z": 0.475,
+        "shelf_level_gap": 0.299,
+        "shelf_board_thickness": 0.027,
+        "shelf_side_thickness": 0.034,
+        "shelf_back_thickness": 0.031,
+        "target_depth_ratio": 0.112,
+        "target_lateral_margin": 0.107,
+        "target_lateral_span": 0.058,
+        "target_box_size_x": 0.064,
+        "target_box_size_y": 0.152,
+        "target_box_size_z": 0.055,
+        "clutter_count": 0,
+        "target_gap_index": 0,
+        "target_level": 2
+      },
+      "result": {
+        "success": false,
+        "final_stage": "FAILED",
+        "failure_message": "Pre-insert trajectory violates the R1 stage-motion limit.",
+        "stage_transitions": [
+          {
+            "stage": "ACQUIRE_TARGET",
+            "timestamp": 1775659313.3018506
+          },
+          {
+            "stage": "ARM_STOW_SAFE",
+            "timestamp": 1775659315.7622516
+          },
+          {
+            "stage": "BASE_ENTER_WORKSPACE",
+            "timestamp": 1775659318.0622287
+          },
+          {
+            "stage": "LIFT_TO_BAND",
+            "timestamp": 1775659320.7748203
+          },
+          {
+            "stage": "SELECT_PRE_INSERT",
+            "timestamp": 1775659322.9840736
+          },
+          {
+            "stage": "PLAN_TO_PRE_INSERT",
+            "timestamp": 1775659323.0115874
+          },
+          {
+            "stage": "FAILED",
+            "timestamp": 1775659328.283163
+          }
+        ],
+        "stage_timeline": [
+          {
+            "stage": "ACQUIRE_TARGET",
+            "started_at": 1775659313.3018506,
+            "ended_at": 1775659315.7622516,
+            "duration_sec": 2.4604010581970215
+          },
+          {
+            "stage": "ARM_STOW_SAFE",
+            "started_at": 1775659315.7622516,
+            "ended_at": 1775659318.0622287,
+            "duration_sec": 2.2999770641326904
+          },
+          {
+            "stage": "BASE_ENTER_WORKSPACE",
+            "started_at": 1775659318.0622287,
+            "ended_at": 1775659320.7748203,
+            "duration_sec": 2.7125916481018066
+          },
+          {
+            "stage": "LIFT_TO_BAND",
+            "started_at": 1775659320.7748203,
+            "ended_at": 1775659322.9840736,
+            "duration_sec": 2.2092533111572266
+          },
+          {
+            "stage": "SELECT_PRE_INSERT",
+            "started_at": 1775659322.9840736,
+            "ended_at": 1775659323.0115874,
+            "duration_sec": 0.027513742446899414
+          },
+          {
+            "stage": "PLAN_TO_PRE_INSERT",
+            "started_at": 1775659323.0115874,
+            "ended_at": 1775659328.283163,
+            "duration_sec": 5.271575689315796
+          }
+        ],
+        "stage_totals": {
+          "ACQUIRE_TARGET": {
+            "attempts": 1,
+            "total_duration_sec": 2.4604010581970215
+          },
+          "ARM_STOW_SAFE": {
+            "attempts": 1,
+            "total_duration_sec": 2.2999770641326904
+          },
+          "BASE_ENTER_WORKSPACE": {
+            "attempts": 1,
+            "total_duration_sec": 2.7125916481018066
+          },
+          "LIFT_TO_BAND": {
+            "attempts": 1,
+            "total_duration_sec": 2.2092533111572266
+          },
+          "SELECT_PRE_INSERT": {
+            "attempts": 1,
+            "total_duration_sec": 0.027513742446899414
+          },
+          "PLAN_TO_PRE_INSERT": {
+            "attempts": 1,
+            "total_duration_sec": 5.271575689315796
+          }
+        },
+        "errors": [
+          {
+            "timestamp": 1775659328.2826304,
+            "message": "Pre-insert trajectory violates the R1 stage-motion limit."
+          }
+        ],
+        "warnings": [
+          {
+            "timestamp": 1775659310.6079812,
+            "logger": "move_group.move_group",
+            "message": "Falling back to using the the move_group node namespace (deprecated behavior)."
+          },
+          {
+            "timestamp": 1775659312.6730566,
+            "logger": "rcl.logging_rosout",
+            "message": "Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic."
+          },
+          {
+            "timestamp": 1775659324.0939214,
+            "logger": "moveit.ompl_planning.model_based_planning_context",
+            "message": "Planning timed out: 1.0s ≥ 1.0s"
+          },
+          {
+            "timestamp": 1775659325.3019874,
+            "logger": "medipick_pick_task_manager",
+            "message": "plan_to_pre_insert_r1_limit: rejecting trajectory because r1 stage motion reached 179.9 deg from start -39.0 deg (limit 100.0 deg)"
+          },
+          {
+            "timestamp": 1775659325.3093393,
+            "logger": "medipick_pick_task_manager",
+            "message": "plan_to_pre_insert_r1_limit: rejecting trajectory because r1 stage motion reached 179.9 deg from start -39.0 deg (limit 100.0 deg)"
+          },
+          {
+            "timestamp": 1775659326.3528624,
+            "logger": "moveit.ompl_planning.model_based_planning_context",
+            "message": "Planning timed out: 1.0s ≥ 1.0s"
+          },
+          {
+            "timestamp": 1775659327.807242,
+            "logger": "medipick_pick_task_manager",
+            "message": "plan_to_pre_insert_r1_limit: rejecting trajectory because r1 stage motion reached 179.2 deg from start -39.0 deg (limit 100.0 deg)"
+          },
+          {
+            "timestamp": 1775659327.8138056,
+            "logger": "medipick_pick_task_manager",
+            "message": "plan_to_pre_insert_r1_limit: rejecting trajectory because r1 stage motion reached 179.2 deg from start -39.0 deg (limit 100.0 deg)"
+          },
+          {
+            "timestamp": 1775659328.277557,
+            "logger": "medipick_pick_task_manager",
+            "message": "plan_to_pre_insert_r1_limit: rejecting trajectory because r1 stage motion reached 179.2 deg from start -39.0 deg (limit 100.0 deg)"
+          },
+          {
+            "timestamp": 1775659328.2821162,
+            "logger": "medipick_pick_task_manager",
+            "message": "plan_to_pre_insert_r1_limit: rejecting trajectory because r1 stage motion reached 179.2 deg from start -39.0 deg (limit 100.0 deg)"
+          }
+        ]
+      },
+      "video": null,
+      "failure_type": "pre_insert_r1_motion_limit",
+      "suggestions": [
+        "把 `PLAN_TO_PRE_INSERT` 的 seeded IK 终点筛选也接入 `r1` 阶段位移代价，提前避开接近 100 度阈值的解，而不是规划完再拒绝。",
+        "对这类柜型给 `pre-insert` 加一个更偏向当前 `r1` 半空间的小候选偏置，减少 `mobile_arm` 为了够到柜口而反向大摆。",
+        "必要时把 `r1` 限制从硬阈值拆成两级：90 度以上重罚，100 度以上拒绝。"
+      ]
+    }
+  ],
+  "successes": []
+}

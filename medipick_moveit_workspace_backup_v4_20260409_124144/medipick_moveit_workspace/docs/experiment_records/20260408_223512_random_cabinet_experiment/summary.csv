@@ -1,0 +1,3 @@
+case,seed,success,final_stage,total_stage_time_sec,video_recorded,video_duration_sec,failure_message
+case_001,4007,False,FAILED,11.943,False,,Pre-insert trajectory violates the R1 stage-motion limit.
+case_002,4008,False,INSERT_AND_SUCTION,50.648,False,,

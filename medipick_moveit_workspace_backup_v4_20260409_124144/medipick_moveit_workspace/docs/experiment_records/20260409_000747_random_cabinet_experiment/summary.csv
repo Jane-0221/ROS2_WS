@@ -1,0 +1,11 @@
+case,seed,success,final_stage,total_stage_time_sec,video_recorded,video_duration_sec,failure_message
+case_001,6001,True,COMPLETED,13.452,False,,
+case_002,6002,True,COMPLETED,13.445,False,,
+case_003,6003,True,COMPLETED,13.359,False,,
+case_004,6004,True,COMPLETED,10.929,False,,
+case_005,6005,True,COMPLETED,11.532,False,,
+case_006,6006,True,COMPLETED,13.434,False,,
+case_007,6007,True,COMPLETED,13.375,False,,
+case_008,6008,True,COMPLETED,11.582,False,,
+case_009,6009,True,COMPLETED,14.171,False,,
+case_010,6010,True,COMPLETED,13.158,False,,

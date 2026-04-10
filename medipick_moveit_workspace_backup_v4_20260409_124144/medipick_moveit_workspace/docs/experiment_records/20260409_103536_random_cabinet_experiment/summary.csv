@@ -1,0 +1,6 @@
+case,seed,success,final_stage,total_stage_time_sec,video_recorded,video_duration_sec,failure_message
+case_001,7401,True,COMPLETED,16.922,False,,
+case_002,7402,True,COMPLETED,16.159,False,,
+case_003,7403,True,COMPLETED,13.350,False,,
+case_004,7404,True,COMPLETED,12.346,False,,
+case_005,7405,True,COMPLETED,13.298,False,,

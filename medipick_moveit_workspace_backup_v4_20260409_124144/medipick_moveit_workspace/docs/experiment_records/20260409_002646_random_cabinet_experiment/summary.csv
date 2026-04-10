@@ -1,0 +1,2 @@
+case,seed,success,final_stage,total_stage_time_sec,video_recorded,video_duration_sec,failure_message
+case_001,5008,False,INSERT_AND_SUCTION,60.576,False,,lift_reference_tool_height: FK request timed out.

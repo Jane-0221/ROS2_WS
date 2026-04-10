@@ -1,0 +1,54 @@
+{
+  "params": {
+    "random_seed": 4004,
+    "shelf_levels": 7,
+    "shelf_width": 0.815,
+    "shelf_depth": 0.25,
+    "shelf_center_x": 0.961,
+    "shelf_center_y": -0.107,
+    "shelf_bottom_z": 0.405,
+    "shelf_level_gap": 0.295,
+    "shelf_board_thickness": 0.031,
+    "shelf_side_thickness": 0.048,
+    "shelf_back_thickness": 0.027,
+    "target_depth_ratio": 0.081,
+    "target_lateral_margin": 0.085,
+    "target_lateral_span": 0.047,
+    "target_box_size_x": 0.064,
+    "target_box_size_y": 0.141,
+    "target_box_size_z": 0.086,
+    "clutter_count": 0,
+    "target_gap_index": 5,
+    "target_level": 3
+  },
+  "derived": {
+    "target_box": {
+      "center": [
+        1.017,
+        -0.026999999999999996,
+        1.3485
+      ],
+      "size": [
+        0.064,
+        0.141,
+        0.086
+      ]
+    },
+    "clutter_boxes": [],
+    "target_pose": {
+      "position": {
+        "x": 0.851633,
+        "y": -0.10929,
+        "z": 2.0275
+      },
+      "orientation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 1.0
+      }
+    },
+    "inner_front_x": 0.836,
+    "back_panel_front_x": 1.059
+  }
+}

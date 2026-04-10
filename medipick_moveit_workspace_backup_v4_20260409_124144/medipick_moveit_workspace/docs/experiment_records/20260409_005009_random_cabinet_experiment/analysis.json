@@ -1,0 +1,386 @@
+{
+  "summary": {
+    "total_cases": 1,
+    "successful_cases": 0,
+    "failed_cases": 1,
+    "success_ratio": 0.0,
+    "failure_type_counter": {
+      "generic_failed": 1
+    },
+    "avg_stage_duration_sec": {
+      "ACQUIRE_TARGET": 0.627,
+      "ARM_STOW_SAFE": 0.0,
+      "BASE_ENTER_WORKSPACE": 3.105,
+      "INSERT_AND_SUCTION": 10.506,
+      "LIFT_TO_BAND": 2.211,
+      "PLAN_TO_PRE_INSERT": 3.072,
+      "SELECT_PRE_INSERT": 0.407
+    },
+    "slow_stage_counter_over_2s": {
+      "BASE_ENTER_WORKSPACE": 1,
+      "LIFT_TO_BAND": 1,
+      "PLAN_TO_PRE_INSERT": 1,
+      "INSERT_AND_SUCTION": 3
+    }
+  },
+  "failures": [
+    {
+      "case": "case_001",
+      "seed": 5004,
+      "success": false,
+      "final_stage": "FAILED",
+      "failure_message": "No feasible outside-cabinet pre-insert candidate found.",
+      "total_stage_time_sec": 47.492,
+      "params": {
+        "random_seed": 5004,
+        "shelf_levels": 6,
+        "shelf_width": 0.885,
+        "shelf_depth": 0.227,
+        "shelf_center_x": 0.905,
+        "shelf_center_y": -0.003,
+        "shelf_bottom_z": 0.411,
+        "shelf_level_gap": 0.262,
+        "shelf_board_thickness": 0.026,
+        "shelf_side_thickness": 0.033,
+        "shelf_back_thickness": 0.024,
+        "target_depth_ratio": 0.071,
+        "target_lateral_margin": 0.118,
+        "target_lateral_span": 0.075,
+        "target_box_size_x": 0.105,
+        "target_box_size_y": 0.111,
+        "target_box_size_z": 0.094,
+        "clutter_count": 0,
+        "target_gap_index": 0,
+        "target_level": 3
+      },
+      "result": {
+        "success": false,
+        "final_stage": "FAILED",
+        "failure_message": "No feasible outside-cabinet pre-insert candidate found.",
+        "stage_transitions": [
+          {
+            "stage": "ACQUIRE_TARGET",
+            "timestamp": 1775667018.7190237
+          },
+          {
+            "stage": "ARM_STOW_SAFE",
+            "timestamp": 1775667019.3464396
+          },
+          {
+            "stage": "BASE_ENTER_WORKSPACE",
+            "timestamp": 1775667019.149255
+          },
+          {
+            "stage": "LIFT_TO_BAND",
+            "timestamp": 1775667022.2541385
+          },
+          {
+            "stage": "SELECT_PRE_INSERT",
+            "timestamp": 1775667024.4654472
+          },
+          {
+            "stage": "PLAN_TO_PRE_INSERT",
+            "timestamp": 1775667024.8758712
+          },
+          {
+            "stage": "INSERT_AND_SUCTION",
+            "timestamp": 1775667031.178075
+          },
+          {
+            "stage": "PLAN_TO_PRE_INSERT",
+            "timestamp": 1775667041.6359882
+          },
+          {
+            "stage": "INSERT_AND_SUCTION",
+            "timestamp": 1775667043.0919068
+          },
+          {
+            "stage": "PLAN_TO_PRE_INSERT",
+            "timestamp": 1775667053.419
+          },
+          {
+            "stage": "INSERT_AND_SUCTION",
+            "timestamp": 1775667054.8769417
+          },
+          {
+            "stage": "SELECT_PRE_INSERT",
+            "timestamp": 1775667065.6089427
+          },
+          {
+            "stage": "FAILED",
+            "timestamp": 1775667066.013492
+          }
+        ],
+        "stage_timeline": [
+          {
+            "stage": "ACQUIRE_TARGET",
+            "started_at": 1775667018.7190237,
+            "ended_at": 1775667019.3464396,
+            "duration_sec": 0.6274158954620361
+          },
+          {
+            "stage": "ARM_STOW_SAFE",
+            "started_at": 1775667019.3464396,
+            "ended_at": 1775667019.149255,
+            "duration_sec": 0.0
+          },
+          {
+            "stage": "BASE_ENTER_WORKSPACE",
+            "started_at": 1775667019.149255,
+            "ended_at": 1775667022.2541385,
+            "duration_sec": 3.1048834323883057
+          },
+          {
+            "stage": "LIFT_TO_BAND",
+            "started_at": 1775667022.2541385,
+            "ended_at": 1775667024.4654472,
+            "duration_sec": 2.211308717727661
+          },
+          {
+            "stage": "SELECT_PRE_INSERT",
+            "started_at": 1775667024.4654472,
+            "ended_at": 1775667024.8758712,
+            "duration_sec": 0.41042399406433105
+          },
+          {
+            "stage": "PLAN_TO_PRE_INSERT",
+            "started_at": 1775667024.8758712,
+            "ended_at": 1775667031.178075,
+            "duration_sec": 6.302203893661499
+          },
+          {
+            "stage": "INSERT_AND_SUCTION",
+            "started_at": 1775667031.178075,
+            "ended_at": 1775667041.6359882,
+            "duration_sec": 10.457913160324097
+          },
+          {
+            "stage": "PLAN_TO_PRE_INSERT",
+            "started_at": 1775667041.6359882,
+            "ended_at": 1775667043.0919068,
+            "duration_sec": 1.455918550491333
+          },
+          {
+            "stage": "INSERT_AND_SUCTION",
+            "started_at": 1775667043.0919068,
+            "ended_at": 1775667053.419,
+            "duration_sec": 10.327093124389648
+          },
+          {
+            "stage": "PLAN_TO_PRE_INSERT",
+            "started_at": 1775667053.419,
+            "ended_at": 1775667054.8769417,
+            "duration_sec": 1.4579417705535889
+          },
+          {
+            "stage": "INSERT_AND_SUCTION",
+            "started_at": 1775667054.8769417,
+            "ended_at": 1775667065.6089427,
+            "duration_sec": 10.732001066207886
+          },
+          {
+            "stage": "SELECT_PRE_INSERT",
+            "started_at": 1775667065.6089427,
+            "ended_at": 1775667066.013492,
+            "duration_sec": 0.40454936027526855
+          }
+        ],
+        "stage_totals": {
+          "ACQUIRE_TARGET": {
+            "attempts": 1,
+            "total_duration_sec": 0.6274158954620361
+          },
+          "ARM_STOW_SAFE": {
+            "attempts": 1,
+            "total_duration_sec": 0.0
+          },
+          "BASE_ENTER_WORKSPACE": {
+            "attempts": 1,
+            "total_duration_sec": 3.1048834323883057
+          },
+          "LIFT_TO_BAND": {
+            "attempts": 1,
+            "total_duration_sec": 2.211308717727661
+          },
+          "SELECT_PRE_INSERT": {
+            "attempts": 2,
+            "total_duration_sec": 0.8149733543395996
+          },
+          "PLAN_TO_PRE_INSERT": {
+            "attempts": 3,
+            "total_duration_sec": 9.216064214706421
+          },
+          "INSERT_AND_SUCTION": {
+            "attempts": 3,
+            "total_duration_sec": 31.51700735092163
+          }
+        },
+        "errors": [
+          {
+            "timestamp": 1775667021.8074021,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775667025.804518,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775667025.8550248,
+            "logger": "moveit.ros_planning.planning_pipeline",
+            "message": "Computed path is not valid. Invalid states at index locations: [ 0 1 2 3 4 5 6 7 ] out of 296. Explanations follow in command line. Contacts are published on /display_contacts"
+          },
+          {
+            "timestamp": 1775667025.8586366,
+            "logger": "moveit.ros_planning.planning_pipeline",
+            "message": "Completed listing of explanations for invalid states."
+          },
+          {
+            "timestamp": 1775667042.8126504,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775667043.8076644,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775667054.809339,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775667055.8068674,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775667065.595931,
+            "logger": "moveit.ros_planning.planning_pipeline",
+            "message": "Computed path is not valid. Invalid states at index locations: [ 114 115 ] out of 174. Explanations follow in command line. Contacts are published on /display_contacts"
+          },
+          {
+            "timestamp": 1775667065.5971274,
+            "logger": "moveit.ros_planning.planning_pipeline",
+            "message": "Completed listing of explanations for invalid states."
+          },
+          {
+            "timestamp": 1775667066.0128894,
+            "message": "No feasible outside-cabinet pre-insert candidate found."
+          },
+          {
+            "timestamp": 1775667068.8155406,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775667073.8056862,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775667074.8086367,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775667075.8073008,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775667076.8071167,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775667080.8069296,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775667082.8050046,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775667083.8083513,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          },
+          {
+            "timestamp": 1775667084.8085082,
+            "logger": "moveit.ros.perception.shape_mask",
+            "message": "Missing transform for shape mesh with handle 1"
+          }
+        ],
+        "warnings": [
+          {
+            "timestamp": 1775667012.7464192,
+            "logger": "move_group.move_group",
+            "message": "Falling back to using the the move_group node namespace (deprecated behavior)."
+          },
+          {
+            "timestamp": 1775667015.0814052,
+            "logger": "rcl.logging_rosout",
+            "message": "Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic."
+          },
+          {
+            "timestamp": 1775667024.6036167,
+            "logger": "medipick_pick_task_manager",
+            "message": "pre_insert_select_arm_insert_ik: IK failed with code=-31."
+          },
+          {
+            "timestamp": 1775667024.7388148,
+            "logger": "medipick_pick_task_manager",
+            "message": "pre_insert_select_arm_insert_ik: IK failed with code=-31."
+          },
+          {
+            "timestamp": 1775667024.8748538,
+            "logger": "medipick_pick_task_manager",
+            "message": "pre_insert_select_arm_insert_ik: IK failed with code=-31."
+          },
+          {
+            "timestamp": 1775667036.305104,
+            "logger": "ompl",
+            "message": "./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 5.000569 seconds"
+          },
+          {
+            "timestamp": 1775667048.2182624,
+            "logger": "ompl",
+            "message": "./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 4.993944 seconds"
+          },
+          {
+            "timestamp": 1775667060.008731,
+            "logger": "ompl",
+            "message": "./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 4.997799 seconds"
+          },
+          {
+            "timestamp": 1775667065.7459648,
+            "logger": "medipick_pick_task_manager",
+            "message": "pre_insert_select_arm_insert_ik: IK failed with code=-31."
+          },
+          {
+            "timestamp": 1775667065.8773115,
+            "logger": "medipick_pick_task_manager",
+            "message": "pre_insert_select_arm_insert_ik: IK failed with code=-31."
+          },
+          {
+            "timestamp": 1775667066.012271,
+            "logger": "medipick_pick_task_manager",
+            "message": "pre_insert_select_arm_insert_ik: IK failed with code=-31."
+          }
+        ]
+      },
+      "video": null,
+      "failure_type": "generic_failed",
+      "suggestions": [
+        "为失败 case 自动导出更细的分类字段，例如 `ik_failed`、`collision_blocked`、`stage_timeout`，避免后续只能人工读日志。",
+        "在 case README 里追加失败时的最后 3 条 manager error，便于快速复盘。"
+      ]
+    }
+  ],
+  "successes": []
+}

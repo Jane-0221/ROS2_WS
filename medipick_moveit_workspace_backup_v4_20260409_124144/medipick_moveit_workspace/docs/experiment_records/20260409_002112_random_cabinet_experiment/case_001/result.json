@@ -1,0 +1,212 @@
+{
+  "success": false,
+  "final_stage": "FAILED",
+  "failure_message": "Pre-insert planning failed: arm: MoveIt failed to produce a valid trajectory (TIMED_OUT, code=-6).; retry failed: MoveIt failed to produce a valid trajectory (INVALID_MOTION_PLAN, code=-2).; mobile_arm: MoveIt failed to produce a valid trajectory (TIMED_OUT, code=-6).; retry failed: MoveIt failed to produce a valid trajectory (INVALID_MOTION_PLAN, code=-2).",
+  "stage_transitions": [
+    {
+      "stage": "ACQUIRE_TARGET",
+      "timestamp": 1775665277.654788
+    },
+    {
+      "stage": "ARM_STOW_SAFE",
+      "timestamp": 1775665278.325574
+    },
+    {
+      "stage": "BASE_ENTER_WORKSPACE",
+      "timestamp": 1775665280.628379
+    },
+    {
+      "stage": "LIFT_TO_BAND",
+      "timestamp": 1775665283.3408413
+    },
+    {
+      "stage": "SELECT_PRE_INSERT",
+      "timestamp": 1775665285.5595877
+    },
+    {
+      "stage": "PLAN_TO_PRE_INSERT",
+      "timestamp": 1775665285.9475846
+    },
+    {
+      "stage": "FAILED",
+      "timestamp": 1775665306.4562967
+    }
+  ],
+  "stage_timeline": [
+    {
+      "stage": "ACQUIRE_TARGET",
+      "started_at": 1775665277.654788,
+      "ended_at": 1775665278.325574,
+      "duration_sec": 0.6707859039306641
+    },
+    {
+      "stage": "ARM_STOW_SAFE",
+      "started_at": 1775665278.325574,
+      "ended_at": 1775665280.628379,
+      "duration_sec": 2.302805185317993
+    },
+    {
+      "stage": "BASE_ENTER_WORKSPACE",
+      "started_at": 1775665280.628379,
+      "ended_at": 1775665283.3408413,
+      "duration_sec": 2.7124621868133545
+    },
+    {
+      "stage": "LIFT_TO_BAND",
+      "started_at": 1775665283.3408413,
+      "ended_at": 1775665285.5595877,
+      "duration_sec": 2.2187464237213135
+    },
+    {
+      "stage": "SELECT_PRE_INSERT",
+      "started_at": 1775665285.5595877,
+      "ended_at": 1775665285.9475846,
+      "duration_sec": 0.3879969120025635
+    },
+    {
+      "stage": "PLAN_TO_PRE_INSERT",
+      "started_at": 1775665285.9475846,
+      "ended_at": 1775665306.4562967,
+      "duration_sec": 20.50871205329895
+    }
+  ],
+  "stage_totals": {
+    "ACQUIRE_TARGET": {
+      "attempts": 1,
+      "total_duration_sec": 0.6707859039306641
+    },
+    "ARM_STOW_SAFE": {
+      "attempts": 1,
+      "total_duration_sec": 2.302805185317993
+    },
+    "BASE_ENTER_WORKSPACE": {
+      "attempts": 1,
+      "total_duration_sec": 2.7124621868133545
+    },
+    "LIFT_TO_BAND": {
+      "attempts": 1,
+      "total_duration_sec": 2.2187464237213135
+    },
+    "SELECT_PRE_INSERT": {
+      "attempts": 1,
+      "total_duration_sec": 0.3879969120025635
+    },
+    "PLAN_TO_PRE_INSERT": {
+      "attempts": 1,
+      "total_duration_sec": 20.50871205329895
+    }
+  },
+  "errors": [
+    {
+      "timestamp": 1775665286.2963362,
+      "logger": "moveit.ros_planning.planning_pipeline",
+      "message": "Computed path is not valid. Invalid states at index locations: [ 0 1 2 3 4 5 ] out of 189. Explanations follow in command line. Contacts are published on /display_contacts"
+    },
+    {
+      "timestamp": 1775665286.3004498,
+      "logger": "moveit.ros_planning.planning_pipeline",
+      "message": "Completed listing of explanations for invalid states."
+    },
+    {
+      "timestamp": 1775665289.154255,
+      "logger": "moveit.ros_planning.planning_pipeline",
+      "message": "Computed path is not valid. Invalid states at index locations: [ 0 1 2 3 4 5 6 ] out of 91. Explanations follow in command line. Contacts are published on /display_contacts"
+    },
+    {
+      "timestamp": 1775665289.1589377,
+      "logger": "moveit.ros_planning.planning_pipeline",
+      "message": "Completed listing of explanations for invalid states."
+    },
+    {
+      "timestamp": 1775665291.9313653,
+      "logger": "moveit.ros_planning.planning_pipeline",
+      "message": "Computed path is not valid. Invalid states at index locations: [ 0 1 2 3 4 5 6 7 68 69 ] out of 262. Explanations follow in command line. Contacts are published on /display_contacts"
+    },
+    {
+      "timestamp": 1775665291.9369361,
+      "logger": "moveit.ros_planning.planning_pipeline",
+      "message": "Completed listing of explanations for invalid states."
+    },
+    {
+      "timestamp": 1775665293.048145,
+      "logger": "moveit.ros_planning.planning_pipeline",
+      "message": "Computed path is not valid. Invalid states at index locations: [ 0 1 2 3 4 5 6 7 8 ] out of 164. Explanations follow in command line. Contacts are published on /display_contacts"
+    },
+    {
+      "timestamp": 1775665293.0521085,
+      "logger": "moveit.ros_planning.planning_pipeline",
+      "message": "Completed listing of explanations for invalid states."
+    },
+    {
+      "timestamp": 1775665304.273162,
+      "logger": "moveit.ros_planning.planning_pipeline",
+      "message": "Computed path is not valid. Invalid states at index locations: [ 0 1 2 3 4 5 6 ] out of 91. Explanations follow in command line. Contacts are published on /display_contacts"
+    },
+    {
+      "timestamp": 1775665304.276567,
+      "logger": "moveit.ros_planning.planning_pipeline",
+      "message": "Completed listing of explanations for invalid states."
+    },
+    {
+      "timestamp": 1775665306.440579,
+      "logger": "moveit.ros_planning.planning_pipeline",
+      "message": "Computed path is not valid. Invalid states at index locations: [ 0 1 2 3 4 ] out of 261. Explanations follow in command line. Contacts are published on /display_contacts"
+    },
+    {
+      "timestamp": 1775665306.4431949,
+      "logger": "moveit.ros_planning.planning_pipeline",
+      "message": "Completed listing of explanations for invalid states."
+    },
+    {
+      "timestamp": 1775665306.4555736,
+      "message": "Pre-insert planning failed: arm: MoveIt failed to produce a valid trajectory (TIMED_OUT, code=-6).; retry failed: MoveIt failed to produce a valid trajectory (INVALID_MOTION_PLAN, code=-2).; mobile_arm: MoveIt failed to produce a valid trajectory (TIMED_OUT, code=-6).; retry failed: MoveIt failed to produce a valid trajectory (INVALID_MOTION_PLAN, code=-2)."
+    }
+  ],
+  "warnings": [
+    {
+      "timestamp": 1775665275.0054574,
+      "logger": "move_group.move_group",
+      "message": "Falling back to using the the move_group node namespace (deprecated behavior)."
+    },
+    {
+      "timestamp": 1775665277.1892035,
+      "logger": "rcl.logging_rosout",
+      "message": "Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic."
+    },
+    {
+      "timestamp": 1775665285.6898918,
+      "logger": "medipick_pick_task_manager",
+      "message": "pre_insert_select_arm_insert_ik: IK failed with code=-31."
+    },
+    {
+      "timestamp": 1775665285.8196037,
+      "logger": "medipick_pick_task_manager",
+      "message": "pre_insert_select_arm_insert_ik: IK failed with code=-31."
+    },
+    {
+      "timestamp": 1775665285.9468975,
+      "logger": "medipick_pick_task_manager",
+      "message": "pre_insert_select_arm_insert_ik: IK failed with code=-31."
+    },
+    {
+      "timestamp": 1775665290.1846235,
+      "logger": "moveit.ompl_planning.model_based_planning_context",
+      "message": "Planning timed out: 1.0s ≥ 1.0s"
+    },
+    {
+      "timestamp": 1775665297.104314,
+      "logger": "moveit.ompl_planning.model_based_planning_context",
+      "message": "Planning timed out: 1.0s ≥ 1.0s"
+    },
+    {
+      "timestamp": 1775665301.156848,
+      "logger": "moveit.ompl_planning.model_based_planning_context",
+      "message": "Planning timed out: 1.0s ≥ 1.0s"
+    },
+    {
+      "timestamp": 1775665305.3139758,
+      "logger": "moveit.ompl_planning.model_based_planning_context",
+      "message": "Planning timed out: 1.0s ≥ 1.0s"
+    }
+  ]
+}

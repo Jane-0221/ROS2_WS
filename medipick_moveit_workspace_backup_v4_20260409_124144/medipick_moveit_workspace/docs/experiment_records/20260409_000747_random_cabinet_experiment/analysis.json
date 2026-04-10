@@ -1,0 +1,89 @@
+{
+  "summary": {
+    "total_cases": 10,
+    "successful_cases": 10,
+    "failed_cases": 0,
+    "success_ratio": 100.0,
+    "failure_type_counter": {},
+    "avg_stage_duration_sec": {
+      "ACQUIRE_TARGET": 0.731,
+      "ARM_STOW_SAFE": 2.304,
+      "BASE_ENTER_WORKSPACE": 2.466,
+      "INSERT_AND_SUCTION": 0.794,
+      "LIFT_TO_BAND": 1.771,
+      "PLAN_TO_PRE_INSERT": 1.432,
+      "SAFE_RETREAT": 3.243,
+      "SELECT_PRE_INSERT": 0.103
+    },
+    "slow_stage_counter_over_2s": {
+      "ARM_STOW_SAFE": 10,
+      "BASE_ENTER_WORKSPACE": 9,
+      "LIFT_TO_BAND": 8,
+      "SAFE_RETREAT": 10,
+      "INSERT_AND_SUCTION": 1
+    }
+  },
+  "failures": [],
+  "successes": [
+    {
+      "case": "case_001",
+      "seed": 6001,
+      "final_stage": "COMPLETED",
+      "total_stage_time_sec": 13.452
+    },
+    {
+      "case": "case_002",
+      "seed": 6002,
+      "final_stage": "COMPLETED",
+      "total_stage_time_sec": 13.445
+    },
+    {
+      "case": "case_003",
+      "seed": 6003,
+      "final_stage": "COMPLETED",
+      "total_stage_time_sec": 13.359
+    },
+    {
+      "case": "case_004",
+      "seed": 6004,
+      "final_stage": "COMPLETED",
+      "total_stage_time_sec": 10.929
+    },
+    {
+      "case": "case_005",
+      "seed": 6005,
+      "final_stage": "COMPLETED",
+      "total_stage_time_sec": 11.532
+    },
+    {
+      "case": "case_006",
+      "seed": 6006,
+      "final_stage": "COMPLETED",
+      "total_stage_time_sec": 13.434
+    },
+    {
+      "case": "case_007",
+      "seed": 6007,
+      "final_stage": "COMPLETED",
+      "total_stage_time_sec": 13.375
+    },
+    {
+      "case": "case_008",
+      "seed": 6008,
+      "final_stage": "COMPLETED",
+      "total_stage_time_sec": 11.582
+    },
+    {
+      "case": "case_009",
+      "seed": 6009,
+      "final_stage": "COMPLETED",
+      "total_stage_time_sec": 14.171
+    },
+    {
+      "case": "case_010",
+      "seed": 6010,
+      "final_stage": "COMPLETED",
+      "total_stage_time_sec": 13.158
+    }
+  ]
+}

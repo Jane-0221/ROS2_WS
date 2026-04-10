@@ -1,0 +1,59 @@
+{
+  "summary": {
+    "total_cases": 5,
+    "successful_cases": 5,
+    "failed_cases": 0,
+    "success_ratio": 100.0,
+    "failure_type_counter": {},
+    "avg_stage_duration_sec": {
+      "ACQUIRE_TARGET": 2.251,
+      "ARM_STOW_SAFE": 2.303,
+      "BASE_ENTER_WORKSPACE": 2.453,
+      "INSERT_AND_SUCTION": 0.662,
+      "LIFT_TO_BAND": 2.218,
+      "PLAN_TO_PRE_INSERT": 1.45,
+      "SAFE_RETREAT": 2.676,
+      "SELECT_PRE_INSERT": 0.402
+    },
+    "slow_stage_counter_over_2s": {
+      "ACQUIRE_TARGET": 2,
+      "ARM_STOW_SAFE": 5,
+      "BASE_ENTER_WORKSPACE": 5,
+      "LIFT_TO_BAND": 5,
+      "SAFE_RETREAT": 5
+    }
+  },
+  "failures": [],
+  "successes": [
+    {
+      "case": "case_001",
+      "seed": 7401,
+      "final_stage": "COMPLETED",
+      "total_stage_time_sec": 16.922
+    },
+    {
+      "case": "case_002",
+      "seed": 7402,
+      "final_stage": "COMPLETED",
+      "total_stage_time_sec": 16.159
+    },
+    {
+      "case": "case_003",
+      "seed": 7403,
+      "final_stage": "COMPLETED",
+      "total_stage_time_sec": 13.35
+    },
+    {
+      "case": "case_004",
+      "seed": 7404,
+      "final_stage": "COMPLETED",
+      "total_stage_time_sec": 12.346
+    },
+    {
+      "case": "case_005",
+      "seed": 7405,
+      "final_stage": "COMPLETED",
+      "total_stage_time_sec": 13.298
+    }
+  ]
+}

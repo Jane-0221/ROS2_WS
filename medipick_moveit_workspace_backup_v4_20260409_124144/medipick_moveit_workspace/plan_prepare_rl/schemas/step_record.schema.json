@@ -1,0 +1,22 @@
+{
+  "title": "PrepareStepRecord",
+  "type": "object",
+  "required": [
+    "t",
+    "observation",
+    "action",
+    "reward",
+    "done"
+  ],
+  "properties": {
+    "t": { "type": "integer" },
+    "observation": { "type": "object" },
+    "action": {
+      "type": "array",
+      "items": { "type": "number" }
+    },
+    "reward": { "type": "number" },
+    "done": { "type": "boolean" },
+    "info": { "type": "object" }
+  }
+}

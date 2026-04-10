@@ -1,0 +1,61 @@
+mobile_arm_controller:
+  ros__parameters:
+    joints:
+      - base_x
+      - base_y
+      - base_theta
+      - raise_joint
+      - r1_joint
+      - r2_joint
+      - r3_joint
+      - r4_joint
+      - r5_joint
+      - r6_joint
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+    allow_partial_joints_goal: true
+
+/mobile_arm_controller:
+  ros__parameters:
+    joints:
+      - base_x
+      - base_y
+      - base_theta
+      - raise_joint
+      - r1_joint
+      - r2_joint
+      - r3_joint
+      - r4_joint
+      - r5_joint
+      - r6_joint
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+    allow_partial_joints_goal: true
+
+tool_controller:
+  ros__parameters:
+    joints:
+      - sucker_joint
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+    allow_partial_joints_goal: true
+
+/tool_controller:
+  ros__parameters:
+    joints:
+      - sucker_joint
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+    allow_partial_joints_goal: true

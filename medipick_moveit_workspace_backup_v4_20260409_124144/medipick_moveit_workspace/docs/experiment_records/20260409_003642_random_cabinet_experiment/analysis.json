@@ -1,0 +1,91 @@
+{
+  "summary": {
+    "total_cases": 10,
+    "successful_cases": 10,
+    "failed_cases": 0,
+    "success_ratio": 100.0,
+    "failure_type_counter": {},
+    "avg_stage_duration_sec": {
+      "ACQUIRE_TARGET": 2.134,
+      "ARM_STOW_SAFE": 2.342,
+      "BASE_ENTER_WORKSPACE": 2.713,
+      "INSERT_AND_SUCTION": 2.373,
+      "LIFT_TO_BAND": 1.992,
+      "PLAN_TO_PRE_INSERT": 1.739,
+      "SAFE_RETREAT": 3.084,
+      "SELECT_PRE_INSERT": 0.525
+    },
+    "slow_stage_counter_over_2s": {
+      "ARM_STOW_SAFE": 10,
+      "BASE_ENTER_WORKSPACE": 10,
+      "LIFT_TO_BAND": 9,
+      "SAFE_RETREAT": 10,
+      "INSERT_AND_SUCTION": 3,
+      "ACQUIRE_TARGET": 2,
+      "PLAN_TO_PRE_INSERT": 1
+    }
+  },
+  "failures": [],
+  "successes": [
+    {
+      "case": "case_001",
+      "seed": 7001,
+      "final_stage": "COMPLETED",
+      "total_stage_time_sec": 14.836
+    },
+    {
+      "case": "case_002",
+      "seed": 7002,
+      "final_stage": "COMPLETED",
+      "total_stage_time_sec": 13.522
+    },
+    {
+      "case": "case_003",
+      "seed": 7003,
+      "final_stage": "COMPLETED",
+      "total_stage_time_sec": 13.327
+    },
+    {
+      "case": "case_004",
+      "seed": 7004,
+      "final_stage": "COMPLETED",
+      "total_stage_time_sec": 14.571
+    },
+    {
+      "case": "case_005",
+      "seed": 7005,
+      "final_stage": "COMPLETED",
+      "total_stage_time_sec": 13.305
+    },
+    {
+      "case": "case_006",
+      "seed": 7006,
+      "final_stage": "COMPLETED",
+      "total_stage_time_sec": 13.569
+    },
+    {
+      "case": "case_007",
+      "seed": 7007,
+      "final_stage": "COMPLETED",
+      "total_stage_time_sec": 15.182
+    },
+    {
+      "case": "case_008",
+      "seed": 7008,
+      "final_stage": "COMPLETED",
+      "total_stage_time_sec": 41.408
+    },
+    {
+      "case": "case_009",
+      "seed": 7009,
+      "final_stage": "COMPLETED",
+      "total_stage_time_sec": 13.285
+    },
+    {
+      "case": "case_010",
+      "seed": 7010,
+      "final_stage": "COMPLETED",
+      "total_stage_time_sec": 24.249
+    }
+  ]
+}

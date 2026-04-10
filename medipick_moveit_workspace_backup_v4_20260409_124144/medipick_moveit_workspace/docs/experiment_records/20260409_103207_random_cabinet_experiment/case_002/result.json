@@ -1,0 +1,191 @@
+{
+  "success": false,
+  "final_stage": "PLAN_TO_PRE_INSERT",
+  "failure_message": null,
+  "stage_transitions": [
+    {
+      "stage": "ACQUIRE_TARGET",
+      "timestamp": 1775701984.249208
+    },
+    {
+      "stage": "ARM_STOW_SAFE",
+      "timestamp": 1775701994.6871233
+    },
+    {
+      "stage": "BASE_ENTER_WORKSPACE",
+      "timestamp": 1775701996.9922936
+    },
+    {
+      "stage": "LIFT_TO_BAND",
+      "timestamp": 1775701999.2980456
+    },
+    {
+      "stage": "SELECT_PRE_INSERT",
+      "timestamp": 1775702001.5127745
+    },
+    {
+      "stage": "PLAN_TO_PRE_INSERT",
+      "timestamp": 1775702001.913715
+    },
+    {
+      "stage": "INSERT_AND_SUCTION",
+      "timestamp": 1775702009.4409022
+    },
+    {
+      "stage": "PLAN_TO_PRE_INSERT",
+      "timestamp": 1775702004.2506266
+    },
+    {
+      "stage": "INSERT_AND_SUCTION",
+      "timestamp": 1775702010.4000323
+    },
+    {
+      "stage": "PLAN_TO_PRE_INSERT",
+      "timestamp": 1775702014.3128328
+    }
+  ],
+  "stage_timeline": [
+    {
+      "stage": "ACQUIRE_TARGET",
+      "started_at": 1775701984.249208,
+      "ended_at": 1775701994.6871233,
+      "duration_sec": 10.437915325164795
+    },
+    {
+      "stage": "ARM_STOW_SAFE",
+      "started_at": 1775701994.6871233,
+      "ended_at": 1775701996.9922936,
+      "duration_sec": 2.3051702976226807
+    },
+    {
+      "stage": "BASE_ENTER_WORKSPACE",
+      "started_at": 1775701996.9922936,
+      "ended_at": 1775701999.2980456,
+      "duration_sec": 2.3057520389556885
+    },
+    {
+      "stage": "LIFT_TO_BAND",
+      "started_at": 1775701999.2980456,
+      "ended_at": 1775702001.5127745,
+      "duration_sec": 2.214728832244873
+    },
+    {
+      "stage": "SELECT_PRE_INSERT",
+      "started_at": 1775702001.5127745,
+      "ended_at": 1775702001.913715,
+      "duration_sec": 0.4009404182434082
+    },
+    {
+      "stage": "PLAN_TO_PRE_INSERT",
+      "started_at": 1775702001.913715,
+      "ended_at": 1775702009.4409022,
+      "duration_sec": 7.527187347412109
+    },
+    {
+      "stage": "INSERT_AND_SUCTION",
+      "started_at": 1775702009.4409022,
+      "ended_at": 1775702004.2506266,
+      "duration_sec": 0.0
+    },
+    {
+      "stage": "PLAN_TO_PRE_INSERT",
+      "started_at": 1775702004.2506266,
+      "ended_at": 1775702010.4000323,
+      "duration_sec": 6.1494057178497314
+    },
+    {
+      "stage": "INSERT_AND_SUCTION",
+      "started_at": 1775702010.4000323,
+      "ended_at": 1775702014.3128328,
+      "duration_sec": 3.9128005504608154
+    }
+  ],
+  "stage_totals": {
+    "ACQUIRE_TARGET": {
+      "attempts": 1,
+      "total_duration_sec": 10.437915325164795
+    },
+    "ARM_STOW_SAFE": {
+      "attempts": 1,
+      "total_duration_sec": 2.3051702976226807
+    },
+    "BASE_ENTER_WORKSPACE": {
+      "attempts": 1,
+      "total_duration_sec": 2.3057520389556885
+    },
+    "LIFT_TO_BAND": {
+      "attempts": 1,
+      "total_duration_sec": 2.214728832244873
+    },
+    "SELECT_PRE_INSERT": {
+      "attempts": 1,
+      "total_duration_sec": 0.4009404182434082
+    },
+    "PLAN_TO_PRE_INSERT": {
+      "attempts": 2,
+      "total_duration_sec": 13.67659306526184
+    },
+    "INSERT_AND_SUCTION": {
+      "attempts": 2,
+      "total_duration_sec": 3.9128005504608154
+    }
+  },
+  "errors": [],
+  "warnings": [
+    {
+      "timestamp": 1775701977.3157682,
+      "logger": "move_group.move_group",
+      "message": "Falling back to using the the move_group node namespace (deprecated behavior)."
+    },
+    {
+      "timestamp": 1775701979.8655453,
+      "logger": "rcl.logging_rosout",
+      "message": "Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic."
+    },
+    {
+      "timestamp": 1775702001.6470082,
+      "logger": "medipick_pick_task_manager",
+      "message": "pre_insert_select_arm_insert_ik: IK failed with code=-31."
+    },
+    {
+      "timestamp": 1775702001.781082,
+      "logger": "medipick_pick_task_manager",
+      "message": "pre_insert_select_arm_insert_ik: IK failed with code=-31."
+    },
+    {
+      "timestamp": 1775702001.9128146,
+      "logger": "medipick_pick_task_manager",
+      "message": "pre_insert_select_arm_insert_ik: IK failed with code=-31."
+    },
+    {
+      "timestamp": 1775702002.198143,
+      "logger": "medipick_pick_task_manager",
+      "message": "plan_to_pre_insert_r1_limit[mobile_arm]: rejecting trajectory because base planar stage motion reached 0.559 m (limit 0.300 m)"
+    },
+    {
+      "timestamp": 1775702002.1990676,
+      "logger": "medipick_pick_task_manager",
+      "message": "plan_to_pre_insert_r1_limit[mobile_arm]: rejecting trajectory because base planar stage motion reached 0.559 m (limit 0.300 m)"
+    },
+    {
+      "timestamp": 1775702004.2352765,
+      "logger": "medipick_pick_task_manager",
+      "message": "insert_local_seeded[arm]_ik: IK failed with code=-31."
+    },
+    {
+      "timestamp": 1775702004.249627,
+      "logger": "medipick_pick_task_manager",
+      "message": "insert_local_seeded[mobile_arm]_goal_preference: rejecting seeded goal because base planar stage motion would reach 0.075 m (limit 0.070 m)"
+    },
+    {
+      "timestamp": 1775702014.302544,
+      "logger": "medipick_pick_task_manager",
+      "message": "insert_local_seeded[arm]_ik: IK failed with code=-31."
+    },
+    {
+      "timestamp": 1775702014.3111894,
+      "logger": "medipick_pick_task_manager",
+      "message": "insert_local_seeded[mobile_arm]_goal_preference: rejecting seeded goal because base planar stage motion would reach 0.075 m (limit 0.070 m)"
+    }
+  ]
+}
