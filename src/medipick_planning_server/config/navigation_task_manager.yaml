@@ -1,0 +1,14 @@
+/**:
+  ros__parameters:
+    frame_id: world
+    discrete_lift_mode: true
+    execute_with_controller: true
+    controller_action_name: /mobile_arm_controller/follow_joint_trajectory
+    auto_start_on_target: false
+    auto_accept_base_arrival: true
+    skip_base_execution: true
+    pump_command_topic: /medipick/task/pump_command
+    suction_state_topic: /medipick/hardware/suction_state
+    pump_after_insert: true
+    require_suction_for_success: false
+    suction_wait_timeout: 1.5

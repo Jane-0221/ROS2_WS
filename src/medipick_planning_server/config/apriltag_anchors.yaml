@@ -1,0 +1,9 @@
+anchors:
+  - frame_id: tag36h11:100
+    anchor_type: scene
+    position: [0.0, 0.0, 1.2]
+    orientation: [0.0, 0.0, 0.0, 1.0]
+  - frame_id: tag36h11:200
+    anchor_type: dock
+    position: [1.2, 0.0, 1.1]
+    orientation: [0.0, 0.0, 0.0, 1.0]

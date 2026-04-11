@@ -1,0 +1,50 @@
+rgbd_odometry:
+  ros__parameters:
+    frame_id: base_link
+    odom_frame_id: world
+    publish_tf: false
+    wait_imu_to_init: false
+    approx_sync: true
+    topic_queue_size: 30
+    sync_queue_size: 30
+    subscribe_rgbd: false
+    subscribe_rgb: true
+    subscribe_depth: true
+    subscribe_odom_info: false
+    Vis/MinInliers: "12"
+    Odom/Strategy: "0"
+    Odom/GuessMotion: "true"
+    Odom/Holonomic: "true"
+    OdomF2M/MaxSize: "1000"
+
+rtabmap:
+  ros__parameters:
+    frame_id: base_link
+    odom_frame_id: world
+    map_frame_id: map
+    publish_tf: true
+    approx_sync: true
+    topic_queue_size: 30
+    sync_queue_size: 30
+    subscribe_rgbd: false
+    subscribe_rgb: true
+    subscribe_depth: true
+    subscribe_scan: false
+    subscribe_scan_cloud: false
+    subscribe_odom_info: false
+    Reg/Strategy: "1"
+    RGBD/NeighborLinkRefining: "true"
+    RGBD/ProximityBySpace: "true"
+    RGBD/AngularUpdate: "0.02"
+    RGBD/LinearUpdate: "0.02"
+    RGBD/CreateOccupancyGrid: "true"
+    Grid/3D: "false"
+    Grid/RayTracing: "true"
+    Grid/RangeMax: "3.0"
+    Grid/CellSize: "0.05"
+    Grid/MinClusterSize: "20"
+    Grid/MaxGroundHeight: "0.15"
+    Grid/MinObstacleHeight: "0.03"
+    Mem/IncrementalMemory: "true"
+    Mem/InitWMWithAllNodes: "false"
+    Optimizer/GravitySigma: "0.3"

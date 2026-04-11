@@ -537,3 +537,1438 @@
 [04/11 09:10:18.405827][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Premature end of JPEG file
 [04/11 09:14:12.190277][warning][183831][VideoSensor.cpp:184] [CP9JA53000BM] This frame will be dropped because jpg format verification failure! @Color
 [04/11 09:18:26.081649][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Premature end of JPEG file
+[04/11 09:38:17.620365][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Unsupported marker type 0x0a
+[04/11 09:38:21.867277][warning][183831][VideoSensor.cpp:184] [CP9JA53000BM] This frame will be dropped because jpg format verification failure! @Color
+[04/11 09:41:28.946183][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Unsupported marker type 0x0a
+[04/11 09:41:42.937885][warning][183831][VideoSensor.cpp:184] [CP9JA53000BM] This frame will be dropped because jpg format verification failure! @Color
+[04/11 09:42:43.200816][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Unsupported marker type 0x2e
+[04/11 09:44:19.207276][warning][183831][VideoSensor.cpp:184] [CP9JA53000BM] This frame will be dropped because jpg format verification failure! @Color
+[04/11 09:44:59.027798][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Premature end of JPEG file
+[04/11 09:46:46.587916][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Premature end of JPEG file
+[04/11 09:47:14.386935][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Premature end of JPEG file
+[04/11 09:47:21.361892][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Premature end of JPEG file
+[04/11 09:47:25.998054][warning][272437][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Corrupt JPEG data: 6463 extraneous bytes before marker 0xd2 [**1 logs in 4636ms, last: 09:47:22.997479**]
+[04/11 09:47:29.372089][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Premature end of JPEG file
+[04/11 10:04:32.044762][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Unsupported marker type 0x03
+[04/11 10:05:05.951878][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Premature end of JPEG file
+[04/11 10:05:29.011636][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Premature end of JPEG file
+[04/11 10:05:49.970200][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Unsupported marker type 0x03
+[04/11 10:05:53.904846][warning][274845][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Unsupported marker type 0x9a [**1 logs in 3934ms, last: 10:05:50.904251**]
+[04/11 10:07:27.318229][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Premature end of JPEG file
+[04/11 10:08:35.133072][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Unsupported marker type 0x9a
+[04/11 10:12:49.031460][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Premature end of JPEG file
+[04/11 10:23:33.387693][warning][183832][VideoSensor.cpp:194] [CP9JA53000BM] This frame will be dropped because the data size does not match the expectation! size=130928, expected=814080 @Depth
+[04/11 10:23:33.426409][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Corrupt JPEG data: premature end of data segment
+[04/11 10:23:36.392423][warning][279914][VideoSensor.cpp:194] [CP9JA53000BM] This frame will be dropped because the data size does not match the expectation! size=130520, expected=814080 @Depth [**2 logs in 3004ms, last: 10:23:33.405506**]
+[04/11 10:25:24.626465][info][183786][DeviceManager.cpp:339] Enable net device enumeration: true
+[04/11 10:25:24.735775][warning][283697][ObException.cpp:8] Cannot switch depth work mode while any stream is started. Please stop all stream first!
+[04/11 10:25:25.316174][info][283697][Pipeline.cpp:42] [CP9JA53000BM] Pipeline created with device: {name: Gemini 336, sn: CP9JA53000BM}, @0x58A0180B9010
+[04/11 10:25:25.316263][info][283697][Pipeline.cpp:216] [CP9JA53000BM] Check and set config done!
+[04/11 10:25:25.316791][info][283697][Pipeline.cpp:254] [CP9JA53000BM] Try to start streams!
+[04/11 10:25:25.316819][info][283697][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STARTING@Accel
+[04/11 10:25:25.318234][info][283697][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STARTING@Gyro
+[04/11 10:25:25.319072][info][283697][Pipeline.cpp:270] [CP9JA53000BM] Start streams done!
+[04/11 10:25:25.319084][info][283697][Pipeline.cpp:238] [CP9JA53000BM] Pipeline start done!
+[04/11 10:25:25.319204][info][283697][Pipeline.cpp:42] [CP9JA53000BM] Pipeline created with device: {name: Gemini 336, sn: CP9JA53000BM}, @0x58A0180B90D0
+[04/11 10:25:25.319305][info][283697][Pipeline.cpp:216] [CP9JA53000BM] Check and set config done!
+[04/11 10:25:25.319465][info][283697][Pipeline.cpp:254] [CP9JA53000BM] Try to start streams!
+[04/11 10:25:25.319646][info][283697][VideoSensor.cpp:58] [CP9JA53000BM] Try to start stream: {type: Color, format: MJPG, width: 1280, height: 720, fps: 30}
+[04/11 10:25:25.319658][warning][283697][ObException.cpp:8] The Color has already been started.
+[04/11 10:25:25.320466][warning][283697][Pipeline.cpp:236] [CP9JA53000BM] Execute failure! A libobsensor_exception has occurred!
+ - where: Pipeline.cpp(236):start
+ - msg: The Color has already been started.
+ - type: N11libobsensor31unsupported_operation_exceptionE
+[04/11 10:25:25.320481][info][283697][Pipeline.cpp:336] [CP9JA53000BM] Try to stop pipeline!
+[04/11 10:25:25.320485][info][283697][Pipeline.cpp:312] [CP9JA53000BM] Try to stop streams!
+[04/11 10:25:25.320497][info][283697][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STOPPING@Depth
+[04/11 10:25:25.374567][info][283697][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STOPPED@Depth
+[04/11 10:25:25.374659][info][283697][Pipeline.cpp:326] [CP9JA53000BM] Sensor stream stopped, sensorType=Depth
+[04/11 10:25:25.374677][info][283697][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STOPPING@Color
+[04/11 10:25:25.416297][info][283697][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STOPPED@Color
+[04/11 10:25:25.416411][info][283697][Pipeline.cpp:326] [CP9JA53000BM] Sensor stream stopped, sensorType=Color
+[04/11 10:25:25.416421][info][283697][Pipeline.cpp:332] [CP9JA53000BM] Stop streams done!
+[04/11 10:25:25.416589][info][283697][Pipeline.cpp:356] [CP9JA53000BM] Stop pipeline done!
+[04/11 10:25:25.417290][info][283697][Pipeline.cpp:216] [CP9JA53000BM] Check and set config done!
+[04/11 10:25:25.417476][info][283697][Pipeline.cpp:254] [CP9JA53000BM] Try to start streams!
+[04/11 10:25:25.417493][info][283697][VideoSensor.cpp:58] [CP9JA53000BM] Try to start stream: {type: Color, format: MJPG, width: 1280, height: 720, fps: 30}
+[04/11 10:25:25.417510][info][283697][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STARTING@Color
+[04/11 10:25:25.417517][info][283697][VideoSensor.cpp:127] [CP9JA53000BM] Start backend stream: {type: Color, format: MJPG, width: 1280, height: 720, fps: 30}
+[04/11 10:25:25.418824][info][283697][VideoSensor.cpp:58] [CP9JA53000BM] Try to start stream: {type: Depth, format: Y16, width: 848, height: 480, fps: 30}
+[04/11 10:25:25.418859][info][283697][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STARTING@Depth
+[04/11 10:25:25.419593][info][283697][VideoSensor.cpp:127] [CP9JA53000BM] Start backend stream: {type: Depth, format: Z16, width: 848, height: 480, fps: 30}
+[04/11 10:25:25.435614][info][283697][Pipeline.cpp:270] [CP9JA53000BM] Start streams done!
+[04/11 10:25:25.435658][info][283697][Pipeline.cpp:238] [CP9JA53000BM] Pipeline start done!
+[04/11 10:25:25.522140][info][283735][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STREAMING@Depth
+[04/11 10:25:25.537700][info][283739][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STREAMING@Accel
+[04/11 10:25:25.537757][info][283739][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STREAMING@Gyro
+[04/11 10:25:26.154574][info][283734][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STREAMING@Color
+[04/11 10:25:28.557944][info][283735][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=28.947895fps
+[04/11 10:25:28.794362][info][283738][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=28.947895fps
+[04/11 10:25:29.024518][info][283734][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=25.154722fps
+[04/11 10:25:29.191405][info][283753][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=25.154722fps
+[04/11 10:25:30.553602][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=204.346100fps
+[04/11 10:25:30.553671][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=204.346100fps
+[04/11 10:25:33.563856][info][283735][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:25:33.799988][info][283738][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.970030fps
+[04/11 10:25:34.030398][info][283734][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:25:34.197313][info][283753][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/11 10:25:35.569575][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.754395fps
+[04/11 10:25:35.569629][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.754395fps
+[04/11 10:25:38.569753][info][283735][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:25:38.805941][info][283738][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/11 10:25:39.036312][info][283734][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:25:39.203201][info][283753][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/11 10:25:40.585696][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.754395fps
+[04/11 10:25:40.585789][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.754395fps
+[04/11 10:25:43.575673][info][283735][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:25:43.811961][info][283738][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/11 10:25:44.042234][info][283734][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:25:44.209191][info][283753][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/11 10:25:45.601593][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.754395fps
+[04/11 10:25:45.601661][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.754395fps
+[04/11 10:25:48.581751][info][283735][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:25:48.627082][info][183786][DeviceManager.cpp:339] Enable net device enumeration: true
+[04/11 10:25:48.706006][warning][284153][ObException.cpp:8] Cannot switch depth work mode while any stream is started. Please stop all stream first!
+[04/11 10:25:48.820536][info][283738][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.946098fps
+[04/11 10:25:49.048180][info][283734][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:25:49.172996][info][284153][Pipeline.cpp:42] [CP9JA53000BM] Pipeline created with device: {name: Gemini 336, sn: CP9JA53000BM}, @0x58A018364540
+[04/11 10:25:49.173067][info][284153][Pipeline.cpp:216] [CP9JA53000BM] Check and set config done!
+[04/11 10:25:49.173784][info][284153][Pipeline.cpp:254] [CP9JA53000BM] Try to start streams!
+[04/11 10:25:49.173825][info][284153][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STARTING@Accel
+[04/11 10:25:49.179201][info][283739][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STREAMING@Accel
+[04/11 10:25:49.180269][info][284153][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STARTING@Gyro
+[04/11 10:25:49.183104][info][284153][Pipeline.cpp:270] [CP9JA53000BM] Start streams done!
+[04/11 10:25:49.183128][info][284153][Pipeline.cpp:238] [CP9JA53000BM] Pipeline start done!
+[04/11 10:25:49.183241][info][284153][Pipeline.cpp:42] [CP9JA53000BM] Pipeline created with device: {name: Gemini 336, sn: CP9JA53000BM}, @0x763FA0686510
+[04/11 10:25:49.183339][info][284153][Pipeline.cpp:216] [CP9JA53000BM] Check and set config done!
+[04/11 10:25:49.183795][info][284153][Pipeline.cpp:254] [CP9JA53000BM] Try to start streams!
+[04/11 10:25:49.184153][info][284153][VideoSensor.cpp:58] [CP9JA53000BM] Try to start stream: {type: Color, format: MJPG, width: 1280, height: 720, fps: 30}
+[04/11 10:25:49.184166][warning][284153][ObException.cpp:8] The Color has already been started.
+[04/11 10:25:49.184197][warning][284153][Pipeline.cpp:236] [CP9JA53000BM] Execute failure! A libobsensor_exception has occurred!
+ - where: Pipeline.cpp(236):start
+ - msg: The Color has already been started.
+ - type: N11libobsensor31unsupported_operation_exceptionE
+[04/11 10:25:49.184213][info][284153][Pipeline.cpp:336] [CP9JA53000BM] Try to stop pipeline!
+[04/11 10:25:49.184216][info][284153][Pipeline.cpp:312] [CP9JA53000BM] Try to stop streams!
+[04/11 10:25:49.184225][info][284153][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STOPPING@Depth
+[04/11 10:25:49.200332][info][283739][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STREAMING@Gyro
+[04/11 10:25:49.212415][info][283753][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.382372fps
+[04/11 10:25:49.245461][info][284153][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STOPPED@Depth
+[04/11 10:25:49.248520][warning][283734][VideoSensor.cpp:184] [CP9JA53000BM] This frame will be dropped because jpg format verification failure! @Color
+[04/11 10:25:49.287098][info][284153][Pipeline.cpp:326] [CP9JA53000BM] Sensor stream stopped, sensorType=Depth
+[04/11 10:25:49.287155][info][284153][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STOPPING@Color
+[04/11 10:25:49.333043][info][284153][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STOPPED@Color
+[04/11 10:25:49.337119][info][284153][Pipeline.cpp:326] [CP9JA53000BM] Sensor stream stopped, sensorType=Color
+[04/11 10:25:49.337161][info][284153][Pipeline.cpp:332] [CP9JA53000BM] Stop streams done!
+[04/11 10:25:49.339072][info][284153][Pipeline.cpp:356] [CP9JA53000BM] Stop pipeline done!
+[04/11 10:25:49.339547][info][284153][Pipeline.cpp:216] [CP9JA53000BM] Check and set config done!
+[04/11 10:25:49.339801][info][284153][Pipeline.cpp:254] [CP9JA53000BM] Try to start streams!
+[04/11 10:25:49.339839][info][284153][VideoSensor.cpp:58] [CP9JA53000BM] Try to start stream: {type: Color, format: MJPG, width: 1280, height: 720, fps: 30}
+[04/11 10:25:49.339865][info][284153][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STARTING@Color
+[04/11 10:25:49.339874][info][284153][VideoSensor.cpp:127] [CP9JA53000BM] Start backend stream: {type: Color, format: MJPG, width: 1280, height: 720, fps: 30}
+[04/11 10:25:49.345324][info][284153][VideoSensor.cpp:58] [CP9JA53000BM] Try to start stream: {type: Depth, format: Y16, width: 848, height: 480, fps: 30}
+[04/11 10:25:49.346474][info][284153][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STARTING@Depth
+[04/11 10:25:49.346497][info][284153][VideoSensor.cpp:127] [CP9JA53000BM] Start backend stream: {type: Depth, format: Z16, width: 848, height: 480, fps: 30}
+[04/11 10:25:49.361873][info][284153][Pipeline.cpp:270] [CP9JA53000BM] Start streams done!
+[04/11 10:25:49.361928][info][284153][Pipeline.cpp:238] [CP9JA53000BM] Pipeline start done!
+[04/11 10:25:49.681263][info][284359][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STREAMING@Depth
+[04/11 10:25:50.080274][info][284357][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STREAMING@Color
+[04/11 10:25:50.609564][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=202.076675fps
+[04/11 10:25:50.609616][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=202.076675fps
+[04/11 10:25:53.585031][info][284359][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=27.178257fps
+[04/11 10:25:53.821258][info][284364][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=27.194561fps
+[04/11 10:25:54.051609][info][284357][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=25.184891fps
+[04/11 10:25:54.218496][info][284367][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=25.569317fps
+[04/11 10:25:55.617537][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:25:55.617593][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:25:58.590956][info][284359][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.970030fps
+[04/11 10:25:58.827046][info][284364][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/11 10:25:59.057494][info][284357][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:25:59.224419][info][284367][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/11 10:26:00.625553][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:26:00.625610][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:26:03.596858][info][284359][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:26:03.836122][info][284364][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.946098fps
+[04/11 10:26:04.063437][info][284357][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:26:04.230435][info][284367][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/11 10:26:05.633627][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:26:05.633794][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:26:06.330544][info][284608][LinuxUsbPal.cpp:335] Create PollingDeviceWatcher!
+[04/11 10:26:06.330647][info][284608][DeviceManager.cpp:25] Current found device(s): (1)
+[04/11 10:26:06.330656][info][284608][DeviceManager.cpp:34] 	- Name: Gemini 336, PID: 0x0803, SN/ID: CP9JA53000BM, Connection: USB3.2
+[04/11 10:26:06.330663][info][284608][DeviceManager.cpp:339] Enable net device enumeration: true
+[04/11 10:26:08.345664][info][284608][DeviceManager.cpp:25] Current device(s) list: (1)
+[04/11 10:26:08.345719][info][284608][DeviceManager.cpp:34] 	- Name: Gemini 336, PID: 0x0803, SN/ID: CP9JA53000BM, Connection: USB3.2
+[04/11 10:26:08.345728][info][284608][DeviceManager.cpp:339] Enable net device enumeration: true
+[04/11 10:26:08.376386][warning][285086][ObLibuvcDevicePort.cpp:71] uvc_open failed: [Path: 6-2-8.0, Return Code: -6]
+[04/11 10:26:08.382345][warning][285086][DeviceBase.cpp:343] Execute failure! A std::exception has occurred!
+ - where: DeviceBase.cpp(343):getComponent
+ - msg: uvc_open failed: [Path: 6-2-8.0, Return Code: -6]
+ - type: St13runtime_error
+[04/11 10:26:08.385808][warning][285086][ObLibuvcDevicePort.cpp:71] uvc_open failed: [Path: 6-2-8.0, Return Code: -6]
+[04/11 10:26:08.385862][warning][285086][DeviceBase.cpp:343] Execute failure! A std::exception has occurred!
+ - where: DeviceBase.cpp(343):getComponent
+ - msg: uvc_open failed: [Path: 6-2-8.0, Return Code: -6]
+ - type: St13runtime_error
+[04/11 10:26:08.602805][info][284359][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:26:08.840819][info][183786][DeviceManager.cpp:339] Enable net device enumeration: true
+[04/11 10:26:08.855036][info][284364][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=25.503088fps
+[04/11 10:26:08.954637][warning][285095][ObException.cpp:8] Cannot switch depth work mode while any stream is started. Please stop all stream first!
+[04/11 10:26:09.069750][info][284357][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:26:09.236911][info][284367][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/11 10:26:09.682085][info][285095][Pipeline.cpp:42] [CP9JA53000BM] Pipeline created with device: {name: Gemini 336, sn: CP9JA53000BM}, @0x763FE46FC010
+[04/11 10:26:09.682143][info][285095][Pipeline.cpp:216] [CP9JA53000BM] Check and set config done!
+[04/11 10:26:09.682293][info][285095][Pipeline.cpp:254] [CP9JA53000BM] Try to start streams!
+[04/11 10:26:09.682304][info][285095][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STARTING@Accel
+[04/11 10:26:09.683196][info][285095][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STARTING@Gyro
+[04/11 10:26:09.684216][info][285095][Pipeline.cpp:270] [CP9JA53000BM] Start streams done!
+[04/11 10:26:09.684234][info][285095][Pipeline.cpp:238] [CP9JA53000BM] Pipeline start done!
+[04/11 10:26:09.684298][info][285095][Pipeline.cpp:42] [CP9JA53000BM] Pipeline created with device: {name: Gemini 336, sn: CP9JA53000BM}, @0x763FE470DF90
+[04/11 10:26:09.684373][info][285095][Pipeline.cpp:216] [CP9JA53000BM] Check and set config done!
+[04/11 10:26:09.684609][info][285095][Pipeline.cpp:254] [CP9JA53000BM] Try to start streams!
+[04/11 10:26:09.684622][info][285095][VideoSensor.cpp:58] [CP9JA53000BM] Try to start stream: {type: Color, format: MJPG, width: 1280, height: 720, fps: 30}
+[04/11 10:26:09.684629][warning][285095][ObException.cpp:8] The Color has already been started.
+[04/11 10:26:09.684653][warning][285095][Pipeline.cpp:236] [CP9JA53000BM] Execute failure! A libobsensor_exception has occurred!
+ - where: Pipeline.cpp(236):start
+ - msg: The Color has already been started.
+ - type: N11libobsensor31unsupported_operation_exceptionE
+[04/11 10:26:09.684655][info][285095][Pipeline.cpp:336] [CP9JA53000BM] Try to stop pipeline!
+[04/11 10:26:09.684658][info][285095][Pipeline.cpp:312] [CP9JA53000BM] Try to stop streams!
+[04/11 10:26:09.684663][info][285095][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STOPPING@Depth
+[04/11 10:26:09.691813][info][283739][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STREAMING@Accel
+[04/11 10:26:09.691863][info][283739][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STREAMING@Gyro
+[04/11 10:26:09.737164][info][285095][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STOPPED@Depth
+[04/11 10:26:09.737235][info][285095][Pipeline.cpp:326] [CP9JA53000BM] Sensor stream stopped, sensorType=Depth
+[04/11 10:26:09.737247][info][285095][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STOPPING@Color
+[04/11 10:26:09.743860][info][285095][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STOPPED@Color
+[04/11 10:26:09.743907][info][285095][Pipeline.cpp:326] [CP9JA53000BM] Sensor stream stopped, sensorType=Color
+[04/11 10:26:09.743910][info][285095][Pipeline.cpp:332] [CP9JA53000BM] Stop streams done!
+[04/11 10:26:09.763885][info][285095][Pipeline.cpp:356] [CP9JA53000BM] Stop pipeline done!
+[04/11 10:26:09.764098][info][285095][Pipeline.cpp:216] [CP9JA53000BM] Check and set config done!
+[04/11 10:26:09.777802][info][285095][Pipeline.cpp:254] [CP9JA53000BM] Try to start streams!
+[04/11 10:26:09.777837][info][285095][VideoSensor.cpp:58] [CP9JA53000BM] Try to start stream: {type: Color, format: MJPG, width: 1280, height: 720, fps: 30}
+[04/11 10:26:09.777849][info][285095][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STARTING@Color
+[04/11 10:26:09.777855][info][285095][VideoSensor.cpp:127] [CP9JA53000BM] Start backend stream: {type: Color, format: MJPG, width: 1280, height: 720, fps: 30}
+[04/11 10:26:09.778911][info][285095][VideoSensor.cpp:58] [CP9JA53000BM] Try to start stream: {type: Depth, format: Y16, width: 848, height: 480, fps: 30}
+[04/11 10:26:09.778936][info][285095][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STARTING@Depth
+[04/11 10:26:09.778944][info][285095][VideoSensor.cpp:127] [CP9JA53000BM] Start backend stream: {type: Depth, format: Z16, width: 848, height: 480, fps: 30}
+[04/11 10:26:09.795749][info][285095][Pipeline.cpp:270] [CP9JA53000BM] Start streams done!
+[04/11 10:26:09.795787][info][285095][Pipeline.cpp:238] [CP9JA53000BM] Pipeline start done!
+[04/11 10:26:09.882043][info][285120][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STREAMING@Depth
+[04/11 10:26:10.515073][info][285119][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STREAMING@Color
+[04/11 10:26:10.641566][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=202.076675fps
+[04/11 10:26:10.641700][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=202.076675fps
+[04/11 10:26:13.619464][info][285120][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=28.901733fps
+[04/11 10:26:13.889125][info][285122][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=30.790625fps
+[04/11 10:26:14.085936][info][285119][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=25.119617fps
+[04/11 10:26:14.252993][info][285127][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=25.119617fps
+[04/11 10:26:15.649578][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:26:15.649744][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:26:18.625329][info][285120][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:26:18.894630][info][285122][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.970030fps
+[04/11 10:26:19.091856][info][285119][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:26:19.258746][info][285127][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/11 10:26:19.397923][warning][285086][ObLibuvcDevicePort.cpp:71] uvc_open failed: [Path: 6-2-8.0, Return Code: -6]
+[04/11 10:26:19.398009][warning][285086][DeviceBase.cpp:343] Execute failure! A std::exception has occurred!
+ - where: DeviceBase.cpp(343):getComponent
+ - msg: uvc_open failed: [Path: 6-2-8.0, Return Code: -6]
+ - type: St13runtime_error
+[04/11 10:26:19.398453][warning][285086][ObLibuvcDevicePort.cpp:71] uvc_open failed: [Path: 6-2-8.0, Return Code: -6]
+[04/11 10:26:19.398490][warning][285086][DeviceBase.cpp:343] Execute failure! A std::exception has occurred!
+ - where: DeviceBase.cpp(343):getComponent
+ - msg: uvc_open failed: [Path: 6-2-8.0, Return Code: -6]
+ - type: St13runtime_error
+[04/11 10:26:20.657550][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:26:20.657702][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:26:23.631221][info][285120][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:26:23.901896][info][285122][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.958059fps
+[04/11 10:26:24.097781][info][285119][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:26:24.264670][info][285127][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/11 10:26:25.665536][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:26:25.665671][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:26:28.637473][info][285120][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:26:28.906581][info][285122][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.970030fps
+[04/11 10:26:29.103672][info][285119][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:26:29.270571][info][285127][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/11 10:26:30.410269][warning][285086][ObLibuvcDevicePort.cpp:71] uvc_open failed: [Path: 6-2-8.0, Return Code: -6]
+[04/11 10:26:30.410347][warning][285086][DeviceBase.cpp:343] Execute failure! A std::exception has occurred!
+ - where: DeviceBase.cpp(343):getComponent
+ - msg: uvc_open failed: [Path: 6-2-8.0, Return Code: -6]
+ - type: St13runtime_error
+[04/11 10:26:30.410753][warning][285086][ObLibuvcDevicePort.cpp:71] uvc_open failed: [Path: 6-2-8.0, Return Code: -6]
+[04/11 10:26:30.410792][warning][285086][DeviceBase.cpp:343] Execute failure! A std::exception has occurred!
+ - where: DeviceBase.cpp(343):getComponent
+ - msg: uvc_open failed: [Path: 6-2-8.0, Return Code: -6]
+ - type: St13runtime_error
+[04/11 10:26:30.673535][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=202.076675fps
+[04/11 10:26:30.673668][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=202.076675fps
+[04/11 10:26:33.644188][info][285120][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.958059fps
+[04/11 10:26:33.912504][info][285122][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/11 10:26:34.109609][info][285119][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:26:34.276460][info][285127][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/11 10:26:35.681530][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:26:35.681649][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:26:38.649315][info][285120][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.970030fps
+[04/11 10:26:38.918702][info][285122][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/11 10:26:39.115479][info][285119][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:26:39.282371][info][285127][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/11 10:26:40.689592][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:26:40.689661][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:26:43.654842][info][285120][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.970030fps
+[04/11 10:26:43.924211][info][285122][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/11 10:26:44.121371][info][285119][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:26:44.318913][info][285127][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.785545fps
+[04/11 10:26:45.094041][info][285469][LinuxUsbPal.cpp:335] Create PollingDeviceWatcher!
+[04/11 10:26:45.095747][info][285469][DeviceManager.cpp:25] Current found device(s): (1)
+[04/11 10:26:45.095754][info][285469][DeviceManager.cpp:34] 	- Name: Gemini 336, PID: 0x0803, SN/ID: CP9JA53000BM, Connection: USB3.2
+[04/11 10:26:45.095760][info][285469][DeviceManager.cpp:339] Enable net device enumeration: true
+[04/11 10:26:45.697550][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:26:45.697633][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:26:47.111428][info][285469][DeviceManager.cpp:25] Current device(s) list: (1)
+[04/11 10:26:47.112542][info][285469][DeviceManager.cpp:34] 	- Name: Gemini 336, PID: 0x0803, SN/ID: CP9JA53000BM, Connection: USB3.2
+[04/11 10:26:47.112557][info][285469][DeviceManager.cpp:339] Enable net device enumeration: true
+[04/11 10:26:47.266223][warning][285961][ObLibuvcDevicePort.cpp:71] uvc_open failed: [Path: 6-2-8.0, Return Code: -6]
+[04/11 10:26:47.266960][warning][285961][DeviceBase.cpp:343] Execute failure! A std::exception has occurred!
+ - where: DeviceBase.cpp(343):getComponent
+ - msg: uvc_open failed: [Path: 6-2-8.0, Return Code: -6]
+ - type: St13runtime_error
+[04/11 10:26:47.275806][warning][285961][ObLibuvcDevicePort.cpp:71] uvc_open failed: [Path: 6-2-8.0, Return Code: -6]
+[04/11 10:26:47.275889][warning][285961][DeviceBase.cpp:343] Execute failure! A std::exception has occurred!
+ - where: DeviceBase.cpp(343):getComponent
+ - msg: uvc_open failed: [Path: 6-2-8.0, Return Code: -6]
+ - type: St13runtime_error
+[04/11 10:26:48.660885][info][285120][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:26:48.949699][info][285122][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=18.507462fps
+[04/11 10:26:49.127410][info][285119][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:26:49.331499][info][285127][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=20.147615fps
+[04/11 10:26:50.705574][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=202.076675fps
+[04/11 10:26:50.705944][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=202.076675fps
+[04/11 10:26:53.666668][info][285120][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:26:53.969743][info][285122][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=30.478088fps
+[04/11 10:26:54.133182][info][285119][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:26:54.333458][info][285127][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=30.187925fps
+[04/11 10:26:55.713603][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:26:55.713818][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:26:58.291398][warning][285961][ObLibuvcDevicePort.cpp:71] uvc_open failed: [Path: 6-2-8.0, Return Code: -6]
+[04/11 10:26:58.291462][warning][285961][DeviceBase.cpp:343] Execute failure! A std::exception has occurred!
+ - where: DeviceBase.cpp(343):getComponent
+ - msg: uvc_open failed: [Path: 6-2-8.0, Return Code: -6]
+ - type: St13runtime_error
+[04/11 10:26:58.291861][warning][285961][ObLibuvcDevicePort.cpp:71] uvc_open failed: [Path: 6-2-8.0, Return Code: -6]
+[04/11 10:26:58.291888][warning][285961][DeviceBase.cpp:343] Execute failure! A std::exception has occurred!
+ - where: DeviceBase.cpp(343):getComponent
+ - msg: uvc_open failed: [Path: 6-2-8.0, Return Code: -6]
+ - type: St13runtime_error
+[04/11 10:26:58.672548][info][285120][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:26:58.976225][info][285122][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.958059fps
+[04/11 10:26:59.139197][info][285119][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:26:59.339390][info][285127][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/11 10:27:00.721531][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:27:00.721658][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:27:03.680730][info][285120][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.952078fps
+[04/11 10:27:03.986389][info][285122][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.940119fps
+[04/11 10:27:04.145144][info][285119][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:27:04.345416][info][285127][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/11 10:27:05.729508][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:27:05.729568][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:27:08.684652][info][285120][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.976019fps
+[04/11 10:27:08.989439][info][285122][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.982012fps
+[04/11 10:27:09.151410][info][285119][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:27:09.351738][info][285127][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/11 10:27:10.737497][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=202.076675fps
+[04/11 10:27:10.737584][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=202.076675fps
+[04/11 10:27:13.690274][info][285120][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:27:13.995541][info][285122][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/11 10:27:14.157321][info][285119][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:27:14.357638][info][285127][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/11 10:27:15.745505][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:27:15.745574][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:27:18.696158][info][285120][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:27:19.001467][info][285122][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/11 10:27:19.163243][info][285119][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:27:19.363504][info][285127][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/11 10:27:20.753487][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:27:20.753547][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:27:23.702096][info][285120][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:27:24.004997][info][285122][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.982012fps
+[04/11 10:27:24.169176][info][285119][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:27:24.369447][info][285127][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/11 10:27:25.761465][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:27:25.761520][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:27:28.707985][info][285120][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.970030fps
+[04/11 10:27:29.010753][info][285122][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/11 10:27:29.174955][info][285119][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.970030fps
+[04/11 10:27:29.375233][info][285127][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/11 10:27:30.769445][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=202.076675fps
+[04/11 10:27:30.769500][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=202.076675fps
+[04/11 10:27:33.713911][info][285120][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:27:34.017222][info][285122][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.958059fps
+[04/11 10:27:34.181210][info][285119][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.958059fps
+[04/11 10:27:34.381548][info][285127][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/11 10:27:35.777422][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:27:35.777470][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:27:38.719831][info][285120][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:27:39.022427][info][285122][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.970030fps
+[04/11 10:27:39.187477][info][285119][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:27:39.387750][info][285127][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/11 10:27:40.785431][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:27:40.785488][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:27:43.725839][info][285120][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:27:44.028554][info][285122][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/11 10:27:44.193488][info][285119][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:27:44.393727][info][285127][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/11 10:27:45.793468][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:27:45.793531][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:27:48.731645][info][285120][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:27:49.034386][info][285122][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/11 10:27:49.198836][info][285119][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.970030fps
+[04/11 10:27:49.398985][info][285127][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.970030fps
+[04/11 10:27:50.801449][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=202.076675fps
+[04/11 10:27:50.801518][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=202.076675fps
+[04/11 10:27:53.737537][info][285120][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:27:54.040401][info][285122][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/11 10:27:54.204278][info][285119][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:27:54.404525][info][285127][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/11 10:27:55.809437][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:27:55.809498][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:27:58.743452][info][285120][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:27:59.046362][info][285122][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/11 10:27:59.210156][info][285119][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:27:59.410435][info][285127][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/11 10:28:00.817432][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:28:00.817484][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:28:03.749385][info][285120][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:28:04.052156][info][285122][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/11 10:28:04.216091][info][285119][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:28:04.416356][info][285127][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/11 10:28:05.825527][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:28:05.825612][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:28:08.755256][info][285120][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:28:09.059632][info][285122][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.958059fps
+[04/11 10:28:09.222008][info][285119][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.970030fps
+[04/11 10:28:09.422254][info][285127][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/11 10:28:10.833522][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=202.076675fps
+[04/11 10:28:10.833652][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=202.076675fps
+[04/11 10:28:13.761143][info][285120][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:28:14.063898][info][285122][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.976019fps
+[04/11 10:28:14.227875][info][285119][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:28:14.428185][info][285127][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/11 10:28:15.841568][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:28:15.841668][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:28:18.767064][info][285120][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:28:19.070172][info][285122][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.958059fps
+[04/11 10:28:19.233824][info][285119][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:28:19.434048][info][285127][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/11 10:28:20.849507][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:28:20.849609][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:28:23.772978][info][285120][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.970030fps
+[04/11 10:28:24.075813][info][285122][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.970030fps
+[04/11 10:28:24.239726][info][285119][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:28:24.440011][info][285127][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.970030fps
+[04/11 10:28:25.857893][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:28:25.858029][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.637054fps
+[04/11 10:28:28.779310][info][285120][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.958059fps
+[04/11 10:28:29.082526][info][285122][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.958059fps
+[04/11 10:28:29.245618][info][285119][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:28:29.445901][info][285127][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/11 10:28:30.865465][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=202.076675fps
+[04/11 10:28:30.865531][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=202.117035fps
+[04/11 10:28:33.784788][info][285120][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.970030fps
+[04/11 10:28:34.087824][info][285122][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.970030fps
+[04/11 10:28:34.251517][info][285119][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:28:34.451794][info][285127][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/11 10:28:35.866043][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.559692fps
+[04/11 10:28:35.866123][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.559692fps
+[04/11 10:28:36.599821][info][183786][DeviceManager.cpp:339] Enable net device enumeration: true
+[04/11 10:28:37.048388][warning][287424][ObException.cpp:8] Cannot switch depth work mode while any stream is started. Please stop all stream first!
+[04/11 10:28:38.792412][info][285120][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.952078fps
+[04/11 10:28:39.120792][info][285122][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=23.246572fps
+[04/11 10:28:39.257583][info][285119][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:28:39.465442][info][285127][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.916235fps
+[04/11 10:28:40.873638][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.717590fps
+[04/11 10:28:40.873964][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.717590fps
+[04/11 10:28:42.951328][info][287424][Pipeline.cpp:42] [CP9JA53000BM] Pipeline created with device: {name: Gemini 336, sn: CP9JA53000BM}, @0x763FB46C31D0
+[04/11 10:28:42.953153][info][287424][Pipeline.cpp:216] [CP9JA53000BM] Check and set config done!
+[04/11 10:28:42.953570][info][287424][Pipeline.cpp:254] [CP9JA53000BM] Try to start streams!
+[04/11 10:28:42.953593][info][287424][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STARTING@Accel
+[04/11 10:28:42.953639][info][283739][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STREAMING@Accel
+[04/11 10:28:42.954831][info][287424][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STARTING@Gyro
+[04/11 10:28:42.957793][info][287424][Pipeline.cpp:270] [CP9JA53000BM] Start streams done!
+[04/11 10:28:42.957846][info][287424][Pipeline.cpp:238] [CP9JA53000BM] Pipeline start done!
+[04/11 10:28:42.958207][info][287424][Pipeline.cpp:42] [CP9JA53000BM] Pipeline created with device: {name: Gemini 336, sn: CP9JA53000BM}, @0x763FB497F2B0
+[04/11 10:28:42.958391][info][287424][Pipeline.cpp:216] [CP9JA53000BM] Check and set config done!
+[04/11 10:28:42.959011][info][287424][Pipeline.cpp:254] [CP9JA53000BM] Try to start streams!
+[04/11 10:28:42.959038][info][287424][VideoSensor.cpp:58] [CP9JA53000BM] Try to start stream: {type: Color, format: MJPG, width: 1280, height: 720, fps: 30}
+[04/11 10:28:42.959051][warning][287424][ObException.cpp:8] The Color has already been started.
+[04/11 10:28:42.959078][warning][287424][Pipeline.cpp:236] [CP9JA53000BM] Execute failure! A libobsensor_exception has occurred!
+ - where: Pipeline.cpp(236):start
+ - msg: The Color has already been started.
+ - type: N11libobsensor31unsupported_operation_exceptionE
+[04/11 10:28:42.959084][info][287424][Pipeline.cpp:336] [CP9JA53000BM] Try to stop pipeline!
+[04/11 10:28:42.959087][info][287424][Pipeline.cpp:312] [CP9JA53000BM] Try to stop streams!
+[04/11 10:28:42.959097][info][287424][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STOPPING@Depth
+[04/11 10:28:42.968110][info][283739][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STREAMING@Gyro
+[04/11 10:28:43.016932][info][287424][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STOPPED@Depth
+[04/11 10:28:43.017286][info][287424][Pipeline.cpp:326] [CP9JA53000BM] Sensor stream stopped, sensorType=Depth
+[04/11 10:28:43.017363][info][287424][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STOPPING@Color
+[04/11 10:28:43.061158][info][287424][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STOPPED@Color
+[04/11 10:28:43.061302][info][287424][Pipeline.cpp:326] [CP9JA53000BM] Sensor stream stopped, sensorType=Color
+[04/11 10:28:43.061316][info][287424][Pipeline.cpp:332] [CP9JA53000BM] Stop streams done!
+[04/11 10:28:43.064132][info][287424][Pipeline.cpp:356] [CP9JA53000BM] Stop pipeline done!
+[04/11 10:28:43.064878][info][287424][Pipeline.cpp:216] [CP9JA53000BM] Check and set config done!
+[04/11 10:28:43.066197][info][287424][Pipeline.cpp:254] [CP9JA53000BM] Try to start streams!
+[04/11 10:28:43.066223][info][287424][VideoSensor.cpp:58] [CP9JA53000BM] Try to start stream: {type: Color, format: MJPG, width: 1280, height: 720, fps: 30}
+[04/11 10:28:43.066239][info][287424][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STARTING@Color
+[04/11 10:28:43.066245][info][287424][VideoSensor.cpp:127] [CP9JA53000BM] Start backend stream: {type: Color, format: MJPG, width: 1280, height: 720, fps: 30}
+[04/11 10:28:43.068754][info][287424][VideoSensor.cpp:58] [CP9JA53000BM] Try to start stream: {type: Depth, format: Y16, width: 848, height: 480, fps: 30}
+[04/11 10:28:43.068808][info][287424][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STARTING@Depth
+[04/11 10:28:43.068818][info][287424][VideoSensor.cpp:127] [CP9JA53000BM] Start backend stream: {type: Depth, format: Z16, width: 848, height: 480, fps: 30}
+[04/11 10:28:43.086138][info][287424][Pipeline.cpp:270] [CP9JA53000BM] Start streams done!
+[04/11 10:28:43.087339][info][287424][Pipeline.cpp:238] [CP9JA53000BM] Pipeline start done!
+[04/11 10:28:43.172382][info][287597][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STREAMING@Depth
+[04/11 10:28:43.770675][info][287596][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STREAMING@Color
+[04/11 10:28:43.804961][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=28.731045fps
+[04/11 10:28:44.141539][info][287599][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=25.293766fps
+[04/11 10:28:44.271256][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=25.329079fps
+[04/11 10:28:44.471388][info][287616][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=25.369556fps
+[04/11 10:28:45.889534][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.754395fps
+[04/11 10:28:45.889757][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.754395fps
+[04/11 10:28:48.810263][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:28:49.147182][info][287599][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/11 10:28:49.277017][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:28:49.477275][info][287616][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/11 10:28:50.905381][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.754395fps
+[04/11 10:28:50.905502][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.754395fps
+[04/11 10:28:53.816186][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:28:54.153633][info][287599][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/11 10:28:54.283060][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:28:54.483255][info][287616][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/11 10:28:55.913373][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=202.076675fps
+[04/11 10:28:55.913494][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=202.076675fps
+[04/11 10:28:58.822167][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:28:59.158213][info][287599][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.970030fps
+[04/11 10:28:59.288875][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.970030fps
+[04/11 10:28:59.489152][info][287616][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/11 10:29:00.921828][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:29:00.922267][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.637054fps
+[04/11 10:29:03.829174][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.958059fps
+[04/11 10:29:04.165256][info][287599][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.958059fps
+[04/11 10:29:04.294773][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:29:04.495206][info][287616][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/11 10:29:05.929383][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:29:05.929549][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.717590fps
+[04/11 10:29:08.833937][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.976019fps
+[04/11 10:29:09.170975][info][287599][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.970030fps
+[04/11 10:29:09.300859][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:29:09.501183][info][287616][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/11 10:29:10.937362][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:29:10.937435][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:29:13.839800][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:29:14.176731][info][287599][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/11 10:29:14.306558][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:29:14.506850][info][287616][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.970030fps
+[04/11 10:29:15.945363][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=202.076675fps
+[04/11 10:29:15.945434][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=202.076675fps
+[04/11 10:29:18.845692][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:29:19.182176][info][287599][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/11 10:29:19.312468][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:29:19.512730][info][287616][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/11 10:29:20.953342][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:29:20.953393][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:29:23.851594][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:29:24.318556][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:29:25.961326][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:29:25.961391][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:29:28.857498][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:29:29.324302][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:29:30.969345][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:29:30.969408][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:29:33.863397][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:29:34.330206][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:29:35.977364][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=202.076675fps
+[04/11 10:29:35.977465][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=202.076675fps
+[04/11 10:29:38.869403][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:29:39.336113][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:29:40.985341][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:29:40.985406][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:29:43.875229][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:29:44.342011][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.970030fps
+[04/11 10:29:45.993314][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:29:45.993376][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:29:48.881145][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:29:49.347941][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:29:51.001363][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:29:51.001425][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:29:53.887025][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:29:54.353829][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:29:56.009282][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=202.076675fps
+[04/11 10:29:56.009333][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=202.076675fps
+[04/11 10:29:58.893038][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:29:59.359745][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:30:01.017312][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:30:01.017384][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:30:03.898851][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.970030fps
+[04/11 10:30:04.365648][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:30:06.025266][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:30:06.025317][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:30:08.904739][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:30:09.371547][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:30:11.033289][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:30:11.033351][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:30:13.910648][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:30:14.377453][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:30:16.041297][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=202.076675fps
+[04/11 10:30:16.041396][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=202.076675fps
+[04/11 10:30:18.916640][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:30:19.383363][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:30:21.049258][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:30:21.049323][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:30:23.922497][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:30:24.389251][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:30:26.057281][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:30:26.057349][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:30:28.928388][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:30:29.395168][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:30:31.065338][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:30:31.065407][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:30:33.934426][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:30:34.401190][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:30:36.073242][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=202.076675fps
+[04/11 10:30:36.073295][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=202.076675fps
+[04/11 10:30:38.940222][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:30:39.407009][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.970030fps
+[04/11 10:30:41.081255][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:30:41.081301][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:30:43.946154][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:30:44.413009][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:30:46.089224][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:30:46.089281][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:30:48.952013][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:30:49.418817][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:30:51.097267][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:30:51.097332][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:30:53.958065][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:30:54.424738][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:30:56.113238][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.754395fps
+[04/11 10:30:56.113295][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.754395fps
+[04/11 10:30:58.963813][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.970030fps
+[04/11 10:30:59.430616][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:31:01.121226][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=202.076675fps
+[04/11 10:31:01.121285][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=202.076675fps
+[04/11 10:31:03.969709][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:31:04.436532][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:31:06.129195][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:31:06.129238][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:31:08.975666][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:31:09.442437][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:31:11.137225][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:31:11.137290][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:31:13.981531][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:31:14.448333][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:31:16.145230][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:31:16.145290][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:31:18.987442][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:31:19.454254][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:31:21.153202][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=202.076675fps
+[04/11 10:31:21.153263][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=202.076675fps
+[04/11 10:31:23.993361][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:31:24.460167][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:31:26.161204][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:31:26.161266][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:31:28.999512][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:31:29.466080][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:31:31.169213][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:31:31.169273][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:31:34.005191][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:31:34.471975][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.970030fps
+[04/11 10:31:36.177196][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:31:36.177258][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:31:39.011120][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:31:39.477906][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:31:41.185198][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=202.076675fps
+[04/11 10:31:41.185285][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=202.076675fps
+[04/11 10:31:44.016974][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.970030fps
+[04/11 10:31:44.483794][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:31:46.193159][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:31:46.193227][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:31:49.023702][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.958059fps
+[04/11 10:31:49.489706][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:31:51.201191][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:31:51.201250][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:31:54.028815][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.970030fps
+[04/11 10:31:54.495623][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:31:56.209263][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:31:56.209413][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:31:59.034722][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:31:59.501528][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:32:01.217182][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=202.076675fps
+[04/11 10:32:01.217239][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=202.076675fps
+[04/11 10:32:04.040629][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:32:04.507412][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:32:06.225146][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:32:06.225198][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:32:09.046535][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:32:09.513356][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:32:11.233212][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:32:11.233286][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:32:12.619882][info][289240][LinuxUsbPal.cpp:335] Create PollingDeviceWatcher!
+[04/11 10:32:12.620461][info][289240][DeviceManager.cpp:25] Current found device(s): (1)
+[04/11 10:32:12.620664][info][289240][DeviceManager.cpp:34] 	- Name: Gemini 336, PID: 0x0803, SN/ID: CP9JA53000BM, Connection: USB3.2
+[04/11 10:32:12.620673][info][289240][DeviceManager.cpp:339] Enable net device enumeration: true
+[04/11 10:32:14.052554][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:32:14.519329][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:32:14.663396][info][289240][DeviceManager.cpp:25] Current device(s) list: (1)
+[04/11 10:32:14.663455][info][289240][DeviceManager.cpp:34] 	- Name: Gemini 336, PID: 0x0803, SN/ID: CP9JA53000BM, Connection: USB3.2
+[04/11 10:32:14.663622][info][289240][DeviceManager.cpp:339] Enable net device enumeration: true
+[04/11 10:32:14.690492][warning][289766][ObLibuvcDevicePort.cpp:71] uvc_open failed: [Path: 6-2-8.0, Return Code: -6]
+[04/11 10:32:14.691089][warning][289766][DeviceBase.cpp:343] Execute failure! A std::exception has occurred!
+ - where: DeviceBase.cpp(343):getComponent
+ - msg: uvc_open failed: [Path: 6-2-8.0, Return Code: -6]
+ - type: St13runtime_error
+[04/11 10:32:14.692516][warning][289766][ObLibuvcDevicePort.cpp:71] uvc_open failed: [Path: 6-2-8.0, Return Code: -6]
+[04/11 10:32:14.692839][warning][289766][DeviceBase.cpp:343] Execute failure! A std::exception has occurred!
+ - where: DeviceBase.cpp(343):getComponent
+ - msg: uvc_open failed: [Path: 6-2-8.0, Return Code: -6]
+ - type: St13runtime_error
+[04/11 10:32:16.241163][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:32:16.241224][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:32:19.058365][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:32:19.525175][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:32:21.257172][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.754395fps
+[04/11 10:32:21.257233][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.754395fps
+[04/11 10:32:24.064321][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:32:24.531089][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:32:25.706572][warning][289766][ObLibuvcDevicePort.cpp:71] uvc_open failed: [Path: 6-2-8.0, Return Code: -6]
+[04/11 10:32:25.706649][warning][289766][DeviceBase.cpp:343] Execute failure! A std::exception has occurred!
+ - where: DeviceBase.cpp(343):getComponent
+ - msg: uvc_open failed: [Path: 6-2-8.0, Return Code: -6]
+ - type: St13runtime_error
+[04/11 10:32:25.707193][warning][289766][ObLibuvcDevicePort.cpp:71] uvc_open failed: [Path: 6-2-8.0, Return Code: -6]
+[04/11 10:32:25.707246][warning][289766][DeviceBase.cpp:343] Execute failure! A std::exception has occurred!
+ - where: DeviceBase.cpp(343):getComponent
+ - msg: uvc_open failed: [Path: 6-2-8.0, Return Code: -6]
+ - type: St13runtime_error
+[04/11 10:32:26.265264][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=202.076675fps
+[04/11 10:32:26.265413][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=202.076675fps
+[04/11 10:32:29.070182][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:32:29.537004][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.970030fps
+[04/11 10:32:31.273114][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:32:31.273173][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:32:34.076114][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:32:34.542951][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:32:36.281119][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:32:36.281176][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:32:36.718922][warning][289766][ObLibuvcDevicePort.cpp:71] uvc_open failed: [Path: 6-2-8.0, Return Code: -6]
+[04/11 10:32:36.719001][warning][289766][DeviceBase.cpp:343] Execute failure! A std::exception has occurred!
+ - where: DeviceBase.cpp(343):getComponent
+ - msg: uvc_open failed: [Path: 6-2-8.0, Return Code: -6]
+ - type: St13runtime_error
+[04/11 10:32:36.719432][warning][289766][ObLibuvcDevicePort.cpp:71] uvc_open failed: [Path: 6-2-8.0, Return Code: -6]
+[04/11 10:32:36.719470][warning][289766][DeviceBase.cpp:343] Execute failure! A std::exception has occurred!
+ - where: DeviceBase.cpp(343):getComponent
+ - msg: uvc_open failed: [Path: 6-2-8.0, Return Code: -6]
+ - type: St13runtime_error
+[04/11 10:32:39.081988][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.970030fps
+[04/11 10:32:39.548837][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:32:41.289189][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:32:41.289388][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:32:44.087986][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:32:44.554861][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:32:46.297111][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=202.076675fps
+[04/11 10:32:46.297169][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=202.076675fps
+[04/11 10:32:49.093813][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:32:49.560601][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:32:51.305123][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:32:51.305179][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:32:54.099718][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:32:54.566516][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:32:56.313082][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:32:56.313138][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:32:59.105660][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:32:59.572448][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:33:01.321129][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:33:01.321194][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:33:04.111528][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:33:04.578353][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:33:06.329132][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=202.076675fps
+[04/11 10:33:06.329195][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=202.076675fps
+[04/11 10:33:09.117505][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:33:09.584252][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:33:11.337060][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:33:11.337105][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:33:12.946158][info][290427][LinuxUsbPal.cpp:335] Create PollingDeviceWatcher!
+[04/11 10:33:12.946381][info][290427][DeviceManager.cpp:25] Current found device(s): (1)
+[04/11 10:33:12.946396][info][290427][DeviceManager.cpp:34] 	- Name: Gemini 336, PID: 0x0803, SN/ID: CP9JA53000BM, Connection: USB3.2
+[04/11 10:33:12.946404][info][290427][DeviceManager.cpp:339] Enable net device enumeration: true
+[04/11 10:33:14.123835][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:33:14.593050][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.946098fps
+[04/11 10:33:14.963595][info][290427][DeviceManager.cpp:25] Current device(s) list: (1)
+[04/11 10:33:14.963649][info][290427][DeviceManager.cpp:34] 	- Name: Gemini 336, PID: 0x0803, SN/ID: CP9JA53000BM, Connection: USB3.2
+[04/11 10:33:14.963659][info][290427][DeviceManager.cpp:339] Enable net device enumeration: true
+[04/11 10:33:14.992729][warning][290980][ObLibuvcDevicePort.cpp:71] uvc_open failed: [Path: 6-2-8.0, Return Code: -6]
+[04/11 10:33:14.992891][warning][290980][DeviceBase.cpp:343] Execute failure! A std::exception has occurred!
+ - where: DeviceBase.cpp(343):getComponent
+ - msg: uvc_open failed: [Path: 6-2-8.0, Return Code: -6]
+ - type: St13runtime_error
+[04/11 10:33:14.993805][warning][290980][ObLibuvcDevicePort.cpp:71] uvc_open failed: [Path: 6-2-8.0, Return Code: -6]
+[04/11 10:33:14.993901][warning][290980][DeviceBase.cpp:343] Execute failure! A std::exception has occurred!
+ - where: DeviceBase.cpp(343):getComponent
+ - msg: uvc_open failed: [Path: 6-2-8.0, Return Code: -6]
+ - type: St13runtime_error
+[04/11 10:33:16.345367][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:33:16.345473][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:33:19.129347][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:33:19.596126][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.982012fps
+[04/11 10:33:21.353096][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:33:21.353170][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:33:24.135238][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:33:24.601959][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.970030fps
+[04/11 10:33:26.007085][warning][290980][ObLibuvcDevicePort.cpp:71] uvc_open failed: [Path: 6-2-8.0, Return Code: -6]
+[04/11 10:33:26.007187][warning][290980][DeviceBase.cpp:343] Execute failure! A std::exception has occurred!
+ - where: DeviceBase.cpp(343):getComponent
+ - msg: uvc_open failed: [Path: 6-2-8.0, Return Code: -6]
+ - type: St13runtime_error
+[04/11 10:33:26.007632][warning][290980][ObLibuvcDevicePort.cpp:71] uvc_open failed: [Path: 6-2-8.0, Return Code: -6]
+[04/11 10:33:26.007676][warning][290980][DeviceBase.cpp:343] Execute failure! A std::exception has occurred!
+ - where: DeviceBase.cpp(343):getComponent
+ - msg: uvc_open failed: [Path: 6-2-8.0, Return Code: -6]
+ - type: St13runtime_error
+[04/11 10:33:26.361105][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=202.076675fps
+[04/11 10:33:26.361162][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=202.076675fps
+[04/11 10:33:29.141090][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:33:29.607901][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:33:31.369088][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:33:31.369250][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:33:34.147007][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.970030fps
+[04/11 10:33:34.613812][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:33:36.377211][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:33:36.377315][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:33:39.153137][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.958059fps
+[04/11 10:33:39.619794][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:33:41.385062][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:33:41.385128][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:33:44.158816][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.970030fps
+[04/11 10:33:44.625615][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:33:46.401055][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.754395fps
+[04/11 10:33:46.401116][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.754395fps
+[04/11 10:33:49.164759][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:33:49.631540][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:33:51.409038][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=202.076675fps
+[04/11 10:33:51.409090][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=202.076675fps
+[04/11 10:33:54.170877][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:33:54.638027][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.958059fps
+[04/11 10:33:55.472839][info][291410][LinuxUsbPal.cpp:335] Create PollingDeviceWatcher!
+[04/11 10:33:55.475197][info][291410][DeviceManager.cpp:25] Current found device(s): (1)
+[04/11 10:33:55.476265][info][291410][DeviceManager.cpp:34] 	- Name: Gemini 336, PID: 0x0803, SN/ID: CP9JA53000BM, Connection: USB3.2
+[04/11 10:33:55.476290][info][291410][DeviceManager.cpp:339] Enable net device enumeration: true
+[04/11 10:33:56.417296][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:33:56.417472][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:33:57.494180][info][291410][DeviceManager.cpp:25] Current device(s) list: (1)
+[04/11 10:33:57.494232][info][291410][DeviceManager.cpp:34] 	- Name: Gemini 336, PID: 0x0803, SN/ID: CP9JA53000BM, Connection: USB3.2
+[04/11 10:33:57.494240][info][291410][DeviceManager.cpp:339] Enable net device enumeration: true
+[04/11 10:33:57.550901][warning][291990][ObLibuvcDevicePort.cpp:71] uvc_open failed: [Path: 6-2-8.0, Return Code: -6]
+[04/11 10:33:57.551038][warning][291990][DeviceBase.cpp:343] Execute failure! A std::exception has occurred!
+ - where: DeviceBase.cpp(343):getComponent
+ - msg: uvc_open failed: [Path: 6-2-8.0, Return Code: -6]
+ - type: St13runtime_error
+[04/11 10:33:57.551857][warning][291990][ObLibuvcDevicePort.cpp:71] uvc_open failed: [Path: 6-2-8.0, Return Code: -6]
+[04/11 10:33:57.552023][warning][291990][DeviceBase.cpp:343] Execute failure! A std::exception has occurred!
+ - where: DeviceBase.cpp(343):getComponent
+ - msg: uvc_open failed: [Path: 6-2-8.0, Return Code: -6]
+ - type: St13runtime_error
+[04/11 10:33:59.176740][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:33:59.643332][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.970030fps
+[04/11 10:34:01.425069][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:34:01.425134][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:34:04.182439][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:34:04.649248][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:34:06.433059][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:34:06.433121][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:34:08.564399][warning][291990][ObLibuvcDevicePort.cpp:71] uvc_open failed: [Path: 6-2-8.0, Return Code: -6]
+[04/11 10:34:08.564463][warning][291990][DeviceBase.cpp:343] Execute failure! A std::exception has occurred!
+ - where: DeviceBase.cpp(343):getComponent
+ - msg: uvc_open failed: [Path: 6-2-8.0, Return Code: -6]
+ - type: St13runtime_error
+[04/11 10:34:08.564862][warning][291990][ObLibuvcDevicePort.cpp:71] uvc_open failed: [Path: 6-2-8.0, Return Code: -6]
+[04/11 10:34:08.564904][warning][291990][DeviceBase.cpp:343] Execute failure! A std::exception has occurred!
+ - where: DeviceBase.cpp(343):getComponent
+ - msg: uvc_open failed: [Path: 6-2-8.0, Return Code: -6]
+ - type: St13runtime_error
+[04/11 10:34:09.188351][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:34:09.655135][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:34:11.441016][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=202.076675fps
+[04/11 10:34:11.441072][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=202.076675fps
+[04/11 10:34:14.194384][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:34:14.661098][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:34:16.449026][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:34:16.449081][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:34:19.200161][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:34:19.666970][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.970030fps
+[04/11 10:34:21.456983][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.717590fps
+[04/11 10:34:21.457028][info][283739][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:34:24.206092][info][287597][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:34:24.672896][info][287596][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:34:48.385259][info][293587][LinuxUsbPal.cpp:335] Create PollingDeviceWatcher!
+[04/11 10:34:48.386948][info][293587][DeviceManager.cpp:25] Current found device(s): (1)
+[04/11 10:34:48.386963][info][293587][DeviceManager.cpp:34] 	- Name: Gemini 336, PID: 0x0803, SN/ID: CP9JA53000BM, Connection: USB3.2
+[04/11 10:34:48.386971][info][293587][DeviceManager.cpp:339] Enable net device enumeration: true
+[04/11 10:34:50.408898][info][293587][DeviceManager.cpp:25] Current device(s) list: (1)
+[04/11 10:34:50.408967][info][293587][DeviceManager.cpp:34] 	- Name: Gemini 336, PID: 0x0803, SN/ID: CP9JA53000BM, Connection: USB3.2
+[04/11 10:34:50.408976][info][293587][DeviceManager.cpp:339] Enable net device enumeration: true
+[04/11 10:34:50.438837][info][294156][DeviceBase.cpp:651] key: HwType,value:R1
+[04/11 10:34:50.438882][info][294156][DeviceBase.cpp:651] key: HwVer,value:V1.1
+[04/11 10:34:50.438893][info][294156][DeviceBase.cpp:651] key: IspFwVer,value:20241125
+[04/11 10:34:50.438899][info][294156][DeviceBase.cpp:651] key: IspNeedVer,value:20241125
+[04/11 10:34:50.612454][info][294156][DeviceManager.cpp:194] Device created successfully! Name: Gemini 336, PID: 0x0803, SN/ID: CP9JA53000BM FW: 1.4.00
+[04/11 10:34:50.773975][warning][294156][SensorBase.cpp:147] [CP9JA53000BM] Failed to update default stream profile for sensor due to no matching stream profile found
+[04/11 10:34:50.776013][warning][294156][SensorBase.cpp:147] [CP9JA53000BM] Failed to update default stream profile for sensor due to no matching stream profile found
+[04/11 10:34:51.376874][info][294156][Pipeline.cpp:42] [CP9JA53000BM] Pipeline created with device: {name: Gemini 336, sn: CP9JA53000BM}, @0x7718304C7BE0
+[04/11 10:34:51.377806][info][294156][Pipeline.cpp:216] [CP9JA53000BM] Check and set config done!
+[04/11 10:34:51.378178][info][294156][Pipeline.cpp:254] [CP9JA53000BM] Try to start streams!
+[04/11 10:34:51.378203][info][294156][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STARTING@Accel
+[04/11 10:34:51.379595][info][294156][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STARTING@Gyro
+[04/11 10:34:51.380895][info][294156][Pipeline.cpp:270] [CP9JA53000BM] Start streams done!
+[04/11 10:34:51.380918][info][294156][Pipeline.cpp:238] [CP9JA53000BM] Pipeline start done!
+[04/11 10:34:51.381074][info][294156][Pipeline.cpp:42] [CP9JA53000BM] Pipeline created with device: {name: Gemini 336, sn: CP9JA53000BM}, @0x77186803F9C0
+[04/11 10:34:51.381202][info][294156][Pipeline.cpp:216] [CP9JA53000BM] Check and set config done!
+[04/11 10:34:51.381346][info][294156][Pipeline.cpp:254] [CP9JA53000BM] Try to start streams!
+[04/11 10:34:51.381360][info][294156][VideoSensor.cpp:58] [CP9JA53000BM] Try to start stream: {type: Color, format: MJPG, width: 1280, height: 720, fps: 30}
+[04/11 10:34:51.381370][info][294156][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STARTING@Color
+[04/11 10:34:51.381375][info][294156][VideoSensor.cpp:127] [CP9JA53000BM] Start backend stream: {type: Color, format: MJPG, width: 1280, height: 720, fps: 30}
+[04/11 10:34:51.383184][info][294156][VideoSensor.cpp:58] [CP9JA53000BM] Try to start stream: {type: Depth, format: Y16, width: 848, height: 480, fps: 30}
+[04/11 10:34:51.383213][info][294156][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STARTING@Depth
+[04/11 10:34:51.383220][info][294156][VideoSensor.cpp:127] [CP9JA53000BM] Start backend stream: {type: Depth, format: Z16, width: 848, height: 480, fps: 30}
+[04/11 10:34:51.384701][info][294156][Pipeline.cpp:270] [CP9JA53000BM] Start streams done!
+[04/11 10:34:51.384729][info][294156][Pipeline.cpp:238] [CP9JA53000BM] Pipeline start done!
+[04/11 10:34:51.484065][info][294200][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STREAMING@Depth
+[04/11 10:34:51.529152][info][294204][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STREAMING@Gyro
+[04/11 10:34:51.529215][info][294204][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STREAMING@Accel
+[04/11 10:34:51.922048][info][294199][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STREAMING@Color
+[04/11 10:34:56.489246][info][294200][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=30.163803fps
+[04/11 10:34:56.494538][info][294202][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=30.163803fps
+[04/11 10:34:56.541404][info][294204][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=202.114914fps
+[04/11 10:34:56.541757][info][294204][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=202.114914fps
+[04/11 10:34:56.956215][info][294199][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.996027fps
+[04/11 10:34:57.122211][info][294207][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=31.007751fps
+[04/11 10:35:01.494707][info][294200][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.970030fps
+[04/11 10:35:01.498319][info][294202][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.976019fps
+[04/11 10:35:01.545049][info][294204][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.838516fps
+[04/11 10:35:01.545276][info][294204][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.838516fps
+[04/11 10:35:01.961985][info][294199][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.970030fps
+[04/11 10:35:02.128326][info][294207][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/11 10:35:06.500756][info][294200][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:35:06.503836][info][294202][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.970030fps
+[04/11 10:35:06.553052][info][294204][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:35:06.553264][info][294204][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:35:06.967090][info][294199][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:35:07.133953][info][294207][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.970030fps
+[04/11 10:35:24.870828][info][295859][LinuxUsbPal.cpp:335] Create PollingDeviceWatcher!
+[04/11 10:35:24.870992][info][295859][DeviceManager.cpp:25] Current found device(s): (1)
+[04/11 10:35:24.871006][info][295859][DeviceManager.cpp:34] 	- Name: Gemini 336, PID: 0x0803, SN/ID: CP9JA53000BM, Connection: USB3.2
+[04/11 10:35:24.871017][info][295859][DeviceManager.cpp:339] Enable net device enumeration: true
+[04/11 10:35:26.894501][info][295859][DeviceManager.cpp:25] Current device(s) list: (1)
+[04/11 10:35:26.894567][info][295859][DeviceManager.cpp:34] 	- Name: Gemini 336, PID: 0x0803, SN/ID: CP9JA53000BM, Connection: USB3.2
+[04/11 10:35:26.894575][info][295859][DeviceManager.cpp:339] Enable net device enumeration: true
+[04/11 10:35:26.969612][info][296440][DeviceBase.cpp:651] key: HwType,value:R1
+[04/11 10:35:26.969658][info][296440][DeviceBase.cpp:651] key: HwVer,value:V1.1
+[04/11 10:35:26.969663][info][296440][DeviceBase.cpp:651] key: IspFwVer,value:20241125
+[04/11 10:35:26.969668][info][296440][DeviceBase.cpp:651] key: IspNeedVer,value:20241125
+[04/11 10:35:27.142128][info][296440][DeviceManager.cpp:194] Device created successfully! Name: Gemini 336, PID: 0x0803, SN/ID: CP9JA53000BM FW: 1.4.00
+[04/11 10:35:27.452195][warning][296440][SensorBase.cpp:147] [CP9JA53000BM] Failed to update default stream profile for sensor due to no matching stream profile found
+[04/11 10:35:27.453235][warning][296440][SensorBase.cpp:147] [CP9JA53000BM] Failed to update default stream profile for sensor due to no matching stream profile found
+[04/11 10:35:27.969553][info][296440][Pipeline.cpp:42] [CP9JA53000BM] Pipeline created with device: {name: Gemini 336, sn: CP9JA53000BM}, @0x76E9384F4C40
+[04/11 10:35:27.969639][info][296440][Pipeline.cpp:216] [CP9JA53000BM] Check and set config done!
+[04/11 10:35:27.969903][info][296440][Pipeline.cpp:254] [CP9JA53000BM] Try to start streams!
+[04/11 10:35:27.970026][info][296440][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STARTING@Accel
+[04/11 10:35:27.972175][info][296440][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STARTING@Gyro
+[04/11 10:35:27.975045][info][296440][Pipeline.cpp:270] [CP9JA53000BM] Start streams done!
+[04/11 10:35:27.975089][info][296440][Pipeline.cpp:238] [CP9JA53000BM] Pipeline start done!
+[04/11 10:35:27.975215][info][296440][Pipeline.cpp:42] [CP9JA53000BM] Pipeline created with device: {name: Gemini 336, sn: CP9JA53000BM}, @0x76E9384CCE30
+[04/11 10:35:27.975354][info][296440][Pipeline.cpp:216] [CP9JA53000BM] Check and set config done!
+[04/11 10:35:27.975641][info][296440][Pipeline.cpp:254] [CP9JA53000BM] Try to start streams!
+[04/11 10:35:27.975661][info][296440][VideoSensor.cpp:58] [CP9JA53000BM] Try to start stream: {type: Color, format: MJPG, width: 1280, height: 720, fps: 30}
+[04/11 10:35:27.975679][info][296440][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STARTING@Color
+[04/11 10:35:27.975688][info][296440][VideoSensor.cpp:127] [CP9JA53000BM] Start backend stream: {type: Color, format: MJPG, width: 1280, height: 720, fps: 30}
+[04/11 10:35:27.977942][info][296440][VideoSensor.cpp:58] [CP9JA53000BM] Try to start stream: {type: Depth, format: Y16, width: 848, height: 480, fps: 30}
+[04/11 10:35:27.978000][info][296440][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STARTING@Depth
+[04/11 10:35:27.978012][info][296440][VideoSensor.cpp:127] [CP9JA53000BM] Start backend stream: {type: Depth, format: Z16, width: 848, height: 480, fps: 30}
+[04/11 10:35:27.980584][info][296440][Pipeline.cpp:270] [CP9JA53000BM] Start streams done!
+[04/11 10:35:27.980634][info][296440][Pipeline.cpp:238] [CP9JA53000BM] Pipeline start done!
+[04/11 10:35:28.079180][info][296495][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STREAMING@Depth
+[04/11 10:35:28.121100][info][296499][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STREAMING@Gyro
+[04/11 10:35:28.121160][info][296499][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STREAMING@Accel
+[04/11 10:35:28.516990][info][296494][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STREAMING@Color
+[04/11 10:35:33.083709][info][296495][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=30.169830fps
+[04/11 10:35:33.087408][info][296497][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=30.181892fps
+[04/11 10:35:33.129127][info][296499][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=202.276367fps
+[04/11 10:35:33.129383][info][296499][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=202.276367fps
+[04/11 10:35:33.550285][info][296494][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.996027fps
+[04/11 10:35:33.716991][info][296502][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=31.026255fps
+[04/11 10:35:38.089763][info][296495][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:35:38.092739][info][296497][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.970030fps
+[04/11 10:35:38.137329][info][296499][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:35:38.137659][info][296499][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:35:38.556095][info][296494][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:35:38.723247][info][296502][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.958059fps
+[04/11 10:35:43.099218][info][296495][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.940119fps
+[04/11 10:35:43.122884][info][296497][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=26.640158fps
+[04/11 10:35:43.138568][info][296499][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.559692fps
+[04/11 10:35:43.138731][info][296499][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.759644fps
+[04/11 10:35:43.562367][info][296494][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:35:43.734484][info][296502][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.934143fps
+[04/11 10:35:48.101412][info][296495][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.988007fps
+[04/11 10:35:48.138027][info][296497][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=31.897928fps
+[04/11 10:35:48.153018][info][296499][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.635422fps
+[04/11 10:35:48.153233][info][296499][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.794617fps
+[04/11 10:35:48.567812][info][296494][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.970030fps
+[04/11 10:35:48.768081][info][296502][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.996027fps
+[04/11 10:35:53.107306][info][296495][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:35:53.143285][info][296497][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.970030fps
+[04/11 10:35:53.153166][info][296499][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=202.159576fps
+[04/11 10:35:53.160988][info][296499][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=202.117035fps
+[04/11 10:35:53.573700][info][296494][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:35:53.774040][info][296502][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/11 10:35:58.113187][info][296495][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:35:58.150141][info][296497][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.958059fps
+[04/11 10:35:58.161455][info][296499][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.477646fps
+[04/11 10:35:58.161835][info][296499][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.559692fps
+[04/11 10:35:58.579632][info][296494][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:35:58.779982][info][296502][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.970030fps
+[04/11 10:36:03.119092][info][296495][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:36:03.155346][info][296497][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.970030fps
+[04/11 10:36:03.169105][info][296499][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:36:03.169416][info][296499][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:36:03.585470][info][296494][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:36:03.785795][info][296502][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/11 10:36:08.125033][info][296495][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:36:08.161151][info][296497][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/11 10:36:08.184898][info][296499][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.794617fps
+[04/11 10:36:08.185005][info][296499][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.754395fps
+[04/11 10:36:08.592144][info][296494][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.958059fps
+[04/11 10:36:08.792477][info][296502][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.958059fps
+[04/11 10:36:13.130894][info][296495][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.970030fps
+[04/11 10:36:13.167339][info][296497][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/11 10:36:13.192887][info][296499][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=202.076675fps
+[04/11 10:36:13.192995][info][296499][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=202.117035fps
+[04/11 10:36:13.597973][info][296494][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.970030fps
+[04/11 10:36:13.798176][info][296502][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/11 10:36:18.137468][info][296495][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.958059fps
+[04/11 10:36:18.173096][info][296497][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/11 10:36:18.193304][info][296499][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.559692fps
+[04/11 10:36:18.193413][info][296499][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.759644fps
+[04/11 10:36:18.603300][info][296494][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:36:18.803848][info][296502][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.970030fps
+[04/11 10:36:56.421798][info][298863][LinuxUsbPal.cpp:335] Create PollingDeviceWatcher!
+[04/11 10:36:56.421835][info][298863][DeviceManager.cpp:25] Current found device(s): (1)
+[04/11 10:36:56.421840][info][298863][DeviceManager.cpp:34] 	- Name: Gemini 336, PID: 0x0803, SN/ID: CP9JA53000BM, Connection: USB3.2
+[04/11 10:36:56.421845][info][298863][DeviceManager.cpp:339] Enable net device enumeration: true
+[04/11 10:36:58.442414][info][298863][DeviceManager.cpp:25] Current device(s) list: (1)
+[04/11 10:36:58.442818][info][298863][DeviceManager.cpp:34] 	- Name: Gemini 336, PID: 0x0803, SN/ID: CP9JA53000BM, Connection: USB3.2
+[04/11 10:36:58.442841][info][298863][DeviceManager.cpp:339] Enable net device enumeration: true
+[04/11 10:36:58.480827][info][299444][DeviceBase.cpp:651] key: HwType,value:R1
+[04/11 10:36:58.480882][info][299444][DeviceBase.cpp:651] key: HwVer,value:V1.1
+[04/11 10:36:58.480908][info][299444][DeviceBase.cpp:651] key: IspFwVer,value:20241125
+[04/11 10:36:58.480912][info][299444][DeviceBase.cpp:651] key: IspNeedVer,value:20241125
+[04/11 10:36:58.650020][info][299444][DeviceManager.cpp:194] Device created successfully! Name: Gemini 336, PID: 0x0803, SN/ID: CP9JA53000BM FW: 1.4.00
+[04/11 10:36:58.872927][warning][299444][SensorBase.cpp:147] [CP9JA53000BM] Failed to update default stream profile for sensor due to no matching stream profile found
+[04/11 10:36:58.874095][warning][299444][SensorBase.cpp:147] [CP9JA53000BM] Failed to update default stream profile for sensor due to no matching stream profile found
+[04/11 10:36:59.486156][info][299444][Pipeline.cpp:42] [CP9JA53000BM] Pipeline created with device: {name: Gemini 336, sn: CP9JA53000BM}, @0x72DBBC49A3D0
+[04/11 10:36:59.486218][info][299444][Pipeline.cpp:216] [CP9JA53000BM] Check and set config done!
+[04/11 10:36:59.486444][info][299444][Pipeline.cpp:254] [CP9JA53000BM] Try to start streams!
+[04/11 10:36:59.486460][info][299444][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STARTING@Accel
+[04/11 10:36:59.487726][info][299444][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STARTING@Gyro
+[04/11 10:36:59.488498][info][299444][Pipeline.cpp:270] [CP9JA53000BM] Start streams done!
+[04/11 10:36:59.488504][info][299444][Pipeline.cpp:238] [CP9JA53000BM] Pipeline start done!
+[04/11 10:36:59.488561][info][299444][Pipeline.cpp:42] [CP9JA53000BM] Pipeline created with device: {name: Gemini 336, sn: CP9JA53000BM}, @0x72DBBC49A2B0
+[04/11 10:36:59.488615][info][299444][Pipeline.cpp:216] [CP9JA53000BM] Check and set config done!
+[04/11 10:36:59.488793][info][299444][Pipeline.cpp:254] [CP9JA53000BM] Try to start streams!
+[04/11 10:36:59.488804][info][299444][VideoSensor.cpp:58] [CP9JA53000BM] Try to start stream: {type: Color, format: MJPG, width: 1280, height: 720, fps: 30}
+[04/11 10:36:59.488811][info][299444][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STARTING@Color
+[04/11 10:36:59.488815][info][299444][VideoSensor.cpp:127] [CP9JA53000BM] Start backend stream: {type: Color, format: MJPG, width: 1280, height: 720, fps: 30}
+[04/11 10:36:59.489885][info][299444][VideoSensor.cpp:58] [CP9JA53000BM] Try to start stream: {type: Depth, format: Y16, width: 848, height: 480, fps: 30}
+[04/11 10:36:59.489896][info][299444][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STARTING@Depth
+[04/11 10:36:59.489901][info][299444][VideoSensor.cpp:127] [CP9JA53000BM] Start backend stream: {type: Depth, format: Z16, width: 848, height: 480, fps: 30}
+[04/11 10:36:59.490990][info][299444][Pipeline.cpp:270] [CP9JA53000BM] Start streams done!
+[04/11 10:36:59.490996][info][299444][Pipeline.cpp:238] [CP9JA53000BM] Pipeline start done!
+[04/11 10:36:59.591615][info][299506][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STREAMING@Depth
+[04/11 10:36:59.633035][info][299512][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STREAMING@Gyro
+[04/11 10:36:59.633102][info][299512][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STREAMING@Accel
+[04/11 10:37:00.030042][info][299505][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STREAMING@Color
+[04/11 10:37:04.596501][info][299506][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=30.169830fps
+[04/11 10:37:04.599488][info][299508][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=30.175858fps
+[04/11 10:37:04.641603][info][299512][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.876999fps
+[04/11 10:37:04.641817][info][299512][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.876999fps
+[04/11 10:37:05.062897][info][299505][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=30.007948fps
+[04/11 10:37:05.196351][info][299517][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=30.987606fps
+[04/11 10:37:09.603297][info][299506][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.958059fps
+[04/11 10:37:09.612752][info][299508][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.922203fps
+[04/11 10:37:09.649068][info][299512][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=202.076675fps
+[04/11 10:37:09.649321][info][299512][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=202.076675fps
+[04/11 10:37:10.068744][info][299505][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:37:10.203230][info][299517][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.958059fps
+[04/11 10:37:14.608311][info][299506][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.970030fps
+[04/11 10:37:14.644938][info][299508][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=30.007948fps
+[04/11 10:37:14.657313][info][299512][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:37:14.657849][info][299512][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:37:15.074885][info][299505][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:37:15.208229][info][299517][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.970030fps
+[04/11 10:37:19.614289][info][299506][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:37:19.651202][info][299508][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.958059fps
+[04/11 10:37:19.664927][info][299512][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.717590fps
+[04/11 10:37:19.665107][info][299512][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:37:20.080579][info][299505][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:37:20.214387][info][299517][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/11 10:37:24.620212][info][299506][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:37:24.658462][info][299508][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.958059fps
+[04/11 10:37:24.665079][info][299512][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.959610fps
+[04/11 10:37:24.680947][info][299512][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.794617fps
+[04/11 10:37:25.086708][info][299505][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:37:25.220890][info][299517][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/11 10:37:29.627143][info][299506][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.958059fps
+[04/11 10:37:29.673356][info][299512][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.277954fps
+[04/11 10:37:29.675859][info][299508][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=27.705799fps
+[04/11 10:37:29.697266][info][299512][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.315521fps
+[04/11 10:37:30.092403][info][299505][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:37:30.239822][info][299517][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.886431fps
+[04/11 10:37:34.632170][info][299506][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.970030fps
+[04/11 10:37:34.680930][info][299512][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.717590fps
+[04/11 10:37:34.702393][info][299508][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=32.027054fps
+[04/11 10:37:34.713634][info][299512][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.754395fps
+[04/11 10:37:35.098261][info][299505][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:37:35.265176][info][299517][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=30.043772fps
+[04/11 10:37:39.637832][info][299506][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.970030fps
+[04/11 10:37:39.682170][info][299512][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=202.119156fps
+[04/11 10:37:39.708086][info][299508][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/11 10:37:39.721525][info][299512][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=202.076675fps
+[04/11 10:37:40.104148][info][299505][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:37:40.271058][info][299517][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/11 10:37:44.646720][info][299506][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.946098fps
+[04/11 10:37:44.687676][info][299512][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.198792fps
+[04/11 10:37:44.722544][info][299512][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.359726fps
+[04/11 10:37:44.834322][info][299508][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=28.092079fps
+[04/11 10:37:45.110239][info][299505][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:37:45.288873][info][299517][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.898344fps
+[04/11 10:37:49.649756][info][299506][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.982012fps
+[04/11 10:37:49.688817][info][299512][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.959610fps
+[04/11 10:37:49.729034][info][299512][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.917313fps
+[04/11 10:37:49.856690][info][299508][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=31.262445fps
+[04/11 10:37:50.115922][info][299505][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.970030fps
+[04/11 10:37:50.316394][info][299517][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=30.031822fps
+[04/11 10:37:54.656208][info][299506][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.958059fps
+[04/11 10:37:54.704939][info][299512][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.754395fps
+[04/11 10:37:54.737306][info][299512][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=202.076675fps
+[04/11 10:37:54.859331][info][299508][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.982012fps
+[04/11 10:37:55.121886][info][299505][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:37:55.322364][info][299517][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/11 10:37:59.661412][info][299506][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.970030fps
+[04/11 10:37:59.705249][info][299512][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=202.159576fps
+[04/11 10:37:59.745560][info][299512][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 10:37:59.864254][info][299508][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.970030fps
+[04/11 10:38:00.127843][info][299505][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:38:00.328021][info][299517][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/11 10:38:04.667965][info][299506][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 10:38:04.713478][info][299512][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.477646fps
+[04/11 10:38:04.746451][info][299512][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.559692fps
+[04/11 10:38:04.871770][info][299508][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.958059fps
+[04/11 10:38:05.133731][info][299505][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:38:05.333973][info][299517][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.970030fps
+[04/11 10:38:09.674147][info][299506][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.958059fps
+[04/11 10:38:09.721124][info][299512][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 10:38:09.762965][info][299512][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.754395fps
+[04/11 10:38:09.876341][info][299508][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.970030fps
+[04/11 10:38:10.139580][info][299505][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 10:38:10.343969][info][299517][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.940119fps
+[04/11 11:07:56.303673][info][304181][LinuxUsbPal.cpp:335] Create PollingDeviceWatcher!
+[04/11 11:07:56.303746][info][304181][DeviceManager.cpp:25] Current found device(s): (1)
+[04/11 11:07:56.303757][info][304181][DeviceManager.cpp:34] 	- Name: Gemini 336, PID: 0x0803, SN/ID: CP9JA53000BM, Connection: USB3.2
+[04/11 11:07:56.303764][info][304181][DeviceManager.cpp:339] Enable net device enumeration: true
+[04/11 11:07:58.348735][info][304181][DeviceManager.cpp:25] Current device(s) list: (1)
+[04/11 11:07:58.348827][info][304181][DeviceManager.cpp:34] 	- Name: Gemini 336, PID: 0x0803, SN/ID: CP9JA53000BM, Connection: USB3.2
+[04/11 11:07:58.348837][info][304181][DeviceManager.cpp:339] Enable net device enumeration: true
+[04/11 11:07:58.391672][info][304772][DeviceBase.cpp:651] key: HwType,value:R1
+[04/11 11:07:58.391710][info][304772][DeviceBase.cpp:651] key: HwVer,value:V1.1
+[04/11 11:07:58.391716][info][304772][DeviceBase.cpp:651] key: IspFwVer,value:20241125
+[04/11 11:07:58.391722][info][304772][DeviceBase.cpp:651] key: IspNeedVer,value:20241125
+[04/11 11:07:58.559863][info][304772][DeviceManager.cpp:194] Device created successfully! Name: Gemini 336, PID: 0x0803, SN/ID: CP9JA53000BM FW: 1.4.00
+[04/11 11:07:58.867175][warning][304772][SensorBase.cpp:147] [CP9JA53000BM] Failed to update default stream profile for sensor due to no matching stream profile found
+[04/11 11:07:58.868076][warning][304772][SensorBase.cpp:147] [CP9JA53000BM] Failed to update default stream profile for sensor due to no matching stream profile found
+[04/11 11:07:59.641133][info][304772][Pipeline.cpp:42] [CP9JA53000BM] Pipeline created with device: {name: Gemini 336, sn: CP9JA53000BM}, @0x7670AC497850
+[04/11 11:07:59.641837][info][304772][Pipeline.cpp:216] [CP9JA53000BM] Check and set config done!
+[04/11 11:07:59.642626][info][304772][Pipeline.cpp:254] [CP9JA53000BM] Try to start streams!
+[04/11 11:07:59.642654][info][304772][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STARTING@Accel
+[04/11 11:07:59.644071][info][304772][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STARTING@Gyro
+[04/11 11:07:59.645040][info][304772][Pipeline.cpp:270] [CP9JA53000BM] Start streams done!
+[04/11 11:07:59.645064][info][304772][Pipeline.cpp:238] [CP9JA53000BM] Pipeline start done!
+[04/11 11:07:59.645193][info][304772][Pipeline.cpp:42] [CP9JA53000BM] Pipeline created with device: {name: Gemini 336, sn: CP9JA53000BM}, @0x7670AC497730
+[04/11 11:07:59.645285][info][304772][Pipeline.cpp:216] [CP9JA53000BM] Check and set config done!
+[04/11 11:07:59.645474][info][304772][Pipeline.cpp:254] [CP9JA53000BM] Try to start streams!
+[04/11 11:07:59.645521][info][304772][VideoSensor.cpp:58] [CP9JA53000BM] Try to start stream: {type: Color, format: MJPG, width: 1280, height: 720, fps: 30}
+[04/11 11:07:59.645535][info][304772][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STARTING@Color
+[04/11 11:07:59.645542][info][304772][VideoSensor.cpp:127] [CP9JA53000BM] Start backend stream: {type: Color, format: MJPG, width: 1280, height: 720, fps: 30}
+[04/11 11:07:59.650449][info][304772][VideoSensor.cpp:58] [CP9JA53000BM] Try to start stream: {type: Depth, format: Y16, width: 848, height: 480, fps: 30}
+[04/11 11:07:59.650499][info][304772][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STARTING@Depth
+[04/11 11:07:59.650507][info][304772][VideoSensor.cpp:127] [CP9JA53000BM] Start backend stream: {type: Depth, format: Z16, width: 848, height: 480, fps: 30}
+[04/11 11:07:59.652297][info][304772][Pipeline.cpp:270] [CP9JA53000BM] Start streams done!
+[04/11 11:07:59.652328][info][304772][Pipeline.cpp:238] [CP9JA53000BM] Pipeline start done!
+[04/11 11:07:59.752334][info][304809][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STREAMING@Depth
+[04/11 11:07:59.791087][info][304813][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STREAMING@Accel
+[04/11 11:07:59.791142][info][304813][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STREAMING@Gyro
+[04/11 11:08:00.188703][info][304808][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STREAMING@Color
+[04/11 11:08:04.755163][info][304809][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=30.169830fps
+[04/11 11:08:05.222372][info][304808][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.996027fps
+[04/11 11:08:09.761057][info][304809][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 11:08:10.230045][info][304808][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.952078fps
+[04/11 11:08:14.766971][info][304809][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.970030fps
+[04/11 11:08:15.234141][info][304808][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.976019fps
+[04/11 11:08:19.772885][info][304809][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 11:08:20.240015][info][304808][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.970030fps
+[04/11 11:08:24.778721][info][304809][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 11:08:25.245921][info][304808][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 11:08:29.784582][info][304809][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 11:08:30.251816][info][304808][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 11:08:34.790488][info][304809][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 11:08:35.257743][info][304808][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 11:08:39.796439][info][304809][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 11:08:40.263665][info][304808][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 11:08:44.802250][info][304809][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 11:08:45.269488][info][304808][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 11:08:49.808143][info][304809][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 11:08:50.275349][info][304808][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 11:08:54.814038][info][304809][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 11:08:55.281232][info][304808][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 11:08:59.820068][info][304809][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 11:09:00.287181][info][304808][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 11:09:04.825850][info][304809][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.970030fps
+[04/11 11:09:05.293057][info][304808][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 11:09:09.831738][info][304809][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 11:09:10.298890][info][304808][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.970030fps
+[04/11 11:09:14.837569][info][304809][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 11:09:15.304788][info][304808][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 11:09:19.843466][info][304809][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 11:09:20.310668][info][304808][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 11:09:24.849367][info][304809][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 11:09:25.316570][info][304808][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 11:09:29.855251][info][304809][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 11:09:30.322516][info][304808][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 11:09:34.861165][info][304809][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 11:09:35.328355][info][304808][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 11:09:39.867035][info][304809][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 11:09:40.334234][info][304808][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 11:09:44.873626][info][304809][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 11:09:45.340120][info][304808][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 11:09:49.879243][info][304809][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 11:09:50.346076][info][304808][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 11:09:54.884682][info][304809][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.970030fps
+[04/11 11:09:55.351884][info][304808][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.970030fps
+[04/11 11:09:59.890593][info][304809][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 11:10:00.357784][info][304808][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 11:10:04.896513][info][304809][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 11:10:05.363677][info][304808][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 11:10:09.902510][info][304809][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 11:10:10.369576][info][304808][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 11:10:14.908271][info][304809][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 11:10:15.375454][info][304808][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 11:10:19.914206][info][304809][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 11:10:20.381356][info][304808][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 11:10:24.920300][info][304809][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 11:10:25.387941][info][304808][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 11:10:29.925910][info][304809][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.970030fps
+[04/11 11:10:30.393132][info][304808][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 11:10:32.543384][info][304813][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=2.304389fps
+[04/11 11:10:32.543450][info][304813][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=2.310935fps
+[04/11 11:10:32.550674][warning][304813][ObException.cpp:8] Timestamp anomaly detected, timestamp: 1775877032544205, cacheTimestamp: 1775876882012496 ,currentDiff: 150531709, maxValidTimestampDiff: 5000000
+[04/11 11:10:32.553378][warning][304813][SensorBase.cpp:418] [CP9JA53000BM] Execute failure! A libobsensor_exception has occurred!
+ - where: SensorBase.cpp(418):outputFrame
+ - msg: Timestamp anomaly detected, timestamp: 1775877032544205, cacheTimestamp: 1775876882012496 ,currentDiff: 150531709, maxValidTimestampDiff: 5000000
+ - type: N11libobsensor23invalid_value_exceptionE
+[04/11 11:10:32.553400][error][304813][SensorBase.cpp:418] [CP9JA53000BM] Timestamp anomaly detected, frame: 1775877032544205, sensor: Accel
+[04/11 11:10:32.553417][warning][304813][ObException.cpp:8] Timestamp anomaly detected, timestamp: 1775877032544205, cacheTimestamp: 1775876882012496 ,currentDiff: 150531709, maxValidTimestampDiff: 5000000
+[04/11 11:10:32.553426][warning][304813][SensorBase.cpp:418] [CP9JA53000BM] Execute failure! A libobsensor_exception has occurred!
+ - where: SensorBase.cpp(418):outputFrame
+ - msg: Timestamp anomaly detected, timestamp: 1775877032544205, cacheTimestamp: 1775876882012496 ,currentDiff: 150531709, maxValidTimestampDiff: 5000000
+ - type: N11libobsensor23invalid_value_exceptionE
+[04/11 11:10:32.553430][error][304813][SensorBase.cpp:418] [CP9JA53000BM] Timestamp anomaly detected, frame: 1775877032544205, sensor: Gyro
+[04/11 11:10:32.904753][info][304811][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=0.352602fps
+[04/11 11:10:32.904800][info][304816][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=0.268756fps
+[04/11 11:10:33.969410][info][304181][Pipeline.cpp:336] [CP9JA53000BM] Try to stop pipeline!
+[04/11 11:10:33.969436][info][304181][Pipeline.cpp:312] [CP9JA53000BM] Try to stop streams!
+[04/11 11:10:33.969450][info][304181][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STOPPING@Depth
+[04/11 11:10:34.021456][info][304181][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STOPPED@Depth
+[04/11 11:10:34.021646][info][304181][Pipeline.cpp:326] [CP9JA53000BM] Sensor stream stopped, sensorType=Depth
+[04/11 11:10:34.021669][info][304181][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STOPPING@Color
+[04/11 11:10:34.064200][info][304181][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STOPPED@Color
+[04/11 11:10:34.064354][info][304181][Pipeline.cpp:326] [CP9JA53000BM] Sensor stream stopped, sensorType=Color
+[04/11 11:10:34.064363][info][304181][Pipeline.cpp:332] [CP9JA53000BM] Stop streams done!
+[04/11 11:10:34.064524][info][304181][Pipeline.cpp:356] [CP9JA53000BM] Stop pipeline done!
+[04/11 11:10:34.064913][info][304181][Pipeline.cpp:336] [CP9JA53000BM] Try to stop pipeline!
+[04/11 11:10:34.064921][info][304181][Pipeline.cpp:312] [CP9JA53000BM] Try to stop streams!
+[04/11 11:10:34.064930][info][304181][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STOPPING@Gyro
+[04/11 11:10:34.065069][info][304181][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STOPPED@Gyro
+[04/11 11:10:34.065072][info][304181][Pipeline.cpp:326] [CP9JA53000BM] Sensor stream stopped, sensorType=Gyro
+[04/11 11:10:34.065076][info][304181][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STOPPING@Accel
+[04/11 11:10:34.071564][info][304181][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STOPPED@Accel
+[04/11 11:10:34.071595][info][304181][Pipeline.cpp:326] [CP9JA53000BM] Sensor stream stopped, sensorType=Accel
+[04/11 11:10:34.071598][info][304181][Pipeline.cpp:332] [CP9JA53000BM] Stop streams done!
+[04/11 11:10:34.071728][info][304181][Pipeline.cpp:356] [CP9JA53000BM] Stop pipeline done!
+[04/11 11:10:49.955705][info][305686][LinuxUsbPal.cpp:335] Create PollingDeviceWatcher!
+[04/11 11:10:49.955788][info][305686][DeviceManager.cpp:25] Current found device(s): (1)
+[04/11 11:10:49.955797][info][305686][DeviceManager.cpp:34] 	- Name: Gemini 336, PID: 0x0803, SN/ID: CP9JA53000BM, Connection: USB3.2
+[04/11 11:10:49.955805][info][305686][DeviceManager.cpp:339] Enable net device enumeration: true
+[04/11 11:10:51.985499][info][305686][DeviceManager.cpp:25] Current device(s) list: (1)
+[04/11 11:10:51.985546][info][305686][DeviceManager.cpp:34] 	- Name: Gemini 336, PID: 0x0803, SN/ID: CP9JA53000BM, Connection: USB3.2
+[04/11 11:10:51.985553][info][305686][DeviceManager.cpp:339] Enable net device enumeration: true
+[04/11 11:10:52.003676][info][306225][DeviceBase.cpp:651] key: HwType,value:R1
+[04/11 11:10:52.003700][info][306225][DeviceBase.cpp:651] key: HwVer,value:V1.1
+[04/11 11:10:52.003705][info][306225][DeviceBase.cpp:651] key: IspFwVer,value:20241125
+[04/11 11:10:52.003709][info][306225][DeviceBase.cpp:651] key: IspNeedVer,value:20241125
+[04/11 11:10:52.191450][info][306225][DeviceManager.cpp:194] Device created successfully! Name: Gemini 336, PID: 0x0803, SN/ID: CP9JA53000BM FW: 1.4.00
+[04/11 11:10:54.734072][info][306225][Pipeline.cpp:42] [CP9JA53000BM] Pipeline created with device: {name: Gemini 336, sn: CP9JA53000BM}, @0x729538068200
+[04/11 11:10:54.734150][info][306225][Pipeline.cpp:216] [CP9JA53000BM] Check and set config done!
+[04/11 11:10:54.734469][info][306225][Pipeline.cpp:254] [CP9JA53000BM] Try to start streams!
+[04/11 11:10:54.734486][info][306225][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STARTING@Accel
+[04/11 11:10:54.735896][info][306225][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STARTING@Gyro
+[04/11 11:10:54.738168][info][306225][Pipeline.cpp:270] [CP9JA53000BM] Start streams done!
+[04/11 11:10:54.738187][info][306225][Pipeline.cpp:238] [CP9JA53000BM] Pipeline start done!
+[04/11 11:10:54.738301][info][306225][Pipeline.cpp:42] [CP9JA53000BM] Pipeline created with device: {name: Gemini 336, sn: CP9JA53000BM}, @0x7295380680E0
+[04/11 11:10:54.738374][info][306225][Pipeline.cpp:216] [CP9JA53000BM] Check and set config done!
+[04/11 11:10:54.738527][info][306225][Pipeline.cpp:254] [CP9JA53000BM] Try to start streams!
+[04/11 11:10:54.738546][info][306225][VideoSensor.cpp:58] [CP9JA53000BM] Try to start stream: {type: Color, format: MJPG, width: 1280, height: 720, fps: 30}
+[04/11 11:10:54.738560][info][306225][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STARTING@Color
+[04/11 11:10:54.738567][info][306225][VideoSensor.cpp:127] [CP9JA53000BM] Start backend stream: {type: Color, format: MJPG, width: 1280, height: 720, fps: 30}
+[04/11 11:10:54.740254][info][306225][VideoSensor.cpp:58] [CP9JA53000BM] Try to start stream: {type: Depth, format: Y16, width: 848, height: 480, fps: 30}
+[04/11 11:10:54.740281][info][306225][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STARTING@Depth
+[04/11 11:10:54.740290][info][306225][VideoSensor.cpp:127] [CP9JA53000BM] Start backend stream: {type: Depth, format: Z16, width: 848, height: 480, fps: 30}
+[04/11 11:10:54.756959][info][306225][Pipeline.cpp:270] [CP9JA53000BM] Start streams done!
+[04/11 11:10:54.756995][info][306225][Pipeline.cpp:238] [CP9JA53000BM] Pipeline start done!
+[04/11 11:10:54.850743][info][306291][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STREAMING@Depth
+[04/11 11:10:54.880243][info][306295][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STREAMING@Gyro
+[04/11 11:10:54.880296][info][306295][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STREAMING@Accel
+[04/11 11:10:55.276298][info][306290][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STREAMING@Color
+[04/11 11:10:59.882219][info][306291][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=30.206676fps
+[04/11 11:10:59.884808][info][306293][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=30.230709fps
+[04/11 11:10:59.886685][info][306295][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.957642fps
+[04/11 11:10:59.886877][info][306295][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.957642fps
+[04/11 11:11:00.282675][info][306290][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=30.163803fps
+[04/11 11:11:00.482981][info][306300][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=31.256224fps
+[04/11 11:11:04.888060][info][306291][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 11:11:04.891524][info][306293][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.958059fps
+[04/11 11:11:04.894690][info][306295][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=202.076675fps
+[04/11 11:11:04.895002][info][306295][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=202.076675fps
+[04/11 11:11:05.288582][info][306290][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 11:11:05.489078][info][306300][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.958059fps
+[04/11 11:11:09.895013][info][306291][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 11:11:09.898131][info][306293][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.958059fps
+[04/11 11:11:09.902809][info][306295][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 11:11:09.903083][info][306295][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.637054fps
+[04/11 11:11:10.294461][info][306290][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 11:11:10.494758][info][306300][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.970030fps
+[04/11 11:12:03.002318][info][307988][LinuxUsbPal.cpp:335] Create PollingDeviceWatcher!
+[04/11 11:12:03.002398][info][307988][DeviceManager.cpp:25] Current found device(s): (1)
+[04/11 11:12:03.002406][info][307988][DeviceManager.cpp:34] 	- Name: Gemini 336, PID: 0x0803, SN/ID: CP9JA53000BM, Connection: USB3.2
+[04/11 11:12:03.002413][info][307988][DeviceManager.cpp:339] Enable net device enumeration: true
+[04/11 11:12:05.021887][info][307988][DeviceManager.cpp:25] Current device(s) list: (1)
+[04/11 11:12:05.022388][info][307988][DeviceManager.cpp:34] 	- Name: Gemini 336, PID: 0x0803, SN/ID: CP9JA53000BM, Connection: USB3.2
+[04/11 11:12:05.022407][info][307988][DeviceManager.cpp:339] Enable net device enumeration: true
+[04/11 11:12:05.111820][info][308510][DeviceBase.cpp:651] key: HwType,value:R1
+[04/11 11:12:05.111860][info][308510][DeviceBase.cpp:651] key: HwVer,value:V1.1
+[04/11 11:12:05.111867][info][308510][DeviceBase.cpp:651] key: IspFwVer,value:20241125
+[04/11 11:12:05.111872][info][308510][DeviceBase.cpp:651] key: IspNeedVer,value:20241125
+[04/11 11:12:05.313758][info][308510][DeviceManager.cpp:194] Device created successfully! Name: Gemini 336, PID: 0x0803, SN/ID: CP9JA53000BM FW: 1.4.00
+[04/11 11:12:05.904367][warning][308510][SensorBase.cpp:147] [CP9JA53000BM] Failed to update default stream profile for sensor due to no matching stream profile found
+[04/11 11:12:05.905460][warning][308510][SensorBase.cpp:147] [CP9JA53000BM] Failed to update default stream profile for sensor due to no matching stream profile found
+[04/11 11:12:06.604106][info][308510][Pipeline.cpp:42] [CP9JA53000BM] Pipeline created with device: {name: Gemini 336, sn: CP9JA53000BM}, @0x72E37044E2D0
+[04/11 11:12:06.604196][info][308510][Pipeline.cpp:216] [CP9JA53000BM] Check and set config done!
+[04/11 11:12:06.604480][info][308510][Pipeline.cpp:254] [CP9JA53000BM] Try to start streams!
+[04/11 11:12:06.604522][info][308510][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STARTING@Accel
+[04/11 11:12:06.605883][info][308510][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STARTING@Gyro
+[04/11 11:12:06.606798][info][308510][Pipeline.cpp:270] [CP9JA53000BM] Start streams done!
+[04/11 11:12:06.606816][info][308510][Pipeline.cpp:238] [CP9JA53000BM] Pipeline start done!
+[04/11 11:12:06.606936][info][308510][Pipeline.cpp:42] [CP9JA53000BM] Pipeline created with device: {name: Gemini 336, sn: CP9JA53000BM}, @0x72E37044E1B0
+[04/11 11:12:06.607039][info][308510][Pipeline.cpp:216] [CP9JA53000BM] Check and set config done!
+[04/11 11:12:06.607271][info][308510][Pipeline.cpp:254] [CP9JA53000BM] Try to start streams!
+[04/11 11:12:06.607285][info][308510][VideoSensor.cpp:58] [CP9JA53000BM] Try to start stream: {type: Color, format: MJPG, width: 1280, height: 720, fps: 30}
+[04/11 11:12:06.607299][info][308510][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STARTING@Color
+[04/11 11:12:06.607306][info][308510][VideoSensor.cpp:127] [CP9JA53000BM] Start backend stream: {type: Color, format: MJPG, width: 1280, height: 720, fps: 30}
+[04/11 11:12:06.609741][info][308510][VideoSensor.cpp:58] [CP9JA53000BM] Try to start stream: {type: Depth, format: Y16, width: 848, height: 480, fps: 30}
+[04/11 11:12:06.609806][info][308510][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STARTING@Depth
+[04/11 11:12:06.609817][info][308510][VideoSensor.cpp:127] [CP9JA53000BM] Start backend stream: {type: Depth, format: Z16, width: 848, height: 480, fps: 30}
+[04/11 11:12:06.611432][info][308510][Pipeline.cpp:270] [CP9JA53000BM] Start streams done!
+[04/11 11:12:06.611456][info][308510][Pipeline.cpp:238] [CP9JA53000BM] Pipeline start done!
+[04/11 11:12:06.715956][info][308579][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STREAMING@Depth
+[04/11 11:12:06.750895][info][308588][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STREAMING@Accel
+[04/11 11:12:06.750942][info][308588][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STREAMING@Gyro
+[04/11 11:12:07.148533][info][308578][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STREAMING@Color
+[04/11 11:12:11.715199][info][308579][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=30.175858fps
+[04/11 11:12:11.750717][info][308585][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=30.236723fps
+[04/11 11:12:11.766605][info][308588][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.953751fps
+[04/11 11:12:11.766845][info][308588][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.994019fps
+[04/11 11:12:12.182271][info][308578][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.996027fps
+[04/11 11:12:12.382556][info][308593][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=31.312326fps
+[04/11 11:12:16.721065][info][308579][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 11:12:16.757690][info][308585][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=27.161974fps
+[04/11 11:12:16.774559][info][308588][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=199.680511fps
+[04/11 11:12:16.774717][info][308588][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=199.680511fps
+[04/11 11:12:17.188141][info][308578][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 11:12:17.388465][info][308593][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/11 11:12:21.726945][info][308579][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.970030fps
+[04/11 11:12:21.762868][info][308585][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.970030fps
+[04/11 11:12:21.782553][info][308588][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 11:12:21.782697][info][308588][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 11:12:22.194054][info][308578][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 11:12:22.394478][info][308593][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/11 11:12:26.732834][info][308579][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 11:12:26.768531][info][308585][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/11 11:12:26.798600][info][308588][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.754395fps
+[04/11 11:12:26.798894][info][308588][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.754395fps
+[04/11 11:12:27.199874][info][308578][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.970030fps
+[04/11 11:12:27.400192][info][308593][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/11 11:12:31.738709][info][308579][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 11:12:31.774735][info][308585][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/11 11:12:31.806517][info][308588][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=202.076675fps
+[04/11 11:12:31.806650][info][308588][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=202.076675fps
+[04/11 11:12:32.205840][info][308578][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 11:12:32.406126][info][308593][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/11 11:12:36.744587][info][308579][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 11:12:36.781191][info][308585][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.958059fps
+[04/11 11:12:36.814517][info][308588][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.677322fps
+[04/11 11:12:36.814616][info][308588][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.677322fps
+[04/11 11:12:37.211710][info][308578][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 11:12:37.412008][info][308593][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.970030fps
+[04/11 11:12:41.750473][info][308579][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/11 11:12:41.787153][info][308585][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/11 11:12:41.830586][info][308588][SensorBase.cpp:432] [CP9JA53000BM] Accel Streaming... frameRate=201.754395fps
+[04/11 11:12:41.830899][info][308588][SensorBase.cpp:432] [CP9JA53000BM] Gyro Streaming... frameRate=201.754395fps
+[04/11 11:12:42.217603][info][308578][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/11 11:12:42.419270][info][308593][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.952078fps
+[04/11 11:12:45.561752][info][307988][Pipeline.cpp:336] [CP9JA53000BM] Try to stop pipeline!
+[04/11 11:12:45.561796][info][307988][Pipeline.cpp:312] [CP9JA53000BM] Try to stop streams!
+[04/11 11:12:45.561811][info][307988][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STOPPING@Depth
+[04/11 11:12:45.614557][info][307988][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STOPPED@Depth
+[04/11 11:12:45.614620][info][307988][Pipeline.cpp:326] [CP9JA53000BM] Sensor stream stopped, sensorType=Depth
+[04/11 11:12:45.614633][info][307988][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STOPPING@Color
+[04/11 11:12:45.619745][info][307988][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STOPPED@Color
+[04/11 11:12:45.619840][info][307988][Pipeline.cpp:326] [CP9JA53000BM] Sensor stream stopped, sensorType=Color
+[04/11 11:12:45.619855][info][307988][Pipeline.cpp:332] [CP9JA53000BM] Stop streams done!
+[04/11 11:12:45.655311][info][307988][Pipeline.cpp:356] [CP9JA53000BM] Stop pipeline done!
+[04/11 11:12:45.655723][info][307988][Pipeline.cpp:336] [CP9JA53000BM] Try to stop pipeline!
+[04/11 11:12:45.655728][info][307988][Pipeline.cpp:312] [CP9JA53000BM] Try to stop streams!
+[04/11 11:12:45.655738][info][307988][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STOPPING@Gyro
+[04/11 11:12:45.655879][info][307988][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STOPPED@Gyro
+[04/11 11:12:45.655885][info][307988][Pipeline.cpp:326] [CP9JA53000BM] Sensor stream stopped, sensorType=Gyro
+[04/11 11:12:45.655890][info][307988][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STOPPING@Accel
+[04/11 11:12:45.663364][info][307988][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STOPPED@Accel
+[04/11 11:12:45.663380][info][307988][Pipeline.cpp:326] [CP9JA53000BM] Sensor stream stopped, sensorType=Accel
+[04/11 11:12:45.663384][info][307988][Pipeline.cpp:332] [CP9JA53000BM] Stop streams done!
+[04/11 11:12:45.663525][info][307988][Pipeline.cpp:356] [CP9JA53000BM] Stop pipeline done!
+[04/11 11:12:45.699918][info][307988][Pipeline.cpp:53] [CP9JA53000BM] Pipeline destroyed! @0x72E37044E2D0
+[04/11 11:12:45.699960][info][307988][Pipeline.cpp:53] [CP9JA53000BM] Pipeline destroyed! @0x72E37044E1B0
+[04/11 11:12:45.701393][info][307988][SensorBase.cpp:47] [CP9JA53000BM] SensorBase is destroyed
+[04/11 11:12:45.701408][info][307988][SensorBase.cpp:47] [CP9JA53000BM] SensorBase is destroyed
+[04/11 11:12:45.701501][info][307988][SensorBase.cpp:47] [CP9JA53000BM] SensorBase is destroyed
+[04/11 11:12:45.702363][info][307988][ObLibuvcDevicePort.cpp:87] uvc_close done.
+[04/11 11:12:45.702378][info][307988][ObLibuvcDevicePort.cpp:88] ~ObLibuvcDevicePort done
+[04/11 11:12:45.702424][info][307988][SensorBase.cpp:47] [CP9JA53000BM] SensorBase is destroyed
+[04/11 11:12:45.702470][info][307988][SensorBase.cpp:47] [CP9JA53000BM] SensorBase is destroyed
+[04/11 11:12:45.702527][info][307988][SensorBase.cpp:47] [CP9JA53000BM] SensorBase is destroyed
+[04/11 11:12:45.703729][info][307988][ObLibuvcDevicePort.cpp:87] uvc_close done.
+[04/11 11:12:45.703754][info][307988][ObLibuvcDevicePort.cpp:88] ~ObLibuvcDevicePort done

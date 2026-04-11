@@ -1,0 +1,7 @@
+string medicine_id
+---
+bool success
+string state
+string message
+geometry_msgs/PoseStamped dock_pose
+geometry_msgs/PoseStamped target_pose_for_pick

@@ -38,14 +38,18 @@ class WheeltecChassisNode(Node):
             parameters=[
                 ('protocol', 'serial'),  # 通信协议: serial/can
                 ('robot_type', 'diff'),  # 底盘类型: diff/ackermann/omni
+                ('cmd_vel_topic', 'cmd_vel'),
                 ('port', '/dev/ttyACM0'),  # 串口设备
                 ('baudrate', 115200),     # 波特率
                 ('max_vx', 500.0),        # 最大线速度 mm/s
                 ('max_vy', 500.0),        # 最大侧向速度 mm/s
                 ('max_vz', 1.0),          # 最大角速度 rad/s
-                ('publish_odom', True),   # 是否发布里程计
+                ('publish_odom', False),   # 是否发布里程计
                 ('publish_battery', True), # 是否发布电池状态
-                ('cmd_timeout', 0.5)      # 命令超时时间(秒)
+                ('cmd_timeout', 0.5),     # 命令超时时间(秒)
+                ('linear_x_sign', -1.0),
+                ('linear_y_sign', 1.0),
+                ('angular_z_sign', 1.0),
             ]
         )
         
@@ -79,7 +83,7 @@ class WheeltecChassisNode(Node):
         # 创建订阅者
         self.cmd_vel_sub = self.create_subscription(
             Twist,
-            'cmd_vel',
+            str(self.get_parameter('cmd_vel_topic').value),
             self.cmd_vel_callback,
             10
         )
@@ -123,23 +127,25 @@ class WheeltecChassisNode(Node):
         # 更新最后命令时间
         self.last_cmd_time = self.get_clock().now()
         
+        linear_x_sign = float(self.get_parameter('linear_x_sign').value)
+        linear_y_sign = float(self.get_parameter('linear_y_sign').value)
+        angular_z_sign = float(self.get_parameter('angular_z_sign').value)
+
         # 将Twist消息转换为归一化速度
         # 注意：ROS2的Twist使用m/s和rad/s，需要转换为mm/s
-        # 方向修正：将x和y方向取反以修正运动方向
-        kx = -msg.linear.x * 1000.0 / self.controller.max_speeds[0]  # m/s -> mm/s，方向取反
-        kz = msg.angular.z / self.controller.max_speeds[2]          # rad/s -> 比例
-        
+        kx = linear_x_sign * msg.linear.x * 1000.0 / self.controller.max_speeds[0]
+        ky = linear_y_sign * msg.linear.y * 1000.0 / self.controller.max_speeds[1]
+        kz = angular_z_sign * msg.angular.z / self.controller.max_speeds[2]
+
         # 限制在[-1, 1]范围内
         kx = max(-1.0, min(1.0, kx))
+        ky = max(-1.0, min(1.0, ky))
         kz = max(-1.0, min(1.0, kz))
-        
-        # 对于差速底盘，Y轴速度为0
-        ky = 0.0
         
         # 执行动作
         self.controller.execute_action(kx, ky, kz)
         
-        self.get_logger().debug(f'执行速度命令: kx={kx:.3f}, kz={kz:.3f}')
+        self.get_logger().debug(f'执行速度命令: kx={kx:.3f}, ky={ky:.3f}, kz={kz:.3f}')
     
     def enable_motors_callback(self, request, response):
         """处理电机使能服务请求"""

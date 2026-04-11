@@ -19,6 +19,8 @@ install(PROGRAMS
   scripts/mock_initial_pose_manager.py
   scripts/mock_pick_path_publisher.py
   scripts/pick_task_manager.py
+  scripts/medicine_location_registry.py
+  scripts/fetch_medicine_coordinator.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

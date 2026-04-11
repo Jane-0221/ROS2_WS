@@ -1,0 +1,9 @@
+string medicine_id
+---
+bool success
+string message
+geometry_msgs/PoseStamped item_pose_map
+geometry_msgs/PoseStamped shelf_face_pose_map
+float32 confidence
+builtin_interfaces/Time updated_at
+string dock_tag_frame

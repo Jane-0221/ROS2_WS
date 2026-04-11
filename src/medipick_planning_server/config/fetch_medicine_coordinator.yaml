@@ -1,0 +1,11 @@
+/**:
+  ros__parameters:
+    output_target_frame: world
+    dock_standoff: 0.60
+    navigate_timeout_sec: 360.0
+    service_wait_timeout_sec: 5.0
+    min_confidence: 0.70
+    max_position_stddev: 0.10
+    max_yaw_stddev_deg: 5.0
+    require_local_pick_confirmation: true
+    auto_start_pick_task: true

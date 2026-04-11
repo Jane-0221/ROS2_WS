@@ -41,6 +41,11 @@ check_pkg moveit_planners_ompl
 check_pkg moveit_ros_move_group
 check_pkg moveit_ros_perception
 check_pkg moveit_simple_controller_manager
+check_pkg nav2_bringup
+check_pkg nav2_mppi_controller
+check_pkg robot_localization
+check_pkg rtabmap_ros
+check_pkg apriltag_ros
 check_pkg orbbec_camera
 check_pkg robot_hardware
 check_pkg medipick_planning_server

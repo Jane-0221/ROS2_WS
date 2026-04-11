@@ -14,6 +14,18 @@ STM32_UDEV_RULE="${WORKSPACE_ROOT}/etc/udev/rules.d/99-serial-permissions.rules"
 
 export DEBIAN_FRONTEND=noninteractive
 
+if ! grep -RqsE '^[^#].*jammy-updates' /etc/apt/sources.list /etc/apt/sources.list.d/*.list 2>/dev/null; then
+  echo "Detected missing Ubuntu jammy-updates repository."
+  echo "Appending jammy-updates entries to /etc/apt/sources.list."
+  cat >> /etc/apt/sources.list <<'EOF'
+
+# Added by install_medipick_host_deps.sh for ROS/SLAM runtime dependencies
+deb http://cn.archive.ubuntu.com/ubuntu/ jammy-updates main restricted
+deb http://cn.archive.ubuntu.com/ubuntu/ jammy-updates universe
+deb http://cn.archive.ubuntu.com/ubuntu/ jammy-updates multiverse
+EOF
+fi
+
 if grep -RqsE 'mirrors\.(tuna|ustc)\..*/ros2/ubuntu' /etc/apt/sources.list.d/ros2.list /etc/apt/sources.list.d/ros-fish.list 2>/dev/null; then
   echo "Detected stale or unreliable ROS 2 mirror configuration."
   echo "Switching ROS 2 apt source to Aliyun before installation."
@@ -27,10 +39,16 @@ echo "[2/4] Installing minimal MoveIt runtime package set"
 apt-get install -y \
   --no-install-recommends \
   ros-humble-control-msgs \
+  ros-humble-navigation2 \
+  ros-humble-nav2-bringup \
+  ros-humble-nav2-mppi-controller \
   ros-humble-moveit-planners-ompl \
   ros-humble-moveit-ros-move-group \
   ros-humble-moveit-ros-perception \
-  ros-humble-moveit-simple-controller-manager
+  ros-humble-moveit-simple-controller-manager \
+  ros-humble-robot-localization \
+  ros-humble-rtabmap-ros \
+  ros-humble-apriltag-ros
 
 echo "[3/4] Installing Orbbec udev rules"
 "${ORBBEC_UDEV_INSTALLER}"

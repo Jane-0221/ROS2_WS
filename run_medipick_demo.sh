@@ -31,6 +31,22 @@ if ! ros2 pkg prefix moveit_ros_move_group >/dev/null 2>&1; then
   exit 1
 fi
 
+required_pkgs=(
+  nav2_bringup
+  nav2_mppi_controller
+  robot_localization
+  rtabmap_ros
+  apriltag_ros
+)
+
+for pkg in "${required_pkgs[@]}"; do
+  if ! ros2 pkg prefix "${pkg}" >/dev/null 2>&1; then
+    echo "${pkg} is missing."
+    echo "Run: sudo ./scripts/install_medipick_host_deps.sh"
+    exit 1
+  fi
+done
+
 if [[ ! -f /etc/udev/rules.d/99-obsensor-libusb.rules ]]; then
   echo "Orbbec udev rules are missing."
   echo "Run: sudo ./scripts/install_medipick_host_deps.sh"
@@ -50,4 +66,4 @@ if [[ "$has_rviz_arg" -eq 0 ]]; then
   launch_args=("rviz:=true" "${launch_args[@]}")
 fi
 
-ros2 launch medipick_planning_server hardware_demo.launch.py "${launch_args[@]}"
+ros2 launch medipick_planning_server visual_navigation_demo.launch.py "${launch_args[@]}"

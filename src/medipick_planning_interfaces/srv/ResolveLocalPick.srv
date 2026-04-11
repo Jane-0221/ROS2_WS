@@ -1,0 +1,7 @@
+string medicine_id
+geometry_msgs/PoseStamped reference_item_pose_map
+---
+bool success
+string message
+geometry_msgs/PoseStamped local_pick_pose
+float32 confidence

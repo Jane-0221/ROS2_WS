@@ -43,7 +43,11 @@ setup(
             'pump_command_adapter = robot_hardware.pump_command_adapter:main',
             'camera_target_pose_relay = robot_hardware.camera_target_pose_relay:main',
             'camera_pointcloud_target_estimator = robot_hardware.camera_pointcloud_target_estimator:main',
+            'local_pick_pose_resolver = robot_hardware.local_pick_pose_resolver:main',
             'manual_target_pose_publisher = robot_hardware.manual_target_pose_publisher:main',
+            'base_pose_joint_state_bridge = robot_hardware.base_pose_joint_state_bridge:main',
+            'joint_state_mux = robot_hardware.joint_state_mux:main',
+            'apriltag_anchor_localizer = robot_hardware.apriltag_anchor_localizer:main',
         ],
     },
 )

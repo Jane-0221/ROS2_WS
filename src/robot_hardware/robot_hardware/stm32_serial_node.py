@@ -63,6 +63,7 @@ class STM32SerialNode(Node):
         self.declare_parameter("baudrate", 115200)
         self.declare_parameter("calibration_file", "")
         self.declare_parameter("joint_states_topic", "/joint_states")
+        self.declare_parameter("arm_joint_states_topic", "/medipick/hardware/arm_joint_states")
         self.declare_parameter(
             "motor_arm_joint_command_topic",
             "/medipick/hardware/motor_arm_joint_command",
@@ -79,6 +80,8 @@ class STM32SerialNode(Node):
         self.declare_parameter("raw_suction_topic", "/medipick/hardware/raw_suction_state")
         self.declare_parameter("legacy_servo_control_topic", "/stm32/servo_control")
         self.declare_parameter("enable_legacy_servo_control_topic", False)
+        self.declare_parameter("publish_full_joint_states", True)
+        self.declare_parameter("publish_base_joints", True)
         self.declare_parameter("send_period_sec", 0.05)
         self.declare_parameter("recv_period_sec", 0.01)
 
@@ -105,9 +108,19 @@ class STM32SerialNode(Node):
         self.dn_data = DnData()
         self._recv_buffer = bytearray()
 
-        self._joint_state_publisher = self.create_publisher(
+        self._publish_full_joint_states = bool(self.get_parameter("publish_full_joint_states").value)
+        self._publish_base_joints = bool(self.get_parameter("publish_base_joints").value)
+
+        self._joint_state_publisher = None
+        if self._publish_full_joint_states:
+            self._joint_state_publisher = self.create_publisher(
+                JointState,
+                str(self.get_parameter("joint_states_topic").value),
+                20,
+            )
+        self._arm_joint_state_publisher = self.create_publisher(
             JointState,
-            str(self.get_parameter("joint_states_topic").value),
+            str(self.get_parameter("arm_joint_states_topic").value),
             20,
         )
         self._lift_height_publisher = self.create_publisher(
@@ -252,12 +265,9 @@ class STM32SerialNode(Node):
         self._lift_height_publisher.publish(Float32(data=lift_height_mm))
         self._raw_suction_publisher.publish(Bool(data=bool(self.up_data.suck_state)))
 
-        joint_state = JointState()
-        joint_state.header.stamp = self.get_clock().now().to_msg()
-        ordered_joint_names = [
-            "base_x",
-            "base_y",
-            "base_theta",
+        arm_joint_state = JointState()
+        arm_joint_state.header.stamp = self.get_clock().now().to_msg()
+        ordered_arm_joint_names = [
             "raise_joint",
             "r1_joint",
             "r2_joint",
@@ -277,12 +287,22 @@ class STM32SerialNode(Node):
             joint_positions[joint_name] = mapping.feedback_to_joint(raw_feedback)
         joint_positions.update(self._calibration.fixed_joints)
 
-        joint_state.name = ordered_joint_names
-        joint_state.position = [joint_positions.get(joint_name, 0.0) for joint_name in ordered_joint_names]
-        self._joint_state_publisher.publish(joint_state)
+        arm_joint_state.name = ordered_arm_joint_names
+        arm_joint_state.position = [joint_positions.get(joint_name, 0.0) for joint_name in ordered_arm_joint_names]
+        self._arm_joint_state_publisher.publish(arm_joint_state)
+
+        if self._joint_state_publisher is not None:
+            joint_state = JointState()
+            joint_state.header = arm_joint_state.header
+            ordered_joint_names = list(ordered_arm_joint_names)
+            if self._publish_base_joints:
+                ordered_joint_names = ["base_x", "base_y", "base_theta"] + ordered_joint_names
+            joint_state.name = ordered_joint_names
+            joint_state.position = [joint_positions.get(joint_name, 0.0) for joint_name in ordered_joint_names]
+            self._joint_state_publisher.publish(joint_state)
 
         motor_arm_feedback = JointState()
-        motor_arm_feedback.header = joint_state.header
+        motor_arm_feedback.header = arm_joint_state.header
         motor_arm_feedback.name = list(self._calibration.arm_joint_mappings.keys())
         motor_arm_feedback.position = [joint_positions[joint_name] for joint_name in motor_arm_feedback.name]
         self._motor_arm_feedback_publisher.publish(motor_arm_feedback)
