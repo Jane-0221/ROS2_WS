@@ -1,0 +1,810 @@
+[04/10 19:49:13.382275][info][158396][LinuxUsbPal.cpp:335] Create PollingDeviceWatcher!
+[04/10 19:49:13.382322][info][158396][DeviceManager.cpp:25] Current found device(s): (1)
+[04/10 19:49:13.382329][info][158396][DeviceManager.cpp:34] 	- Name: Bootloader device, PID: 0x0501, SN/ID: CP9JA53000BM, Connection: USB3.0
+[04/10 19:49:13.382338][info][158396][DeviceManager.cpp:339] Enable net device enumeration: true
+[04/10 19:49:15.388530][info][158396][DeviceManager.cpp:25] Current device(s) list: (1)
+[04/10 19:49:15.388583][info][158396][DeviceManager.cpp:34] 	- Name: Bootloader device, PID: 0x0501, SN/ID: CP9JA53000BM, Connection: USB3.0
+[04/10 19:49:15.388595][info][158396][DeviceManager.cpp:339] Enable net device enumeration: false
+[04/10 19:49:16.493863][info][158424][DeviceManager.cpp:194] Device created successfully! Name: Boot, PID: 0x0501, SN/ID: CP9JA53000BM FW: 1.1.6
+[04/10 19:49:17.708787][warning][158424][ObException.cpp:8] Device Component 'device clock synchronizer' not found!
+[04/10 19:49:17.710106][warning][158428][ObException.cpp:8] Extension info IspFwVer not found!
+[04/10 19:49:17.710220][error][158428][FirmwareUpdater.cpp:105] Firmware update failed: Parse firmware data failed!
+Invalid input data or data has been damaged
+[04/10 19:49:28.812229][info][158424][DeviceManager.cpp:194] Device created successfully! Name: Boot, PID: 0x0501, SN/ID: CP9JA53000BM FW: 1.1.6
+[04/10 19:49:28.909770][warning][158424][ObException.cpp:8] Device Component 'device clock synchronizer' not found!
+[04/10 19:49:28.911453][warning][158442][ObException.cpp:8] Extension info IspFwVer not found!
+[04/10 19:49:28.911551][error][158442][FirmwareUpdater.cpp:105] Firmware update failed: Parse firmware data failed!
+Invalid input data or data has been damaged
+[04/10 19:49:40.013556][info][158424][DeviceManager.cpp:194] Device created successfully! Name: Boot, PID: 0x0501, SN/ID: CP9JA53000BM FW: 1.1.6
+[04/10 19:49:41.707531][warning][158424][ObException.cpp:8] Device Component 'device clock synchronizer' not found!
+[04/10 19:49:41.709162][warning][158479][ObException.cpp:8] Extension info IspFwVer not found!
+[04/10 19:49:41.709254][error][158479][FirmwareUpdater.cpp:105] Firmware update failed: Parse firmware data failed!
+Invalid input data or data has been damaged
+[04/10 19:49:52.811195][info][158424][DeviceManager.cpp:194] Device created successfully! Name: Boot, PID: 0x0501, SN/ID: CP9JA53000BM FW: 1.1.6
+[04/10 19:49:52.907288][warning][158424][ObException.cpp:8] Device Component 'device clock synchronizer' not found!
+[04/10 19:49:52.908635][warning][158494][ObException.cpp:8] Extension info IspFwVer not found!
+[04/10 19:49:52.908710][error][158494][FirmwareUpdater.cpp:105] Firmware update failed: Parse firmware data failed!
+Invalid input data or data has been damaged
+[04/10 19:50:04.010531][info][158424][DeviceManager.cpp:194] Device created successfully! Name: Boot, PID: 0x0501, SN/ID: CP9JA53000BM FW: 1.1.6
+[04/10 19:50:05.708441][warning][158424][ObException.cpp:8] Device Component 'device clock synchronizer' not found!
+[04/10 19:50:05.709762][warning][158558][ObException.cpp:8] Extension info IspFwVer not found!
+[04/10 19:50:05.709835][error][158558][FirmwareUpdater.cpp:105] Firmware update failed: Parse firmware data failed!
+Invalid input data or data has been damaged
+[04/10 19:50:16.811663][info][158424][DeviceManager.cpp:194] Device created successfully! Name: Boot, PID: 0x0501, SN/ID: CP9JA53000BM FW: 1.1.6
+[04/10 19:50:16.907197][warning][158424][ObException.cpp:8] Device Component 'device clock synchronizer' not found!
+[04/10 19:50:16.908518][warning][158573][ObException.cpp:8] Extension info IspFwVer not found!
+[04/10 19:50:16.908599][error][158573][FirmwareUpdater.cpp:105] Firmware update failed: Parse firmware data failed!
+Invalid input data or data has been damaged
+[04/10 19:50:28.010484][info][158424][DeviceManager.cpp:194] Device created successfully! Name: Boot, PID: 0x0501, SN/ID: CP9JA53000BM FW: 1.1.6
+[04/10 19:50:29.707393][warning][158424][ObException.cpp:8] Device Component 'device clock synchronizer' not found!
+[04/10 19:50:29.708778][warning][158592][ObException.cpp:8] Extension info IspFwVer not found!
+[04/10 19:50:29.708840][error][158592][FirmwareUpdater.cpp:105] Firmware update failed: Parse firmware data failed!
+Invalid input data or data has been damaged
+[04/10 19:50:40.810755][info][158424][DeviceManager.cpp:194] Device created successfully! Name: Boot, PID: 0x0501, SN/ID: CP9JA53000BM FW: 1.1.6
+[04/10 19:50:40.907481][warning][158424][ObException.cpp:8] Device Component 'device clock synchronizer' not found!
+[04/10 19:50:40.908719][warning][158617][ObException.cpp:8] Extension info IspFwVer not found!
+[04/10 19:50:40.908818][error][158617][FirmwareUpdater.cpp:105] Firmware update failed: Parse firmware data failed!
+Invalid input data or data has been damaged
+[04/10 19:50:52.010915][info][158424][DeviceManager.cpp:194] Device created successfully! Name: Boot, PID: 0x0501, SN/ID: CP9JA53000BM FW: 1.1.6
+[04/10 19:50:53.707476][warning][158424][ObException.cpp:8] Device Component 'device clock synchronizer' not found!
+[04/10 19:50:53.708904][warning][158700][ObException.cpp:8] Extension info IspFwVer not found!
+[04/10 19:50:53.708990][error][158700][FirmwareUpdater.cpp:105] Firmware update failed: Parse firmware data failed!
+Invalid input data or data has been damaged
+[04/10 19:51:04.811103][info][158424][DeviceManager.cpp:194] Device created successfully! Name: Boot, PID: 0x0501, SN/ID: CP9JA53000BM FW: 1.1.6
+[04/10 19:51:04.907432][warning][158424][ObException.cpp:8] Device Component 'device clock synchronizer' not found!
+[04/10 19:51:04.908996][warning][158767][ObException.cpp:8] Extension info IspFwVer not found!
+[04/10 19:51:04.909064][error][158767][FirmwareUpdater.cpp:105] Firmware update failed: Parse firmware data failed!
+Invalid input data or data has been damaged
+[04/10 20:12:38.696574][debug][169803][FrameMemoryPool.cpp:29] FrameMemoryPool created!
+[04/10 20:12:38.697359][debug][169803][PrivFilterLoader.cpp:168] Private filter creator created: G2XLDecompress
+[04/10 20:12:38.697379][debug][169803][PrivFilterLoader.cpp:168] Private filter creator created: FrameUnpacker
+[04/10 20:12:38.697386][debug][169803][PrivFilterLoader.cpp:168] Private filter creator created: G2PixelOffsetFix
+[04/10 20:12:38.697392][debug][169803][PrivFilterLoader.cpp:168] Private filter creator created: ConfidenceEstimator
+[04/10 20:12:38.697398][debug][169803][PrivFilterLoader.cpp:168] Private filter creator created: G330FrameUnpacker
+[04/10 20:12:38.698017][debug][169803][PrivFilterLoader.cpp:168] Private filter creator created: DisparityTransform
+[04/10 20:12:38.698032][debug][169803][PrivFilterLoader.cpp:168] Private filter creator created: HoleFillingFilter
+[04/10 20:12:38.698039][debug][169803][PrivFilterLoader.cpp:168] Private filter creator created: NoiseRemovalFilter
+[04/10 20:12:38.698045][debug][169803][PrivFilterLoader.cpp:168] Private filter creator created: SpatialAdvancedFilter
+[04/10 20:12:38.698052][debug][169803][PrivFilterLoader.cpp:168] Private filter creator created: TemporalFilter
+[04/10 20:12:38.698058][debug][169803][PrivFilterLoader.cpp:168] Private filter creator created: DepthResize
+[04/10 20:12:38.698069][debug][169803][PrivFilterLoader.cpp:168] Private filter creator created: EdgeNoiseRemovalFilter
+[04/10 20:12:38.698076][debug][169803][PrivFilterLoader.cpp:168] Private filter creator created: HardwareD2DCorrectionFilter
+[04/10 20:12:38.698083][debug][169803][PrivFilterLoader.cpp:168] Private filter creator created: OpenNIDisparityTransform
+[04/10 20:12:38.698089][debug][169803][PrivFilterLoader.cpp:168] Private filter creator created: SpatialFastFilter
+[04/10 20:12:38.698096][debug][169803][PrivFilterLoader.cpp:168] Private filter creator created: SpatialModerateFilter
+[04/10 20:12:38.698103][debug][169803][PrivFilterLoader.cpp:168] Private filter creator created: FalsePositiveFilter
+[04/10 20:12:38.698139][debug][169803][FilterFactory.cpp:32] Registered 33 filter creators
+[04/10 20:12:38.698145][debug][169803][FilterFactory.cpp:34]  - Align
+[04/10 20:12:38.698153][debug][169803][FilterFactory.cpp:34]  - ConfidenceEstimator
+[04/10 20:12:38.698166][debug][169803][FilterFactory.cpp:34]  - DecimationFilter
+[04/10 20:12:38.698171][debug][169803][FilterFactory.cpp:34]  - DepthResize
+[04/10 20:12:38.698176][debug][169803][FilterFactory.cpp:34]  - DisparityTransform
+[04/10 20:12:38.698180][debug][169803][FilterFactory.cpp:34]  - EdgeNoiseRemovalFilter
+[04/10 20:12:38.698184][debug][169803][FilterFactory.cpp:34]  - FalsePositiveFilter
+[04/10 20:12:38.698187][debug][169803][FilterFactory.cpp:34]  - FormatConverter
+[04/10 20:12:38.698191][debug][169803][FilterFactory.cpp:34]  - FrameFlip
+[04/10 20:12:38.698195][debug][169803][FilterFactory.cpp:34]  - FrameMirror
+[04/10 20:12:38.698198][debug][169803][FilterFactory.cpp:34]  - FrameRotate
+[04/10 20:12:38.698202][debug][169803][FilterFactory.cpp:34]  - FrameUnpacker
+[04/10 20:12:38.698205][debug][169803][FilterFactory.cpp:34]  - G2PixelOffsetFix
+[04/10 20:12:38.698209][debug][169803][FilterFactory.cpp:34]  - G2XLDecompress
+[04/10 20:12:38.698213][debug][169803][FilterFactory.cpp:34]  - G330FrameUnpacker
+[04/10 20:12:38.698216][debug][169803][FilterFactory.cpp:34]  - HDRMerge
+[04/10 20:12:38.698220][debug][169803][FilterFactory.cpp:34]  - HardwareD2DCorrectionFilter
+[04/10 20:12:38.698224][debug][169803][FilterFactory.cpp:34]  - HoleFillingFilter
+[04/10 20:12:38.698229][debug][169803][FilterFactory.cpp:34]  - IMUCorrector
+[04/10 20:12:38.698233][debug][169803][FilterFactory.cpp:34]  - IMUFrameReversion
+[04/10 20:12:38.698237][debug][169803][FilterFactory.cpp:34]  - LiDARFormatConverter
+[04/10 20:12:38.698241][debug][169803][FilterFactory.cpp:34]  - LiDARPointFilter
+[04/10 20:12:38.698248][debug][169803][FilterFactory.cpp:34]  - NoiseRemovalFilter
+[04/10 20:12:38.698252][debug][169803][FilterFactory.cpp:34]  - OpenNIDisparityTransform
+[04/10 20:12:38.698257][debug][169803][FilterFactory.cpp:34]  - PixelValueOffset
+[04/10 20:12:38.698261][debug][169803][FilterFactory.cpp:34]  - PixelValueScaler
+[04/10 20:12:38.698265][debug][169803][FilterFactory.cpp:34]  - PointCloudFilter
+[04/10 20:12:38.698270][debug][169803][FilterFactory.cpp:34]  - SequenceIdFilter
+[04/10 20:12:38.698274][debug][169803][FilterFactory.cpp:34]  - SpatialAdvancedFilter
+[04/10 20:12:38.698279][debug][169803][FilterFactory.cpp:34]  - SpatialFastFilter
+[04/10 20:12:38.698283][debug][169803][FilterFactory.cpp:34]  - SpatialModerateFilter
+[04/10 20:12:38.698289][debug][169803][FilterFactory.cpp:34]  - TemporalFilter
+[04/10 20:12:38.698294][debug][169803][FilterFactory.cpp:34]  - ThresholdFilter
+[04/10 20:12:38.699167][debug][169803][UsbEnumeratorLibusb.cpp:471] UsbEnumeratorLibusb::startEventHandler()
+[04/10 20:12:38.699221][debug][169803][UsbEnumeratorLibusb.cpp:341] UsbEnumeratorLibusb created
+[04/10 20:12:38.699236][debug][169803][LinuxUsbPal.cpp:406] Uvc backend have been set to 0
+[04/10 20:12:38.699562][debug][169803][DeviceSeriesInfo.cpp:84] Ignore error: External config file doesn't exist: /home/jszn/robot_ros2_ws/install/orbbec_camera/lib/DeviceInfoConfigOEM.xml
+[04/10 20:12:38.699582][debug][169803][DynamicLibraryManager.cpp:31] Current working directory: /home/jszn/robot_ros2_ws/install/orbbec_camera/lib
+[04/10 20:12:38.700498][debug][169803][Context.cpp:51] Context created! Library version: v2.7.6, config file path: /home/jszn/robot_ros2_ws/install/orbbec_camera/share/orbbec_camera/config/OrbbecSDKConfig_v2.0.xml
+[04/10 20:12:38.700525][debug][169803][Context.cpp:100] Current working directory: /home/jszn/robot_ros2_ws/install/orbbec_camera/lib
+[04/10 20:12:38.700548][debug][169803][Context.cpp:110]  - Successfully retrieved commit hash for library 'firmwareupdater' (commit: b6df232)
+[04/10 20:12:38.700569][debug][169803][Context.cpp:110]  - Successfully retrieved commit hash for library 'privfilter' (commit: 968f706)
+[04/10 20:12:38.700587][debug][169803][Context.cpp:110]  - Successfully retrieved commit hash for library 'filterprocessor' (commit: f54b8d3)
+[04/10 20:12:38.700605][debug][169803][Context.cpp:110]  - Successfully retrieved commit hash for library 'frameprocessor' (commit: a4e10e8)
+[04/10 20:12:38.702338][debug][169803][DeviceManager.cpp:52] DeviceManager init ...
+[04/10 20:12:38.702436][debug][169803][DeviceManager.cpp:58] Enable USB Device Enumerator ...
+[04/10 20:12:38.702750][debug][169803][UsbEnumeratorLibusb.cpp:447] queryUsbInterfaces done!
+[04/10 20:12:38.702805][debug][169803][ObV4lGmslDevicePort.cpp:1882] Cannot access /sys/class/video4linux
+[04/10 20:12:38.702816][debug][169803][UsbDeviceEnumerator.cpp:151] Current usb device port list:
+[04/10 20:12:38.702822][debug][169803][UsbDeviceEnumerator.cpp:154]  - 6-2-4.0 | Orbbec Bootloader Data Channel
+[04/10 20:12:38.702895][info][169803][LinuxUsbPal.cpp:335] Create PollingDeviceWatcher!
+[04/10 20:12:38.702903][debug][169803][UsbDeviceEnumerator.cpp:48] Found 1 device(s):
+[04/10 20:12:38.702911][debug][169803][UsbDeviceEnumerator.cpp:51]   - Name: Bootloader device, PID: 0x0501, SN/ID: CP9JA53000BM, connection: USB3.0
+[04/10 20:12:38.702919][info][169803][DeviceManager.cpp:25] Current found device(s): (1)
+[04/10 20:12:38.702925][info][169803][DeviceManager.cpp:34] 	- Name: Bootloader device, PID: 0x0501, SN/ID: CP9JA53000BM, Connection: USB3.0
+[04/10 20:12:38.702929][debug][169803][DeviceManager.cpp:78] DeviceManager construct done!
+[04/10 20:12:38.702935][info][169803][DeviceManager.cpp:339] Enable net device enumeration: true
+[04/10 20:12:38.703298][debug][169803][GVCPClient.cpp:421] bind 192.168.0.115:0
+[04/10 20:12:38.703375][debug][169803][GVCPClient.cpp:302] getnameinfo-name: enp6s0
+[04/10 20:12:38.703476][debug][169803][GVCPClient.cpp:335] local mac address: a8:a1:59:08:08:b6,local ip address:192.168.0.115, interfaceName:enp6s0
+[04/10 20:12:38.703511][debug][169803][GVCPClient.cpp:302] getnameinfo-name: utun
+[04/10 20:12:38.703551][debug][169803][GVCPClient.cpp:335] local mac address: 00:00:00:00:00:00,local ip address:198.18.0.1, interfaceName:utun
+[04/10 20:12:40.707865][debug][169803][NetDeviceEnumerator.cpp:52] No net source port found!
+[04/10 20:12:40.707910][debug][169803][NetDeviceEnumerator.cpp:37] No net device found!
+[04/10 20:12:40.707995][info][169803][DeviceManager.cpp:25] Current device(s) list: (1)
+[04/10 20:12:40.708008][info][169803][DeviceManager.cpp:34] 	- Name: Bootloader device, PID: 0x0501, SN/ID: CP9JA53000BM, Connection: USB3.0
+[04/10 20:12:40.708018][info][169803][DeviceManager.cpp:339] Enable net device enumeration: false
+[04/10 20:12:41.710793][debug][169803][DeviceManager.cpp:248] Add device changed callback, callback id = 1
+[04/10 20:12:41.819645][debug][169836][DeviceManager.cpp:136] DeviceManager createDevice with access mode: default access(4)...
+[04/10 20:12:41.819677][debug][169836][DeviceBase.cpp:556] Convert access mode from default access to control access
+[04/10 20:12:41.819781][debug][169836][LinuxUsbPal.cpp:177] Vendor device have been create! url: 6-2-4
+[04/10 20:12:41.819959][debug][169836][PropertyServer.cpp:316] [CP9JA53000BM] [delta: 248us] Property 1000 get structure data successfully, size 164
+[04/10 20:12:41.819973][debug][169836][DeviceManager.cpp:168] Access control is not supported on this device. Access mode 'control access(2)' was ignored
+[04/10 20:12:41.819985][info][169836][DeviceManager.cpp:194] Device created successfully! Name: Boot, PID: 0x0501, SN/ID: CP9JA53000BM FW: 1.1.6
+[04/10 20:12:41.820057][debug][169836][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:12:41.820093][debug][169836][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:12:41.820102][debug][169836][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:12:41.820127][debug][169836][FilterDecorator.cpp:15] Filter PointCloudFilter created with frame queue capacity 10
+[04/10 20:12:41.820153][debug][169836][FilterDecorator.cpp:15] Filter PointCloudFilter created with frame queue capacity 10
+[04/10 20:12:44.941980][warning][169836][ObException.cpp:8] Device Component 'device clock synchronizer' not found!
+[04/10 20:12:44.943788][debug][169845][PropertyServer.cpp:316] [CP9JA53000BM] [delta: 170us] Property 1063 get structure data successfully, size 16
+[04/10 20:12:44.943981][warning][169845][ObException.cpp:8] Extension info IspFwVer not found!
+[04/10 20:12:44.944334][debug][169845][ObExceptionExt.hpp:36] [SDKExt] Parse firmware data failed!
+Invalid input data or data has been damaged
+[04/10 20:12:44.944351][debug][169845][FirmwareUpdater.cpp:47] Firmware update callback: state=-9, message=Parse firmware data failed!
+Invalid input data or data has been damaged, percent=0
+[04/10 20:12:44.944403][error][169845][FirmwareUpdater.cpp:105] Firmware update failed: Parse firmware data failed!
+Invalid input data or data has been damaged
+[04/10 20:12:44.944558][debug][169836][Pipeline.cpp:25] [CP9JA53000BM] Pipeline init ...
+[04/10 20:12:44.945186][debug][169837][FilterDecorator.cpp:303] Filter@PointCloudFilter have been reset
+[04/10 20:12:44.945205][debug][169837][FilterDecorator.cpp:284] Filter PointCloudFilter destroyed
+[04/10 20:12:44.945218][debug][169837][FilterDecorator.cpp:303] Filter@PointCloudFilter have been reset
+[04/10 20:12:44.945223][debug][169837][FilterDecorator.cpp:284] Filter PointCloudFilter destroyed
+[04/10 20:12:44.945270][debug][169837][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:12:44.945275][debug][169837][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:12:44.945282][debug][169837][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:12:44.945288][debug][169837][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:12:44.945294][debug][169837][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:12:44.945298][debug][169837][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:12:45.045474][debug][169837][DeviceMonitor.cpp:174] Heartbeat already disabled!
+[04/10 20:12:56.046136][debug][169836][DeviceManager.cpp:136] DeviceManager createDevice with access mode: default access(4)...
+[04/10 20:12:56.046177][debug][169836][DeviceBase.cpp:556] Convert access mode from default access to control access
+[04/10 20:12:56.046262][debug][169836][LinuxUsbPal.cpp:177] Vendor device have been create! url: 6-2-4
+[04/10 20:12:56.046700][debug][169836][PropertyServer.cpp:316] [CP9JA53000BM] [delta: 492us] Property 1000 get structure data successfully, size 164
+[04/10 20:12:56.046722][debug][169836][DeviceManager.cpp:168] Access control is not supported on this device. Access mode 'control access(2)' was ignored
+[04/10 20:12:56.046734][info][169836][DeviceManager.cpp:194] Device created successfully! Name: Boot, PID: 0x0501, SN/ID: CP9JA53000BM FW: 1.1.6
+[04/10 20:12:56.046821][debug][169836][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:12:56.046864][debug][169836][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:12:56.046879][debug][169836][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:12:56.046895][debug][169836][FilterDecorator.cpp:15] Filter PointCloudFilter created with frame queue capacity 10
+[04/10 20:12:56.046925][debug][169836][FilterDecorator.cpp:15] Filter PointCloudFilter created with frame queue capacity 10
+[04/10 20:12:59.147827][warning][169836][ObException.cpp:8] Device Component 'device clock synchronizer' not found!
+[04/10 20:12:59.150021][debug][169872][PropertyServer.cpp:316] [CP9JA53000BM] [delta: 198us] Property 1063 get structure data successfully, size 16
+[04/10 20:12:59.150068][warning][169872][ObException.cpp:8] Extension info IspFwVer not found!
+[04/10 20:12:59.150115][debug][169872][ObExceptionExt.hpp:36] [SDKExt] Parse firmware data failed!
+Invalid input data or data has been damaged
+[04/10 20:12:59.150138][debug][169872][FirmwareUpdater.cpp:47] Firmware update callback: state=-9, message=Parse firmware data failed!
+Invalid input data or data has been damaged, percent=0
+[04/10 20:12:59.150155][error][169872][FirmwareUpdater.cpp:105] Firmware update failed: Parse firmware data failed!
+Invalid input data or data has been damaged
+[04/10 20:12:59.150349][debug][169836][Pipeline.cpp:25] [CP9JA53000BM] Pipeline init ...
+[04/10 20:12:59.150713][debug][169837][FilterDecorator.cpp:303] Filter@PointCloudFilter have been reset
+[04/10 20:12:59.150732][debug][169837][FilterDecorator.cpp:284] Filter PointCloudFilter destroyed
+[04/10 20:12:59.150762][debug][169837][FilterDecorator.cpp:303] Filter@PointCloudFilter have been reset
+[04/10 20:12:59.150812][debug][169837][FilterDecorator.cpp:284] Filter PointCloudFilter destroyed
+[04/10 20:12:59.150951][debug][169837][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:12:59.150960][debug][169837][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:12:59.150977][debug][169837][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:12:59.150982][debug][169837][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:12:59.150997][debug][169837][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:12:59.151000][debug][169837][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:12:59.251212][debug][169837][DeviceMonitor.cpp:174] Heartbeat already disabled!
+[04/10 20:13:10.251785][debug][169836][DeviceManager.cpp:136] DeviceManager createDevice with access mode: default access(4)...
+[04/10 20:13:10.251838][debug][169836][DeviceBase.cpp:556] Convert access mode from default access to control access
+[04/10 20:13:10.251927][debug][169836][LinuxUsbPal.cpp:177] Vendor device have been create! url: 6-2-4
+[04/10 20:13:10.252250][debug][169836][PropertyServer.cpp:316] [CP9JA53000BM] [delta: 383us] Property 1000 get structure data successfully, size 164
+[04/10 20:13:10.252263][debug][169836][DeviceManager.cpp:168] Access control is not supported on this device. Access mode 'control access(2)' was ignored
+[04/10 20:13:10.252275][info][169836][DeviceManager.cpp:194] Device created successfully! Name: Boot, PID: 0x0501, SN/ID: CP9JA53000BM FW: 1.1.6
+[04/10 20:13:10.252337][debug][169836][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:13:10.252365][debug][169836][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:13:10.252378][debug][169836][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:13:10.252412][debug][169836][FilterDecorator.cpp:15] Filter PointCloudFilter created with frame queue capacity 10
+[04/10 20:13:10.252446][debug][169836][FilterDecorator.cpp:15] Filter PointCloudFilter created with frame queue capacity 10
+[04/10 20:13:11.755162][warning][169836][ObException.cpp:8] Device Component 'device clock synchronizer' not found!
+[04/10 20:13:11.756524][debug][169894][PropertyServer.cpp:316] [CP9JA53000BM] [delta: 151us] Property 1063 get structure data successfully, size 16
+[04/10 20:13:11.756552][warning][169894][ObException.cpp:8] Extension info IspFwVer not found!
+[04/10 20:13:11.756578][debug][169894][ObExceptionExt.hpp:36] [SDKExt] Parse firmware data failed!
+Invalid input data or data has been damaged
+[04/10 20:13:11.756593][debug][169894][FirmwareUpdater.cpp:47] Firmware update callback: state=-9, message=Parse firmware data failed!
+Invalid input data or data has been damaged, percent=0
+[04/10 20:13:11.756602][error][169894][FirmwareUpdater.cpp:105] Firmware update failed: Parse firmware data failed!
+Invalid input data or data has been damaged
+[04/10 20:13:11.756706][debug][169836][Pipeline.cpp:25] [CP9JA53000BM] Pipeline init ...
+[04/10 20:13:11.756949][debug][169837][FilterDecorator.cpp:303] Filter@PointCloudFilter have been reset
+[04/10 20:13:11.756963][debug][169837][FilterDecorator.cpp:284] Filter PointCloudFilter destroyed
+[04/10 20:13:11.756979][debug][169837][FilterDecorator.cpp:303] Filter@PointCloudFilter have been reset
+[04/10 20:13:11.756987][debug][169837][FilterDecorator.cpp:284] Filter PointCloudFilter destroyed
+[04/10 20:13:11.757032][debug][169837][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:13:11.757040][debug][169837][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:13:11.757061][debug][169837][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:13:11.757065][debug][169837][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:13:11.757072][debug][169837][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:13:11.757076][debug][169837][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:13:11.857246][debug][169837][DeviceMonitor.cpp:174] Heartbeat already disabled!
+[04/10 20:13:22.857892][debug][169836][DeviceManager.cpp:136] DeviceManager createDevice with access mode: default access(4)...
+[04/10 20:13:22.857935][debug][169836][DeviceBase.cpp:556] Convert access mode from default access to control access
+[04/10 20:13:22.858025][debug][169836][LinuxUsbPal.cpp:177] Vendor device have been create! url: 6-2-4
+[04/10 20:13:22.858479][debug][169836][PropertyServer.cpp:316] [CP9JA53000BM] [delta: 514us] Property 1000 get structure data successfully, size 164
+[04/10 20:13:22.858496][debug][169836][DeviceManager.cpp:168] Access control is not supported on this device. Access mode 'control access(2)' was ignored
+[04/10 20:13:22.858506][info][169836][DeviceManager.cpp:194] Device created successfully! Name: Boot, PID: 0x0501, SN/ID: CP9JA53000BM FW: 1.1.6
+[04/10 20:13:22.858564][debug][169836][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:13:22.858582][debug][169836][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:13:22.858592][debug][169836][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:13:22.858616][debug][169836][FilterDecorator.cpp:15] Filter PointCloudFilter created with frame queue capacity 10
+[04/10 20:13:22.858647][debug][169836][FilterDecorator.cpp:15] Filter PointCloudFilter created with frame queue capacity 10
+[04/10 20:13:22.955215][warning][169836][ObException.cpp:8] Device Component 'device clock synchronizer' not found!
+[04/10 20:13:22.956649][debug][169926][PropertyServer.cpp:316] [CP9JA53000BM] [delta: 153us] Property 1063 get structure data successfully, size 16
+[04/10 20:13:22.956673][warning][169926][ObException.cpp:8] Extension info IspFwVer not found!
+[04/10 20:13:22.956699][debug][169926][ObExceptionExt.hpp:36] [SDKExt] Parse firmware data failed!
+Invalid input data or data has been damaged
+[04/10 20:13:22.956717][debug][169926][FirmwareUpdater.cpp:47] Firmware update callback: state=-9, message=Parse firmware data failed!
+Invalid input data or data has been damaged, percent=0
+[04/10 20:13:22.956729][error][169926][FirmwareUpdater.cpp:105] Firmware update failed: Parse firmware data failed!
+Invalid input data or data has been damaged
+[04/10 20:13:22.956933][debug][169836][Pipeline.cpp:25] [CP9JA53000BM] Pipeline init ...
+[04/10 20:13:22.957089][debug][169837][FilterDecorator.cpp:303] Filter@PointCloudFilter have been reset
+[04/10 20:13:22.957097][debug][169837][FilterDecorator.cpp:284] Filter PointCloudFilter destroyed
+[04/10 20:13:22.957108][debug][169837][FilterDecorator.cpp:303] Filter@PointCloudFilter have been reset
+[04/10 20:13:22.957113][debug][169837][FilterDecorator.cpp:284] Filter PointCloudFilter destroyed
+[04/10 20:13:22.957150][debug][169837][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:13:22.957157][debug][169837][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:13:22.957164][debug][169837][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:13:22.957169][debug][169837][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:13:22.957175][debug][169837][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:13:22.957180][debug][169837][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:13:23.057431][debug][169837][DeviceMonitor.cpp:174] Heartbeat already disabled!
+[04/10 20:13:34.058153][debug][169836][DeviceManager.cpp:136] DeviceManager createDevice with access mode: default access(4)...
+[04/10 20:13:34.058201][debug][169836][DeviceBase.cpp:556] Convert access mode from default access to control access
+[04/10 20:13:34.058305][debug][169836][LinuxUsbPal.cpp:177] Vendor device have been create! url: 6-2-4
+[04/10 20:13:34.058709][debug][169836][PropertyServer.cpp:316] [CP9JA53000BM] [delta: 465us] Property 1000 get structure data successfully, size 164
+[04/10 20:13:34.058726][debug][169836][DeviceManager.cpp:168] Access control is not supported on this device. Access mode 'control access(2)' was ignored
+[04/10 20:13:34.058738][info][169836][DeviceManager.cpp:194] Device created successfully! Name: Boot, PID: 0x0501, SN/ID: CP9JA53000BM FW: 1.1.6
+[04/10 20:13:34.058803][debug][169836][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:13:34.058832][debug][169836][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:13:34.058843][debug][169836][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:13:34.058866][debug][169836][FilterDecorator.cpp:15] Filter PointCloudFilter created with frame queue capacity 10
+[04/10 20:13:34.058895][debug][169836][FilterDecorator.cpp:15] Filter PointCloudFilter created with frame queue capacity 10
+[04/10 20:13:35.756547][warning][169836][ObException.cpp:8] Device Component 'device clock synchronizer' not found!
+[04/10 20:13:35.758018][debug][169950][PropertyServer.cpp:316] [CP9JA53000BM] [delta: 169us] Property 1063 get structure data successfully, size 16
+[04/10 20:13:35.758042][warning][169950][ObException.cpp:8] Extension info IspFwVer not found!
+[04/10 20:13:35.758066][debug][169950][ObExceptionExt.hpp:36] [SDKExt] Parse firmware data failed!
+Invalid input data or data has been damaged
+[04/10 20:13:35.758082][debug][169950][FirmwareUpdater.cpp:47] Firmware update callback: state=-9, message=Parse firmware data failed!
+Invalid input data or data has been damaged, percent=0
+[04/10 20:13:35.758093][error][169950][FirmwareUpdater.cpp:105] Firmware update failed: Parse firmware data failed!
+Invalid input data or data has been damaged
+[04/10 20:13:35.758219][debug][169836][Pipeline.cpp:25] [CP9JA53000BM] Pipeline init ...
+[04/10 20:13:35.758426][debug][169837][FilterDecorator.cpp:303] Filter@PointCloudFilter have been reset
+[04/10 20:13:35.758436][debug][169837][FilterDecorator.cpp:284] Filter PointCloudFilter destroyed
+[04/10 20:13:35.758452][debug][169837][FilterDecorator.cpp:303] Filter@PointCloudFilter have been reset
+[04/10 20:13:35.758458][debug][169837][FilterDecorator.cpp:284] Filter PointCloudFilter destroyed
+[04/10 20:13:35.758513][debug][169837][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:13:35.758521][debug][169837][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:13:35.758530][debug][169837][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:13:35.758533][debug][169837][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:13:35.758540][debug][169837][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:13:35.758544][debug][169837][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:13:35.858729][debug][169837][DeviceMonitor.cpp:174] Heartbeat already disabled!
+[04/10 20:13:38.703486][debug][169818][GVCPClient.cpp:421] bind 0.0.0.0:43300 [**3 logs in 60000ms, last: 20:12:38.703509**]
+[04/10 20:13:46.859470][debug][169836][DeviceManager.cpp:136] DeviceManager createDevice with access mode: default access(4)...
+[04/10 20:13:46.859519][debug][169836][DeviceBase.cpp:556] Convert access mode from default access to control access
+[04/10 20:13:46.859610][debug][169836][LinuxUsbPal.cpp:177] Vendor device have been create! url: 6-2-4
+[04/10 20:13:46.860065][debug][169836][PropertyServer.cpp:316] [CP9JA53000BM] [delta: 518us] Property 1000 get structure data successfully, size 164
+[04/10 20:13:46.860082][debug][169836][DeviceManager.cpp:168] Access control is not supported on this device. Access mode 'control access(2)' was ignored
+[04/10 20:13:46.860091][info][169836][DeviceManager.cpp:194] Device created successfully! Name: Boot, PID: 0x0501, SN/ID: CP9JA53000BM FW: 1.1.6
+[04/10 20:13:46.860163][debug][169836][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:13:46.860187][debug][169836][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:13:46.860197][debug][169836][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:13:46.860217][debug][169836][FilterDecorator.cpp:15] Filter PointCloudFilter created with frame queue capacity 10
+[04/10 20:13:46.860240][debug][169836][FilterDecorator.cpp:15] Filter PointCloudFilter created with frame queue capacity 10
+[04/10 20:13:46.955843][warning][169836][ObException.cpp:8] Device Component 'device clock synchronizer' not found!
+[04/10 20:13:46.957740][debug][169975][PropertyServer.cpp:316] [CP9JA53000BM] [delta: 175us] Property 1063 get structure data successfully, size 16
+[04/10 20:13:46.957803][warning][169975][ObException.cpp:8] Extension info IspFwVer not found!
+[04/10 20:13:46.957834][debug][169975][ObExceptionExt.hpp:36] [SDKExt] Parse firmware data failed!
+Invalid input data or data has been damaged
+[04/10 20:13:46.957848][debug][169975][FirmwareUpdater.cpp:47] Firmware update callback: state=-9, message=Parse firmware data failed!
+Invalid input data or data has been damaged, percent=0
+[04/10 20:13:46.957857][error][169975][FirmwareUpdater.cpp:105] Firmware update failed: Parse firmware data failed!
+Invalid input data or data has been damaged
+[04/10 20:13:46.957961][debug][169836][Pipeline.cpp:25] [CP9JA53000BM] Pipeline init ...
+[04/10 20:13:46.958185][debug][169837][FilterDecorator.cpp:303] Filter@PointCloudFilter have been reset
+[04/10 20:13:46.958197][debug][169837][FilterDecorator.cpp:284] Filter PointCloudFilter destroyed
+[04/10 20:13:46.958215][debug][169837][FilterDecorator.cpp:303] Filter@PointCloudFilter have been reset
+[04/10 20:13:46.958220][debug][169837][FilterDecorator.cpp:284] Filter PointCloudFilter destroyed
+[04/10 20:13:46.958276][debug][169837][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:13:46.958283][debug][169837][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:13:46.958292][debug][169837][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:13:46.958295][debug][169837][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:13:46.958301][debug][169837][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:13:46.958305][debug][169837][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:13:47.058491][debug][169837][DeviceMonitor.cpp:174] Heartbeat already disabled!
+[04/10 20:13:58.059183][debug][169836][DeviceManager.cpp:136] DeviceManager createDevice with access mode: default access(4)...
+[04/10 20:13:58.059233][debug][169836][DeviceBase.cpp:556] Convert access mode from default access to control access
+[04/10 20:13:58.059339][debug][169836][LinuxUsbPal.cpp:177] Vendor device have been create! url: 6-2-4
+[04/10 20:13:58.059830][debug][169836][PropertyServer.cpp:316] [CP9JA53000BM] [delta: 565us] Property 1000 get structure data successfully, size 164
+[04/10 20:13:58.059847][debug][169836][DeviceManager.cpp:168] Access control is not supported on this device. Access mode 'control access(2)' was ignored
+[04/10 20:13:58.059857][info][169836][DeviceManager.cpp:194] Device created successfully! Name: Boot, PID: 0x0501, SN/ID: CP9JA53000BM FW: 1.1.6
+[04/10 20:13:58.059906][debug][169836][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:13:58.059926][debug][169836][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:13:58.059935][debug][169836][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:13:58.059952][debug][169836][FilterDecorator.cpp:15] Filter PointCloudFilter created with frame queue capacity 10
+[04/10 20:13:58.059977][debug][169836][FilterDecorator.cpp:15] Filter PointCloudFilter created with frame queue capacity 10
+[04/10 20:13:59.755315][warning][169836][ObException.cpp:8] Device Component 'device clock synchronizer' not found!
+[04/10 20:13:59.756897][debug][170001][PropertyServer.cpp:316] [CP9JA53000BM] [delta: 148us] Property 1063 get structure data successfully, size 16
+[04/10 20:13:59.756924][warning][170001][ObException.cpp:8] Extension info IspFwVer not found!
+[04/10 20:13:59.756960][debug][170001][ObExceptionExt.hpp:36] [SDKExt] Parse firmware data failed!
+Invalid input data or data has been damaged
+[04/10 20:13:59.756981][debug][170001][FirmwareUpdater.cpp:47] Firmware update callback: state=-9, message=Parse firmware data failed!
+Invalid input data or data has been damaged, percent=0
+[04/10 20:13:59.756993][error][170001][FirmwareUpdater.cpp:105] Firmware update failed: Parse firmware data failed!
+Invalid input data or data has been damaged
+[04/10 20:13:59.757107][debug][169836][Pipeline.cpp:25] [CP9JA53000BM] Pipeline init ...
+[04/10 20:13:59.757293][debug][169837][FilterDecorator.cpp:303] Filter@PointCloudFilter have been reset
+[04/10 20:13:59.757302][debug][169837][FilterDecorator.cpp:284] Filter PointCloudFilter destroyed
+[04/10 20:13:59.757314][debug][169837][FilterDecorator.cpp:303] Filter@PointCloudFilter have been reset
+[04/10 20:13:59.757319][debug][169837][FilterDecorator.cpp:284] Filter PointCloudFilter destroyed
+[04/10 20:13:59.757352][debug][169837][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:13:59.757356][debug][169837][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:13:59.757361][debug][169837][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:13:59.757364][debug][169837][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:13:59.757369][debug][169837][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:13:59.757372][debug][169837][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:13:59.857567][debug][169837][DeviceMonitor.cpp:174] Heartbeat already disabled!
+[04/10 20:14:10.858400][debug][169836][DeviceManager.cpp:136] DeviceManager createDevice with access mode: default access(4)...
+[04/10 20:14:10.858443][debug][169836][DeviceBase.cpp:556] Convert access mode from default access to control access
+[04/10 20:14:10.858537][debug][169836][LinuxUsbPal.cpp:177] Vendor device have been create! url: 6-2-4
+[04/10 20:14:10.858995][debug][169836][PropertyServer.cpp:316] [CP9JA53000BM] [delta: 522us] Property 1000 get structure data successfully, size 164
+[04/10 20:14:10.859024][debug][169836][DeviceManager.cpp:168] Access control is not supported on this device. Access mode 'control access(2)' was ignored
+[04/10 20:14:10.859037][info][169836][DeviceManager.cpp:194] Device created successfully! Name: Boot, PID: 0x0501, SN/ID: CP9JA53000BM FW: 1.1.6
+[04/10 20:14:10.859093][debug][169836][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:14:10.859115][debug][169836][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:14:10.859126][debug][169836][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:14:10.859146][debug][169836][FilterDecorator.cpp:15] Filter PointCloudFilter created with frame queue capacity 10
+[04/10 20:14:10.859173][debug][169836][FilterDecorator.cpp:15] Filter PointCloudFilter created with frame queue capacity 10
+[04/10 20:14:10.956207][warning][169836][ObException.cpp:8] Device Component 'device clock synchronizer' not found!
+[04/10 20:14:10.957908][debug][170018][PropertyServer.cpp:316] [CP9JA53000BM] [delta: 184us] Property 1063 get structure data successfully, size 16
+[04/10 20:14:10.957977][warning][170018][ObException.cpp:8] Extension info IspFwVer not found!
+[04/10 20:14:10.958016][debug][170018][ObExceptionExt.hpp:36] [SDKExt] Parse firmware data failed!
+Invalid input data or data has been damaged
+[04/10 20:14:10.958034][debug][170018][FirmwareUpdater.cpp:47] Firmware update callback: state=-9, message=Parse firmware data failed!
+Invalid input data or data has been damaged, percent=0
+[04/10 20:14:10.958058][error][170018][FirmwareUpdater.cpp:105] Firmware update failed: Parse firmware data failed!
+Invalid input data or data has been damaged
+[04/10 20:14:10.958201][debug][169836][Pipeline.cpp:25] [CP9JA53000BM] Pipeline init ...
+[04/10 20:14:10.958530][debug][169837][FilterDecorator.cpp:303] Filter@PointCloudFilter have been reset
+[04/10 20:14:10.958618][debug][169837][FilterDecorator.cpp:284] Filter PointCloudFilter destroyed
+[04/10 20:14:10.958636][debug][169837][FilterDecorator.cpp:303] Filter@PointCloudFilter have been reset
+[04/10 20:14:10.958640][debug][169837][FilterDecorator.cpp:284] Filter PointCloudFilter destroyed
+[04/10 20:14:10.958690][debug][169837][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:14:10.959781][debug][169837][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:14:10.959796][debug][169837][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:14:10.959800][debug][169837][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:14:10.959809][debug][169837][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:14:10.959813][debug][169837][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:14:11.060013][debug][169837][DeviceMonitor.cpp:174] Heartbeat already disabled!
+[04/10 20:14:22.059451][debug][169836][DeviceManager.cpp:136] DeviceManager createDevice with access mode: default access(4)...
+[04/10 20:14:22.059493][debug][169836][DeviceBase.cpp:556] Convert access mode from default access to control access
+[04/10 20:14:22.059580][debug][169836][LinuxUsbPal.cpp:177] Vendor device have been create! url: 6-2-4
+[04/10 20:14:22.060058][debug][169836][PropertyServer.cpp:316] [CP9JA53000BM] [delta: 537us] Property 1000 get structure data successfully, size 164
+[04/10 20:14:22.060075][debug][169836][DeviceManager.cpp:168] Access control is not supported on this device. Access mode 'control access(2)' was ignored
+[04/10 20:14:22.060085][info][169836][DeviceManager.cpp:194] Device created successfully! Name: Boot, PID: 0x0501, SN/ID: CP9JA53000BM FW: 1.1.6
+[04/10 20:14:22.060134][debug][169836][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:14:22.060163][debug][169836][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:14:22.060176][debug][169836][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:14:22.060201][debug][169836][FilterDecorator.cpp:15] Filter PointCloudFilter created with frame queue capacity 10
+[04/10 20:14:22.060233][debug][169836][FilterDecorator.cpp:15] Filter PointCloudFilter created with frame queue capacity 10
+[04/10 20:14:23.755337][warning][169836][ObException.cpp:8] Device Component 'device clock synchronizer' not found!
+[04/10 20:14:23.756697][debug][170040][PropertyServer.cpp:316] [CP9JA53000BM] [delta: 152us] Property 1063 get structure data successfully, size 16
+[04/10 20:14:23.756723][warning][170040][ObException.cpp:8] Extension info IspFwVer not found!
+[04/10 20:14:23.756750][debug][170040][ObExceptionExt.hpp:36] [SDKExt] Parse firmware data failed!
+Invalid input data or data has been damaged
+[04/10 20:14:23.756769][debug][170040][FirmwareUpdater.cpp:47] Firmware update callback: state=-9, message=Parse firmware data failed!
+Invalid input data or data has been damaged, percent=0
+[04/10 20:14:23.756781][error][170040][FirmwareUpdater.cpp:105] Firmware update failed: Parse firmware data failed!
+Invalid input data or data has been damaged
+[04/10 20:14:23.756873][debug][169836][Pipeline.cpp:25] [CP9JA53000BM] Pipeline init ...
+[04/10 20:14:23.757112][debug][169837][FilterDecorator.cpp:303] Filter@PointCloudFilter have been reset
+[04/10 20:14:23.757127][debug][169837][FilterDecorator.cpp:284] Filter PointCloudFilter destroyed
+[04/10 20:14:23.757143][debug][169837][FilterDecorator.cpp:303] Filter@PointCloudFilter have been reset
+[04/10 20:14:23.757161][debug][169837][FilterDecorator.cpp:284] Filter PointCloudFilter destroyed
+[04/10 20:14:23.757217][debug][169837][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:14:23.757224][debug][169837][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:14:23.757233][debug][169837][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:14:23.757238][debug][169837][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:14:23.757245][debug][169837][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:14:23.757250][debug][169837][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:14:23.857437][debug][169837][DeviceMonitor.cpp:174] Heartbeat already disabled!
+[04/10 20:14:34.858128][debug][169836][DeviceManager.cpp:136] DeviceManager createDevice with access mode: default access(4)...
+[04/10 20:14:34.858162][debug][169836][DeviceBase.cpp:556] Convert access mode from default access to control access
+[04/10 20:14:34.858244][debug][169836][LinuxUsbPal.cpp:177] Vendor device have been create! url: 6-2-4
+[04/10 20:14:34.858663][debug][169836][PropertyServer.cpp:316] [CP9JA53000BM] [delta: 475us] Property 1000 get structure data successfully, size 164
+[04/10 20:14:34.858675][debug][169836][DeviceManager.cpp:168] Access control is not supported on this device. Access mode 'control access(2)' was ignored
+[04/10 20:14:34.858683][info][169836][DeviceManager.cpp:194] Device created successfully! Name: Boot, PID: 0x0501, SN/ID: CP9JA53000BM FW: 1.1.6
+[04/10 20:14:34.858723][debug][169836][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:14:34.858741][debug][169836][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:14:34.858747][debug][169836][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:14:34.858763][debug][169836][FilterDecorator.cpp:15] Filter PointCloudFilter created with frame queue capacity 10
+[04/10 20:14:34.858799][debug][169836][FilterDecorator.cpp:15] Filter PointCloudFilter created with frame queue capacity 10
+[04/10 20:14:34.955155][warning][169836][ObException.cpp:8] Device Component 'device clock synchronizer' not found!
+[04/10 20:14:34.956560][debug][170056][PropertyServer.cpp:316] [CP9JA53000BM] [delta: 159us] Property 1063 get structure data successfully, size 16
+[04/10 20:14:34.956586][warning][170056][ObException.cpp:8] Extension info IspFwVer not found!
+[04/10 20:14:34.956612][debug][170056][ObExceptionExt.hpp:36] [SDKExt] Parse firmware data failed!
+Invalid input data or data has been damaged
+[04/10 20:14:34.956626][debug][170056][FirmwareUpdater.cpp:47] Firmware update callback: state=-9, message=Parse firmware data failed!
+Invalid input data or data has been damaged, percent=0
+[04/10 20:14:34.956635][error][170056][FirmwareUpdater.cpp:105] Firmware update failed: Parse firmware data failed!
+Invalid input data or data has been damaged
+[04/10 20:14:34.956798][debug][169836][Pipeline.cpp:25] [CP9JA53000BM] Pipeline init ...
+[04/10 20:14:34.957138][debug][169837][FilterDecorator.cpp:303] Filter@PointCloudFilter have been reset
+[04/10 20:14:34.957151][debug][169837][FilterDecorator.cpp:284] Filter PointCloudFilter destroyed
+[04/10 20:14:34.957175][debug][169837][FilterDecorator.cpp:303] Filter@PointCloudFilter have been reset
+[04/10 20:14:34.957181][debug][169837][FilterDecorator.cpp:284] Filter PointCloudFilter destroyed
+[04/10 20:14:34.957247][debug][169837][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:14:34.957254][debug][169837][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:14:34.957263][debug][169837][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:14:34.957268][debug][169837][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:14:34.957275][debug][169837][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:14:34.957294][debug][169837][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:14:35.057513][debug][169837][DeviceMonitor.cpp:174] Heartbeat already disabled!
+[04/10 20:14:39.440822][debug][169803][DeviceManager.cpp:256] Erase device changed callback, id = 1, erasedSize = 1
+[04/10 20:18:18.763554][debug][170364][FrameMemoryPool.cpp:29] FrameMemoryPool created!
+[04/10 20:18:18.764069][debug][170364][PrivFilterLoader.cpp:168] Private filter creator created: G2XLDecompress
+[04/10 20:18:18.764082][debug][170364][PrivFilterLoader.cpp:168] Private filter creator created: FrameUnpacker
+[04/10 20:18:18.764087][debug][170364][PrivFilterLoader.cpp:168] Private filter creator created: G2PixelOffsetFix
+[04/10 20:18:18.764091][debug][170364][PrivFilterLoader.cpp:168] Private filter creator created: ConfidenceEstimator
+[04/10 20:18:18.764097][debug][170364][PrivFilterLoader.cpp:168] Private filter creator created: G330FrameUnpacker
+[04/10 20:18:18.764478][debug][170364][PrivFilterLoader.cpp:168] Private filter creator created: DisparityTransform
+[04/10 20:18:18.764495][debug][170364][PrivFilterLoader.cpp:168] Private filter creator created: HoleFillingFilter
+[04/10 20:18:18.764503][debug][170364][PrivFilterLoader.cpp:168] Private filter creator created: NoiseRemovalFilter
+[04/10 20:18:18.764510][debug][170364][PrivFilterLoader.cpp:168] Private filter creator created: SpatialAdvancedFilter
+[04/10 20:18:18.764517][debug][170364][PrivFilterLoader.cpp:168] Private filter creator created: TemporalFilter
+[04/10 20:18:18.764523][debug][170364][PrivFilterLoader.cpp:168] Private filter creator created: DepthResize
+[04/10 20:18:18.764528][debug][170364][PrivFilterLoader.cpp:168] Private filter creator created: EdgeNoiseRemovalFilter
+[04/10 20:18:18.764532][debug][170364][PrivFilterLoader.cpp:168] Private filter creator created: HardwareD2DCorrectionFilter
+[04/10 20:18:18.764537][debug][170364][PrivFilterLoader.cpp:168] Private filter creator created: OpenNIDisparityTransform
+[04/10 20:18:18.764540][debug][170364][PrivFilterLoader.cpp:168] Private filter creator created: SpatialFastFilter
+[04/10 20:18:18.764544][debug][170364][PrivFilterLoader.cpp:168] Private filter creator created: SpatialModerateFilter
+[04/10 20:18:18.764548][debug][170364][PrivFilterLoader.cpp:168] Private filter creator created: FalsePositiveFilter
+[04/10 20:18:18.764588][debug][170364][FilterFactory.cpp:32] Registered 33 filter creators
+[04/10 20:18:18.764594][debug][170364][FilterFactory.cpp:34]  - Align
+[04/10 20:18:18.764598][debug][170364][FilterFactory.cpp:34]  - ConfidenceEstimator
+[04/10 20:18:18.764602][debug][170364][FilterFactory.cpp:34]  - DecimationFilter
+[04/10 20:18:18.764606][debug][170364][FilterFactory.cpp:34]  - DepthResize
+[04/10 20:18:18.764609][debug][170364][FilterFactory.cpp:34]  - DisparityTransform
+[04/10 20:18:18.764613][debug][170364][FilterFactory.cpp:34]  - EdgeNoiseRemovalFilter
+[04/10 20:18:18.764617][debug][170364][FilterFactory.cpp:34]  - FalsePositiveFilter
+[04/10 20:18:18.764620][debug][170364][FilterFactory.cpp:34]  - FormatConverter
+[04/10 20:18:18.764624][debug][170364][FilterFactory.cpp:34]  - FrameFlip
+[04/10 20:18:18.764627][debug][170364][FilterFactory.cpp:34]  - FrameMirror
+[04/10 20:18:18.764632][debug][170364][FilterFactory.cpp:34]  - FrameRotate
+[04/10 20:18:18.764638][debug][170364][FilterFactory.cpp:34]  - FrameUnpacker
+[04/10 20:18:18.764644][debug][170364][FilterFactory.cpp:34]  - G2PixelOffsetFix
+[04/10 20:18:18.764650][debug][170364][FilterFactory.cpp:34]  - G2XLDecompress
+[04/10 20:18:18.764655][debug][170364][FilterFactory.cpp:34]  - G330FrameUnpacker
+[04/10 20:18:18.764659][debug][170364][FilterFactory.cpp:34]  - HDRMerge
+[04/10 20:18:18.764662][debug][170364][FilterFactory.cpp:34]  - HardwareD2DCorrectionFilter
+[04/10 20:18:18.764666][debug][170364][FilterFactory.cpp:34]  - HoleFillingFilter
+[04/10 20:18:18.764670][debug][170364][FilterFactory.cpp:34]  - IMUCorrector
+[04/10 20:18:18.764674][debug][170364][FilterFactory.cpp:34]  - IMUFrameReversion
+[04/10 20:18:18.764680][debug][170364][FilterFactory.cpp:34]  - LiDARFormatConverter
+[04/10 20:18:18.764719][debug][170364][FilterFactory.cpp:34]  - LiDARPointFilter
+[04/10 20:18:18.764725][debug][170364][FilterFactory.cpp:34]  - NoiseRemovalFilter
+[04/10 20:18:18.764729][debug][170364][FilterFactory.cpp:34]  - OpenNIDisparityTransform
+[04/10 20:18:18.764733][debug][170364][FilterFactory.cpp:34]  - PixelValueOffset
+[04/10 20:18:18.764737][debug][170364][FilterFactory.cpp:34]  - PixelValueScaler
+[04/10 20:18:18.764741][debug][170364][FilterFactory.cpp:34]  - PointCloudFilter
+[04/10 20:18:18.764746][debug][170364][FilterFactory.cpp:34]  - SequenceIdFilter
+[04/10 20:18:18.764750][debug][170364][FilterFactory.cpp:34]  - SpatialAdvancedFilter
+[04/10 20:18:18.764754][debug][170364][FilterFactory.cpp:34]  - SpatialFastFilter
+[04/10 20:18:18.764758][debug][170364][FilterFactory.cpp:34]  - SpatialModerateFilter
+[04/10 20:18:18.764762][debug][170364][FilterFactory.cpp:34]  - TemporalFilter
+[04/10 20:18:18.764772][debug][170364][FilterFactory.cpp:34]  - ThresholdFilter
+[04/10 20:18:18.765549][debug][170364][UsbEnumeratorLibusb.cpp:471] UsbEnumeratorLibusb::startEventHandler()
+[04/10 20:18:18.765596][debug][170364][UsbEnumeratorLibusb.cpp:341] UsbEnumeratorLibusb created
+[04/10 20:18:18.765610][debug][170364][LinuxUsbPal.cpp:406] Uvc backend have been set to 0
+[04/10 20:18:18.765886][debug][170364][DeviceSeriesInfo.cpp:84] Ignore error: External config file doesn't exist: /home/jszn/robot_ros2_ws/install/orbbec_camera/lib/DeviceInfoConfigOEM.xml
+[04/10 20:18:18.765913][debug][170364][DynamicLibraryManager.cpp:31] Current working directory: /home/jszn/robot_ros2_ws/install/orbbec_camera/lib
+[04/10 20:18:18.766608][debug][170364][Context.cpp:51] Context created! Library version: v2.7.6, config file path: /home/jszn/robot_ros2_ws/install/orbbec_camera/share/orbbec_camera/config/OrbbecSDKConfig_v2.0.xml
+[04/10 20:18:18.766629][debug][170364][Context.cpp:100] Current working directory: /home/jszn/robot_ros2_ws/install/orbbec_camera/lib
+[04/10 20:18:18.766644][debug][170364][Context.cpp:110]  - Successfully retrieved commit hash for library 'firmwareupdater' (commit: b6df232)
+[04/10 20:18:18.766660][debug][170364][Context.cpp:110]  - Successfully retrieved commit hash for library 'privfilter' (commit: 968f706)
+[04/10 20:18:18.766674][debug][170364][Context.cpp:110]  - Successfully retrieved commit hash for library 'filterprocessor' (commit: f54b8d3)
+[04/10 20:18:18.766688][debug][170364][Context.cpp:110]  - Successfully retrieved commit hash for library 'frameprocessor' (commit: a4e10e8)
+[04/10 20:18:18.768066][debug][170364][DeviceManager.cpp:52] DeviceManager init ...
+[04/10 20:18:18.768160][debug][170364][DeviceManager.cpp:58] Enable USB Device Enumerator ...
+[04/10 20:18:18.768471][debug][170364][UsbEnumeratorLibusb.cpp:447] queryUsbInterfaces done!
+[04/10 20:18:18.768503][debug][170364][ObV4lGmslDevicePort.cpp:1882] Cannot access /sys/class/video4linux
+[04/10 20:18:18.768509][debug][170364][UsbDeviceEnumerator.cpp:151] Current usb device port list:
+[04/10 20:18:18.768516][debug][170364][UsbDeviceEnumerator.cpp:154]  - 6-2-4.0 | Orbbec Bootloader Data Channel
+[04/10 20:18:18.768600][info][170364][LinuxUsbPal.cpp:335] Create PollingDeviceWatcher!
+[04/10 20:18:18.768615][debug][170364][UsbDeviceEnumerator.cpp:48] Found 1 device(s):
+[04/10 20:18:18.768627][debug][170364][UsbDeviceEnumerator.cpp:51]   - Name: Bootloader device, PID: 0x0501, SN/ID: CP9JA53000BM, connection: USB3.0
+[04/10 20:18:18.768643][info][170364][DeviceManager.cpp:25] Current found device(s): (1)
+[04/10 20:18:18.768650][info][170364][DeviceManager.cpp:34] 	- Name: Bootloader device, PID: 0x0501, SN/ID: CP9JA53000BM, Connection: USB3.0
+[04/10 20:18:18.768655][debug][170364][DeviceManager.cpp:78] DeviceManager construct done!
+[04/10 20:18:18.768661][info][170364][DeviceManager.cpp:339] Enable net device enumeration: true
+[04/10 20:18:18.769078][debug][170364][GVCPClient.cpp:421] bind 192.168.0.115:0
+[04/10 20:18:18.769144][debug][170364][GVCPClient.cpp:302] getnameinfo-name: enp6s0
+[04/10 20:18:18.769230][debug][170364][GVCPClient.cpp:335] local mac address: a8:a1:59:08:08:b6,local ip address:192.168.0.115, interfaceName:enp6s0
+[04/10 20:18:18.769266][debug][170364][GVCPClient.cpp:302] getnameinfo-name: utun
+[04/10 20:18:18.769301][debug][170364][GVCPClient.cpp:335] local mac address: 00:00:00:00:00:00,local ip address:198.18.0.1, interfaceName:utun
+[04/10 20:18:20.773712][debug][170364][NetDeviceEnumerator.cpp:52] No net source port found!
+[04/10 20:18:20.773759][debug][170364][NetDeviceEnumerator.cpp:37] No net device found!
+[04/10 20:18:20.773876][info][170364][DeviceManager.cpp:25] Current device(s) list: (1)
+[04/10 20:18:20.773891][info][170364][DeviceManager.cpp:34] 	- Name: Bootloader device, PID: 0x0501, SN/ID: CP9JA53000BM, Connection: USB3.0
+[04/10 20:18:20.773898][info][170364][DeviceManager.cpp:339] Enable net device enumeration: false
+[04/10 20:18:21.779575][debug][170364][DeviceManager.cpp:248] Add device changed callback, callback id = 1
+[04/10 20:18:21.882198][debug][170395][DeviceManager.cpp:136] DeviceManager createDevice with access mode: default access(4)...
+[04/10 20:18:21.882229][debug][170395][DeviceBase.cpp:556] Convert access mode from default access to control access
+[04/10 20:18:21.882318][debug][170395][LinuxUsbPal.cpp:177] Vendor device have been create! url: 6-2-4
+[04/10 20:18:21.882496][debug][170395][PropertyServer.cpp:316] [CP9JA53000BM] [delta: 230us] Property 1000 get structure data successfully, size 164
+[04/10 20:18:21.882509][debug][170395][DeviceManager.cpp:168] Access control is not supported on this device. Access mode 'control access(2)' was ignored
+[04/10 20:18:21.882517][info][170395][DeviceManager.cpp:194] Device created successfully! Name: Boot, PID: 0x0501, SN/ID: CP9JA53000BM FW: 1.1.6
+[04/10 20:18:21.882583][debug][170395][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:18:21.882619][debug][170395][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:18:21.882629][debug][170395][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:18:21.882655][debug][170395][FilterDecorator.cpp:15] Filter PointCloudFilter created with frame queue capacity 10
+[04/10 20:18:21.882682][debug][170395][FilterDecorator.cpp:15] Filter PointCloudFilter created with frame queue capacity 10
+[04/10 20:18:23.757193][warning][170395][ObException.cpp:8] Device Component 'device clock synchronizer' not found!
+[04/10 20:18:23.758548][debug][170398][PropertyServer.cpp:316] [CP9JA53000BM] [delta: 147us] Property 1063 get structure data successfully, size 16
+[04/10 20:18:23.758570][warning][170398][ObException.cpp:8] Extension info IspFwVer not found!
+[04/10 20:18:23.758592][debug][170398][ObExceptionExt.hpp:36] [SDKExt] Parse firmware data failed!
+Invalid input data or data has been damaged
+[04/10 20:18:23.758605][debug][170398][FirmwareUpdater.cpp:47] Firmware update callback: state=-9, message=Parse firmware data failed!
+Invalid input data or data has been damaged, percent=0
+[04/10 20:18:23.758647][error][170398][FirmwareUpdater.cpp:105] Firmware update failed: Parse firmware data failed!
+Invalid input data or data has been damaged
+[04/10 20:18:23.758757][debug][170395][Pipeline.cpp:25] [CP9JA53000BM] Pipeline init ...
+[04/10 20:18:23.758996][debug][170396][FilterDecorator.cpp:303] Filter@PointCloudFilter have been reset
+[04/10 20:18:23.759014][debug][170396][FilterDecorator.cpp:284] Filter PointCloudFilter destroyed
+[04/10 20:18:23.759028][debug][170396][FilterDecorator.cpp:303] Filter@PointCloudFilter have been reset
+[04/10 20:18:23.759035][debug][170396][FilterDecorator.cpp:284] Filter PointCloudFilter destroyed
+[04/10 20:18:23.759078][debug][170396][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:18:23.759085][debug][170396][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:18:23.759092][debug][170396][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:18:23.759097][debug][170396][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:18:23.759114][debug][170396][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:18:23.759120][debug][170396][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:18:23.859339][debug][170396][DeviceMonitor.cpp:174] Heartbeat already disabled!
+[04/10 20:18:34.859985][debug][170395][DeviceManager.cpp:136] DeviceManager createDevice with access mode: default access(4)...
+[04/10 20:18:34.860053][debug][170395][DeviceBase.cpp:556] Convert access mode from default access to control access
+[04/10 20:18:34.860162][debug][170395][LinuxUsbPal.cpp:177] Vendor device have been create! url: 6-2-4
+[04/10 20:18:34.860564][debug][170395][PropertyServer.cpp:316] [CP9JA53000BM] [delta: 469us] Property 1000 get structure data successfully, size 164
+[04/10 20:18:34.860587][debug][170395][DeviceManager.cpp:168] Access control is not supported on this device. Access mode 'control access(2)' was ignored
+[04/10 20:18:34.860606][info][170395][DeviceManager.cpp:194] Device created successfully! Name: Boot, PID: 0x0501, SN/ID: CP9JA53000BM FW: 1.1.6
+[04/10 20:18:34.860681][debug][170395][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:18:34.860709][debug][170395][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:18:34.860720][debug][170395][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:18:34.860732][debug][170395][FilterDecorator.cpp:15] Filter PointCloudFilter created with frame queue capacity 10
+[04/10 20:18:34.860783][debug][170395][FilterDecorator.cpp:15] Filter PointCloudFilter created with frame queue capacity 10
+[04/10 20:18:34.956278][warning][170395][ObException.cpp:8] Device Component 'device clock synchronizer' not found!
+[04/10 20:18:34.958342][debug][170431][PropertyServer.cpp:316] [CP9JA53000BM] [delta: 197us] Property 1063 get structure data successfully, size 16
+[04/10 20:18:34.958420][warning][170431][ObException.cpp:8] Extension info IspFwVer not found!
+[04/10 20:18:34.958465][debug][170431][ObExceptionExt.hpp:36] [SDKExt] Parse firmware data failed!
+Invalid input data or data has been damaged
+[04/10 20:18:34.958485][debug][170431][FirmwareUpdater.cpp:47] Firmware update callback: state=-9, message=Parse firmware data failed!
+Invalid input data or data has been damaged, percent=0
+[04/10 20:18:34.958495][error][170431][FirmwareUpdater.cpp:105] Firmware update failed: Parse firmware data failed!
+Invalid input data or data has been damaged
+[04/10 20:18:34.958921][debug][170395][Pipeline.cpp:25] [CP9JA53000BM] Pipeline init ...
+[04/10 20:18:34.959231][debug][170396][FilterDecorator.cpp:303] Filter@PointCloudFilter have been reset
+[04/10 20:18:34.959245][debug][170396][FilterDecorator.cpp:284] Filter PointCloudFilter destroyed
+[04/10 20:18:34.959263][debug][170396][FilterDecorator.cpp:303] Filter@PointCloudFilter have been reset
+[04/10 20:18:34.959268][debug][170396][FilterDecorator.cpp:284] Filter PointCloudFilter destroyed
+[04/10 20:18:34.959332][debug][170396][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:18:34.959337][debug][170396][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:18:34.959346][debug][170396][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:18:34.959351][debug][170396][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:18:34.959360][debug][170396][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:18:34.959364][debug][170396][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:18:35.059572][debug][170396][DeviceMonitor.cpp:174] Heartbeat already disabled!
+[04/10 20:18:46.060252][debug][170395][DeviceManager.cpp:136] DeviceManager createDevice with access mode: default access(4)...
+[04/10 20:18:46.060290][debug][170395][DeviceBase.cpp:556] Convert access mode from default access to control access
+[04/10 20:18:46.060390][debug][170395][LinuxUsbPal.cpp:177] Vendor device have been create! url: 6-2-4
+[04/10 20:18:46.060843][debug][170395][PropertyServer.cpp:316] [CP9JA53000BM] [delta: 523us] Property 1000 get structure data successfully, size 164
+[04/10 20:18:46.060866][debug][170395][DeviceManager.cpp:168] Access control is not supported on this device. Access mode 'control access(2)' was ignored
+[04/10 20:18:46.060877][info][170395][DeviceManager.cpp:194] Device created successfully! Name: Boot, PID: 0x0501, SN/ID: CP9JA53000BM FW: 1.1.6
+[04/10 20:18:46.060929][debug][170395][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:18:46.060953][debug][170395][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:18:46.060966][debug][170395][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:18:46.060987][debug][170395][FilterDecorator.cpp:15] Filter PointCloudFilter created with frame queue capacity 10
+[04/10 20:18:46.061014][debug][170395][FilterDecorator.cpp:15] Filter PointCloudFilter created with frame queue capacity 10
+[04/10 20:18:47.755291][warning][170395][ObException.cpp:8] Device Component 'device clock synchronizer' not found!
+[04/10 20:18:47.756834][debug][170457][PropertyServer.cpp:316] [CP9JA53000BM] [delta: 184us] Property 1063 get structure data successfully, size 16
+[04/10 20:18:47.756881][warning][170457][ObException.cpp:8] Extension info IspFwVer not found!
+[04/10 20:18:47.756921][debug][170457][ObExceptionExt.hpp:36] [SDKExt] Parse firmware data failed!
+Invalid input data or data has been damaged
+[04/10 20:18:47.756946][debug][170457][FirmwareUpdater.cpp:47] Firmware update callback: state=-9, message=Parse firmware data failed!
+Invalid input data or data has been damaged, percent=0
+[04/10 20:18:47.756959][error][170457][FirmwareUpdater.cpp:105] Firmware update failed: Parse firmware data failed!
+Invalid input data or data has been damaged
+[04/10 20:18:47.757087][debug][170395][Pipeline.cpp:25] [CP9JA53000BM] Pipeline init ...
+[04/10 20:18:47.757285][debug][170396][FilterDecorator.cpp:303] Filter@PointCloudFilter have been reset
+[04/10 20:18:47.757298][debug][170396][FilterDecorator.cpp:284] Filter PointCloudFilter destroyed
+[04/10 20:18:47.757310][debug][170396][FilterDecorator.cpp:303] Filter@PointCloudFilter have been reset
+[04/10 20:18:47.757313][debug][170396][FilterDecorator.cpp:284] Filter PointCloudFilter destroyed
+[04/10 20:18:47.757368][debug][170396][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:18:47.757373][debug][170396][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:18:47.757381][debug][170396][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:18:47.757385][debug][170396][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:18:47.757392][debug][170396][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:18:47.757396][debug][170396][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:18:47.857577][debug][170396][DeviceMonitor.cpp:174] Heartbeat already disabled!
+[04/10 20:18:58.858292][debug][170395][DeviceManager.cpp:136] DeviceManager createDevice with access mode: default access(4)...
+[04/10 20:18:58.858340][debug][170395][DeviceBase.cpp:556] Convert access mode from default access to control access
+[04/10 20:18:58.858446][debug][170395][LinuxUsbPal.cpp:177] Vendor device have been create! url: 6-2-4
+[04/10 20:18:58.858803][debug][170395][PropertyServer.cpp:316] [CP9JA53000BM] [delta: 428us] Property 1000 get structure data successfully, size 164
+[04/10 20:18:58.858899][debug][170395][DeviceManager.cpp:168] Access control is not supported on this device. Access mode 'control access(2)' was ignored
+[04/10 20:18:58.858915][info][170395][DeviceManager.cpp:194] Device created successfully! Name: Boot, PID: 0x0501, SN/ID: CP9JA53000BM FW: 1.1.6
+[04/10 20:18:58.858974][debug][170395][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:18:58.858997][debug][170395][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:18:58.859022][debug][170395][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:18:58.859045][debug][170395][FilterDecorator.cpp:15] Filter PointCloudFilter created with frame queue capacity 10
+[04/10 20:18:58.859072][debug][170395][FilterDecorator.cpp:15] Filter PointCloudFilter created with frame queue capacity 10
+[04/10 20:18:58.955138][warning][170395][ObException.cpp:8] Device Component 'device clock synchronizer' not found!
+[04/10 20:18:58.956447][debug][170478][PropertyServer.cpp:316] [CP9JA53000BM] [delta: 154us] Property 1063 get structure data successfully, size 16
+[04/10 20:18:58.956473][warning][170478][ObException.cpp:8] Extension info IspFwVer not found!
+[04/10 20:18:58.956503][debug][170478][ObExceptionExt.hpp:36] [SDKExt] Parse firmware data failed!
+Invalid input data or data has been damaged
+[04/10 20:18:58.956524][debug][170478][FirmwareUpdater.cpp:47] Firmware update callback: state=-9, message=Parse firmware data failed!
+Invalid input data or data has been damaged, percent=0
+[04/10 20:18:58.956537][error][170478][FirmwareUpdater.cpp:105] Firmware update failed: Parse firmware data failed!
+Invalid input data or data has been damaged
+[04/10 20:18:58.956618][debug][170395][Pipeline.cpp:25] [CP9JA53000BM] Pipeline init ...
+[04/10 20:18:58.956788][debug][170396][FilterDecorator.cpp:303] Filter@PointCloudFilter have been reset
+[04/10 20:18:58.956803][debug][170396][FilterDecorator.cpp:284] Filter PointCloudFilter destroyed
+[04/10 20:18:58.956817][debug][170396][FilterDecorator.cpp:303] Filter@PointCloudFilter have been reset
+[04/10 20:18:58.956823][debug][170396][FilterDecorator.cpp:284] Filter PointCloudFilter destroyed
+[04/10 20:18:58.956857][debug][170396][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:18:58.956862][debug][170396][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:18:58.956869][debug][170396][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:18:58.956876][debug][170396][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:18:58.956881][debug][170396][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:18:58.956886][debug][170396][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:18:59.057077][debug][170396][DeviceMonitor.cpp:174] Heartbeat already disabled!
+[04/10 20:19:10.058744][debug][170395][DeviceManager.cpp:136] DeviceManager createDevice with access mode: default access(4)...
+[04/10 20:19:10.058787][debug][170395][DeviceBase.cpp:556] Convert access mode from default access to control access
+[04/10 20:19:10.058868][debug][170395][LinuxUsbPal.cpp:177] Vendor device have been create! url: 6-2-4
+[04/10 20:19:10.059299][debug][170395][PropertyServer.cpp:316] [CP9JA53000BM] [delta: 486us] Property 1000 get structure data successfully, size 164
+[04/10 20:19:10.059312][debug][170395][DeviceManager.cpp:168] Access control is not supported on this device. Access mode 'control access(2)' was ignored
+[04/10 20:19:10.059321][info][170395][DeviceManager.cpp:194] Device created successfully! Name: Boot, PID: 0x0501, SN/ID: CP9JA53000BM FW: 1.1.6
+[04/10 20:19:10.059359][debug][170395][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:19:10.059378][debug][170395][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:19:10.059388][debug][170395][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:19:10.059409][debug][170395][FilterDecorator.cpp:15] Filter PointCloudFilter created with frame queue capacity 10
+[04/10 20:19:10.059434][debug][170395][FilterDecorator.cpp:15] Filter PointCloudFilter created with frame queue capacity 10
+[04/10 20:19:11.756326][warning][170395][ObException.cpp:8] Device Component 'device clock synchronizer' not found!
+[04/10 20:19:11.757864][debug][170499][PropertyServer.cpp:316] [CP9JA53000BM] [delta: 163us] Property 1063 get structure data successfully, size 16
+[04/10 20:19:11.757905][warning][170499][ObException.cpp:8] Extension info IspFwVer not found!
+[04/10 20:19:11.757934][debug][170499][ObExceptionExt.hpp:36] [SDKExt] Parse firmware data failed!
+Invalid input data or data has been damaged
+[04/10 20:19:11.757956][debug][170499][FirmwareUpdater.cpp:47] Firmware update callback: state=-9, message=Parse firmware data failed!
+Invalid input data or data has been damaged, percent=0
+[04/10 20:19:11.757966][error][170499][FirmwareUpdater.cpp:105] Firmware update failed: Parse firmware data failed!
+Invalid input data or data has been damaged
+[04/10 20:19:11.758068][debug][170395][Pipeline.cpp:25] [CP9JA53000BM] Pipeline init ...
+[04/10 20:19:11.758290][debug][170396][FilterDecorator.cpp:303] Filter@PointCloudFilter have been reset
+[04/10 20:19:11.758300][debug][170396][FilterDecorator.cpp:284] Filter PointCloudFilter destroyed
+[04/10 20:19:11.758313][debug][170396][FilterDecorator.cpp:303] Filter@PointCloudFilter have been reset
+[04/10 20:19:11.758319][debug][170396][FilterDecorator.cpp:284] Filter PointCloudFilter destroyed
+[04/10 20:19:11.758354][debug][170396][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:19:11.758360][debug][170396][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:19:11.758367][debug][170396][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:19:11.758372][debug][170396][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:19:11.758380][debug][170396][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:19:11.758385][debug][170396][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:19:11.858580][debug][170396][DeviceMonitor.cpp:174] Heartbeat already disabled!
+[04/10 20:19:18.769256][debug][170379][GVCPClient.cpp:421] bind 0.0.0.0:58422 [**3 logs in 60000ms, last: 20:18:18.769265**]
+[04/10 20:19:22.859529][debug][170395][DeviceManager.cpp:136] DeviceManager createDevice with access mode: default access(4)...
+[04/10 20:19:22.859578][debug][170395][DeviceBase.cpp:556] Convert access mode from default access to control access
+[04/10 20:19:22.859667][debug][170395][LinuxUsbPal.cpp:177] Vendor device have been create! url: 6-2-4
+[04/10 20:19:22.860007][debug][170395][PropertyServer.cpp:316] [CP9JA53000BM] [delta: 399us] Property 1000 get structure data successfully, size 164
+[04/10 20:19:22.860023][debug][170395][DeviceManager.cpp:168] Access control is not supported on this device. Access mode 'control access(2)' was ignored
+[04/10 20:19:22.860031][info][170395][DeviceManager.cpp:194] Device created successfully! Name: Boot, PID: 0x0501, SN/ID: CP9JA53000BM FW: 1.1.6
+[04/10 20:19:22.860078][debug][170395][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:19:22.860102][debug][170395][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:19:22.860112][debug][170395][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:19:22.860131][debug][170395][FilterDecorator.cpp:15] Filter PointCloudFilter created with frame queue capacity 10
+[04/10 20:19:22.860150][debug][170395][FilterDecorator.cpp:15] Filter PointCloudFilter created with frame queue capacity 10
+[04/10 20:19:22.956834][warning][170395][ObException.cpp:8] Device Component 'device clock synchronizer' not found!
+[04/10 20:19:22.958479][debug][170520][PropertyServer.cpp:316] [CP9JA53000BM] [delta: 174us] Property 1063 get structure data successfully, size 16
+[04/10 20:19:22.958835][warning][170520][ObException.cpp:8] Extension info IspFwVer not found!
+[04/10 20:19:22.958875][debug][170520][ObExceptionExt.hpp:36] [SDKExt] Parse firmware data failed!
+Invalid input data or data has been damaged
+[04/10 20:19:22.958892][debug][170520][FirmwareUpdater.cpp:47] Firmware update callback: state=-9, message=Parse firmware data failed!
+Invalid input data or data has been damaged, percent=0
+[04/10 20:19:22.958904][error][170520][FirmwareUpdater.cpp:105] Firmware update failed: Parse firmware data failed!
+Invalid input data or data has been damaged
+[04/10 20:19:22.959026][debug][170395][Pipeline.cpp:25] [CP9JA53000BM] Pipeline init ...
+[04/10 20:19:22.959290][debug][170396][FilterDecorator.cpp:303] Filter@PointCloudFilter have been reset
+[04/10 20:19:22.959300][debug][170396][FilterDecorator.cpp:284] Filter PointCloudFilter destroyed
+[04/10 20:19:22.959312][debug][170396][FilterDecorator.cpp:303] Filter@PointCloudFilter have been reset
+[04/10 20:19:22.959316][debug][170396][FilterDecorator.cpp:284] Filter PointCloudFilter destroyed
+[04/10 20:19:22.959367][debug][170396][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:19:22.959371][debug][170396][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:19:22.959379][debug][170396][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:19:22.959383][debug][170396][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:19:22.959390][debug][170396][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:19:22.959394][debug][170396][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:19:23.059607][debug][170396][DeviceMonitor.cpp:174] Heartbeat already disabled!
+[04/10 20:19:34.060395][debug][170395][DeviceManager.cpp:136] DeviceManager createDevice with access mode: default access(4)...
+[04/10 20:19:34.060438][debug][170395][DeviceBase.cpp:556] Convert access mode from default access to control access
+[04/10 20:19:34.060536][debug][170395][LinuxUsbPal.cpp:177] Vendor device have been create! url: 6-2-4
+[04/10 20:19:34.060982][debug][170395][PropertyServer.cpp:316] [CP9JA53000BM] [delta: 511us] Property 1000 get structure data successfully, size 164
+[04/10 20:19:34.060999][debug][170395][DeviceManager.cpp:168] Access control is not supported on this device. Access mode 'control access(2)' was ignored
+[04/10 20:19:34.061011][info][170395][DeviceManager.cpp:194] Device created successfully! Name: Boot, PID: 0x0501, SN/ID: CP9JA53000BM FW: 1.1.6
+[04/10 20:19:34.061065][debug][170395][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:19:34.061087][debug][170395][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:19:34.061099][debug][170395][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:19:34.061120][debug][170395][FilterDecorator.cpp:15] Filter PointCloudFilter created with frame queue capacity 10
+[04/10 20:19:34.061147][debug][170395][FilterDecorator.cpp:15] Filter PointCloudFilter created with frame queue capacity 10
+[04/10 20:19:35.756027][warning][170395][ObException.cpp:8] Device Component 'device clock synchronizer' not found!
+[04/10 20:19:35.757549][debug][170544][PropertyServer.cpp:316] [CP9JA53000BM] [delta: 145us] Property 1063 get structure data successfully, size 16
+[04/10 20:19:35.757574][warning][170544][ObException.cpp:8] Extension info IspFwVer not found!
+[04/10 20:19:35.757599][debug][170544][ObExceptionExt.hpp:36] [SDKExt] Parse firmware data failed!
+Invalid input data or data has been damaged
+[04/10 20:19:35.757618][debug][170544][FirmwareUpdater.cpp:47] Firmware update callback: state=-9, message=Parse firmware data failed!
+Invalid input data or data has been damaged, percent=0
+[04/10 20:19:35.757630][error][170544][FirmwareUpdater.cpp:105] Firmware update failed: Parse firmware data failed!
+Invalid input data or data has been damaged
+[04/10 20:19:35.757715][debug][170395][Pipeline.cpp:25] [CP9JA53000BM] Pipeline init ...
+[04/10 20:19:35.757956][debug][170396][FilterDecorator.cpp:303] Filter@PointCloudFilter have been reset
+[04/10 20:19:35.757974][debug][170396][FilterDecorator.cpp:284] Filter PointCloudFilter destroyed
+[04/10 20:19:35.757991][debug][170396][FilterDecorator.cpp:303] Filter@PointCloudFilter have been reset
+[04/10 20:19:35.757997][debug][170396][FilterDecorator.cpp:284] Filter PointCloudFilter destroyed
+[04/10 20:19:35.758044][debug][170396][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:19:35.758063][debug][170396][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:19:35.758073][debug][170396][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:19:35.758078][debug][170396][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:19:35.758086][debug][170396][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:19:35.758093][debug][170396][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:19:35.858266][debug][170396][DeviceMonitor.cpp:174] Heartbeat already disabled!
+[04/10 20:19:46.858970][debug][170395][DeviceManager.cpp:136] DeviceManager createDevice with access mode: default access(4)...
+[04/10 20:19:46.859018][debug][170395][DeviceBase.cpp:556] Convert access mode from default access to control access
+[04/10 20:19:46.859117][debug][170395][LinuxUsbPal.cpp:177] Vendor device have been create! url: 6-2-4
+[04/10 20:19:46.859436][debug][170395][PropertyServer.cpp:316] [CP9JA53000BM] [delta: 384us] Property 1000 get structure data successfully, size 164
+[04/10 20:19:46.859455][debug][170395][DeviceManager.cpp:168] Access control is not supported on this device. Access mode 'control access(2)' was ignored
+[04/10 20:19:46.859466][info][170395][DeviceManager.cpp:194] Device created successfully! Name: Boot, PID: 0x0501, SN/ID: CP9JA53000BM FW: 1.1.6
+[04/10 20:19:46.859522][debug][170395][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:19:46.859547][debug][170395][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:19:46.859556][debug][170395][FilterDecorator.cpp:15] Filter FormatConverter created with frame queue capacity 10
+[04/10 20:19:46.859577][debug][170395][FilterDecorator.cpp:15] Filter PointCloudFilter created with frame queue capacity 10
+[04/10 20:19:46.859603][debug][170395][FilterDecorator.cpp:15] Filter PointCloudFilter created with frame queue capacity 10
+[04/10 20:19:46.955063][warning][170395][ObException.cpp:8] Device Component 'device clock synchronizer' not found!
+[04/10 20:19:46.956407][debug][170562][PropertyServer.cpp:316] [CP9JA53000BM] [delta: 146us] Property 1063 get structure data successfully, size 16
+[04/10 20:19:46.956433][warning][170562][ObException.cpp:8] Extension info IspFwVer not found!
+[04/10 20:19:46.956465][debug][170562][ObExceptionExt.hpp:36] [SDKExt] Parse firmware data failed!
+Invalid input data or data has been damaged
+[04/10 20:19:46.956483][debug][170562][FirmwareUpdater.cpp:47] Firmware update callback: state=-9, message=Parse firmware data failed!
+Invalid input data or data has been damaged, percent=0
+[04/10 20:19:46.956494][error][170562][FirmwareUpdater.cpp:105] Firmware update failed: Parse firmware data failed!
+Invalid input data or data has been damaged
+[04/10 20:19:46.956588][debug][170395][Pipeline.cpp:25] [CP9JA53000BM] Pipeline init ...
+[04/10 20:19:46.956746][debug][170396][FilterDecorator.cpp:303] Filter@PointCloudFilter have been reset
+[04/10 20:19:46.956756][debug][170396][FilterDecorator.cpp:284] Filter PointCloudFilter destroyed
+[04/10 20:19:46.956772][debug][170396][FilterDecorator.cpp:303] Filter@PointCloudFilter have been reset
+[04/10 20:19:46.956779][debug][170396][FilterDecorator.cpp:284] Filter PointCloudFilter destroyed
+[04/10 20:19:46.956822][debug][170396][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:19:46.956828][debug][170396][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:19:46.956835][debug][170396][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:19:46.956839][debug][170396][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:19:46.956847][debug][170396][FilterDecorator.cpp:303] Filter@FormatConverter have been reset
+[04/10 20:19:46.956851][debug][170396][FilterDecorator.cpp:284] Filter FormatConverter destroyed
+[04/10 20:19:47.057040][debug][170396][DeviceMonitor.cpp:174] Heartbeat already disabled!

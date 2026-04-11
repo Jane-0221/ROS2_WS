@@ -41,6 +41,8 @@ setup(
             'motor_arm_trajectory_controller_bridge = robot_hardware.arm_trajectory_controller_bridge:main',
             'lift_command_adapter = robot_hardware.lift_command_adapter:main',
             'pump_command_adapter = robot_hardware.pump_command_adapter:main',
+            'camera_target_pose_relay = robot_hardware.camera_target_pose_relay:main',
+            'camera_pointcloud_target_estimator = robot_hardware.camera_pointcloud_target_estimator:main',
             'manual_target_pose_publisher = robot_hardware.manual_target_pose_publisher:main',
         ],
     },

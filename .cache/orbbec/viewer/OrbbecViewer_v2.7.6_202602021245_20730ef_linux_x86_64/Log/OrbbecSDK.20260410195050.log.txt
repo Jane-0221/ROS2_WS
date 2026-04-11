@@ -1,0 +1,99 @@
+[04/10 19:50:51.116751][debug][158653][FrameMemoryPool.cpp:29] FrameMemoryPool created!
+[04/10 19:50:51.117524][debug][158653][PrivFilterLoader.cpp:168] Private filter creator created: G2XLDecompress
+[04/10 19:50:51.117533][debug][158653][PrivFilterLoader.cpp:168] Private filter creator created: FrameUnpacker
+[04/10 19:50:51.117536][debug][158653][PrivFilterLoader.cpp:168] Private filter creator created: G2PixelOffsetFix
+[04/10 19:50:51.117540][debug][158653][PrivFilterLoader.cpp:168] Private filter creator created: ConfidenceEstimator
+[04/10 19:50:51.117543][debug][158653][PrivFilterLoader.cpp:168] Private filter creator created: G330FrameUnpacker
+[04/10 19:50:51.118130][debug][158653][PrivFilterLoader.cpp:168] Private filter creator created: DisparityTransform
+[04/10 19:50:51.118150][debug][158653][PrivFilterLoader.cpp:168] Private filter creator created: HoleFillingFilter
+[04/10 19:50:51.118158][debug][158653][PrivFilterLoader.cpp:168] Private filter creator created: NoiseRemovalFilter
+[04/10 19:50:51.118161][debug][158653][PrivFilterLoader.cpp:168] Private filter creator created: SpatialAdvancedFilter
+[04/10 19:50:51.118166][debug][158653][PrivFilterLoader.cpp:168] Private filter creator created: TemporalFilter
+[04/10 19:50:51.118170][debug][158653][PrivFilterLoader.cpp:168] Private filter creator created: DepthResize
+[04/10 19:50:51.118174][debug][158653][PrivFilterLoader.cpp:168] Private filter creator created: EdgeNoiseRemovalFilter
+[04/10 19:50:51.118177][debug][158653][PrivFilterLoader.cpp:168] Private filter creator created: HardwareD2DCorrectionFilter
+[04/10 19:50:51.118181][debug][158653][PrivFilterLoader.cpp:168] Private filter creator created: OpenNIDisparityTransform
+[04/10 19:50:51.118184][debug][158653][PrivFilterLoader.cpp:168] Private filter creator created: SpatialFastFilter
+[04/10 19:50:51.118188][debug][158653][PrivFilterLoader.cpp:168] Private filter creator created: SpatialModerateFilter
+[04/10 19:50:51.118191][debug][158653][PrivFilterLoader.cpp:168] Private filter creator created: FalsePositiveFilter
+[04/10 19:50:51.118226][debug][158653][FilterFactory.cpp:32] Registered 33 filter creators
+[04/10 19:50:51.118232][debug][158653][FilterFactory.cpp:34]  - Align
+[04/10 19:50:51.118234][debug][158653][FilterFactory.cpp:34]  - ConfidenceEstimator
+[04/10 19:50:51.118237][debug][158653][FilterFactory.cpp:34]  - DecimationFilter
+[04/10 19:50:51.118241][debug][158653][FilterFactory.cpp:34]  - DepthResize
+[04/10 19:50:51.118243][debug][158653][FilterFactory.cpp:34]  - DisparityTransform
+[04/10 19:50:51.118247][debug][158653][FilterFactory.cpp:34]  - EdgeNoiseRemovalFilter
+[04/10 19:50:51.118249][debug][158653][FilterFactory.cpp:34]  - FalsePositiveFilter
+[04/10 19:50:51.118252][debug][158653][FilterFactory.cpp:34]  - FormatConverter
+[04/10 19:50:51.118255][debug][158653][FilterFactory.cpp:34]  - FrameFlip
+[04/10 19:50:51.118258][debug][158653][FilterFactory.cpp:34]  - FrameMirror
+[04/10 19:50:51.118261][debug][158653][FilterFactory.cpp:34]  - FrameRotate
+[04/10 19:50:51.118264][debug][158653][FilterFactory.cpp:34]  - FrameUnpacker
+[04/10 19:50:51.118268][debug][158653][FilterFactory.cpp:34]  - G2PixelOffsetFix
+[04/10 19:50:51.118270][debug][158653][FilterFactory.cpp:34]  - G2XLDecompress
+[04/10 19:50:51.118273][debug][158653][FilterFactory.cpp:34]  - G330FrameUnpacker
+[04/10 19:50:51.118275][debug][158653][FilterFactory.cpp:34]  - HDRMerge
+[04/10 19:50:51.118278][debug][158653][FilterFactory.cpp:34]  - HardwareD2DCorrectionFilter
+[04/10 19:50:51.118281][debug][158653][FilterFactory.cpp:34]  - HoleFillingFilter
+[04/10 19:50:51.118284][debug][158653][FilterFactory.cpp:34]  - IMUCorrector
+[04/10 19:50:51.118287][debug][158653][FilterFactory.cpp:34]  - IMUFrameReversion
+[04/10 19:50:51.118290][debug][158653][FilterFactory.cpp:34]  - LiDARFormatConverter
+[04/10 19:50:51.118293][debug][158653][FilterFactory.cpp:34]  - LiDARPointFilter
+[04/10 19:50:51.118295][debug][158653][FilterFactory.cpp:34]  - NoiseRemovalFilter
+[04/10 19:50:51.118298][debug][158653][FilterFactory.cpp:34]  - OpenNIDisparityTransform
+[04/10 19:50:51.118301][debug][158653][FilterFactory.cpp:34]  - PixelValueOffset
+[04/10 19:50:51.118313][debug][158653][FilterFactory.cpp:34]  - PixelValueScaler
+[04/10 19:50:51.118317][debug][158653][FilterFactory.cpp:34]  - PointCloudFilter
+[04/10 19:50:51.118320][debug][158653][FilterFactory.cpp:34]  - SequenceIdFilter
+[04/10 19:50:51.118323][debug][158653][FilterFactory.cpp:34]  - SpatialAdvancedFilter
+[04/10 19:50:51.118326][debug][158653][FilterFactory.cpp:34]  - SpatialFastFilter
+[04/10 19:50:51.118329][debug][158653][FilterFactory.cpp:34]  - SpatialModerateFilter
+[04/10 19:50:51.118331][debug][158653][FilterFactory.cpp:34]  - TemporalFilter
+[04/10 19:50:51.118335][debug][158653][FilterFactory.cpp:34]  - ThresholdFilter
+[04/10 19:50:51.119135][debug][158653][UsbEnumeratorLibusb.cpp:471] UsbEnumeratorLibusb::startEventHandler()
+[04/10 19:50:51.119210][debug][158653][UsbEnumeratorLibusb.cpp:341] UsbEnumeratorLibusb created
+[04/10 19:50:51.119225][debug][158653][LinuxUsbPal.cpp:406] Uvc backend have been set to 0
+[04/10 19:50:51.119534][debug][158653][DeviceSeriesInfo.cpp:84] Ignore error: External config file doesn't exist: /home/jszn/robot_ros2_ws/.cache/orbbec/viewer/OrbbecViewer_v2.7.6_202602021245_20730ef_linux_x86_64/DeviceInfoConfigOEM.xml
+[04/10 19:50:51.119554][debug][158653][DynamicLibraryManager.cpp:31] Current working directory: /home/jszn/robot_ros2_ws/.cache/orbbec/viewer/OrbbecViewer_v2.7.6_202602021245_20730ef_linux_x86_64
+[04/10 19:50:51.121933][debug][158653][Context.cpp:48] Context created! Library version: v2.7.6
+[04/10 19:50:51.124496][debug][158653][Context.cpp:100] Current working directory: /home/jszn/robot_ros2_ws/.cache/orbbec/viewer/OrbbecViewer_v2.7.6_202602021245_20730ef_linux_x86_64
+[04/10 19:50:51.124580][debug][158653][Context.cpp:110]  - Successfully retrieved commit hash for library 'firmwareupdater' (commit: b6df232)
+[04/10 19:50:51.124603][debug][158653][Context.cpp:110]  - Successfully retrieved commit hash for library 'privfilter' (commit: 968f706)
+[04/10 19:50:51.124619][debug][158653][Context.cpp:110]  - Successfully retrieved commit hash for library 'filterprocessor' (commit: f54b8d3)
+[04/10 19:50:51.124637][debug][158653][Context.cpp:110]  - Successfully retrieved commit hash for library 'frameprocessor' (commit: a4e10e8)
+[04/10 19:50:51.124700][debug][158653][DeviceManager.cpp:52] DeviceManager init ...
+[04/10 19:50:51.124889][debug][158653][DeviceManager.cpp:58] Enable USB Device Enumerator ...
+[04/10 19:50:51.125246][debug][158653][UsbEnumeratorLibusb.cpp:447] queryUsbInterfaces done!
+[04/10 19:50:51.125286][debug][158653][ObV4lGmslDevicePort.cpp:1882] Cannot access /sys/class/video4linux
+[04/10 19:50:51.125300][debug][158653][UsbDeviceEnumerator.cpp:151] Current usb device port list:
+[04/10 19:50:51.125314][debug][158653][UsbDeviceEnumerator.cpp:154]  - 6-2-4.0 | Orbbec Bootloader Data Channel
+[04/10 19:50:51.125393][info][158653][LinuxUsbPal.cpp:335] Create PollingDeviceWatcher!
+[04/10 19:50:51.125410][debug][158653][UsbDeviceEnumerator.cpp:48] Found 1 device(s):
+[04/10 19:50:51.125430][debug][158653][UsbDeviceEnumerator.cpp:51]   - Name: Bootloader device, PID: 0x0501, SN/ID: CP9JA53000BM, connection: USB3.0
+[04/10 19:50:51.125443][info][158653][DeviceManager.cpp:25] Current found device(s): (1)
+[04/10 19:50:51.125454][info][158653][DeviceManager.cpp:34] 	- Name: Bootloader device, PID: 0x0501, SN/ID: CP9JA53000BM, Connection: USB3.0
+[04/10 19:50:51.125464][debug][158653][DeviceManager.cpp:78] DeviceManager construct done!
+[04/10 19:50:51.125475][info][158653][DeviceManager.cpp:339] Enable net device enumeration: true
+[04/10 19:50:51.126044][debug][158653][GVCPClient.cpp:421] bind 192.168.0.115:0
+[04/10 19:50:51.126149][debug][158653][GVCPClient.cpp:302] getnameinfo-name: enp6s0
+[04/10 19:50:51.126314][debug][158653][GVCPClient.cpp:335] local mac address: a8:a1:59:08:08:b6,local ip address:192.168.0.115, interfaceName:enp6s0
+[04/10 19:50:51.126358][debug][158653][GVCPClient.cpp:302] getnameinfo-name: utun
+[04/10 19:50:51.126401][debug][158653][GVCPClient.cpp:335] local mac address: 00:00:00:00:00:00,local ip address:198.18.0.1, interfaceName:utun
+[04/10 19:50:53.130804][debug][158653][NetDeviceEnumerator.cpp:52] No net source port found!
+[04/10 19:50:53.130832][debug][158653][NetDeviceEnumerator.cpp:37] No net device found!
+[04/10 19:50:53.130910][info][158653][DeviceManager.cpp:25] Current device(s) list: (1)
+[04/10 19:50:53.130918][info][158653][DeviceManager.cpp:34] 	- Name: Bootloader device, PID: 0x0501, SN/ID: CP9JA53000BM, Connection: USB3.0
+[04/10 19:50:53.130923][info][158653][DeviceManager.cpp:339] Enable net device enumeration: true
+[04/10 19:50:53.130930][debug][158653][DeviceManager.cpp:248] Add device changed callback, callback id = 1
+[04/10 19:50:53.130953][debug][158653][DeviceManager.cpp:136] DeviceManager createDevice with access mode: default access(4)...
+[04/10 19:50:53.130956][debug][158653][DeviceBase.cpp:556] Convert access mode from default access to control access
+[04/10 19:50:53.131025][debug][158653][LinuxUsbPal.cpp:177] Vendor device have been create! url: 6-2-4
+[04/10 19:50:53.131199][debug][158653][PropertyServer.cpp:316] [CP9JA53000BM] [delta: 213us] Property 1000 get structure data successfully, size 164
+[04/10 19:50:53.131216][debug][158653][DeviceManager.cpp:168] Access control is not supported on this device. Access mode 'control access(2)' was ignored
+[04/10 19:50:53.131222][info][158653][DeviceManager.cpp:194] Device created successfully! Name: Boot, PID: 0x0501, SN/ID: CP9JA53000BM FW: 1.1.6
+[04/10 19:50:53.131241][warning][158653][ObException.cpp:8] Device Component 'device sync configurator' not found!
+[04/10 19:50:53.131501][warning][158653][ObException.cpp:8] Device Component 'depth work mode manager' not found!
+[04/10 19:50:53.131525][debug][158653][DeviceManager.cpp:293] Enable multi-device clock sync, repeatInterval=0ms
+[04/10 19:50:54.070687][warning][158653][ObException.cpp:8] Extension info IspFwVer not found!
+[04/10 19:50:55.131830][debug][158695][PropertyServer.cpp:316] [CP9JA53000BM] [delta: 192us] Property 1063 get structure data successfully, size 16
+[04/10 19:51:51.126282][debug][158681][GVCPClient.cpp:421] bind 0.0.0.0:51606 [**3 logs in 60000ms, last: 19:50:51.126356**]

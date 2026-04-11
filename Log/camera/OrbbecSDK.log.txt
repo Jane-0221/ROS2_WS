@@ -1,0 +1,539 @@
+[04/10 18:26:47.215672][warning][128793][UsbEnumeratorLibusb.cpp:399] Failed to open USB device: error=Access denied (insufficient permissions). Try again
+[04/10 18:26:47.265789][warning][128793][UsbEnumeratorLibusb.cpp:403] Failed to open USB device (Access denied (insufficient permissions)), skipping, info.serial and infName may be empty
+[04/10 18:26:47.265911][info][128793][LinuxUsbPal.cpp:335] Create PollingDeviceWatcher!
+[04/10 18:26:47.265922][info][128793][DeviceManager.cpp:25] Current found device(s): (1)
+[04/10 18:26:47.265926][info][128793][DeviceManager.cpp:34] 	- Name: Bootloader device, PID: 0x0501, SN/ID: , Connection: USB3.0
+[04/10 18:26:47.265930][info][128793][DeviceManager.cpp:339] Enable net device enumeration: true
+[04/10 18:26:49.893149][info][128793][DeviceManager.cpp:25] Current device(s) list: (1)
+[04/10 18:26:49.893192][info][128793][DeviceManager.cpp:34] 	- Name: Bootloader device, PID: 0x0501, SN/ID: , Connection: USB3.0
+[04/10 18:26:49.893200][info][128793][DeviceManager.cpp:339] Enable net device enumeration: false
+[04/10 19:36:27.673077][info][153173][LinuxUsbPal.cpp:335] Create PollingDeviceWatcher!
+[04/10 19:36:27.674247][info][153173][DeviceManager.cpp:25] Current found device(s): (1)
+[04/10 19:36:27.674264][info][153173][DeviceManager.cpp:34] 	- Name: Bootloader device, PID: 0x0501, SN/ID: CP9JA53000BM, Connection: USB3.0
+[04/10 19:36:27.674272][info][153173][DeviceManager.cpp:339] Enable net device enumeration: true
+[04/10 19:36:29.680398][info][153173][DeviceManager.cpp:25] Current device(s) list: (1)
+[04/10 19:36:29.680436][info][153173][DeviceManager.cpp:34] 	- Name: Bootloader device, PID: 0x0501, SN/ID: CP9JA53000BM, Connection: USB3.0
+[04/10 19:36:29.680444][info][153173][DeviceManager.cpp:339] Enable net device enumeration: false
+[04/10 19:36:30.789722][info][153318][DeviceManager.cpp:194] Device created successfully! Name: Boot, PID: 0x0501, SN/ID: CP9JA53000BM FW: 1.1.6
+[04/10 19:36:30.851031][warning][153318][ObException.cpp:8] Device Component 'global timestamp filter' not found!
+[04/10 19:36:30.853778][warning][153318][ObException.cpp:8] Device Component 'global timestamp filter' not found!
+[04/10 19:36:30.854096][warning][153318][ObException.cpp:8] Device Component 'global timestamp filter' not found!
+[04/10 19:36:41.957198][info][153318][DeviceManager.cpp:194] Device created successfully! Name: Boot, PID: 0x0501, SN/ID: CP9JA53000BM FW: 1.1.6
+[04/10 19:36:41.957851][warning][153318][ObException.cpp:8] Device Component 'global timestamp filter' not found!
+[04/10 19:36:41.958245][warning][153318][ObException.cpp:8] Device Component 'global timestamp filter' not found!
+[04/10 19:36:41.958544][warning][153318][ObException.cpp:8] Device Component 'global timestamp filter' not found!
+[04/10 19:36:53.060022][info][153318][DeviceManager.cpp:194] Device created successfully! Name: Boot, PID: 0x0501, SN/ID: CP9JA53000BM FW: 1.1.6
+[04/10 19:36:53.060421][warning][153318][ObException.cpp:8] Device Component 'global timestamp filter' not found!
+[04/10 19:36:53.060702][warning][153318][ObException.cpp:8] Device Component 'global timestamp filter' not found!
+[04/10 19:36:53.060977][warning][153318][ObException.cpp:8] Device Component 'global timestamp filter' not found!
+[04/10 19:37:17.200574][info][154139][LinuxUsbPal.cpp:335] Create PollingDeviceWatcher!
+[04/10 19:37:17.200632][info][154139][DeviceManager.cpp:25] Current found device(s): (1)
+[04/10 19:37:17.200638][info][154139][DeviceManager.cpp:34] 	- Name: Bootloader device, PID: 0x0501, SN/ID: CP9JA53000BM, Connection: USB3.0
+[04/10 19:37:17.200643][info][154139][DeviceManager.cpp:339] Enable net device enumeration: true
+[04/10 19:37:19.205688][info][154139][DeviceManager.cpp:25] Current device(s) list: (1)
+[04/10 19:37:19.205722][info][154139][DeviceManager.cpp:34] 	- Name: Bootloader device, PID: 0x0501, SN/ID: CP9JA53000BM, Connection: USB3.0
+[04/10 19:37:19.205728][info][154139][DeviceManager.cpp:339] Enable net device enumeration: false
+[04/10 19:37:20.312526][info][154329][DeviceManager.cpp:194] Device created successfully! Name: Boot, PID: 0x0501, SN/ID: CP9JA53000BM FW: 1.1.6
+[04/10 19:37:20.520321][warning][154329][ObException.cpp:8] Device Component 'global timestamp filter' not found!
+[04/10 19:37:20.520848][warning][154329][ObException.cpp:8] Device Component 'global timestamp filter' not found!
+[04/10 19:37:20.521067][warning][154329][ObException.cpp:8] Device Component 'global timestamp filter' not found!
+[04/10 19:37:31.622709][info][154329][DeviceManager.cpp:194] Device created successfully! Name: Boot, PID: 0x0501, SN/ID: CP9JA53000BM FW: 1.1.6
+[04/10 19:37:31.623068][warning][154329][ObException.cpp:8] Device Component 'global timestamp filter' not found!
+[04/10 19:37:31.623358][warning][154329][ObException.cpp:8] Device Component 'global timestamp filter' not found!
+[04/10 19:37:31.623581][warning][154329][ObException.cpp:8] Device Component 'global timestamp filter' not found!
+[04/10 19:37:42.725120][info][154329][DeviceManager.cpp:194] Device created successfully! Name: Boot, PID: 0x0501, SN/ID: CP9JA53000BM FW: 1.1.6
+[04/10 19:37:42.725546][warning][154329][ObException.cpp:8] Device Component 'global timestamp filter' not found!
+[04/10 19:37:42.725964][warning][154329][ObException.cpp:8] Device Component 'global timestamp filter' not found!
+[04/10 19:37:42.726220][warning][154329][ObException.cpp:8] Device Component 'global timestamp filter' not found!
+[04/10 19:37:53.827899][info][154329][DeviceManager.cpp:194] Device created successfully! Name: Boot, PID: 0x0501, SN/ID: CP9JA53000BM FW: 1.1.6
+[04/10 19:37:53.828271][warning][154329][ObException.cpp:8] Device Component 'global timestamp filter' not found!
+[04/10 19:37:53.828627][warning][154329][ObException.cpp:8] Device Component 'global timestamp filter' not found!
+[04/10 19:37:53.828920][warning][154329][ObException.cpp:8] Device Component 'global timestamp filter' not found!
+[04/10 19:38:15.773096][info][154860][LinuxUsbPal.cpp:335] Create PollingDeviceWatcher!
+[04/10 19:38:15.773160][info][154860][DeviceManager.cpp:25] Current found device(s): (1)
+[04/10 19:38:15.773168][info][154860][DeviceManager.cpp:34] 	- Name: Bootloader device, PID: 0x0501, SN/ID: CP9JA53000BM, Connection: USB3.0
+[04/10 19:38:15.773175][info][154860][DeviceManager.cpp:339] Enable net device enumeration: true
+[04/10 19:38:17.778941][info][154860][DeviceManager.cpp:25] Current device(s) list: (1)
+[04/10 19:38:17.778994][info][154860][DeviceManager.cpp:34] 	- Name: Bootloader device, PID: 0x0501, SN/ID: CP9JA53000BM, Connection: USB3.0
+[04/10 19:38:17.779002][info][154860][DeviceManager.cpp:339] Enable net device enumeration: false
+[04/10 19:38:18.884760][info][155049][DeviceManager.cpp:194] Device created successfully! Name: Boot, PID: 0x0501, SN/ID: CP9JA53000BM FW: 1.1.6
+[04/10 19:38:18.892723][warning][155049][ObException.cpp:8] Device Component 'global timestamp filter' not found!
+[04/10 19:38:18.893239][warning][155049][ObException.cpp:8] Device Component 'global timestamp filter' not found!
+[04/10 19:38:18.893472][warning][155049][ObException.cpp:8] Device Component 'global timestamp filter' not found!
+[04/10 19:38:29.994925][info][155049][DeviceManager.cpp:194] Device created successfully! Name: Boot, PID: 0x0501, SN/ID: CP9JA53000BM FW: 1.1.6
+[04/10 19:38:29.995543][warning][155049][ObException.cpp:8] Device Component 'global timestamp filter' not found!
+[04/10 19:38:29.995834][warning][155049][ObException.cpp:8] Device Component 'global timestamp filter' not found!
+[04/10 19:38:29.996055][warning][155049][ObException.cpp:8] Device Component 'global timestamp filter' not found!
+[04/10 19:38:41.097481][info][155049][DeviceManager.cpp:194] Device created successfully! Name: Boot, PID: 0x0501, SN/ID: CP9JA53000BM FW: 1.1.6
+[04/10 19:38:41.098161][warning][155049][ObException.cpp:8] Device Component 'global timestamp filter' not found!
+[04/10 19:38:41.098527][warning][155049][ObException.cpp:8] Device Component 'global timestamp filter' not found!
+[04/10 19:38:41.098848][warning][155049][ObException.cpp:8] Device Component 'global timestamp filter' not found!
+[04/10 19:38:52.200462][info][155049][DeviceManager.cpp:194] Device created successfully! Name: Boot, PID: 0x0501, SN/ID: CP9JA53000BM FW: 1.1.6
+[04/10 19:38:52.200855][warning][155049][ObException.cpp:8] Device Component 'global timestamp filter' not found!
+[04/10 19:38:52.201239][warning][155049][ObException.cpp:8] Device Component 'global timestamp filter' not found!
+[04/10 19:38:52.201550][warning][155049][ObException.cpp:8] Device Component 'global timestamp filter' not found!
+[04/10 19:39:23.111097][info][155571][LinuxUsbPal.cpp:335] Create PollingDeviceWatcher!
+[04/10 19:39:23.111162][info][155571][DeviceManager.cpp:25] Current found device(s): (1)
+[04/10 19:39:23.111169][info][155571][DeviceManager.cpp:34] 	- Name: Bootloader device, PID: 0x0501, SN/ID: CP9JA53000BM, Connection: USB3.0
+[04/10 19:39:23.111176][info][155571][DeviceManager.cpp:339] Enable net device enumeration: true
+[04/10 19:39:25.116470][info][155571][DeviceManager.cpp:25] Current device(s) list: (1)
+[04/10 19:39:25.116523][info][155571][DeviceManager.cpp:34] 	- Name: Bootloader device, PID: 0x0501, SN/ID: CP9JA53000BM, Connection: USB3.0
+[04/10 19:39:25.116529][info][155571][DeviceManager.cpp:339] Enable net device enumeration: false
+[04/10 19:39:26.225695][info][155761][DeviceManager.cpp:194] Device created successfully! Name: Boot, PID: 0x0501, SN/ID: CP9JA53000BM FW: 1.1.6
+[04/10 19:39:26.233150][warning][155761][ObException.cpp:8] Device Component 'global timestamp filter' not found!
+[04/10 19:39:26.233888][warning][155761][ObException.cpp:8] Device Component 'global timestamp filter' not found!
+[04/10 19:39:26.234118][warning][155761][ObException.cpp:8] Device Component 'global timestamp filter' not found!
+[04/10 19:39:37.335606][info][155761][DeviceManager.cpp:194] Device created successfully! Name: Boot, PID: 0x0501, SN/ID: CP9JA53000BM FW: 1.1.6
+[04/10 19:39:37.336247][warning][155761][ObException.cpp:8] Device Component 'global timestamp filter' not found!
+[04/10 19:39:37.336843][warning][155761][ObException.cpp:8] Device Component 'global timestamp filter' not found!
+[04/10 19:39:37.337206][warning][155761][ObException.cpp:8] Device Component 'global timestamp filter' not found!
+[04/10 19:41:18.486493][info][156675][LinuxUsbPal.cpp:335] Create PollingDeviceWatcher!
+[04/10 19:41:18.486572][info][156675][DeviceManager.cpp:25] Current found device(s): (1)
+[04/10 19:41:18.486581][info][156675][DeviceManager.cpp:34] 	- Name: Bootloader device, PID: 0x0501, SN/ID: CP9JA53000BM, Connection: USB3.0
+[04/10 19:41:18.486588][info][156675][DeviceManager.cpp:339] Enable net device enumeration: true
+[04/10 19:41:20.490932][info][156675][DeviceManager.cpp:25] Current device(s) list: (1)
+[04/10 19:41:20.490966][info][156675][DeviceManager.cpp:34] 	- Name: Bootloader device, PID: 0x0501, SN/ID: CP9JA53000BM, Connection: USB3.0
+[04/10 19:41:20.490973][info][156675][DeviceManager.cpp:339] Enable net device enumeration: false
+[04/10 19:41:21.597577][info][156712][DeviceManager.cpp:194] Device created successfully! Name: Boot, PID: 0x0501, SN/ID: CP9JA53000BM FW: 1.1.6
+[04/10 19:41:23.092948][warning][156712][ObException.cpp:8] Device Component 'device clock synchronizer' not found!
+[04/10 19:41:34.195553][info][156712][DeviceManager.cpp:194] Device created successfully! Name: Boot, PID: 0x0501, SN/ID: CP9JA53000BM FW: 1.1.6
+[04/10 19:41:35.379291][warning][156712][ObException.cpp:8] Device Component 'device clock synchronizer' not found!
+[04/10 19:42:59.925104][info][157200][LinuxUsbPal.cpp:335] Create PollingDeviceWatcher!
+[04/10 19:42:59.925167][info][157200][DeviceManager.cpp:25] Current found device(s): (1)
+[04/10 19:42:59.925174][info][157200][DeviceManager.cpp:34] 	- Name: Bootloader device, PID: 0x0501, SN/ID: CP9JA53000BM, Connection: USB3.0
+[04/10 19:42:59.925180][info][157200][DeviceManager.cpp:339] Enable net device enumeration: true
+[04/10 19:43:01.930436][info][157200][DeviceManager.cpp:25] Current device(s) list: (1)
+[04/10 19:43:01.930514][info][157200][DeviceManager.cpp:34] 	- Name: Bootloader device, PID: 0x0501, SN/ID: CP9JA53000BM, Connection: USB3.0
+[04/10 19:43:01.930526][info][157200][DeviceManager.cpp:339] Enable net device enumeration: false
+[04/10 19:43:03.037738][info][157396][DeviceManager.cpp:194] Device created successfully! Name: Boot, PID: 0x0501, SN/ID: CP9JA53000BM FW: 1.1.6
+[04/10 19:43:03.073810][warning][157396][ObException.cpp:8] Device Component 'device clock synchronizer' not found!
+[04/10 19:43:14.175680][info][157396][DeviceManager.cpp:194] Device created successfully! Name: Boot, PID: 0x0501, SN/ID: CP9JA53000BM FW: 1.1.6
+[04/10 19:43:14.255319][warning][157396][ObException.cpp:8] Device Component 'device clock synchronizer' not found!
+[04/10 20:24:59.180182][info][172347][LinuxUsbPal.cpp:335] Create PollingDeviceWatcher!
+[04/10 20:24:59.180316][info][172347][DeviceManager.cpp:25] Current found device(s): (1)
+[04/10 20:24:59.180327][info][172347][DeviceManager.cpp:34] 	- Name: Gemini 336, PID: 0x0803, SN/ID: CP9JA53000BM, Connection: USB3.2
+[04/10 20:24:59.180338][info][172347][DeviceManager.cpp:339] Enable net device enumeration: true
+[04/10 20:25:01.185609][info][172347][DeviceManager.cpp:25] Current device(s) list: (1)
+[04/10 20:25:01.185644][info][172347][DeviceManager.cpp:34] 	- Name: Gemini 336, PID: 0x0803, SN/ID: CP9JA53000BM, Connection: USB3.2
+[04/10 20:25:01.185651][info][172347][DeviceManager.cpp:339] Enable net device enumeration: true
+[04/10 20:25:01.200603][info][172378][DeviceBase.cpp:651] key: HwType,value:R1
+[04/10 20:25:01.200624][info][172378][DeviceBase.cpp:651] key: HwVer,value:V1.1
+[04/10 20:25:01.200629][info][172378][DeviceBase.cpp:651] key: IspFwVer,value:20241125
+[04/10 20:25:01.200632][info][172378][DeviceBase.cpp:651] key: IspNeedVer,value:20241125
+[04/10 20:25:01.368174][info][172378][DeviceManager.cpp:194] Device created successfully! Name: Gemini 336, PID: 0x0803, SN/ID: CP9JA53000BM FW: 1.4.00
+[04/10 20:25:01.431796][warning][172378][SensorBase.cpp:147] [CP9JA53000BM] Failed to update default stream profile for sensor due to no matching stream profile found
+[04/10 20:25:01.432681][warning][172378][SensorBase.cpp:147] [CP9JA53000BM] Failed to update default stream profile for sensor due to no matching stream profile found
+[04/10 20:25:05.467655][info][172378][Pipeline.cpp:42] [CP9JA53000BM] Pipeline created with device: {name: Gemini 336, sn: CP9JA53000BM}, @0x7C2004426C10
+[04/10 20:25:05.467797][info][172378][Pipeline.cpp:216] [CP9JA53000BM] Check and set config done!
+[04/10 20:25:05.468008][info][172378][Pipeline.cpp:254] [CP9JA53000BM] Try to start streams!
+[04/10 20:25:05.468022][info][172378][VideoSensor.cpp:58] [CP9JA53000BM] Try to start stream: {type: Color, format: MJPG, width: 1280, height: 720, fps: 30}
+[04/10 20:25:05.468035][info][172378][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STARTING@Color
+[04/10 20:25:05.468042][info][172378][VideoSensor.cpp:127] [CP9JA53000BM] Start backend stream: {type: Color, format: MJPG, width: 1280, height: 720, fps: 30}
+[04/10 20:25:05.469442][info][172378][VideoSensor.cpp:58] [CP9JA53000BM] Try to start stream: {type: Depth, format: Y16, width: 848, height: 480, fps: 30}
+[04/10 20:25:05.469471][info][172378][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STARTING@Depth
+[04/10 20:25:05.469480][info][172378][VideoSensor.cpp:127] [CP9JA53000BM] Start backend stream: {type: Depth, format: Z16, width: 848, height: 480, fps: 30}
+[04/10 20:25:05.470741][info][172378][Pipeline.cpp:270] [CP9JA53000BM] Start streams done!
+[04/10 20:25:05.470757][info][172378][Pipeline.cpp:238] [CP9JA53000BM] Pipeline start done!
+[04/10 20:25:05.571299][info][172417][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STREAMING@Depth
+[04/10 20:25:06.008067][info][172416][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STREAMING@Color
+[04/10 20:25:10.575706][info][172417][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=30.169830fps
+[04/10 20:25:10.578272][info][172419][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=30.181892fps
+[04/10 20:25:11.010482][info][172416][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.988007fps
+[04/10 20:25:11.043873][info][172425][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=30.025850fps
+[04/10 20:25:15.581624][info][172417][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/10 20:25:15.584718][info][172419][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/10 20:25:16.016387][info][172416][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/10 20:25:16.049772][info][172425][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/10 20:25:20.587498][info][172417][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/10 20:25:20.589970][info][172419][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.970030fps
+[04/10 20:25:21.022235][info][172416][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/10 20:25:21.055623][info][172425][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/10 20:25:25.593403][info][172417][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/10 20:25:25.596274][info][172419][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.958059fps
+[04/10 20:25:26.028137][info][172416][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/10 20:25:26.061528][info][172425][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/10 20:25:30.599259][info][172417][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/10 20:25:30.601856][info][172419][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.970030fps
+[04/10 20:25:31.034035][info][172416][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/10 20:25:31.067418][info][172425][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/10 20:25:35.605196][info][172417][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/10 20:25:35.611241][info][172419][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.940119fps
+[04/10 20:25:36.039888][info][172416][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.970030fps
+[04/10 20:25:36.073299][info][172425][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/10 20:25:40.611047][info][172417][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/10 20:25:40.613482][info][172419][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.988007fps
+[04/10 20:25:41.045805][info][172416][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/10 20:25:41.079214][info][172425][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/10 20:25:45.616939][info][172417][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.970030fps
+[04/10 20:25:45.619494][info][172419][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/10 20:25:46.051693][info][172416][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/10 20:25:46.085085][info][172425][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/10 20:25:50.622808][info][172417][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/10 20:25:50.625398][info][172419][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/10 20:25:51.057565][info][172416][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/10 20:25:51.091028][info][172425][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/10 20:25:55.628699][info][172417][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/10 20:25:55.632957][info][172419][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.958059fps
+[04/10 20:25:56.063461][info][172416][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/10 20:25:56.096863][info][172425][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.970030fps
+[04/10 20:26:00.634889][info][172417][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/10 20:26:00.637476][info][172419][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.970030fps
+[04/10 20:26:01.069348][info][172416][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/10 20:26:01.102753][info][172425][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/10 20:27:06.002924][info][175345][LinuxUsbPal.cpp:335] Create PollingDeviceWatcher!
+[04/10 20:27:06.002993][info][175345][DeviceManager.cpp:25] Current found device(s): (1)
+[04/10 20:27:06.003000][info][175345][DeviceManager.cpp:34] 	- Name: Gemini 336, PID: 0x0803, SN/ID: CP9JA53000BM, Connection: USB3.2
+[04/10 20:27:06.003005][info][175345][DeviceManager.cpp:339] Enable net device enumeration: true
+[04/10 20:27:08.008146][info][175345][DeviceManager.cpp:25] Current device(s) list: (1)
+[04/10 20:27:08.008236][info][175345][DeviceManager.cpp:34] 	- Name: Gemini 336, PID: 0x0803, SN/ID: CP9JA53000BM, Connection: USB3.2
+[04/10 20:27:08.008249][info][175345][DeviceManager.cpp:339] Enable net device enumeration: true
+[04/10 20:27:08.022647][info][175532][DeviceBase.cpp:651] key: HwType,value:R1
+[04/10 20:27:08.022671][info][175532][DeviceBase.cpp:651] key: HwVer,value:V1.1
+[04/10 20:27:08.022676][info][175532][DeviceBase.cpp:651] key: IspFwVer,value:20241125
+[04/10 20:27:08.022682][info][175532][DeviceBase.cpp:651] key: IspNeedVer,value:20241125
+[04/10 20:27:08.179625][info][175532][DeviceManager.cpp:194] Device created successfully! Name: Gemini 336, PID: 0x0803, SN/ID: CP9JA53000BM FW: 1.4.00
+[04/10 20:27:08.246913][warning][175532][SensorBase.cpp:147] [CP9JA53000BM] Failed to update default stream profile for sensor due to no matching stream profile found
+[04/10 20:27:08.247728][warning][175532][SensorBase.cpp:147] [CP9JA53000BM] Failed to update default stream profile for sensor due to no matching stream profile found
+[04/10 20:27:08.818287][info][175532][Pipeline.cpp:42] [CP9JA53000BM] Pipeline created with device: {name: Gemini 336, sn: CP9JA53000BM}, @0x73F82C447DF0
+[04/10 20:27:08.818397][info][175532][Pipeline.cpp:216] [CP9JA53000BM] Check and set config done!
+[04/10 20:27:08.818601][info][175532][Pipeline.cpp:254] [CP9JA53000BM] Try to start streams!
+[04/10 20:27:08.818614][info][175532][VideoSensor.cpp:58] [CP9JA53000BM] Try to start stream: {type: Color, format: MJPG, width: 1280, height: 720, fps: 30}
+[04/10 20:27:08.818627][info][175532][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STARTING@Color
+[04/10 20:27:08.818633][info][175532][VideoSensor.cpp:127] [CP9JA53000BM] Start backend stream: {type: Color, format: MJPG, width: 1280, height: 720, fps: 30}
+[04/10 20:27:08.820171][info][175532][VideoSensor.cpp:58] [CP9JA53000BM] Try to start stream: {type: Depth, format: Y16, width: 848, height: 480, fps: 30}
+[04/10 20:27:08.820209][info][175532][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STARTING@Depth
+[04/10 20:27:08.820219][info][175532][VideoSensor.cpp:127] [CP9JA53000BM] Start backend stream: {type: Depth, format: Z16, width: 848, height: 480, fps: 30}
+[04/10 20:27:08.821432][info][175532][Pipeline.cpp:270] [CP9JA53000BM] Start streams done!
+[04/10 20:27:08.821444][info][175532][Pipeline.cpp:238] [CP9JA53000BM] Pipeline start done!
+[04/10 20:27:08.921032][info][175563][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STREAMING@Depth
+[04/10 20:27:09.358572][info][175562][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STREAMING@Color
+[04/10 20:27:13.925997][info][175563][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=30.169830fps
+[04/10 20:27:13.929051][info][175565][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=30.175858fps
+[04/10 20:27:14.361002][info][175562][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.988007fps
+[04/10 20:27:14.394474][info][175567][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=30.079681fps
+[04/10 20:27:18.931654][info][175563][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/10 20:27:18.934295][info][175565][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.970030fps
+[04/10 20:27:19.366841][info][175562][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/10 20:27:19.400231][info][175567][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/10 20:27:23.937583][info][175563][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/10 20:27:23.940570][info][175565][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/10 20:27:24.372759][info][175562][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/10 20:27:24.406257][info][175567][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/10 20:41:06.839755][warning][177938][SensorBase.cpp:147] [CP9JA53000BM] Failed to update default stream profile for sensor due to no matching stream profile found
+[04/10 20:41:06.840656][warning][177938][SensorBase.cpp:147] [CP9JA53000BM] Failed to update default stream profile for sensor due to no matching stream profile found
+[04/10 20:44:36.129821][info][178821][LinuxUsbPal.cpp:335] Create PollingDeviceWatcher!
+[04/10 20:44:36.130157][info][178821][DeviceManager.cpp:25] Current found device(s): (1)
+[04/10 20:44:36.130165][info][178821][DeviceManager.cpp:34] 	- Name: Gemini 336, PID: 0x0803, SN/ID: CP9JA53000BM, Connection: USB3.2
+[04/10 20:44:36.130171][info][178821][DeviceManager.cpp:339] Enable net device enumeration: true
+[04/10 20:44:38.135448][info][178821][DeviceManager.cpp:25] Current device(s) list: (1)
+[04/10 20:44:38.135506][info][178821][DeviceManager.cpp:34] 	- Name: Gemini 336, PID: 0x0803, SN/ID: CP9JA53000BM, Connection: USB3.2
+[04/10 20:44:38.135515][info][178821][DeviceManager.cpp:339] Enable net device enumeration: true
+[04/10 20:44:38.151324][info][179040][DeviceBase.cpp:651] key: HwType,value:R1
+[04/10 20:44:38.151347][info][179040][DeviceBase.cpp:651] key: HwVer,value:V1.1
+[04/10 20:44:38.151351][info][179040][DeviceBase.cpp:651] key: IspFwVer,value:20241125
+[04/10 20:44:38.151355][info][179040][DeviceBase.cpp:651] key: IspNeedVer,value:20241125
+[04/10 20:44:38.307618][info][179040][DeviceManager.cpp:194] Device created successfully! Name: Gemini 336, PID: 0x0803, SN/ID: CP9JA53000BM FW: 1.4.00
+[04/10 20:44:38.349920][warning][179040][SensorBase.cpp:147] [CP9JA53000BM] Failed to update default stream profile for sensor due to no matching stream profile found
+[04/10 20:44:38.350995][warning][179040][SensorBase.cpp:147] [CP9JA53000BM] Failed to update default stream profile for sensor due to no matching stream profile found
+[04/10 20:44:38.850339][info][179040][Pipeline.cpp:42] [CP9JA53000BM] Pipeline created with device: {name: Gemini 336, sn: CP9JA53000BM}, @0x785B5C465B80
+[04/10 20:44:38.850431][info][179040][Pipeline.cpp:216] [CP9JA53000BM] Check and set config done!
+[04/10 20:44:38.850645][info][179040][Pipeline.cpp:254] [CP9JA53000BM] Try to start streams!
+[04/10 20:44:38.850668][info][179040][VideoSensor.cpp:58] [CP9JA53000BM] Try to start stream: {type: Color, format: MJPG, width: 1280, height: 720, fps: 30}
+[04/10 20:44:38.850682][info][179040][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STARTING@Color
+[04/10 20:44:38.850689][info][179040][VideoSensor.cpp:127] [CP9JA53000BM] Start backend stream: {type: Color, format: MJPG, width: 1280, height: 720, fps: 30}
+[04/10 20:44:38.852120][info][179040][VideoSensor.cpp:58] [CP9JA53000BM] Try to start stream: {type: Depth, format: Y16, width: 848, height: 480, fps: 30}
+[04/10 20:44:38.852149][info][179040][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STARTING@Depth
+[04/10 20:44:38.852156][info][179040][VideoSensor.cpp:127] [CP9JA53000BM] Start backend stream: {type: Depth, format: Z16, width: 848, height: 480, fps: 30}
+[04/10 20:44:38.868873][info][179040][Pipeline.cpp:270] [CP9JA53000BM] Start streams done!
+[04/10 20:44:38.868898][info][179040][Pipeline.cpp:238] [CP9JA53000BM] Pipeline start done!
+[04/10 20:44:38.955729][info][179046][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STREAMING@Depth
+[04/10 20:44:39.390986][info][179045][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STREAMING@Color
+[04/10 20:44:43.960444][info][179046][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=30.169830fps
+[04/10 20:44:43.961830][info][179048][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=30.187925fps
+[04/10 20:44:44.396580][info][179045][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=30.163803fps
+[04/10 20:44:44.498657][info][179050][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=30.756941fps
+[04/10 20:44:48.966422][info][179046][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/10 20:44:48.968614][info][179048][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.958059fps
+[04/10 20:44:49.402487][info][179045][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/10 20:44:49.503649][info][179050][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.970030fps
+[04/10 20:44:53.972205][info][179046][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/10 20:44:53.974008][info][179048][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/10 20:44:54.408349][info][179045][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/10 20:44:54.509753][info][179050][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/10 20:44:58.978118][info][179046][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/10 20:44:58.980022][info][179048][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/10 20:44:59.414315][info][179045][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/10 20:44:59.515689][info][179050][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/10 20:45:03.984121][info][179046][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/10 20:45:03.993033][info][179048][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.922203fps
+[04/10 20:45:04.420144][info][179045][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/10 20:45:04.520818][info][179050][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.970030fps
+[04/10 20:45:08.990110][info][179046][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/10 20:45:09.024692][info][179048][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=30.013912fps
+[04/10 20:45:09.426071][info][179045][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/10 20:45:09.527168][info][179050][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.958059fps
+[04/10 20:45:13.995756][info][179046][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.970030fps
+[04/10 20:45:14.030899][info][179048][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/10 20:45:14.432059][info][179045][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/10 20:45:14.533217][info][179050][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/10 20:45:19.001736][info][179046][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/10 20:45:19.036581][info][179048][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/10 20:45:19.437820][info][179045][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.970030fps
+[04/10 20:45:19.537991][info][179050][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.976019fps
+[04/10 20:45:24.007600][info][179046][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/10 20:45:24.046206][info][179048][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.940119fps
+[04/10 20:45:24.443820][info][179045][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/10 20:45:24.546997][info][179050][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.946098fps
+[04/10 20:45:29.013460][info][179046][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/10 20:45:29.048209][info][179048][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.988007fps
+[04/10 20:45:29.449599][info][179045][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/10 20:45:29.551264][info][179050][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.970030fps
+[04/10 20:45:34.019336][info][179046][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/10 20:45:34.054255][info][179048][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/10 20:45:34.455761][info][179045][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/10 20:45:34.556993][info][179050][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.970030fps
+[04/10 20:45:39.025401][info][179046][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/10 20:45:39.059940][info][179048][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.970030fps
+[04/10 20:45:39.461399][info][179045][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/10 20:45:39.563100][info][179050][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.958059fps
+[04/10 20:45:44.031144][info][179046][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/10 20:45:44.065814][info][179048][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/10 20:45:44.467294][info][179045][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/10 20:45:44.568477][info][179050][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.970030fps
+[04/10 20:45:49.037032][info][179046][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/10 20:45:49.071833][info][179048][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/10 20:45:49.473148][info][179045][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/10 20:45:49.574570][info][179050][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/10 20:45:54.042916][info][179046][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.970030fps
+[04/10 20:45:54.077681][info][179048][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/10 20:45:54.479055][info][179045][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/10 20:45:54.580250][info][179050][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/10 20:45:59.048799][info][179046][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/10 20:45:59.083537][info][179048][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/10 20:45:59.484930][info][179045][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.970030fps
+[04/10 20:45:59.586756][info][179050][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/10 20:46:04.054928][info][179046][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/10 20:46:04.089934][info][179048][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/10 20:46:04.490840][info][179045][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/10 20:46:04.591940][info][179050][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.970030fps
+[04/10 20:46:09.060563][info][179046][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/10 20:46:09.097571][info][179048][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.952078fps
+[04/10 20:46:09.496727][info][179045][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/10 20:46:09.597997][info][179050][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/10 20:46:14.066487][info][179046][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/10 20:46:14.101404][info][179048][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.976019fps
+[04/10 20:46:14.502676][info][179045][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/10 20:46:14.603835][info][179050][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/10 20:46:19.072345][info][179046][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/10 20:46:19.113634][info][179048][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.928171fps
+[04/10 20:46:19.508565][info][179045][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/10 20:46:19.609909][info][179050][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/10 20:46:24.078251][info][179046][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/10 20:46:24.146528][info][179048][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=30.001987fps
+[04/10 20:46:24.514397][info][179045][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/10 20:46:24.615664][info][179050][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/10 20:46:29.084139][info][179046][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/10 20:46:29.152524][info][179048][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/10 20:46:29.520368][info][179045][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/10 20:46:29.621543][info][179050][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/10 20:46:34.090019][info][179046][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/10 20:46:34.158123][info][179048][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/10 20:46:34.526161][info][179045][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/10 20:46:34.627928][info][179050][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/10 20:46:39.096071][info][179046][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/10 20:46:39.164537][info][179048][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/10 20:46:39.532073][info][179045][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/10 20:46:39.633187][info][179050][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/10 20:46:44.101847][info][179046][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.970030fps
+[04/10 20:46:44.170597][info][179048][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/10 20:46:44.537973][info][179045][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.970030fps
+[04/10 20:46:44.638216][info][179050][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.970030fps
+[04/10 20:46:49.108012][info][179046][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/10 20:46:49.175823][info][179048][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.970030fps
+[04/10 20:46:49.543839][info][179045][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/10 20:46:49.645041][info][179050][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.958059fps
+[04/10 20:46:54.113584][info][179046][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/10 20:46:54.181695][info][179048][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/10 20:46:54.549740][info][179045][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/10 20:46:54.651040][info][179050][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/10 20:46:55.958397][info][178821][Pipeline.cpp:336] [CP9JA53000BM] Try to stop pipeline!
+[04/10 20:46:55.958433][info][178821][Pipeline.cpp:312] [CP9JA53000BM] Try to stop streams!
+[04/10 20:46:55.958451][info][178821][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STOPPING@Depth
+[04/10 20:46:55.965079][info][178821][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STOPPED@Depth
+[04/10 20:46:55.965154][info][178821][Pipeline.cpp:326] [CP9JA53000BM] Sensor stream stopped, sensorType=Depth
+[04/10 20:46:55.965168][info][178821][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STOPPING@Color
+[04/10 20:46:55.985115][info][178821][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STOPPED@Color
+[04/10 20:46:55.985226][info][178821][Pipeline.cpp:326] [CP9JA53000BM] Sensor stream stopped, sensorType=Color
+[04/10 20:46:55.985232][info][178821][Pipeline.cpp:332] [CP9JA53000BM] Stop streams done!
+[04/10 20:46:56.005131][info][178821][Pipeline.cpp:356] [CP9JA53000BM] Stop pipeline done!
+[04/10 20:46:56.068068][info][178821][Pipeline.cpp:53] [CP9JA53000BM] Pipeline destroyed! @0x785B5C465B80
+[04/10 20:46:56.068893][info][178821][SensorBase.cpp:47] [CP9JA53000BM] SensorBase is destroyed
+[04/10 20:46:56.068912][info][178821][SensorBase.cpp:47] [CP9JA53000BM] SensorBase is destroyed
+[04/10 20:46:56.068981][info][178821][SensorBase.cpp:47] [CP9JA53000BM] SensorBase is destroyed
+[04/10 20:46:56.069815][info][178821][ObLibuvcDevicePort.cpp:87] uvc_close done.
+[04/10 20:46:56.069825][info][178821][ObLibuvcDevicePort.cpp:88] ~ObLibuvcDevicePort done
+[04/10 20:46:56.069867][info][178821][SensorBase.cpp:47] [CP9JA53000BM] SensorBase is destroyed
+[04/10 20:46:56.069901][info][178821][SensorBase.cpp:47] [CP9JA53000BM] SensorBase is destroyed
+[04/10 20:46:56.069954][info][178821][SensorBase.cpp:47] [CP9JA53000BM] SensorBase is destroyed
+[04/10 20:46:56.071120][info][178821][ObLibuvcDevicePort.cpp:87] uvc_close done.
+[04/10 20:46:56.071135][info][178821][ObLibuvcDevicePort.cpp:88] ~ObLibuvcDevicePort done
+[04/10 20:47:17.317914][info][180008][LinuxUsbPal.cpp:335] Create PollingDeviceWatcher!
+[04/10 20:47:17.317994][info][180008][DeviceManager.cpp:25] Current found device(s): (1)
+[04/10 20:47:17.318003][info][180008][DeviceManager.cpp:34] 	- Name: Gemini 336, PID: 0x0803, SN/ID: CP9JA53000BM, Connection: USB3.2
+[04/10 20:47:17.318010][info][180008][DeviceManager.cpp:339] Enable net device enumeration: true
+[04/10 20:47:19.323737][info][180008][DeviceManager.cpp:25] Current device(s) list: (1)
+[04/10 20:47:19.323796][info][180008][DeviceManager.cpp:34] 	- Name: Gemini 336, PID: 0x0803, SN/ID: CP9JA53000BM, Connection: USB3.2
+[04/10 20:47:19.323804][info][180008][DeviceManager.cpp:339] Enable net device enumeration: true
+[04/10 20:47:19.339329][info][180229][DeviceBase.cpp:651] key: HwType,value:R1
+[04/10 20:47:19.339354][info][180229][DeviceBase.cpp:651] key: HwVer,value:V1.1
+[04/10 20:47:19.339358][info][180229][DeviceBase.cpp:651] key: IspFwVer,value:20241125
+[04/10 20:47:19.339362][info][180229][DeviceBase.cpp:651] key: IspNeedVer,value:20241125
+[04/10 20:47:19.496609][info][180229][DeviceManager.cpp:194] Device created successfully! Name: Gemini 336, PID: 0x0803, SN/ID: CP9JA53000BM FW: 1.4.00
+[04/10 20:47:19.535840][warning][180229][SensorBase.cpp:147] [CP9JA53000BM] Failed to update default stream profile for sensor due to no matching stream profile found
+[04/10 20:47:19.536667][warning][180229][SensorBase.cpp:147] [CP9JA53000BM] Failed to update default stream profile for sensor due to no matching stream profile found
+[04/10 20:47:19.925927][info][180229][Pipeline.cpp:42] [CP9JA53000BM] Pipeline created with device: {name: Gemini 336, sn: CP9JA53000BM}, @0x7CD49C476E50
+[04/10 20:47:19.926013][info][180229][Pipeline.cpp:216] [CP9JA53000BM] Check and set config done!
+[04/10 20:47:19.926205][info][180229][Pipeline.cpp:254] [CP9JA53000BM] Try to start streams!
+[04/10 20:47:19.926216][info][180229][VideoSensor.cpp:58] [CP9JA53000BM] Try to start stream: {type: Color, format: MJPG, width: 1280, height: 720, fps: 30}
+[04/10 20:47:19.926228][info][180229][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STARTING@Color
+[04/10 20:47:19.926234][info][180229][VideoSensor.cpp:127] [CP9JA53000BM] Start backend stream: {type: Color, format: MJPG, width: 1280, height: 720, fps: 30}
+[04/10 20:47:19.927872][info][180229][VideoSensor.cpp:58] [CP9JA53000BM] Try to start stream: {type: Depth, format: Y16, width: 848, height: 480, fps: 30}
+[04/10 20:47:19.927905][info][180229][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STARTING@Depth
+[04/10 20:47:19.927914][info][180229][VideoSensor.cpp:127] [CP9JA53000BM] Start backend stream: {type: Depth, format: Z16, width: 848, height: 480, fps: 30}
+[04/10 20:47:19.944501][info][180229][Pipeline.cpp:270] [CP9JA53000BM] Start streams done!
+[04/10 20:47:19.944528][info][180229][Pipeline.cpp:238] [CP9JA53000BM] Pipeline start done!
+[04/10 20:47:20.031847][info][180248][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STREAMING@Depth
+[04/10 20:47:20.464864][info][180247][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STREAMING@Color
+[04/10 20:47:25.036420][info][180248][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=30.169830fps
+[04/10 20:47:25.038100][info][180250][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=30.181892fps
+[04/10 20:47:25.472472][info][180247][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=30.151758fps
+[04/10 20:47:25.574059][info][180252][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=30.616301fps
+[04/10 20:47:30.042308][info][180248][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/10 20:47:30.043848][info][180250][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.970030fps
+[04/10 20:47:30.478371][info][180247][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/10 20:47:30.579577][info][180252][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.970030fps
+[04/10 20:47:35.048223][info][180248][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/10 20:47:35.050031][info][180250][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.958059fps
+[04/10 20:47:35.484268][info][180247][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/10 20:47:35.586295][info][180252][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.958059fps
+[04/10 20:47:40.054082][info][180248][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/10 20:47:40.055565][info][180250][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.970030fps
+[04/10 20:47:40.490145][info][180247][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/10 20:47:40.591373][info][180252][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.970030fps
+[04/10 20:47:45.060088][info][180248][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/10 20:47:45.061722][info][180250][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/10 20:47:45.496039][info][180247][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/10 20:47:45.597395][info][180252][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/10 20:47:50.065935][info][180248][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.970030fps
+[04/10 20:47:50.067312][info][180250][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/10 20:47:50.501949][info][180247][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.970030fps
+[04/10 20:47:50.603364][info][180252][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/10 20:47:55.071775][info][180248][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/10 20:47:55.073587][info][180250][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/10 20:47:55.507839][info][180247][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/10 20:47:55.609055][info][180252][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/10 20:48:00.077804][info][180248][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/10 20:48:00.079550][info][180250][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/10 20:48:00.513719][info][180247][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/10 20:48:00.614924][info][180252][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.970030fps
+[04/10 20:48:05.083542][info][180248][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/10 20:48:05.085086][info][180250][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/10 20:48:05.519623][info][180247][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/10 20:48:05.621373][info][180252][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.958059fps
+[04/10 20:48:10.089461][info][180248][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/10 20:48:10.090916][info][180250][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.970030fps
+[04/10 20:48:10.525487][info][180247][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/10 20:48:10.627082][info][180252][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.964043fps
+[04/10 20:48:15.095315][info][180248][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/10 20:48:15.097140][info][180250][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.958059fps
+[04/10 20:48:15.531428][info][180247][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/10 20:48:15.632536][info][180252][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.970030fps
+[04/10 20:48:20.101222][info][180248][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/10 20:48:20.102830][info][180250][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.970030fps
+[04/10 20:48:20.537298][info][180247][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/10 20:48:20.639141][info][180252][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.958059fps
+[04/10 20:48:25.107141][info][180248][VideoSensor.cpp:153] [CP9JA53000BM] Depth backend frame callback, frameRate=29.964043fps
+[04/10 20:48:25.108929][info][180250][SensorBase.cpp:370] [CP9JA53000BM] Depth Streaming... frameRate=29.964043fps
+[04/10 20:48:25.543179][info][180247][VideoSensor.cpp:153] [CP9JA53000BM] Color backend frame callback, frameRate=29.964043fps
+[04/10 20:48:25.647602][info][180252][SensorBase.cpp:370] [CP9JA53000BM] Color Streaming... frameRate=29.952078fps
+[04/10 20:48:28.483743][info][180008][Pipeline.cpp:336] [CP9JA53000BM] Try to stop pipeline!
+[04/10 20:48:28.483778][info][180008][Pipeline.cpp:312] [CP9JA53000BM] Try to stop streams!
+[04/10 20:48:28.483794][info][180008][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STOPPING@Depth
+[04/10 20:48:28.508925][info][180008][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STOPPED@Depth
+[04/10 20:48:28.509032][info][180008][Pipeline.cpp:326] [CP9JA53000BM] Sensor stream stopped, sensorType=Depth
+[04/10 20:48:28.509050][info][180008][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STOPPING@Color
+[04/10 20:48:28.528937][info][180008][SensorBase.cpp:213] [CP9JA53000BM] Stream state changed to STOPPED@Color
+[04/10 20:48:28.529051][info][180008][Pipeline.cpp:326] [CP9JA53000BM] Sensor stream stopped, sensorType=Color
+[04/10 20:48:28.529058][info][180008][Pipeline.cpp:332] [CP9JA53000BM] Stop streams done!
+[04/10 20:48:28.548926][info][180008][Pipeline.cpp:356] [CP9JA53000BM] Stop pipeline done!
+[04/10 20:48:28.593821][info][180008][Pipeline.cpp:53] [CP9JA53000BM] Pipeline destroyed! @0x7CD49C476E50
+[04/10 20:48:28.594562][info][180008][SensorBase.cpp:47] [CP9JA53000BM] SensorBase is destroyed
+[04/10 20:48:28.594574][info][180008][SensorBase.cpp:47] [CP9JA53000BM] SensorBase is destroyed
+[04/10 20:48:28.594645][info][180008][SensorBase.cpp:47] [CP9JA53000BM] SensorBase is destroyed
+[04/10 20:48:28.595476][info][180008][ObLibuvcDevicePort.cpp:87] uvc_close done.
+[04/10 20:48:28.595486][info][180008][ObLibuvcDevicePort.cpp:88] ~ObLibuvcDevicePort done
+[04/10 20:48:28.595529][info][180008][SensorBase.cpp:47] [CP9JA53000BM] SensorBase is destroyed
+[04/10 20:48:28.595565][info][180008][SensorBase.cpp:47] [CP9JA53000BM] SensorBase is destroyed
+[04/10 20:48:28.595621][info][180008][SensorBase.cpp:47] [CP9JA53000BM] SensorBase is destroyed
+[04/10 20:48:28.596739][info][180008][ObLibuvcDevicePort.cpp:87] uvc_close done.
+[04/10 20:48:28.596756][info][180008][ObLibuvcDevicePort.cpp:88] ~ObLibuvcDevicePort done
+[04/10 20:57:03.225968][warning][181273][SensorBase.cpp:147] [CP9JA53000BM] Failed to update default stream profile for sensor due to no matching stream profile found
+[04/10 20:57:03.226748][warning][181273][SensorBase.cpp:147] [CP9JA53000BM] Failed to update default stream profile for sensor due to no matching stream profile found
+[04/10 21:16:17.178043][warning][183812][SensorBase.cpp:147] [CP9JA53000BM] Failed to update default stream profile for sensor due to no matching stream profile found
+[04/10 21:16:17.180114][warning][183812][SensorBase.cpp:147] [CP9JA53000BM] Failed to update default stream profile for sensor due to no matching stream profile found
+[04/11 00:26:07.561344][warning][183831][VideoSensor.cpp:184] [CP9JA53000BM] This frame will be dropped because jpg format verification failure! @Color
+[04/11 00:54:11.871735][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Unsupported marker type 0x04
+[04/11 01:11:46.151029][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Premature end of JPEG file
+[04/11 01:33:29.564155][warning][183831][VideoSensor.cpp:184] [CP9JA53000BM] This frame will be dropped because jpg format verification failure! @Color
+[04/11 01:34:07.497892][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Premature end of JPEG file
+[04/11 01:56:21.100954][warning][183831][VideoSensor.cpp:184] [CP9JA53000BM] This frame will be dropped because jpg format verification failure! @Color
+[04/11 01:57:33.724048][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Unsupported marker type 0x69
+[04/11 02:02:23.643981][warning][183831][VideoSensor.cpp:184] [CP9JA53000BM] This frame will be dropped because jpg format verification failure! @Color
+[04/11 02:18:54.101026][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Premature end of JPEG file
+[04/11 02:28:54.643264][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Unsupported marker type 0x0a
+[04/11 02:31:07.127137][warning][183831][VideoSensor.cpp:184] [CP9JA53000BM] This frame will be dropped because jpg format verification failure! @Color
+[04/11 02:32:36.003891][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Unsupported marker type 0x19
+[04/11 02:33:09.843866][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Unsupported marker type 0x02
+[04/11 02:33:10.506990][warning][183831][VideoSensor.cpp:184] [CP9JA53000BM] This frame will be dropped because jpg format verification failure! @Color
+[04/11 02:42:41.083579][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Premature end of JPEG file
+[04/11 02:51:34.280648][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Unsupported marker type 0xb0
+[04/11 02:53:35.366353][warning][183831][VideoSensor.cpp:184] [CP9JA53000BM] This frame will be dropped because jpg format verification failure! @Color
+[04/11 03:02:09.661822][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Premature end of JPEG file
+[04/11 03:04:01.927480][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Premature end of JPEG file
+[04/11 03:15:53.912958][warning][183831][VideoSensor.cpp:184] [CP9JA53000BM] This frame will be dropped because jpg format verification failure! @Color
+[04/11 03:25:11.558559][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Premature end of JPEG file
+[04/11 03:35:18.753672][warning][183831][VideoSensor.cpp:184] [CP9JA53000BM] This frame will be dropped because jpg format verification failure! @Color
+[04/11 03:56:21.264874][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Unsupported marker type 0x28
+[04/11 03:59:56.356030][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Premature end of JPEG file
+[04/11 04:00:17.076365][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Unsupported marker type 0x88
+[04/11 04:13:15.827470][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Unsupported marker type 0x9a
+[04/11 04:18:04.100500][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Unsupported marker type 0x04
+[04/11 04:26:22.924970][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Premature end of JPEG file
+[04/11 04:27:36.943975][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Invalid JPEG file structure: two SOF markers
+[04/11 04:30:10.157533][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Premature end of JPEG file
+[04/11 04:31:03.765545][warning][183831][VideoSensor.cpp:184] [CP9JA53000BM] This frame will be dropped because jpg format verification failure! @Color
+[04/11 04:31:39.696764][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Unsupported marker type 0x02
+[04/11 04:40:41.464798][warning][183831][VideoSensor.cpp:184] [CP9JA53000BM] This frame will be dropped because jpg format verification failure! @Color
+[04/11 04:50:43.278004][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Premature end of JPEG file
+[04/11 05:26:21.767681][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Premature end of JPEG file
+[04/11 05:44:40.660008][warning][183831][VideoSensor.cpp:184] [CP9JA53000BM] This frame will be dropped because jpg format verification failure! @Color
+[04/11 05:44:55.443108][warning][183831][VideoSensor.cpp:184] [CP9JA53000BM] This frame will be dropped because jpg format verification failure! @Color
+[04/11 05:44:55.448885][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Premature end of JPEG file
+[04/11 05:50:33.758427][warning][183831][VideoSensor.cpp:184] [CP9JA53000BM] This frame will be dropped because jpg format verification failure! @Color
+[04/11 06:03:15.056571][warning][183831][VideoSensor.cpp:184] [CP9JA53000BM] This frame will be dropped because jpg format verification failure! @Color
+[04/11 06:06:04.723393][warning][183831][VideoSensor.cpp:184] [CP9JA53000BM] This frame will be dropped because jpg format verification failure! @Color
+[04/11 06:07:22.048910][warning][183831][VideoSensor.cpp:184] [CP9JA53000BM] This frame will be dropped because jpg format verification failure! @Color
+[04/11 06:30:13.016628][warning][183831][VideoSensor.cpp:184] [CP9JA53000BM] This frame will be dropped because jpg format verification failure! @Color
+[04/11 06:49:42.474745][warning][183831][VideoSensor.cpp:184] [CP9JA53000BM] This frame will be dropped because jpg format verification failure! @Color
+[04/11 08:58:19.724509][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Premature end of JPEG file
+[04/11 08:58:48.625450][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Premature end of JPEG file
+[04/11 09:00:30.238926][warning][183831][VideoSensor.cpp:184] [CP9JA53000BM] This frame will be dropped because jpg format verification failure! @Color
+[04/11 09:03:52.552203][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Premature end of JPEG file
+[04/11 09:06:54.598508][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Premature end of JPEG file
+[04/11 09:08:12.290359][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Premature end of JPEG file
+[04/11 09:08:22.535643][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Premature end of JPEG file
+[04/11 09:08:41.457838][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Unsupported marker type 0x2f
+[04/11 09:09:36.857312][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Premature end of JPEG file
+[04/11 09:10:18.405827][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Premature end of JPEG file
+[04/11 09:14:12.190277][warning][183831][VideoSensor.cpp:184] [CP9JA53000BM] This frame will be dropped because jpg format verification failure! @Color
+[04/11 09:18:26.081649][warning][183833][FormatConverterProcess.cpp:344] Failed to decode mjpeg frame to rgb! Premature end of JPEG file
