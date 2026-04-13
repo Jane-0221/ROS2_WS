@@ -6,11 +6,13 @@ import struct
 from dataclasses import dataclass, field
 from typing import Optional
 
+from geometry_msgs.msg import Twist
 import rclpy
 import serial
 from rclpy.node import Node
 from sensor_msgs.msg import JointState
 from std_msgs.msg import Bool, Float32, Float32MultiArray
+from std_msgs.msg import String
 
 from robot_hardware.medipick_hardware_calibration import (
     REQUIRED_ARM_JOINTS,
@@ -21,7 +23,10 @@ from robot_hardware.medipick_hardware_calibration import (
 
 FRAME_HEADER = b"\xAA\x55"
 FRAME_TAIL = b"\xEE\xFF"
-UP_FRAME_SIZE = 34
+UP_FRAME_TYPE = 0x01
+UP_DATA_LEN = 56
+UP_FLOAT_COUNT = 14
+UP_FRAME_SIZE = 64
 DN_FRAME_TYPE = 0x02
 DN_DATA_LEN = 51
 
@@ -41,11 +46,15 @@ def crc16_ccitt(data: bytes) -> int:
 
 @dataclass
 class UpData:
-    air_path_state: int = 0
-    suck_state: int = 0
-    head_motor_angle: float = 0.0
-    motor_arm_joint_feedback: list[float] = field(default_factory=lambda: [0.0] * 11)
+    air_path_state: float = 0.0
+    suck_state: float = 0.0
+    head_motor_angle_1: float = 0.0
+    head_motor_angle_2: float = 0.0
+    arm_motor_angles: list[float] = field(default_factory=lambda: [0.0] * 6)
     lift_height: float = 0.0
+    chassis_vx: float = 0.0
+    chassis_vy: float = 0.0
+    chassis_yaw: float = 0.0
 
 
 @dataclass
@@ -76,12 +85,27 @@ class STM32SerialNode(Node):
             "motor_arm_joint_feedback_topic",
             "/medipick/hardware/motor_arm_joint_feedback",
         )
+        self.declare_parameter(
+            "stm32_base_cmd_vel_topic",
+            "/medipick/hardware/stm32_base_cmd_vel",
+        )
+        self.declare_parameter(
+            "parsed_summary_topic",
+            "/medipick/hardware/stm32_parsed_summary",
+        )
+        self.declare_parameter(
+            "parsed_chassis_summary_topic",
+            "/medipick/hardware/stm32_chassis_summary",
+        )
+        self.declare_parameter("stm32_base_linear_scale", 1.0)
+        self.declare_parameter("stm32_base_angular_scale", 1.0)
         self.declare_parameter("lift_height_topic", "/medipick/hardware/raw_lift_height_mm")
         self.declare_parameter("raw_suction_topic", "/medipick/hardware/raw_suction_state")
         self.declare_parameter("legacy_servo_control_topic", "/stm32/servo_control")
         self.declare_parameter("enable_legacy_servo_control_topic", False)
         self.declare_parameter("publish_full_joint_states", True)
         self.declare_parameter("publish_base_joints", True)
+        self.declare_parameter("log_received_up_frames", False)
         self.declare_parameter("send_period_sec", 0.05)
         self.declare_parameter("recv_period_sec", 0.01)
 
@@ -110,6 +134,8 @@ class STM32SerialNode(Node):
 
         self._publish_full_joint_states = bool(self.get_parameter("publish_full_joint_states").value)
         self._publish_base_joints = bool(self.get_parameter("publish_base_joints").value)
+        self._stm32_base_linear_scale = float(self.get_parameter("stm32_base_linear_scale").value)
+        self._stm32_base_angular_scale = float(self.get_parameter("stm32_base_angular_scale").value)
 
         self._joint_state_publisher = None
         if self._publish_full_joint_states:
@@ -136,6 +162,21 @@ class STM32SerialNode(Node):
         self._motor_arm_feedback_publisher = self.create_publisher(
             JointState,
             str(self.get_parameter("motor_arm_joint_feedback_topic").value),
+            20,
+        )
+        self._base_cmd_vel_publisher = self.create_publisher(
+            Twist,
+            str(self.get_parameter("stm32_base_cmd_vel_topic").value),
+            20,
+        )
+        self._parsed_summary_publisher = self.create_publisher(
+            String,
+            str(self.get_parameter("parsed_summary_topic").value),
+            20,
+        )
+        self._parsed_chassis_summary_publisher = self.create_publisher(
+            String,
+            str(self.get_parameter("parsed_chassis_summary_topic").value),
             20,
         )
 
@@ -175,9 +216,9 @@ class STM32SerialNode(Node):
                 raise ValueError(
                     f"Joint '{joint_name}' command_index={mapping.command_index} is outside 0..11."
                 )
-            if mapping.feedback_index < 0 or mapping.feedback_index >= 11:
+            if mapping.feedback_index < 4 or mapping.feedback_index >= 10:
                 raise ValueError(
-                    f"Joint '{joint_name}' feedback_index={mapping.feedback_index} is outside 0..10."
+                    f"Joint '{joint_name}' feedback_index={mapping.feedback_index} is outside 4..9 for the current STM32 frame."
                 )
 
     def pack_down_frame(self) -> bytes:
@@ -226,6 +267,9 @@ class STM32SerialNode(Node):
                 return
 
             frame = bytes(self._recv_buffer[:UP_FRAME_SIZE])
+            if frame[2] != UP_FRAME_TYPE or frame[3] != UP_DATA_LEN:
+                del self._recv_buffer[0]
+                continue
             if frame[-2:] != FRAME_TAIL:
                 del self._recv_buffer[0]
                 continue
@@ -239,31 +283,75 @@ class STM32SerialNode(Node):
 
             del self._recv_buffer[:UP_FRAME_SIZE]
             self.up_data = self.unpack_up_frame(frame)
+            if bool(self.get_parameter("log_received_up_frames").value):
+                self.get_logger().info(self.format_up_data(self.up_data))
             self.publish_feedback()
 
     @staticmethod
     def unpack_up_frame(frame: bytes) -> UpData:
-        up_data = UpData()
-        offset = 4
-        up_data.air_path_state = frame[offset]
-        offset += 1
-        up_data.suck_state = frame[offset]
-        offset += 1
-        head_angle_int = struct.unpack("<h", frame[offset:offset + 2])[0]
-        up_data.head_motor_angle = head_angle_int / 10.0
-        offset += 2
-        for index in range(11):
-            angle_int = struct.unpack("<h", frame[offset:offset + 2])[0]
-            up_data.motor_arm_joint_feedback[index] = angle_int / 10.0
-            offset += 2
-        height_int = struct.unpack("<H", frame[offset:offset + 2])[0]
-        up_data.lift_height = height_int / 10.0
-        return up_data
+        if len(frame) != UP_FRAME_SIZE:
+            raise ValueError(f"STM32 up-frame must be exactly {UP_FRAME_SIZE} bytes, got {len(frame)}.")
+        if frame[2] != UP_FRAME_TYPE:
+            raise ValueError(f"STM32 up-frame type must be 0x{UP_FRAME_TYPE:02X}, got 0x{frame[2]:02X}.")
+        if frame[3] != UP_DATA_LEN:
+            raise ValueError(f"STM32 up-frame data_len must be {UP_DATA_LEN}, got {frame[3]}.")
+
+        values = struct.unpack("<14f", frame[4:4 + UP_DATA_LEN])
+        return UpData(
+            air_path_state=values[0],
+            suck_state=values[1],
+            head_motor_angle_1=values[2],
+            head_motor_angle_2=values[3],
+            arm_motor_angles=list(values[4:10]),
+            lift_height=values[10],
+            chassis_vx=values[11],
+            chassis_vy=values[12],
+            chassis_yaw=values[13],
+        )
+
+    @staticmethod
+    def format_up_data(up_data: UpData) -> str:
+        arm_values = ", ".join(f"{value:.4f}" for value in up_data.arm_motor_angles)
+        return (
+            "STM32 up-frame: "
+            f"air_path_state={up_data.air_path_state:.4f}, "
+            f"suck_state={up_data.suck_state:.4f}, "
+            f"head_motor_angle_1={up_data.head_motor_angle_1:.4f}, "
+            f"head_motor_angle_2={up_data.head_motor_angle_2:.4f}, "
+            f"arm_motor_angles=[{arm_values}], "
+            f"lift_height={up_data.lift_height:.4f}, "
+            f"chassis_vx={up_data.chassis_vx:.4f}, "
+            f"chassis_vy={up_data.chassis_vy:.4f}, "
+            f"chassis_yaw={up_data.chassis_yaw:.4f}"
+        )
 
     def publish_feedback(self) -> None:
         lift_height_mm = float(self.up_data.lift_height)
         self._lift_height_publisher.publish(Float32(data=lift_height_mm))
-        self._raw_suction_publisher.publish(Bool(data=bool(self.up_data.suck_state)))
+        self._raw_suction_publisher.publish(Bool(data=bool(self.up_data.suck_state >= 0.5)))
+
+        scaled_chassis_vx = self.up_data.chassis_vx * self._stm32_base_linear_scale
+        scaled_chassis_vy = self.up_data.chassis_vy * self._stm32_base_linear_scale
+        scaled_chassis_yaw = self.up_data.chassis_yaw * self._stm32_base_angular_scale
+
+        base_cmd = Twist()
+        base_cmd.linear.x = scaled_chassis_vx
+        base_cmd.linear.y = scaled_chassis_vy
+        base_cmd.angular.z = scaled_chassis_yaw
+        self._base_cmd_vel_publisher.publish(base_cmd)
+        self._parsed_summary_publisher.publish(String(data=self.format_up_data(self.up_data)))
+        self._parsed_chassis_summary_publisher.publish(
+            String(
+                data=(
+                    f"raw: vx={self.up_data.chassis_vx:.4f} m/s, "
+                    f"vy={self.up_data.chassis_vy:.4f} m/s, "
+                    f"yaw={self.up_data.chassis_yaw:.4f} rad/s | "
+                    f"scaled: vx={scaled_chassis_vx:.4f} m/s, "
+                    f"vy={scaled_chassis_vy:.4f} m/s, "
+                    f"yaw={scaled_chassis_yaw:.4f} rad/s"
+                )
+            )
+        )
 
         arm_joint_state = JointState()
         arm_joint_state.header.stamp = self.get_clock().now().to_msg()
@@ -283,7 +371,8 @@ class STM32SerialNode(Node):
         joint_positions = dict(self._calibration.base_joints)
         joint_positions["raise_joint"] = self._calibration.lift.mm_to_joint(lift_height_mm)
         for joint_name, mapping in self._calibration.arm_joint_mappings.items():
-            raw_feedback = self.up_data.motor_arm_joint_feedback[mapping.feedback_index]
+            arm_index = mapping.feedback_index - 4
+            raw_feedback = self.up_data.arm_motor_angles[arm_index]
             joint_positions[joint_name] = mapping.feedback_to_joint(raw_feedback)
         joint_positions.update(self._calibration.fixed_joints)
 

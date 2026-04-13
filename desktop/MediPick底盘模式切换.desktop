@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=MediPick底盘模式切换
+Name[zh_CN]=MediPick底盘模式切换
+Comment=双击选择 STM32 控制底盘或导航控制底盘
+Comment[zh_CN]=双击选择 STM32 控制底盘或导航控制底盘
+Exec=/home/jszn/robot_ros2_ws/switch_chassis_control_mode.sh
+Path=/home/jszn/robot_ros2_ws
+Icon=utilities-terminal
+Terminal=true
+Categories=Utility;

@@ -3,7 +3,7 @@ from pathlib import Path
 import yaml
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
+from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, OpaqueFunction
 from launch.conditions import IfCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
@@ -21,6 +21,48 @@ def load_yaml(package_name: str, relative_path: str) -> dict:
     package_path = Path(get_package_share_directory(package_name))
     with open(package_path / relative_path, "r", encoding="utf-8") as file:
         return yaml.safe_load(file)
+
+
+def build_wheeltec_chassis_node(context, hardware_package: str):
+    base_control_mode = LaunchConfiguration("base_control_mode").perform(context).strip()
+    if base_control_mode not in {"nav", "stm32"}:
+        raise RuntimeError(
+            f"Invalid base_control_mode '{base_control_mode}'. Expected 'nav' or 'stm32'."
+        )
+
+    cmd_vel_topic = "/cmd_vel"
+    if base_control_mode == "stm32":
+        cmd_vel_topic = LaunchConfiguration("stm32_base_cmd_vel_topic").perform(context).strip()
+    identical_nonzero_cmd_guard_enabled = base_control_mode == "stm32"
+
+    return [
+        Node(
+            package=hardware_package,
+            executable="wheeltec_chassis_node",
+            name="wheeltec_chassis_node",
+            output="screen",
+            condition=IfCondition(LaunchConfiguration("start_base")),
+            parameters=[
+                {
+                    "robot_type": "omni",
+                    "protocol": "serial",
+                    "port": LaunchConfiguration("wheeltec_port"),
+                    "baudrate": ParameterValue(LaunchConfiguration("wheeltec_baudrate"), value_type=int),
+                    "publish_odom": False,
+                    "cmd_vel_topic": cmd_vel_topic,
+                    "identical_nonzero_cmd_guard_enabled": identical_nonzero_cmd_guard_enabled,
+                    "identical_nonzero_cmd_guard_timeout": ParameterValue(
+                        LaunchConfiguration("stm32_identical_nonzero_cmd_guard_timeout"),
+                        value_type=float,
+                    ),
+                    "identical_nonzero_cmd_guard_epsilon": ParameterValue(
+                        LaunchConfiguration("stm32_identical_nonzero_cmd_guard_epsilon"),
+                        value_type=float,
+                    ),
+                }
+            ],
+        )
+    ]
 
 
 def generate_launch_description():
@@ -137,8 +179,18 @@ def generate_launch_description():
             DeclareLaunchArgument("start_fetch_coordinator", default_value="true"),
             DeclareLaunchArgument("serial_port", default_value="/dev/ttySTM32"),
             DeclareLaunchArgument("baudrate", default_value="115200"),
-            DeclareLaunchArgument("wheeltec_port", default_value="/dev/ttyACM0"),
+            DeclareLaunchArgument("base_control_mode", default_value="nav"),
+            DeclareLaunchArgument(
+                "stm32_base_cmd_vel_topic",
+                default_value="/medipick/hardware/stm32_base_cmd_vel",
+            ),
+            DeclareLaunchArgument(
+                "wheeltec_port",
+                default_value="/dev/serial/by-id/usb-WCH.CN_USB_Single_Serial_0002-if00",
+            ),
             DeclareLaunchArgument("wheeltec_baudrate", default_value="115200"),
+            DeclareLaunchArgument("stm32_identical_nonzero_cmd_guard_timeout", default_value="2.0"),
+            DeclareLaunchArgument("stm32_identical_nonzero_cmd_guard_epsilon", default_value="0.0001"),
             DeclareLaunchArgument("calibration_file", default_value=calibration_file),
             DeclareLaunchArgument("camera_launch_file", default_value="gemini_330_series.launch.py"),
             DeclareLaunchArgument("camera_model", default_value="camera"),
@@ -244,22 +296,7 @@ def generate_launch_description():
                     "--child-frame-id", LaunchConfiguration("camera_frame_child"),
                 ],
             ),
-            Node(
-                package=hardware_package,
-                executable="wheeltec_chassis_node",
-                name="wheeltec_chassis_node",
-                output="screen",
-                condition=IfCondition(LaunchConfiguration("start_base")),
-                parameters=[
-                    {
-                        "robot_type": "omni",
-                        "protocol": "serial",
-                        "port": LaunchConfiguration("wheeltec_port"),
-                        "baudrate": ParameterValue(LaunchConfiguration("wheeltec_baudrate"), value_type=int),
-                        "publish_odom": False,
-                    }
-                ],
-            ),
+            OpaqueFunction(function=lambda context: build_wheeltec_chassis_node(context, hardware_package)),
             Node(
                 package=hardware_package,
                 executable="stm32_serial_node",
@@ -272,6 +309,7 @@ def generate_launch_description():
                         "baudrate": ParameterValue(LaunchConfiguration("baudrate"), value_type=int),
                         "calibration_file": LaunchConfiguration("calibration_file"),
                         "motor_arm_joint_command_topic": LaunchConfiguration("motor_arm_joint_command_topic"),
+                        "stm32_base_cmd_vel_topic": LaunchConfiguration("stm32_base_cmd_vel_topic"),
                         "publish_full_joint_states": False,
                         "publish_base_joints": False,
                         "arm_joint_states_topic": "/medipick/hardware/arm_joint_states",

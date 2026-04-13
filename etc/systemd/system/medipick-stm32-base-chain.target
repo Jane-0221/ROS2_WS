@@ -1,0 +1,7 @@
+[Unit]
+Description=MediPick STM32 To Chassis Control Chain
+Wants=medipick-stm32.service medipick-wheeltec.service
+After=network.target
+
+[Install]
+WantedBy=multi-user.target

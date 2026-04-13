@@ -47,9 +47,13 @@ class WheeltecChassisNode(Node):
                 ('publish_odom', False),   # 是否发布里程计
                 ('publish_battery', True), # 是否发布电池状态
                 ('cmd_timeout', 0.5),     # 命令超时时间(秒)
+                ('disable_software_limit', False),
                 ('linear_x_sign', -1.0),
                 ('linear_y_sign', 1.0),
                 ('angular_z_sign', 1.0),
+                ('identical_nonzero_cmd_guard_enabled', False),
+                ('identical_nonzero_cmd_guard_timeout', 2.0),
+                ('identical_nonzero_cmd_guard_epsilon', 1e-4),
             ]
         )
         
@@ -106,11 +110,30 @@ class WheeltecChassisNode(Node):
         self.motors_enabled = True  # 默认使能电机
         self.last_cmd_time = None
         self.cmd_timeout = self.get_parameter('cmd_timeout').value
+        self.identical_nonzero_cmd_guard_enabled = bool(
+            self.get_parameter('identical_nonzero_cmd_guard_enabled').value
+        )
+        self.identical_nonzero_cmd_guard_timeout = float(
+            self.get_parameter('identical_nonzero_cmd_guard_timeout').value
+        )
+        self.identical_nonzero_cmd_guard_epsilon = float(
+            self.get_parameter('identical_nonzero_cmd_guard_epsilon').value
+        )
+        self._guard_active_cmd = None
+        self._guard_active_since = None
+        self._guard_latched_cmd = None
         
         # 启动定时器
         self.timer = self.create_timer(0.1, self.timer_callback)  # 10Hz
         
         self.get_logger().info('Wheeltec底盘节点初始化完成')
+        if bool(self.get_parameter('disable_software_limit').value):
+            self.get_logger().warn('已禁用软件限速，Twist速度将直接透传到底盘协议')
+        if self.identical_nonzero_cmd_guard_enabled:
+            self.get_logger().warn(
+                f'已启用同值非零速度保护：相同非零底盘命令持续超过 '
+                f'{self.identical_nonzero_cmd_guard_timeout:.1f}s 将强制停车'
+            )
         
         # 连接底盘
         if self.controller.connect():
@@ -125,11 +148,25 @@ class WheeltecChassisNode(Node):
             return
         
         # 更新最后命令时间
-        self.last_cmd_time = self.get_clock().now()
+        now = self.get_clock().now()
+        if not self._check_identical_nonzero_cmd_guard(msg, now):
+            return
+        self.last_cmd_time = now
         
         linear_x_sign = float(self.get_parameter('linear_x_sign').value)
         linear_y_sign = float(self.get_parameter('linear_y_sign').value)
         angular_z_sign = float(self.get_parameter('angular_z_sign').value)
+        disable_software_limit = bool(self.get_parameter('disable_software_limit').value)
+
+        if disable_software_limit:
+            vx_mmps = linear_x_sign * msg.linear.x * 1000.0
+            vy_mmps = linear_y_sign * msg.linear.y * 1000.0
+            vz_radps = angular_z_sign * msg.angular.z
+            self.controller.base_protocol.send_velocity(vx_mmps, vy_mmps, vz_radps)
+            self.get_logger().debug(
+                f'直通速度命令: vx={vx_mmps:.1f}mm/s, vy={vy_mmps:.1f}mm/s, vz={vz_radps:.3f}rad/s'
+            )
+            return
 
         # 将Twist消息转换为归一化速度
         # 注意：ROS2的Twist使用m/s和rad/s，需要转换为mm/s
@@ -146,6 +183,70 @@ class WheeltecChassisNode(Node):
         self.controller.execute_action(kx, ky, kz)
         
         self.get_logger().debug(f'执行速度命令: kx={kx:.3f}, ky={ky:.3f}, kz={kz:.3f}')
+
+    def _cmd_to_tuple(self, msg):
+        return (float(msg.linear.x), float(msg.linear.y), float(msg.angular.z))
+
+    def _is_zero_cmd(self, cmd):
+        epsilon = self.identical_nonzero_cmd_guard_epsilon
+        return all(abs(value) <= epsilon for value in cmd)
+
+    def _same_cmd(self, cmd_a, cmd_b):
+        if cmd_a is None or cmd_b is None:
+            return False
+        epsilon = self.identical_nonzero_cmd_guard_epsilon
+        return all(abs(value_a - value_b) <= epsilon for value_a, value_b in zip(cmd_a, cmd_b))
+
+    @staticmethod
+    def _format_cmd(cmd):
+        return f'vx={cmd[0]:.4f} m/s, vy={cmd[1]:.4f} m/s, wz={cmd[2]:.4f} rad/s'
+
+    def _clear_identical_nonzero_cmd_guard(self):
+        self._guard_active_cmd = None
+        self._guard_active_since = None
+
+    def _check_identical_nonzero_cmd_guard(self, msg, now):
+        if not self.identical_nonzero_cmd_guard_enabled:
+            return True
+
+        current_cmd = self._cmd_to_tuple(msg)
+
+        if self._is_zero_cmd(current_cmd):
+            if self._guard_latched_cmd is not None:
+                self.get_logger().info('同值非零速度保护解除：已收到零速度命令')
+            self._guard_latched_cmd = None
+            self._clear_identical_nonzero_cmd_guard()
+            return True
+
+        if self._guard_latched_cmd is not None:
+            if self._same_cmd(current_cmd, self._guard_latched_cmd):
+                return False
+            self.get_logger().info('同值非零速度保护解除：已收到新的底盘命令')
+            self._guard_latched_cmd = None
+            self._clear_identical_nonzero_cmd_guard()
+
+        if not self._same_cmd(current_cmd, self._guard_active_cmd):
+            self._guard_active_cmd = current_cmd
+            self._guard_active_since = now
+            return True
+
+        if self._guard_active_since is None:
+            self._guard_active_since = now
+            return True
+
+        elapsed_sec = (now - self._guard_active_since).nanoseconds / 1e9
+        if elapsed_sec < self.identical_nonzero_cmd_guard_timeout:
+            return True
+
+        self.controller.stop()
+        self.last_cmd_time = None
+        self._guard_latched_cmd = current_cmd
+        self._clear_identical_nonzero_cmd_guard()
+        self.get_logger().error(
+            '检测到相同非零底盘命令持续 %.2fs，已强制停车：%s'
+            % (elapsed_sec, self._format_cmd(current_cmd))
+        )
+        return False
     
     def enable_motors_callback(self, request, response):
         """处理电机使能服务请求"""
@@ -202,7 +303,7 @@ class WheeltecChassisNode(Node):
     def destroy_node(self):
         """节点销毁时停止底盘"""
         self.controller.stop()
-        self.controller.base_protocol.disconnect()
+        self.controller.close()
         super().destroy_node()
 
 

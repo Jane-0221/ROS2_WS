@@ -21,6 +21,10 @@ logging.basicConfig(
 )
 logger = logging.getLogger("WheeltecProtocol")
 
+
+INT16_MIN = -32768
+INT16_MAX = 32767
+
 class ControlProtocol(Enum):
     """控制协议枚举"""
     SERIAL = "serial"  # 串口协议 (文档5.1节)
@@ -136,9 +140,9 @@ class WheeltecBaseProtocol:
         Z轴角速度放大1000倍
         """
         # 转换为整数
-        vx_int = int(vx_mmps)
-        vy_int = int(vy_mmps)
-        vz_int = int(vz_radps * 1000)  # 关键: 放大1000倍
+        vx_int = self._saturate_int16(vx_mmps, "vx_mmps")
+        vy_int = self._saturate_int16(vy_mmps, "vy_mmps")
+        vz_int = self._saturate_int16(vz_radps * 1000, "vz_x1000")  # 关键: 放大1000倍
         
         # 构建前9字节
         first_9_bytes = struct.pack(
@@ -168,9 +172,9 @@ class WheeltecBaseProtocol:
         Z轴角速度放大1000倍
         """
         # 转换为整数
-        vx_int = int(vx_mmps)
-        vy_int = int(vy_mmps)
-        vz_int = int(vz_radps * 1000)  # 关键: 放大1000倍
+        vx_int = self._saturate_int16(vx_mmps, "vx_mmps")
+        vy_int = self._saturate_int16(vy_mmps, "vy_mmps")
+        vz_int = self._saturate_int16(vz_radps * 1000, "vz_x1000")  # 关键: 放大1000倍
         
         # 8字节数据帧
         can_data = struct.pack('>hhhBB', vx_int, vy_int, vz_int, 0x00, 0x00)
@@ -232,6 +236,17 @@ class WheeltecBaseProtocol:
     def stop(self) -> bool:
         """发送停止指令"""
         return self.send_velocity(0, 0, 0)
+
+    @staticmethod
+    def _saturate_int16(value: float, field_name: str) -> int:
+        int_value = int(value)
+        if int_value < INT16_MIN:
+            logger.warning(f"{field_name}={int_value} below int16 range, saturating to {INT16_MIN}")
+            return INT16_MIN
+        if int_value > INT16_MAX:
+            logger.warning(f"{field_name}={int_value} above int16 range, saturating to {INT16_MAX}")
+            return INT16_MAX
+        return int_value
     
     def close(self):
         """关闭连接"""

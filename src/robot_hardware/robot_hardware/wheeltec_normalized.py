@@ -109,8 +109,8 @@ class MethodC_Controller:
         success = self.base_protocol.send_velocity(vx, vy, vz)
 
         if success:
-            logger.info(f"执行动作: kx={kx:.2f}, ky={ky:.2f}, kz={kz:.2f}")
-            logger.info(f"实际速度: vx={vx:.1f}mm/s, vy={vy:.1f}mm/s, vz={vz:.3f}rad/s")
+            logger.debug(f"执行动作: kx={kx:.2f}, ky={ky:.2f}, kz={kz:.2f}")
+            logger.debug(f"实际速度: vx={vx:.1f}mm/s, vy={vy:.1f}mm/s, vz={vz:.3f}rad/s")
 
             # 如果有持续时间，等待后停止
             if duration > 0:
