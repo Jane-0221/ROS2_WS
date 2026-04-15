@@ -21,6 +21,8 @@ install(PROGRAMS
   scripts/pick_task_manager.py
   scripts/medicine_location_registry.py
   scripts/fetch_medicine_coordinator.py
+  scripts/imu_ready_relay.py
+  scripts/wait_for_tf_ready.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

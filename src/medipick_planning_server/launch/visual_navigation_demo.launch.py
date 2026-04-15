@@ -25,15 +25,10 @@ def load_yaml(package_name: str, relative_path: str) -> dict:
 
 def build_wheeltec_chassis_node(context, hardware_package: str):
     base_control_mode = LaunchConfiguration("base_control_mode").perform(context).strip()
-    if base_control_mode not in {"nav", "stm32"}:
+    if base_control_mode not in {"nav", "stm32", "app"}:
         raise RuntimeError(
-            f"Invalid base_control_mode '{base_control_mode}'. Expected 'nav' or 'stm32'."
+            f"Invalid base_control_mode '{base_control_mode}'. Expected 'nav', 'stm32', or 'app'."
         )
-
-    cmd_vel_topic = "/cmd_vel"
-    if base_control_mode == "stm32":
-        cmd_vel_topic = LaunchConfiguration("stm32_base_cmd_vel_topic").perform(context).strip()
-    identical_nonzero_cmd_guard_enabled = base_control_mode == "stm32"
 
     return [
         Node(
@@ -49,13 +44,46 @@ def build_wheeltec_chassis_node(context, hardware_package: str):
                     "port": LaunchConfiguration("wheeltec_port"),
                     "baudrate": ParameterValue(LaunchConfiguration("wheeltec_baudrate"), value_type=int),
                     "publish_odom": False,
-                    "cmd_vel_topic": cmd_vel_topic,
-                    "identical_nonzero_cmd_guard_enabled": identical_nonzero_cmd_guard_enabled,
-                    "identical_nonzero_cmd_guard_timeout": ParameterValue(
+                    "cmd_vel_topic": LaunchConfiguration("base_cmd_vel_muxed_topic"),
+                    "identical_nonzero_cmd_guard_enabled": False,
+                }
+            ],
+        )
+    ]
+
+
+def build_base_cmd_mux_node(context, hardware_package: str):
+    base_control_mode = LaunchConfiguration("base_control_mode").perform(context).strip()
+    if base_control_mode not in {"nav", "stm32", "app"}:
+        raise RuntimeError(
+            f"Invalid base_control_mode '{base_control_mode}'. Expected 'nav', 'stm32', or 'app'."
+        )
+
+    return [
+        Node(
+            package=hardware_package,
+            executable="base_cmd_mux",
+            name="medipick_base_cmd_mux",
+            output="screen",
+            condition=IfCondition(LaunchConfiguration("start_base")),
+            parameters=[
+                {
+                    "default_mode": base_control_mode,
+                    "nav_cmd_vel_topic": "/cmd_vel",
+                    "stm32_cmd_vel_topic": LaunchConfiguration("stm32_base_cmd_vel_topic"),
+                    "app_cmd_vel_topic": LaunchConfiguration("app_base_cmd_vel_topic"),
+                    "output_topic": LaunchConfiguration("base_cmd_vel_muxed_topic"),
+                    "active_mode_topic": LaunchConfiguration("base_active_mode_topic"),
+                    "mode_service": LaunchConfiguration("base_control_mode_service"),
+                    "input_timeout_sec": ParameterValue(
+                        LaunchConfiguration("base_cmd_input_timeout_sec"),
+                        value_type=float,
+                    ),
+                    "stm32_identical_nonzero_cmd_guard_timeout": ParameterValue(
                         LaunchConfiguration("stm32_identical_nonzero_cmd_guard_timeout"),
                         value_type=float,
                     ),
-                    "identical_nonzero_cmd_guard_epsilon": ParameterValue(
+                    "stm32_identical_nonzero_cmd_guard_epsilon": ParameterValue(
                         LaunchConfiguration("stm32_identical_nonzero_cmd_guard_epsilon"),
                         value_type=float,
                     ),
@@ -184,6 +212,11 @@ def generate_launch_description():
                 "stm32_base_cmd_vel_topic",
                 default_value="/medipick/hardware/stm32_base_cmd_vel",
             ),
+            DeclareLaunchArgument("app_base_cmd_vel_topic", default_value="/medipick/app/cmd_vel"),
+            DeclareLaunchArgument("base_cmd_vel_muxed_topic", default_value="/medipick/base/cmd_vel_muxed"),
+            DeclareLaunchArgument("base_active_mode_topic", default_value="/medipick/base/active_mode"),
+            DeclareLaunchArgument("base_control_mode_service", default_value="/medipick/base/set_control_mode"),
+            DeclareLaunchArgument("base_cmd_input_timeout_sec", default_value="0.5"),
             DeclareLaunchArgument(
                 "wheeltec_port",
                 default_value="/dev/serial/by-id/usb-WCH.CN_USB_Single_Serial_0002-if00",
@@ -203,6 +236,7 @@ def generate_launch_description():
             DeclareLaunchArgument("camera_enable_accel", default_value="true"),
             DeclareLaunchArgument("camera_enable_gyro", default_value="true"),
             DeclareLaunchArgument("camera_enable_sync_imu", default_value="true"),
+            DeclareLaunchArgument("camera_enable_publish_extrinsic", default_value="true"),
             DeclareLaunchArgument("camera_publish_tf", default_value="true"),
             DeclareLaunchArgument("camera_tf_publish_rate", default_value="0.0"),
             DeclareLaunchArgument("camera_log_level", default_value="info"),
@@ -261,6 +295,7 @@ def generate_launch_description():
                     "enable_accel": LaunchConfiguration("camera_enable_accel"),
                     "enable_gyro": LaunchConfiguration("camera_enable_gyro"),
                     "enable_sync_output_accel_gyro": LaunchConfiguration("camera_enable_sync_imu"),
+                    "enable_publish_extrinsic": LaunchConfiguration("camera_enable_publish_extrinsic"),
                     "time_domain": LaunchConfiguration("camera_time_domain"),
                     "publish_tf": LaunchConfiguration("camera_publish_tf"),
                     "tf_publish_rate": LaunchConfiguration("camera_tf_publish_rate"),
@@ -296,6 +331,7 @@ def generate_launch_description():
                     "--child-frame-id", LaunchConfiguration("camera_frame_child"),
                 ],
             ),
+            OpaqueFunction(function=lambda context: build_base_cmd_mux_node(context, hardware_package)),
             OpaqueFunction(function=lambda context: build_wheeltec_chassis_node(context, hardware_package)),
             Node(
                 package=hardware_package,

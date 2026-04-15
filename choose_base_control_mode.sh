@@ -11,7 +11,8 @@ Usage:
   bash choose_base_control_mode.sh
   bash choose_base_control_mode.sh --nav-base [launch_arg:=value ...]
   bash choose_base_control_mode.sh --stm32-base [launch_arg:=value ...]
-  bash choose_base_control_mode.sh --base-control-mode nav|stm32 [launch_arg:=value ...]
+  bash choose_base_control_mode.sh --app-base [launch_arg:=value ...]
+  bash choose_base_control_mode.sh --base-control-mode nav|stm32|app [launch_arg:=value ...]
 
 If no base-control mode is provided, a GUI chooser is shown when available.
 EOF
@@ -50,7 +51,8 @@ select_mode_gui() {
     --column="Mode" \
     --column="Description" \
     TRUE nav "Nav2 publishes /cmd_vel directly" \
-    FALSE stm32 "STM32 relays chassis commands to the base"
+    FALSE stm32 "STM32 relays chassis commands to the base" \
+    FALSE app "Android bridge publishes app commands through the base mux"
 }
 
 select_mode_terminal() {
@@ -59,7 +61,8 @@ select_mode_terminal() {
     echo "Choose base control mode:"
     echo "  1) nav    - Nav2 publishes /cmd_vel directly"
     echo "  2) stm32  - STM32 relays chassis commands to the base"
-    read -rp "Enter 1 or 2: " selection
+    echo "  3) app    - Android bridge publishes /medipick/app/cmd_vel"
+    read -rp "Enter 1, 2, or 3: " selection
     case "$selection" in
       1)
         echo "nav"
@@ -67,6 +70,10 @@ select_mode_terminal() {
         ;;
       2)
         echo "stm32"
+        return 0
+        ;;
+      3)
+        echo "app"
         return 0
         ;;
       *)
@@ -93,9 +100,13 @@ while [[ $# -gt 0 ]]; do
       selected_mode="stm32"
       shift
       ;;
+    --app-base)
+      selected_mode="app"
+      shift
+      ;;
     --base-control-mode)
       if [[ $# -lt 2 ]]; then
-        echo "--base-control-mode requires nav or stm32"
+        echo "--base-control-mode requires nav, stm32, or app"
         exit 1
       fi
       selected_mode="$2"
@@ -112,9 +123,9 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-if [[ -n "$selected_mode" && "$selected_mode" != "nav" && "$selected_mode" != "stm32" ]]; then
+if [[ -n "$selected_mode" && "$selected_mode" != "nav" && "$selected_mode" != "stm32" && "$selected_mode" != "app" ]]; then
   echo "Invalid base control mode: $selected_mode"
-  echo "Expected: nav or stm32"
+  echo "Expected: nav, stm32, or app"
   exit 1
 fi
 

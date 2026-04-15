@@ -12,7 +12,7 @@ rgbd_odometry:
     subscribe_rgb: true
     subscribe_depth: true
     subscribe_odom_info: false
-    Vis/MinInliers: "15"
+    Vis/MinInliers: "20"
     Odom/Strategy: "0"
     Odom/GuessMotion: "true"
     Odom/Holonomic: "true"
@@ -38,8 +38,8 @@ rtabmap:
     Reg/Strategy: "1"
     RGBD/NeighborLinkRefining: "true"
     RGBD/ProximityBySpace: "true"
-    RGBD/AngularUpdate: "0.05"
-    RGBD/LinearUpdate: "0.05"
+    RGBD/AngularUpdate: "0.1"
+    RGBD/LinearUpdate: "0.1"
     RGBD/CreateOccupancyGrid: "true"
     Grid/3D: "false"
     Grid/RayTracing: "true"

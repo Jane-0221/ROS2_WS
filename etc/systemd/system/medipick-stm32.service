@@ -1,7 +1,7 @@
 [Unit]
 Description=MediPick STM32 Receiver
-After=network.target dev-ttyUSB0.device
-Wants=network.target dev-ttyUSB0.device
+After=network.target
+Wants=network.target
 PartOf=medipick-stm32-base-chain.target
 
 [Service]
@@ -11,7 +11,7 @@ Group=jszn
 WorkingDirectory=/home/jszn/robot_ros2_ws
 Environment=HOME=/home/jszn
 Environment=ROS_DISTRO=humble
-ExecStart=/bin/bash -lc 'source /opt/ros/humble/setup.bash && source /home/jszn/robot_ros2_ws/install/setup.bash && exec ros2 run robot_hardware stm32_serial_node --ros-args -p serial_port:=/dev/ttyUSB0 -p baudrate:=115200 -p calibration_file:=/home/jszn/robot_ros2_ws/src/robot_hardware/config/medipick_hardware.yaml -p publish_full_joint_states:=false -p publish_base_joints:=false -p log_received_up_frames:=false -p stm32_base_angular_scale:=1.0'
+ExecStart=/bin/bash -lc 'source /opt/ros/humble/setup.bash && source /home/jszn/robot_ros2_ws/install/setup.bash && exec ros2 run robot_hardware stm32_serial_node --ros-args -p serial_port:=/dev/ttySTM32 -p baudrate:=115200 -p calibration_file:=/home/jszn/robot_ros2_ws/src/robot_hardware/config/medipick_hardware.yaml -p publish_full_joint_states:=false -p publish_base_joints:=false -p log_received_up_frames:=false'
 Restart=always
 RestartSec=2
 KillSignal=SIGINT

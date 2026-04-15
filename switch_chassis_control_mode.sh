@@ -5,6 +5,7 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 WORKSPACE_DIR="$SCRIPT_DIR"
 DEFAULT_DB_PATH="$HOME/.ros/medipick_scene_mapping.db"
+DEFAULT_APP_DEVICE_NAME="MediPick-Desk"
 
 source_setup() {
   local had_nounset=0
@@ -25,15 +26,18 @@ Usage:
   ./switch_chassis_control_mode.sh
   ./switch_chassis_control_mode.sh --mode stm32
   ./switch_chassis_control_mode.sh --mode nav
+  ./switch_chassis_control_mode.sh --mode app
   ./switch_chassis_control_mode.sh --mode nav --database /path/to/map.db
   ./switch_chassis_control_mode.sh --mode stm32 --dry-run
 
 Modes:
   stm32  Receive STM32 chassis commands and relay them to the Wheeltec base.
   nav    Start localization + Nav2 and let ROS /cmd_vel control the Wheeltec base.
+  app    Start the Android mapping bridge; the phone app controls the base through the mux.
 
 Extra ROS launch arguments can be appended at the end:
   ./switch_chassis_control_mode.sh --mode nav start_rtabmap_viz:=true
+  ./switch_chassis_control_mode.sh --mode app device_name:=My-MediPick-Desk
 EOF
 }
 
@@ -50,7 +54,8 @@ select_mode_gui() {
     --column="模式" \
     --column="说明" \
     TRUE stm32 "接收 STM32 上报码控制底盘" \
-    FALSE nav "导航/ROS 通过 /cmd_vel 控制底盘"
+    FALSE nav "导航/ROS 通过 /cmd_vel 控制底盘" \
+    FALSE app "Android App 通过桥接服务控制底盘"
 }
 
 select_mode_terminal() {
@@ -59,7 +64,8 @@ select_mode_terminal() {
     echo "请选择底盘控制模式："
     echo "  1) stm32  接收 STM32 上报码控制底盘"
     echo "  2) nav    导航/ROS 通过 /cmd_vel 控制底盘"
-    read -rp "请输入 1 或 2: " selection
+    echo "  3) app    Android App 通过桥接服务控制底盘"
+    read -rp "请输入 1、2 或 3: " selection
     case "$selection" in
       1)
         echo "stm32"
@@ -67,6 +73,10 @@ select_mode_terminal() {
         ;;
       2)
         echo "nav"
+        return 0
+        ;;
+      3)
+        echo "app"
         return 0
         ;;
       *)
@@ -83,6 +93,8 @@ stop_conflicting_processes() {
   local patterns=(
     "scene_mapping_navigation.launch.py"
     "visual_navigation_demo.launch.py"
+    "mapping_app_bridge.launch.py"
+    "medipick_mapping_app_bridge"
     "wheeltec_chassis_node"
     "stm32_serial_node"
     "rtabmap_viz"
@@ -139,7 +151,7 @@ build_launch_command() {
       start_base:=true
       base_control_mode:=stm32
     )
-  else
+  elif [[ "$mode" == "nav" ]]; then
     cmd+=(
       localization:=true
       start_nav2:=true
@@ -149,6 +161,12 @@ build_launch_command() {
       start_base:=true
       base_control_mode:=nav
       rtabmap_database_path:="$database_path"
+    )
+  else
+    cmd=(
+      bash
+      "$WORKSPACE_DIR/run_mapping_console_bridge.sh"
+      "device_name:=$DEFAULT_APP_DEVICE_NAME"
     )
   fi
 
@@ -181,9 +199,12 @@ run_mode() {
   if [[ "$mode" == "stm32" ]]; then
     echo "即将启动：STM32 接收模式"
     echo "底盘将订阅 /medipick/hardware/stm32_base_cmd_vel"
-  else
+  elif [[ "$mode" == "nav" ]]; then
     echo "即将启动：导航控制模式"
     echo "底盘将订阅 /cmd_vel，数据库：$database_path"
+  else
+    echo "即将启动：App 控制模式"
+    echo "将启动 Android 桥接服务，手机 App 通过 /medipick/app/cmd_vel 控制底盘"
   fi
   echo
   printf '命令：'
@@ -207,7 +228,7 @@ while [[ $# -gt 0 ]]; do
       ;;
     --mode)
       if [[ $# -lt 2 ]]; then
-        echo "--mode 需要参数：stm32 或 nav"
+        echo "--mode 需要参数：stm32、nav 或 app"
         exit 1
       fi
       selected_mode="$2"
@@ -249,11 +270,11 @@ if [[ -z "$selected_mode" ]]; then
 fi
 
 case "$selected_mode" in
-  stm32|nav)
+  stm32|nav|app)
     ;;
   *)
     echo "不支持的模式：$selected_mode"
-    echo "可选值：stm32 或 nav"
+    echo "可选值：stm32、nav 或 app"
     exit 1
     ;;
 esac

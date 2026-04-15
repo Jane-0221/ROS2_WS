@@ -6,13 +6,16 @@ WHEELTEC机器人控制协议实现
 - 第5.2节：CAN控制协议
 """
 
-import serial
-import can
+import glob
+import logging
+import os
 import struct
 import time
-import logging
-from typing import Optional, Tuple
 from enum import Enum
+from typing import Optional, Tuple
+
+import can
+import serial
 
 # 设置日志
 logging.basicConfig(
@@ -59,6 +62,12 @@ class WheeltecBaseProtocol:
         # 通信对象
         self.serial_port = None
         self.can_bus = None
+        self._last_serial_connect_attempt = 0.0
+        self._serial_reconnect_interval_sec = float(connection_params.get("reconnect_interval_sec", 2.0))
+        self._last_serial_unavailable_log = 0.0
+        self._serial_unavailable_log_interval_sec = float(
+            connection_params.get("serial_unavailable_log_interval_sec", 5.0)
+        )
         
         # 协议常量
         self.SERIAL_FRAME_HEADER = 0x7B
@@ -84,10 +93,12 @@ class WheeltecBaseProtocol:
     
     def _connect_serial(self) -> bool:
         """连接串口 (文档5.1节: 115200, 8N1)"""
-        port = self.connection_params.get('port', 'COM3')
+        port = self._resolve_serial_port()
         baudrate = self.connection_params.get('baudrate', 115200)
         timeout = self.connection_params.get('timeout', 1.0)
-        
+
+        self._last_serial_connect_attempt = time.monotonic()
+
         try:
             self.serial_port = serial.Serial(
                 port=port,
@@ -104,8 +115,57 @@ class WheeltecBaseProtocol:
             return False
             
         except Exception as e:
+            self.serial_port = None
             logger.error(f"串口连接失败: {e}")
             return False
+
+    def _resolve_serial_port(self) -> str:
+        requested_port = str(self.connection_params.get("port", "COM3"))
+        if not requested_port.startswith("/dev/"):
+            return requested_port
+
+        if os.path.exists(requested_port):
+            return requested_port
+
+        scan_patterns = [
+            requested_port,
+            "/dev/serial/by-id/usb-WCH.CN_USB_Single_Serial_*",
+            "/dev/serial/by-id/*WCH*",
+            "/dev/ttyACM*",
+            "/dev/ttyUSB*",
+        ]
+        for pattern in scan_patterns:
+            matches = sorted(glob.glob(pattern))
+            if matches:
+                resolved_port = matches[0]
+                if resolved_port != requested_port:
+                    logger.warning(
+                        "请求的串口 %s 不存在，自动回退到 %s",
+                        requested_port,
+                        resolved_port,
+                    )
+                self.connection_params["port"] = resolved_port
+                return resolved_port
+
+        return requested_port
+
+    def _should_retry_serial_connect(self) -> bool:
+        now = time.monotonic()
+        return (now - self._last_serial_connect_attempt) >= self._serial_reconnect_interval_sec
+
+    def _ensure_serial_connected(self) -> bool:
+        if self.serial_port and self.serial_port.is_open:
+            return True
+
+        if not self._should_retry_serial_connect():
+            now = time.monotonic()
+            if (now - self._last_serial_unavailable_log) >= self._serial_unavailable_log_interval_sec:
+                logger.error("串口未连接，等待自动重连")
+                self._last_serial_unavailable_log = now
+            return False
+
+        logger.warning("检测到底盘串口未连接，正在尝试自动重连")
+        return self._connect_serial()
     
     def _connect_can(self) -> bool:
         """连接CAN总线 (文档5.2节: 1Mbps)"""
@@ -199,8 +259,7 @@ class WheeltecBaseProtocol:
         
         try:
             if self.protocol == ControlProtocol.SERIAL:
-                if not self.serial_port or not self.serial_port.is_open:
-                    logger.error("串口未连接")
+                if not self._ensure_serial_connected():
                     return False
                 
                 data = self._pack_serial_data(vx_mmps, vy_mmps, vz_radps)
@@ -228,6 +287,12 @@ class WheeltecBaseProtocol:
                 return True
                 
         except Exception as e:
+            if self.protocol == ControlProtocol.SERIAL and self.serial_port:
+                try:
+                    self.serial_port.close()
+                except Exception:
+                    pass
+                self.serial_port = None
             logger.error(f"发送速度指令失败: {e}")
             return False
         

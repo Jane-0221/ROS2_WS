@@ -18,17 +18,20 @@ source_setup() {
 print_usage() {
   cat <<'EOF'
 Usage:
-  bash run_medipick_demo.sh [--base-control-mode nav|stm32] [launch_arg:=value ...]
+  bash run_medipick_demo.sh [--base-control-mode nav|stm32|app] [launch_arg:=value ...]
   bash run_medipick_demo.sh --nav-base [launch_arg:=value ...]
   bash run_medipick_demo.sh --stm32-base [launch_arg:=value ...]
+  bash run_medipick_demo.sh --app-base [launch_arg:=value ...]
 
 Base control modes:
   nav    Nav2 publishes /cmd_vel directly to the Wheeltec base node.
   stm32  STM32 publishes /medipick/hardware/stm32_base_cmd_vel to the Wheeltec base node.
+  app    The Android bridge publishes /medipick/app/cmd_vel through the base mux.
 
 Examples:
   bash run_medipick_demo.sh --nav-base
   bash run_medipick_demo.sh --stm32-base rviz:=false
+  bash run_medipick_demo.sh --app-base start_nav2:=false
   bash run_medipick_demo.sh --base-control-mode stm32 start_nav2:=false
 EOF
 }
@@ -90,9 +93,13 @@ while [[ $# -gt 0 ]]; do
       selected_base_control_mode="stm32"
       shift
       ;;
+    --app-base)
+      selected_base_control_mode="app"
+      shift
+      ;;
     --base-control-mode)
       if [[ $# -lt 2 ]]; then
-        echo "--base-control-mode requires a value: nav or stm32"
+        echo "--base-control-mode requires a value: nav, stm32, or app"
         exit 1
       fi
       selected_base_control_mode="$2"
@@ -117,11 +124,11 @@ done
 
 if [[ -n "$selected_base_control_mode" ]]; then
   case "$selected_base_control_mode" in
-    nav|stm32)
+    nav|stm32|app)
       ;;
     *)
       echo "Invalid base control mode: $selected_base_control_mode"
-      echo "Expected: nav or stm32"
+      echo "Expected: nav, stm32, or app"
       exit 1
       ;;
   esac

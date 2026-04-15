@@ -1,7 +1,7 @@
 [Unit]
 Description=MediPick Wheeltec Chassis Controller
-After=network.target dev-ttyACM0.device medipick-stm32.service
-Wants=network.target dev-ttyACM0.device medipick-stm32.service
+After=network.target medipick-stm32.service
+Wants=network.target medipick-stm32.service
 PartOf=medipick-stm32-base-chain.target
 
 [Service]
@@ -11,7 +11,7 @@ Group=jszn
 WorkingDirectory=/home/jszn/robot_ros2_ws
 Environment=HOME=/home/jszn
 Environment=ROS_DISTRO=humble
-ExecStart=/bin/bash -lc 'source /opt/ros/humble/setup.bash && source /home/jszn/robot_ros2_ws/install/setup.bash && exec ros2 run robot_hardware wheeltec_chassis_node --ros-args -p protocol:=serial -p robot_type:=omni -p port:=/dev/ttyACM0 -p baudrate:=115200 -p cmd_vel_topic:=/medipick/hardware/stm32_base_cmd_vel -p publish_odom:=false -p publish_battery:=false -p disable_software_limit:=true -p cmd_timeout:=0.2'
+ExecStart=/bin/bash -lc 'source /opt/ros/humble/setup.bash && source /home/jszn/robot_ros2_ws/install/setup.bash && exec ros2 run robot_hardware wheeltec_chassis_node --ros-args -p protocol:=serial -p robot_type:=omni -p port:=/dev/serial/by-id/usb-WCH.CN_USB_Single_Serial_0002-if00 -p baudrate:=115200 -p cmd_vel_topic:=/medipick/hardware/stm32_base_cmd_vel -p publish_odom:=false -p publish_battery:=false -p identical_nonzero_cmd_guard_enabled:=true -p identical_nonzero_cmd_guard_timeout:=2.0 -p identical_nonzero_cmd_guard_epsilon:=0.0001'
 Restart=always
 RestartSec=2
 KillSignal=SIGINT
