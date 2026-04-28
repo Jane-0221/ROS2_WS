@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 
 from __future__ import annotations
 
@@ -20,21 +20,16 @@ DEFAULT_FULL_STATE = {
     "base_x": 0.0,
     "base_y": 0.0,
     "base_theta": 0.0,
-    "raise_joint": 0.22,
-    "r1_joint": 0.10,
-    "r2_joint": 1.20,
-    "r3_joint": -4.555309,
-    "r4_joint": 1.10,
-    "r5_joint": 0.45,
-    "r6_joint": 0.15,
+    "raise_joint": 0.0,
+    "r1_joint": 0.0,
+    "r2_joint": 0.0,
+    "r3_joint": 0.0,
+    "r4_joint": 0.0,
+    "r5_joint": 0.0,
+    "r6_joint": 0.0,
     "sucker_joint": 0.0,
-    "h1_joint": -0.424124,
-    "h2_joint": 0.432157,
-    "l1_joint": -0.845803,
-    "l2_joint": -0.545632,
-    "l3_joint": 0.771423,
-    "l4_joint": -1.044046,
-    "l5_joint": -0.033111,
+    "h1_joint": 0.0,
+    "h2_joint": -0.5236,
 }
 
 
@@ -207,14 +202,14 @@ class MockInitialPoseManager(Node):
         state["base_x"] = self._rng.uniform(-0.20, 0.20)
         state["base_y"] = self._rng.uniform(-0.30, 0.30)
         state["base_theta"] = self._rng.uniform(-math.pi, math.pi)
-        state["raise_joint"] = self._rng.uniform(0.10, 0.42)
+        state["raise_joint"] = self._rng.uniform(0.0, 0.18)
         arm_seed = self._rng.choice(INITIAL_ARM_BRANCH_SEEDS)
         state["r1_joint"] = clamp(arm_seed["r1_joint"] + self._rng.uniform(-0.18, 0.18), -0.60, 0.60)
-        state["r2_joint"] = clamp(arm_seed["r2_joint"] + self._rng.uniform(-0.16, 0.16), 0.90, 1.45)
-        state["r3_joint"] = normalize_angle(arm_seed["r3_joint"] + self._rng.uniform(-0.22, 0.22))
-        state["r4_joint"] = clamp(arm_seed["r4_joint"] + self._rng.uniform(-0.18, 0.18), 0.90, 1.45)
-        state["r5_joint"] = clamp(arm_seed["r5_joint"] + self._rng.uniform(-0.25, 0.25), 0.15, 0.95)
-        state["r6_joint"] = clamp(arm_seed["r6_joint"] + self._rng.uniform(-0.20, 0.20), -0.15, 0.45)
+        state["r2_joint"] = clamp(arm_seed["r2_joint"] + self._rng.uniform(-0.20, 0.20), -0.70, 0.70)
+        state["r3_joint"] = clamp(arm_seed["r3_joint"] + self._rng.uniform(-0.20, 0.20), -0.70, 0.70)
+        state["r4_joint"] = clamp(arm_seed["r4_joint"] + self._rng.uniform(-0.20, 0.20), -0.70, 0.70)
+        state["r5_joint"] = clamp(arm_seed["r5_joint"] + self._rng.uniform(-0.20, 0.20), -0.70, 0.70)
+        state["r6_joint"] = clamp(arm_seed["r6_joint"] + self._rng.uniform(-0.20, 0.20), -0.70, 0.70)
         return state
 
 
@@ -233,28 +228,28 @@ MOBILE_ARM_JOINTS = (
 
 INITIAL_ARM_BRANCH_SEEDS = (
     {
-        "r1_joint": 0.05,
-        "r2_joint": 1.20,
-        "r3_joint": -4.555309,
-        "r4_joint": 1.08,
-        "r5_joint": 0.38,
-        "r6_joint": 0.15,
+        "r1_joint": 0.0,
+        "r2_joint": 0.0,
+        "r3_joint": 0.0,
+        "r4_joint": 0.0,
+        "r5_joint": 0.0,
+        "r6_joint": 0.0,
     },
     {
-        "r1_joint": 0.30,
-        "r2_joint": 1.10,
-        "r3_joint": -4.355309,
-        "r4_joint": 1.18,
-        "r5_joint": 0.52,
-        "r6_joint": 0.18,
+        "r1_joint": 0.18,
+        "r2_joint": 0.0,
+        "r3_joint": 0.0,
+        "r4_joint": 0.0,
+        "r5_joint": 0.0,
+        "r6_joint": 0.0,
     },
     {
-        "r1_joint": -0.30,
-        "r2_joint": 1.10,
-        "r3_joint": -4.755309,
-        "r4_joint": 1.18,
-        "r5_joint": 0.52,
-        "r6_joint": 0.18,
+        "r1_joint": -0.18,
+        "r2_joint": 0.0,
+        "r3_joint": 0.0,
+        "r4_joint": 0.0,
+        "r5_joint": 0.0,
+        "r6_joint": 0.0,
     },
 )
 

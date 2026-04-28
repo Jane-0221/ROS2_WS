@@ -1,6 +1,11 @@
 /**:
   ros__parameters:
     frame_id: world
+    pose_link: sucker_link
+    tool_reference_link: sucker_link
+    tool_to_ik_offset_x: 0.1112
+    tool_to_ik_offset_y: -0.0235
+    tool_to_ik_offset_z: 0.0
     discrete_lift_mode: true
     execute_with_controller: true
     controller_action_name: /mobile_arm_controller/follow_joint_trajectory

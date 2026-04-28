@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 
 from __future__ import annotations
 
@@ -11,43 +11,47 @@ from trajectory_msgs.msg import JointTrajectory
 
 
 TRANSIT_STOW_V0_STATE_POSITIONS = {
+    # Transit tuck tuned from the requested MoveIt pose so the arm stays compact
+    # while the base is moving in Gazebo/Nav2.
     "raise_joint": 0.302,
-    "r1_joint": -0.681,
-    "r2_joint": -1.309,
-    "r3_joint": -1.309,
-    "r4_joint": -1.571,
-    "r5_joint": 0.017,
-    "r6_joint": 0.087,
+    "h1_joint": 0.0,
+    "h2_joint": -0.5236,
+    "r1_joint": -0.6806784082777885,
+    "r2_joint": -1.3089969389957472,
+    "r3_joint": -1.3089969389957472,
+    "r4_joint": -1.5707963267948966,
+    "r5_joint": -0.017453292519943295,
+    "r6_joint": 0.08726646259971647,
 }
 
 DEFAULT_STOW_STATE_POSITIONS = dict(TRANSIT_STOW_V0_STATE_POSITIONS)
 
 DEFAULT_PREPARE_ARM_POSITIONS = {
-    "r1_joint": -0.10,
-    "r2_joint": 1.82,
-    "r3_joint": -4.555309,
-    "r4_joint": 1.00,
-    "r5_joint": 0.30,
-    "r6_joint": 0.20,
+    "r1_joint": 0.0,
+    "r2_joint": 0.0,
+    "r3_joint": 0.0,
+    "r4_joint": 0.0,
+    "r5_joint": 0.0,
+    "r6_joint": 0.0,
 }
 
 PREFERRED_PREPARE_ARM_POSITIONS = {
-    "r1_joint": -0.10,
-    "r2_joint": 1.82,
-    "r3_joint": -4.555309,
-    "r4_joint": 1.00,
-    "r5_joint": 0.30,
-    "r6_joint": 0.20,
+    "r1_joint": 0.0,
+    "r2_joint": 0.0,
+    "r3_joint": 0.0,
+    "r4_joint": 0.0,
+    "r5_joint": 0.0,
+    "r6_joint": 0.0,
 }
 
 DEFAULT_PREPARE_BRANCH_ARM_SEEDS = (
-    (-0.10, 1.82, -4.555309, 1.00, 0.30, 0.20),
-    (0.18, 1.75, -4.355309, 1.08, 0.38, 0.20),
-    (-0.32, 1.75, -4.755309, 1.08, 0.38, 0.20),
-    (0.05, 1.95, -4.555309, 0.92, 0.22, 0.15),
-    (-0.20, 1.95, -4.555309, 0.92, 0.22, 0.15),
-    (0.40, 1.65, -4.355309, 1.18, 0.48, 0.20),
-    (-0.50, 1.65, -4.755309, 1.18, 0.48, 0.20),
+    (0.0, 0.0, 0.0, 0.0, 0.0, 0.0),
+    (0.15, 0.0, 0.0, 0.0, 0.0, 0.0),
+    (-0.15, 0.0, 0.0, 0.0, 0.0, 0.0),
+    (0.0, 0.20, 0.0, 0.0, 0.0, 0.0),
+    (0.0, -0.20, 0.0, 0.0, 0.0, 0.0),
+    (0.0, 0.0, 0.20, 0.0, 0.0, 0.0),
+    (0.0, 0.0, -0.20, 0.0, 0.0, 0.0),
 )
 
 DEFAULT_PREPARE_CANDIDATES = (

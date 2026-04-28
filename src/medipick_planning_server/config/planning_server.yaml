@@ -2,7 +2,7 @@
   ros__parameters:
     backend: auto
     default_group_name: mobile_arm
-    default_pose_link: sucker_link
+    default_pose_link: sucker_contact_link
     default_planning_frame: world
     goal_position_tolerance: 0.005
     goal_orientation_tolerance: 0.02
@@ -11,8 +11,8 @@
     default_pipeline_id: ""
     default_planner_id: "RRTstarkConfigDefault"
     ik_pose_link: r6_link
-    tool_reference_link: sucker_link
-    tool_to_ik_offset_x: 0.1112
+    tool_reference_link: sucker_contact_link
+    tool_to_ik_offset_x: 0.1540
     tool_to_ik_offset_y: -0.0235
     tool_to_ik_offset_z: 0.0
     motion_plan_service_name: /plan_kinematic_path

@@ -99,7 +99,7 @@ def generate_launch_description():
         Path(get_package_share_directory(hardware_package)) / "config" / "medipick_hardware.yaml"
     )
     planning_server_config = str(
-        Path(get_package_share_directory(planning_server_package)) / "config" / "planning_server.yaml"
+        Path(get_package_share_directory(planning_server_package)) / "config" / "planning_server_hardware.yaml"
     )
     task_manager_config = str(
         Path(get_package_share_directory(planning_server_package)) / "config" / "hardware_task_manager.yaml"

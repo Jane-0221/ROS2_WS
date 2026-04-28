@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 
 from __future__ import annotations
 
@@ -449,10 +449,17 @@ class PickTaskServicesMixin:
 
     def _stage_base_motion_limits(self, stage: PickStage) -> tuple[bool, float, float]:
         if stage == PickStage.PLAN_TO_PRE_INSERT:
+            extra_base_yaw_deg = 0.0
+            target_pose = self._task_target_pose()
+            if target_pose is not None:
+                if target_pose.pose.position.z < 0.45:
+                    extra_base_yaw_deg = 120.0
+                elif target_pose.pose.position.z < 0.60:
+                    extra_base_yaw_deg = 35.0
             return (
                 self._pre_insert_limit_base_motion,
                 self._pre_insert_base_translation_limit_m,
-                math.radians(self._pre_insert_base_rotation_limit_deg),
+                math.radians(self._pre_insert_base_rotation_limit_deg + extra_base_yaw_deg),
             )
         if stage == PickStage.INSERT_AND_SUCTION:
             return (
@@ -461,6 +468,17 @@ class PickTaskServicesMixin:
                 math.radians(self._insert_base_rotation_limit_deg),
             )
         return False, 0.0, 0.0
+
+    def _effective_r1_stage_motion_limit_deg(self, stage: PickStage) -> float:
+        limit_deg = self._r1_stage_motion_limit_deg
+        if stage == PickStage.PLAN_TO_PRE_INSERT:
+            target_pose = self._task_target_pose()
+            if target_pose is not None:
+                if target_pose.pose.position.z < 0.45:
+                    limit_deg += 45.0
+                elif target_pose.pose.position.z < 0.60:
+                    limit_deg += 15.0
+        return limit_deg
 
     def _seeded_goal_respects_joint_preferences(
         self,
@@ -494,7 +512,8 @@ class PickTaskServicesMixin:
                 )
                 return False
 
-        r1_motion_limit = math.radians(self._r1_stage_motion_limit_deg)
+        effective_r1_limit_deg = self._effective_r1_stage_motion_limit_deg(stage)
+        r1_motion_limit = math.radians(effective_r1_limit_deg)
         r1_motion_extent = joint_state_motion_extent(
             seed_joint_state,
             goal_joint_state,
@@ -506,7 +525,7 @@ class PickTaskServicesMixin:
             self.get_logger().warning(
                 f"{label}: rejecting seeded goal because r1 stage motion would reach "
                 f"{math.degrees(r1_motion_extent):.1f} deg from start {start_deg:.1f} deg "
-                f"(limit {self._r1_stage_motion_limit_deg:.1f} deg)"
+                f"(limit {effective_r1_limit_deg:.1f} deg)"
             )
             return False
         return True
@@ -734,15 +753,20 @@ class PickTaskServicesMixin:
         goal = PoseStamped()
         goal.header.frame_id = target_pose.header.frame_id or self._frame_id
         effective_base_standoff = self._compute_effective_base_standoff(target_pose)
+        effective_lateral_offset = self._base_lateral_offset
+        if target_pose.pose.position.z < 0.60:
+            effective_lateral_offset *= 0.60
+        if target_pose.pose.position.z < 0.45:
+            effective_lateral_offset *= 0.50
         goal.pose.position.x = (
             target_pose.pose.position.x
             - effective_base_standoff * approach_xy[0]
-            + self._base_lateral_offset * lateral_xy[0]
+            + effective_lateral_offset * lateral_xy[0]
         )
         goal.pose.position.y = (
             target_pose.pose.position.y
             - effective_base_standoff * approach_xy[1]
-            + self._base_lateral_offset * lateral_xy[1]
+            + effective_lateral_offset * lateral_xy[1]
         )
         goal.pose.position.z = 0.0
 
@@ -752,16 +776,35 @@ class PickTaskServicesMixin:
         goal.pose.orientation = yaw_to_quaternion(yaw)
         return goal
 
+    def _shelf_lateral_offset(self, target_pose: PoseStamped) -> float:
+        if self._shelf_lateral_axis_xy is None:
+            return target_pose.pose.position.y - self._shelf_center_y
+        delta_x = target_pose.pose.position.x - self._shelf_center_x
+        delta_y = target_pose.pose.position.y - self._shelf_center_y
+        return delta_x * self._shelf_lateral_axis_xy[0] + delta_y * self._shelf_lateral_axis_xy[1]
+
+    def _entry_plane_signed_distance(self, pose: PoseStamped) -> float:
+        if self._shelf_entry_x is None or self._shelf_entry_y is None or self._shelf_inward_axis_xy is None:
+            cabinet_entry_x = self._shelf_center_x - self._shelf_depth / 2.0
+            return pose.pose.position.x - cabinet_entry_x
+        delta_x = pose.pose.position.x - self._shelf_entry_x
+        delta_y = pose.pose.position.y - self._shelf_entry_y
+        return delta_x * self._shelf_inward_axis_xy[0] + delta_y * self._shelf_inward_axis_xy[1]
+
     def _compute_effective_base_standoff(self, target_pose: PoseStamped) -> float:
         if not self._adaptive_workspace_enabled:
             return self._base_standoff
         depth_delta = self._shelf_depth - self._base_standoff_reference_depth
-        lateral_offset = abs(target_pose.pose.position.y - self._shelf_center_y)
+        lateral_offset = abs(self._shelf_lateral_offset(target_pose))
         dynamic = (
             self._base_standoff
             - depth_delta * self._base_standoff_depth_gain
             + lateral_offset * self._base_standoff_lateral_gain
         )
+        if target_pose.pose.position.z < 0.60:
+            dynamic += 0.04
+        if target_pose.pose.position.z < 0.45:
+            dynamic += 0.06
         return max(self._base_standoff_min, min(self._base_standoff_max, dynamic))
 
     def _candidate_prepare_offsets(self) -> list[float]:
@@ -802,14 +845,18 @@ class PickTaskServicesMixin:
             approach_axis[2] / axis_norm,
         )
 
-        cabinet_entry_x = self._shelf_center_x - self._shelf_depth / 2.0
-        axis_x = approach_unit[0]
-        if abs(axis_x) <= 1e-6:
+        plane_point_x = self._shelf_entry_x if self._shelf_entry_x is not None else self._shelf_center_x - self._shelf_depth / 2.0
+        plane_point_y = self._shelf_entry_y if self._shelf_entry_y is not None else self._shelf_center_y
+        inward_axis = self._shelf_inward_axis_xy if self._shelf_inward_axis_xy is not None else (1.0, 0.0)
+        axis_dot_plane_normal = approach_unit[0] * inward_axis[0] + approach_unit[1] * inward_axis[1]
+        if abs(axis_dot_plane_normal) <= 1e-6:
             return effective_pre_insert_offset
 
-        # Intersect the line target - s * approach_unit with the cabinet entry plane x=entry_x,
-        # then step an additional margin backwards along the same approach direction.
-        distance_to_entry_plane = (target_pose.pose.position.x - cabinet_entry_x) / axis_x
+        target_to_plane_along_normal = (
+            (target_pose.pose.position.x - plane_point_x) * inward_axis[0]
+            + (target_pose.pose.position.y - plane_point_y) * inward_axis[1]
+        )
+        distance_to_entry_plane = target_to_plane_along_normal / axis_dot_plane_normal
         if distance_to_entry_plane < 0.0:
             return effective_pre_insert_offset
         return max(effective_pre_insert_offset, distance_to_entry_plane + self._cabinet_entry_margin)
@@ -818,12 +865,16 @@ class PickTaskServicesMixin:
         if not self._adaptive_workspace_enabled:
             return self._pre_insert_offset
         depth_delta = max(0.0, self._shelf_depth - self._pre_insert_offset_reference_depth)
-        lateral_offset = abs(target_pose.pose.position.y - self._shelf_center_y)
+        lateral_offset = abs(self._shelf_lateral_offset(target_pose))
         dynamic = (
             self._pre_insert_offset
             + depth_delta * self._pre_insert_offset_depth_gain
             + lateral_offset * self._pre_insert_offset_lateral_gain
         )
+        if target_pose.pose.position.z < 0.60:
+            dynamic += 0.02
+        if target_pose.pose.position.z < 0.45:
+            dynamic += 0.03
         return max(self._pre_insert_offset_min, min(self._pre_insert_offset_max, dynamic))
 
     def _build_base_trajectory(self, base_goal_pose: PoseStamped, duration_sec: float) -> JointTrajectory:

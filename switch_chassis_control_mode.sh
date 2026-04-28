@@ -88,15 +88,17 @@ select_mode_terminal() {
 
 stop_conflicting_processes() {
   echo "停止可能冲突的后台服务和进程..."
-  systemctl stop --no-block medipick-stm32.service medipick-wheeltec.service >/dev/null 2>&1 || true
+  systemctl stop --no-block medipick-bms.service medipick-stm32.service medipick-wheeltec.service >/dev/null 2>&1 || true
 
   local patterns=(
+    "medipick_runtime.launch.py"
     "scene_mapping_navigation.launch.py"
     "visual_navigation_demo.launch.py"
     "mapping_app_bridge.launch.py"
     "medipick_mapping_app_bridge"
     "wheeltec_chassis_node"
     "stm32_serial_node"
+    "bms_soc_reader_node"
     "rtabmap_viz"
     "/rtabmap_slam/rtabmap"
     "/rtabmap_odom/rgbd_odometry"
@@ -138,24 +140,29 @@ build_launch_command() {
   shift 2
 
   local cmd=(
-    ros2 launch medipick_planning_server scene_mapping_navigation.launch.py
+    ros2 launch medipick_planning_server medipick_runtime.launch.py
   )
 
   if [[ "$mode" == "stm32" ]]; then
     cmd+=(
+      mode:=nav
+      localization:=false
+      start_rtabmap_viz:=false
       start_camera:=false
       start_slam:=false
       start_nav2:=false
-      start_rtabmap_viz:=false
       start_stm32:=true
       start_base:=true
       base_control_mode:=stm32
     )
   elif [[ "$mode" == "nav" ]]; then
     cmd+=(
+      mode:=nav
       localization:=true
-      start_nav2:=true
+      start_camera:=true
+      start_slam:=true
       start_rtabmap_viz:=false
+      start_nav2:=true
       delete_db_on_start:=false
       start_stm32:=false
       start_base:=true

@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <model name="medicine_bottle">
+    <static>true</static>
+    <link name="body">
+      <collision name="body_collision">
+        <pose>0 0 0.07 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.022</radius>
+            <length>0.14</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name="cap_collision">
+        <pose>0 0 0.155 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.018</radius>
+            <length>0.03</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="body_visual">
+        <pose>0 0 0.07 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.022</radius>
+            <length>0.14</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.92 0.93 0.95 1</ambient>
+          <diffuse>0.97 0.98 0.99 1</diffuse>
+          <specular>0.18 0.18 0.18 1</specular>
+        </material>
+      </visual>
+      <visual name="cap_visual">
+        <pose>0 0 0.155 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.018</radius>
+            <length>0.03</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.14 0.62 0.36 1</ambient>
+          <diffuse>0.16 0.72 0.40 1</diffuse>
+          <specular>0.10 0.10 0.10 1</specular>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot name="simple4_urdf">
+<robot name="simple5_urdf">
   <group name="car">
     <chain base_link="world" tip_link="base_link" />
   </group>
@@ -20,6 +20,16 @@
     <chain base_link="world" tip_link="sucker_link" />
   </group>
 
+  <group name="head">
+    <chain base_link="base_body_link" tip_link="h2_link" />
+  </group>
+
+  <group name="whole_robot">
+    <group name="mobile_arm" />
+    <group name="tool" />
+    <group name="head" />
+  </group>
+
   <group name="tool">
     <chain base_link="r6_link" tip_link="sucker_link" />
   </group>
@@ -33,95 +43,95 @@
   </group_state>
 
   <group_state name="home" group="arm">
-    <joint name="raise_joint" value="0.22" />
-    <joint name="r1_joint" value="0.10" />
-    <joint name="r2_joint" value="1.20" />
-    <joint name="r3_joint" value="-4.555309" />
-    <joint name="r4_joint" value="1.10" />
-    <joint name="r5_joint" value="0.45" />
-    <joint name="r6_joint" value="0.15" />
+    <joint name="raise_joint" value="0.0" />
+    <joint name="r1_joint" value="0.0" />
+    <joint name="r2_joint" value="0.0" />
+    <joint name="r3_joint" value="0.0" />
+    <joint name="r4_joint" value="0.0" />
+    <joint name="r5_joint" value="0.0" />
+    <joint name="r6_joint" value="0.0" />
   </group_state>
 
   <group_state name="ready" group="arm">
-    <joint name="raise_joint" value="0.22" />
-    <joint name="r1_joint" value="0.10" />
-    <joint name="r2_joint" value="1.20" />
-    <joint name="r3_joint" value="-4.555309" />
-    <joint name="r4_joint" value="1.10" />
-    <joint name="r5_joint" value="0.45" />
-    <joint name="r6_joint" value="0.15" />
+    <joint name="raise_joint" value="0.0" />
+    <joint name="r1_joint" value="0.0" />
+    <joint name="r2_joint" value="0.0" />
+    <joint name="r3_joint" value="0.0" />
+    <joint name="r4_joint" value="0.0" />
+    <joint name="r5_joint" value="0.0" />
+    <joint name="r6_joint" value="0.0" />
   </group_state>
 
   <group_state name="folded" group="arm">
-    <joint name="raise_joint" value="0.22" />
-    <joint name="r1_joint" value="-0.715585" />
-    <joint name="r2_joint" value="1.186824" />
-    <joint name="r3_joint" value="-4.555309" />
-    <joint name="r4_joint" value="1.989675" />
-    <joint name="r5_joint" value="0.453786" />
-    <joint name="r6_joint" value="0.157080" />
+    <joint name="raise_joint" value="0.0" />
+    <joint name="r1_joint" value="0.0" />
+    <joint name="r2_joint" value="0.0" />
+    <joint name="r3_joint" value="0.0" />
+    <joint name="r4_joint" value="0.0" />
+    <joint name="r5_joint" value="0.0" />
+    <joint name="r6_joint" value="0.0" />
   </group_state>
 
   <group_state name="shelf_prepare" group="arm">
-    <joint name="raise_joint" value="0.495" />
-    <joint name="r1_joint" value="-0.10" />
-    <joint name="r2_joint" value="1.82" />
-    <joint name="r3_joint" value="-4.555309" />
-    <joint name="r4_joint" value="1.00" />
-    <joint name="r5_joint" value="0.30" />
-    <joint name="r6_joint" value="0.20" />
+    <joint name="raise_joint" value="0.0" />
+    <joint name="r1_joint" value="0.0" />
+    <joint name="r2_joint" value="0.0" />
+    <joint name="r3_joint" value="0.0" />
+    <joint name="r4_joint" value="0.0" />
+    <joint name="r5_joint" value="0.0" />
+    <joint name="r6_joint" value="0.0" />
   </group_state>
 
   <group_state name="mobile_home" group="mobile_arm">
     <joint name="base_x" value="0.0" />
     <joint name="base_y" value="0.0" />
     <joint name="base_theta" value="0.0" />
-    <joint name="raise_joint" value="0.22" />
-    <joint name="r1_joint" value="0.10" />
-    <joint name="r2_joint" value="1.20" />
-    <joint name="r3_joint" value="-4.555309" />
-    <joint name="r4_joint" value="1.10" />
-    <joint name="r5_joint" value="0.45" />
-    <joint name="r6_joint" value="0.15" />
+    <joint name="raise_joint" value="0.0" />
+    <joint name="r1_joint" value="0.0" />
+    <joint name="r2_joint" value="0.0" />
+    <joint name="r3_joint" value="0.0" />
+    <joint name="r4_joint" value="0.0" />
+    <joint name="r5_joint" value="0.0" />
+    <joint name="r6_joint" value="0.0" />
   </group_state>
 
   <group_state name="ready" group="mobile_arm">
     <joint name="base_x" value="0.0" />
     <joint name="base_y" value="0.0" />
     <joint name="base_theta" value="0.0" />
-    <joint name="raise_joint" value="0.22" />
-    <joint name="r1_joint" value="0.10" />
-    <joint name="r2_joint" value="1.20" />
-    <joint name="r3_joint" value="-4.555309" />
-    <joint name="r4_joint" value="1.10" />
-    <joint name="r5_joint" value="0.45" />
-    <joint name="r6_joint" value="0.15" />
+    <joint name="raise_joint" value="0.0" />
+    <joint name="r1_joint" value="0.0" />
+    <joint name="r2_joint" value="0.0" />
+    <joint name="r3_joint" value="0.0" />
+    <joint name="r4_joint" value="0.0" />
+    <joint name="r5_joint" value="0.0" />
+    <joint name="r6_joint" value="0.0" />
   </group_state>
 
   <group_state name="shelf_prepare" group="mobile_arm">
-    <joint name="base_x" value="0.229" />
+    <joint name="base_x" value="0.0" />
     <joint name="base_y" value="0.0" />
     <joint name="base_theta" value="0.0" />
-    <joint name="raise_joint" value="0.495" />
-    <joint name="r1_joint" value="-0.10" />
-    <joint name="r2_joint" value="1.82" />
-    <joint name="r3_joint" value="-4.555309" />
-    <joint name="r4_joint" value="1.00" />
-    <joint name="r5_joint" value="0.30" />
-    <joint name="r6_joint" value="0.20" />
+    <joint name="raise_joint" value="0.0" />
+    <joint name="r1_joint" value="0.0" />
+    <joint name="r2_joint" value="0.0" />
+    <joint name="r3_joint" value="0.0" />
+    <joint name="r4_joint" value="0.0" />
+    <joint name="r5_joint" value="0.0" />
+    <joint name="r6_joint" value="0.0" />
   </group_state>
 
   <group_state name="whole_home" group="whole_body">
     <joint name="base_x" value="0.0" />
     <joint name="base_y" value="0.0" />
     <joint name="base_theta" value="0.0" />
-    <joint name="raise_joint" value="0.22" />
-    <joint name="r1_joint" value="0.10" />
-    <joint name="r2_joint" value="1.20" />
-    <joint name="r3_joint" value="-4.555309" />
-    <joint name="r4_joint" value="1.10" />
-    <joint name="r5_joint" value="0.45" />
-    <joint name="r6_joint" value="0.15" />
+    <joint name="raise_joint" value="0.0" />
+    <joint name="r1_joint" value="0.0" />
+    <joint name="r2_joint" value="0.0" />
+    <joint name="r3_joint" value="0.0" />
+    <joint name="r4_joint" value="0.0" />
+    <joint name="r5_joint" value="0.0" />
+    <joint name="r6_joint" value="0.0" />
     <joint name="sucker_joint" value="0.0" />
   </group_state>
 
@@ -129,43 +139,70 @@
     <joint name="base_x" value="0.0" />
     <joint name="base_y" value="0.0" />
     <joint name="base_theta" value="0.0" />
-    <joint name="raise_joint" value="0.22" />
-    <joint name="r1_joint" value="0.10" />
-    <joint name="r2_joint" value="1.20" />
-    <joint name="r3_joint" value="-4.555309" />
-    <joint name="r4_joint" value="1.10" />
-    <joint name="r5_joint" value="0.45" />
-    <joint name="r6_joint" value="0.15" />
+    <joint name="raise_joint" value="0.0" />
+    <joint name="r1_joint" value="0.0" />
+    <joint name="r2_joint" value="0.0" />
+    <joint name="r3_joint" value="0.0" />
+    <joint name="r4_joint" value="0.0" />
+    <joint name="r5_joint" value="0.0" />
+    <joint name="r6_joint" value="0.0" />
     <joint name="sucker_joint" value="0.0" />
   </group_state>
 
   <group_state name="shelf_prepare" group="whole_body">
-    <joint name="base_x" value="0.229" />
+    <joint name="base_x" value="0.0" />
     <joint name="base_y" value="0.0" />
     <joint name="base_theta" value="0.0" />
-    <joint name="raise_joint" value="0.495" />
-    <joint name="r1_joint" value="-0.10" />
-    <joint name="r2_joint" value="1.82" />
-    <joint name="r3_joint" value="-4.555309" />
-    <joint name="r4_joint" value="1.00" />
-    <joint name="r5_joint" value="0.30" />
-    <joint name="r6_joint" value="0.20" />
+    <joint name="raise_joint" value="0.0" />
+    <joint name="r1_joint" value="0.0" />
+    <joint name="r2_joint" value="0.0" />
+    <joint name="r3_joint" value="0.0" />
+    <joint name="r4_joint" value="0.0" />
+    <joint name="r5_joint" value="0.0" />
+    <joint name="r6_joint" value="0.0" />
     <joint name="sucker_joint" value="0.0" />
+  </group_state>
+
+  <group_state name="head_forward" group="head">
+    <joint name="h1_joint" value="0.0" />
+    <joint name="h2_joint" value="-0.5236" />
+  </group_state>
+
+  <group_state name="debug_home" group="whole_robot">
+    <joint name="base_x" value="0.0" />
+    <joint name="base_y" value="0.0" />
+    <joint name="base_theta" value="0.0" />
+    <joint name="raise_joint" value="0.0" />
+    <joint name="r1_joint" value="0.0" />
+    <joint name="r2_joint" value="0.0" />
+    <joint name="r3_joint" value="0.0" />
+    <joint name="r4_joint" value="0.0" />
+    <joint name="r5_joint" value="0.0" />
+    <joint name="r6_joint" value="0.0" />
+    <joint name="sucker_joint" value="0.0" />
+    <joint name="h1_joint" value="0.0" />
+    <joint name="h2_joint" value="-0.5236" />
   </group_state>
 
   <disable_collisions link1="world" link2="base_x_link" reason="Adjacent" />
   <disable_collisions link1="base_x_link" link2="base_y_link" reason="Adjacent" />
   <disable_collisions link1="base_y_link" link2="base_theta_link" reason="Adjacent" />
-  <disable_collisions link1="base_theta_link" link2="base_roll_link" reason="Adjacent" />
-  <disable_collisions link1="base_roll_link" link2="base_link" reason="Adjacent" />
-  <disable_collisions link1="base_link" link2="raise_link" reason="Adjacent" />
+  <disable_collisions link1="base_theta_link" link2="base_link" reason="Adjacent" />
+  <disable_collisions link1="base_link" link2="base_body_link" reason="Adjacent" />
+  <disable_collisions link1="base_body_link" link2="raise_link" reason="Adjacent" />
   <disable_collisions link1="raise_link" link2="r1_link" reason="Adjacent" />
   <disable_collisions link1="r1_link" link2="r2_link" reason="Adjacent" />
   <disable_collisions link1="r2_link" link2="r3_link" reason="Adjacent" />
   <disable_collisions link1="r3_link" link2="r4_link" reason="Adjacent" />
   <disable_collisions link1="r4_link" link2="r5_link" reason="Adjacent" />
   <disable_collisions link1="r5_link" link2="r6_link" reason="Adjacent" />
+  <disable_collisions link1="base_body_link" link2="r5_link" reason="Never" />
+  <disable_collisions link1="base_body_link" link2="r6_link" reason="Never" />
   <disable_collisions link1="r6_link" link2="sucker_link" reason="Adjacent" />
+  <disable_collisions link1="base_body_link" link2="sucker_link" reason="Never" />
   <disable_collisions link1="raise_link" link2="h1_link" reason="Adjacent" />
+  <disable_collisions link1="h1_link" link2="r1_link" reason="Never" />
   <disable_collisions link1="h1_link" link2="h2_link" reason="Adjacent" />
+  <disable_collisions link1="h2_link" link2="cam_link" reason="Adjacent" />
+  <disable_collisions link1="cam_link" link2="cam_sensor_link" reason="Adjacent" />
 </robot>

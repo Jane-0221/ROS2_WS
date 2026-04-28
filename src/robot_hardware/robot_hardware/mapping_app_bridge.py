@@ -60,7 +60,8 @@ class MappingAppBridge(Node):
         self.declare_parameter("map_frame", "map")
         self.declare_parameter("base_frame", "base_link")
         self.declare_parameter("mapping_launch_package", "medipick_planning_server")
-        self.declare_parameter("mapping_launch_file", "scene_mapping_navigation.launch.py")
+        self.declare_parameter("mapping_launch_file", "medipick_runtime.launch.py")
+        self.declare_parameter("mapping_launch_mode", "nav")
         self.declare_parameter("default_database_path", str(Path.home() / ".ros" / "medipick_scene_mapping.db"))
         self.declare_parameter("device_name", "")
         self.declare_parameter("advertise_service", True)
@@ -86,6 +87,7 @@ class MappingAppBridge(Node):
         self._discovery_service_type = str(self.get_parameter("discovery_service_type").value).strip() or "_medipick._tcp.local."
         self._mapping_launch_package = str(self.get_parameter("mapping_launch_package").value)
         self._mapping_launch_file = str(self.get_parameter("mapping_launch_file").value)
+        self._mapping_launch_mode = str(self.get_parameter("mapping_launch_mode").value)
         self._mapping_log_path = Path(str(self.get_parameter("mapping_log_path").value)).expanduser()
         self._app_cmd_timeout_sec = float(self.get_parameter("app_cmd_timeout_sec").value)
         self._app_max_linear_x = float(self.get_parameter("app_max_linear_x").value)
@@ -288,21 +290,43 @@ class MappingAppBridge(Node):
         if self.mapping_running:
             return {"success": True, "message": "Mapping is already running."}
 
+        launch_mode = self._mapping_launch_mode.strip().lower()
+        if launch_mode not in {"mapping", "nav", "nav_pick"}:
+            launch_mode = "mapping"
+
+        launch_file = self._mapping_launch_file.strip()
+        if os.path.basename(launch_file) in {
+            "scene_mapping_navigation.launch.py",
+            "visual_navigation_demo.launch.py",
+            "live_mapping.launch.py",
+        }:
+            launch_file = "medipick_runtime.launch.py"
+
         database_path = str(Path(request.rtabmap_database_path or self._default_database_path).expanduser())
         ros2_executable = shutil.which("ros2") or "/opt/ros/humble/bin/ros2"
+
         command = [
             ros2_executable,
             "launch",
             self._mapping_launch_package,
-            self._mapping_launch_file,
-            "localization:=false",
-            "start_nav2:=false",
+            launch_file,
+            f"mode:={launch_mode}",
+            "start_camera:=true",
+            "start_slam:=true",
             "start_rtabmap_viz:=false",
-            "start_stm32:=false",
-            "base_control_mode:=app",
             f"delete_db_on_start:={'true' if request.delete_db_on_start else 'false'}",
             f"rtabmap_database_path:={database_path}",
         ]
+
+        if launch_mode == "nav":
+            command.extend(
+                [
+                    "start_nav2:=false",
+                    "start_stm32:=false",
+                    "start_base:=true",
+                    "base_control_mode:=app",
+                ]
+            )
 
         self._mapping_log_path.parent.mkdir(parents=True, exist_ok=True)
         self._mapping_log_handle = self._mapping_log_path.open("ab")
@@ -323,7 +347,7 @@ class MappingAppBridge(Node):
             return {"success": False, "message": f"Failed to start mapping launch: {exc}"}
 
         self._default_database_path = database_path
-        self.get_logger().info("Started scene mapping launch for app control.")
+        self.get_logger().info("Started medipick runtime mapping launch for app control.")
         return {
             "success": True,
             "message": "Mapping launch started.",

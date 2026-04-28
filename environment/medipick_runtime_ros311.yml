@@ -1,0 +1,15 @@
+name: MediPickRuntime
+channels:
+  - conda-forge
+  - robostack-humble
+dependencies:
+  - python=3.11
+  - colcon-common-extensions
+  - cmake
+  - pkg-config
+  - make
+  - compilers
+  - ros-humble-desktop
+  - ros-humble-moveit
+  - ros-humble-ros2-control
+  - ros-humble-ros2-controllers

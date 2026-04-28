@@ -151,4 +151,4 @@ if [[ -n "$selected_base_control_mode" ]]; then
   echo "Using base control mode: $selected_base_control_mode"
 fi
 
-ros2 launch medipick_planning_server visual_navigation_demo.launch.py "${launch_args[@]}"
+ros2 launch medipick_planning_server medipick_runtime.launch.py mode:=nav_pick "${launch_args[@]}"

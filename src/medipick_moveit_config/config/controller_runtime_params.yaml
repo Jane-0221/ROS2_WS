@@ -4,7 +4,6 @@ mobile_arm_controller:
       - base_x
       - base_y
       - base_theta
-      - raise_joint
       - r1_joint
       - r2_joint
       - r3_joint
@@ -24,7 +23,6 @@ mobile_arm_controller:
       - base_x
       - base_y
       - base_theta
-      - raise_joint
       - r1_joint
       - r2_joint
       - r3_joint

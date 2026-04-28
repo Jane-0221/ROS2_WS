@@ -9,6 +9,8 @@ install(DIRECTORY config launch rviz
 
 install(PROGRAMS
   scripts/default_joint_state_publisher.py
+  scripts/joint_state_stamp_republisher.py
+  scripts/tf_stamp_republisher.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

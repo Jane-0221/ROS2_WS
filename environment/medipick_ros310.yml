@@ -1,0 +1,11 @@
+name: MediPickROS
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - colcon-common-extensions
+  - catkin_pkg
+  - empy
+  - pyyaml

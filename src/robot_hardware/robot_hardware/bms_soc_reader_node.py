@@ -1,167 +1,256 @@
 #!/usr/bin/env python3
+
+import math
+import os
+import struct
+import time
+
 import rclpy
 from rclpy.node import Node
 import serial
-import struct
+from sensor_msgs.msg import BatteryState
 from std_msgs.msg import Float32, Float32MultiArray
 
 # -------------------------- 达锂BMS RS485协议常量（V1.2） --------------------------
-# 串口配置
-BATTERY_PORT = "/dev/ttyBattery"   # USB转RS485设备名，根据实际修改（如/dev/ttyACM0）
-BAUDRATE = 9600               # 协议固定9600波特率
-BYTESIZE = serial.EIGHTBITS   # 8位数据位
-STOPBITS = serial.STOPBITS_ONE# 1位停止位
-PARITY = serial.PARITY_NONE   # 无校验
+DEFAULT_BATTERY_PORT = "/dev/ttyBattery"
+DEFAULT_BAUDRATE = 9600
+BYTESIZE = serial.EIGHTBITS
+STOPBITS = serial.STOPBITS_ONE
+PARITY = serial.PARITY_NONE
 
-# 协议帧格式定义
-FRAME_HEADER = 0xA5           # 固定帧头
-PC_ADDR = 0x40                # 上位机（PC/ROS）通信地址
-BMS_ADDR = 0x01               # BMS从机地址
-DATA_ID_SOC = 0x90            # 总压/电流/SOC 数据ID（核心）
-DATA_LEN_FIX = 0x08           # 协议固定数据长度8字节
-FRAME_SEND_LEN = 13           # 上位机发送帧总长度：1(头)+1(地址)+1(ID)+1(长度)+8(数据)+1(校验)
-FRAME_RECV_LEN = 13           # BMS响应帧总长度：与发送帧一致
+FRAME_HEADER = 0xA5
+PC_ADDR = 0x40
+BMS_ADDR = 0x01
+DATA_ID_SOC = 0x90
+DATA_LEN_FIX = 0x08
+FRAME_SEND_LEN = 13
+FRAME_RECV_LEN = 13
 
-# 数据解析系数
-VOLT_COEFF = 0.1              # 总压系数：0.1V/单位
-CURR_COEFF = 0.1              # 电流系数：0.1A/单位
-CURR_OFFSET = 30000           # 电流偏移量：协议固定30000
-SOC_COEFF = 0.1               # SOC系数：0.1%/单位
+VOLT_COEFF = 0.1
+CURR_COEFF = 0.1
+CURR_OFFSET = 30000
+SOC_COEFF = 0.1
+
 
 class BmsSocReaderNode(Node):
     def __init__(self):
         super().__init__("bms_soc_reader_node")
-        
-        # 1. 初始化串口（RS485）
+
+        self.declare_parameters(
+            namespace="",
+            parameters=[
+                ("port", DEFAULT_BATTERY_PORT),
+                ("baudrate", DEFAULT_BAUDRATE),
+                ("poll_period_sec", 1.0),
+                ("reconnect_period_sec", 3.0),
+                ("frame_id", "base_link"),
+                ("soc_topic", "bms/battery_soc"),
+                ("raw_data_topic", "bms/battery_data"),
+                ("battery_state_topic", "battery"),
+                ("status_current_threshold_a", 0.2),
+                ("exclusive_port", True),
+            ],
+        )
+
+        self.port = str(self.get_parameter("port").value)
+        self.baudrate = int(self.get_parameter("baudrate").value)
+        self.poll_period_sec = float(self.get_parameter("poll_period_sec").value)
+        self.reconnect_period_sec = float(self.get_parameter("reconnect_period_sec").value)
+        self.frame_id = str(self.get_parameter("frame_id").value)
+        self.status_current_threshold_a = float(self.get_parameter("status_current_threshold_a").value)
+        self.exclusive_port = bool(self.get_parameter("exclusive_port").value)
+
+        self.soc_pub = self.create_publisher(
+            Float32,
+            str(self.get_parameter("soc_topic").value),
+            10,
+        )
+        self.bms_data_pub = self.create_publisher(
+            Float32MultiArray,
+            str(self.get_parameter("raw_data_topic").value),
+            10,
+        )
+        self.battery_state_pub = self.create_publisher(
+            BatteryState,
+            str(self.get_parameter("battery_state_topic").value),
+            10,
+        )
+
         self.ser = None
+        self._last_open_attempt_monotonic = 0.0
+
+        self.battery_soc = 0.0
+        self.total_volt = 0.0
+        self.battery_curr = 0.0
+
+        self.query_timer = self.create_timer(self.poll_period_sec, self.bms_query_task)
+        self._open_serial(initial=True)
+
+    def calc_checksum(self, data_list: list[int]) -> int:
+        return sum(data_list) & 0xFF
+
+    def _describe_port(self) -> str:
+        real_path = os.path.realpath(self.port)
+        if real_path and real_path != self.port:
+            return f"{self.port} -> {real_path}"
+        return self.port
+
+    def _open_serial(self, initial: bool = False) -> bool:
+        if self.ser and self.ser.is_open:
+            return True
+
+        now = time.monotonic()
+        if not initial and now - self._last_open_attempt_monotonic < self.reconnect_period_sec:
+            return False
+        self._last_open_attempt_monotonic = now
+
         try:
             self.ser = serial.Serial(
-                port=BATTERY_PORT,
-                baudrate=BAUDRATE,
+                port=self.port,
+                baudrate=self.baudrate,
                 bytesize=BYTESIZE,
                 parity=PARITY,
                 stopbits=STOPBITS,
-                timeout=0.1,  # 读取超时0.1s，避免阻塞
-                write_timeout=0.1
+                timeout=0.2,
+                write_timeout=0.2,
+                exclusive=self.exclusive_port,
             )
-            self.get_logger().info(f"RS485串口 {BATTERY_PORT} 打开成功！波特率：{BAUDRATE}")
-        except Exception as e:
-            self.get_logger().error(f"RS485串口打开失败：{str(e)}")
-            return
-        
-        # 2. ROS2话题发布：核心发布SOC，附带发布总压/电流（多数据）
-        self.soc_pub = self.create_publisher(Float32, "bms/battery_soc", 10)  # 电池SOC(%)
-        self.bms_data_pub = self.create_publisher(Float32MultiArray, "bms/battery_data", 10)  # [总压V, 电流A, SOC%]
-        
-        # 3. 定时查询BMS数据：1秒1次（可根据需求调整，建议≥500ms）
-        self.query_timer = self.create_timer(1.0, self.bms_query_task)
-        
-        # 初始化数据缓存
-        self.battery_soc = 0.0    # 电池剩余电量(%)
-        self.total_volt = 0.0     # 电池总压(V)
-        self.battery_curr = 0.0   # 电池电流(A)：充电为正，放电为负
+            self.get_logger().info(
+                f"RS485串口 {self._describe_port()} 打开成功，波特率 {self.baudrate}，exclusive={self.exclusive_port}"
+            )
+            return True
+        except Exception as exc:
+            log_fn = self.get_logger().error if initial else self.get_logger().warn
+            log_fn(
+                f"RS485串口 {self._describe_port()} 打开失败: {exc}"
+            )
+            self.ser = None
+            return False
 
-    # 校验和计算：协议规定-前面所有数据之和，只取低8字节（模256）
-    def calc_checksum(self, data_list: list) -> int:
-        sum_val = sum(data_list)
-        return sum_val & 0xFF  # 取低8位
+    def _close_serial(self) -> None:
+        if self.ser and self.ser.is_open:
+            self.ser.close()
+        self.ser = None
 
-    # 打包并发送BMS查询指令（读取SOC/总压/电流）
-    def send_bms_query_cmd(self):
+    def send_bms_query_cmd(self) -> bool:
         if not self.ser or not self.ser.is_open:
-            return
+            return False
+
         try:
-            # 构造发送帧：帧头+上位机地址+数据ID+数据长度+8字节预留数据(全0)+校验和
             send_frame = [0x00] * FRAME_SEND_LEN
-            send_frame[0] = FRAME_HEADER    # 帧头0xA5
-            send_frame[1] = PC_ADDR         # 上位机地址0x40
-            send_frame[2] = DATA_ID_SOC     # 读取SOC的Data ID 0x90
-            send_frame[3] = DATA_LEN_FIX    # 数据长度0x08
-            send_frame[4:12] = [0x00]*8     # 8字节预留数据，协议要求全0
-            # 计算校验和：帧头到预留数据的所有字节
-            checksum = self.calc_checksum(send_frame[0:12])
-            send_frame[12] = checksum       # 最后1字节为校验和
+            send_frame[0] = FRAME_HEADER
+            send_frame[1] = PC_ADDR
+            send_frame[2] = DATA_ID_SOC
+            send_frame[3] = DATA_LEN_FIX
+            send_frame[4:12] = [0x00] * 8
+            send_frame[12] = self.calc_checksum(send_frame[0:12])
 
-            # 发送帧（转字节串）
+            self.ser.reset_input_buffer()
             self.ser.write(bytes(send_frame))
-            # self.get_logger().debug(f"发送BMS查询帧：{bytes(send_frame).hex(' ')}")
-        except Exception as e:
-            self.get_logger().error(f"发送BMS指令失败：{str(e)}")
+            self.ser.flush()
+            return True
+        except Exception as exc:
+            self.get_logger().error(
+                f"发送BMS指令失败 ({self._describe_port()}): {exc}"
+            )
+            self._close_serial()
+            return False
 
-    # 接收并解析BMS响应帧
-    def recv_and_parse_bms_frame(self):
+    def recv_and_parse_bms_frame(self) -> bool:
         if not self.ser or not self.ser.is_open:
-            return
-        try:
-            # 读取串口所有可用数据
-            recv_data = self.ser.read(self.ser.in_waiting)
-            if len(recv_data) < FRAME_RECV_LEN:
-                return  # 数据不足，直接返回
+            return False
 
-            # 查找帧头（处理粘包，从帧头开始截取完整帧）
+        try:
+            recv_data = self.ser.read(FRAME_RECV_LEN)
+            if len(recv_data) < FRAME_RECV_LEN:
+                return False
+
             header_idx = recv_data.find(bytes([FRAME_HEADER]))
             if header_idx == -1:
-                self.get_logger().warn("未找到BMS响应帧头，丢弃数据")
-                return
-            # 截取完整的13字节响应帧
-            recv_frame = recv_data[header_idx:header_idx+FRAME_RECV_LEN]
-            if len(recv_frame) != FRAME_RECV_LEN:
-                return
+                self.get_logger().warn("未找到BMS响应帧头，已丢弃本次数据")
+                return False
 
-            # 帧合法性校验1：地址+数据ID校验（必须是BMS地址+SOC的Data ID）
+            recv_frame = recv_data[header_idx:header_idx + FRAME_RECV_LEN]
+            if len(recv_frame) != FRAME_RECV_LEN:
+                return False
+
             if recv_frame[1] != BMS_ADDR or recv_frame[2] != DATA_ID_SOC:
-                self.get_logger().warn("BMS地址/数据ID不匹配，丢弃帧")
-                return
-            # 帧合法性校验2：校验和校验
+                self.get_logger().warn("BMS地址或数据ID不匹配，已丢弃本次数据")
+                return False
+
             recv_checksum = recv_frame[-1]
             calc_checksum = self.calc_checksum(recv_frame[0:-1])
             if recv_checksum != calc_checksum:
-                self.get_logger().warn(f"BMS校验和失败：接收{recv_checksum:02X}，计算{calc_checksum:02X}")
-                return
+                self.get_logger().warn(
+                    f"BMS校验和失败: 接收 {recv_checksum:02X}，计算 {calc_checksum:02X}"
+                )
+                return False
 
-            # 解析核心数据：协议规定高位在前（大端模式）
-            frame_data = recv_frame[4:12]  # 提取8字节数据内容
-            # 1. 电池总压：Byte0~Byte1 拼接，0.1V/单位
-            self.total_volt = struct.unpack('>H', frame_data[0:2])[0] * VOLT_COEFF
-            # 2. 电池电流：Byte4~Byte5 拼接，30000偏移，0.1A/单位，充电正/放电负
-            curr_raw = struct.unpack('>H', frame_data[4:6])[0]
+            frame_data = recv_frame[4:12]
+            self.total_volt = struct.unpack(">H", frame_data[0:2])[0] * VOLT_COEFF
+            curr_raw = struct.unpack(">H", frame_data[4:6])[0]
             self.battery_curr = (curr_raw - CURR_OFFSET) * CURR_COEFF
-            # 3. 电池SOC：Byte6~Byte7 拼接，0.1%/单位（核心读取目标）
-            self.battery_soc = struct.unpack('>H', frame_data[6:8])[0] * SOC_COEFF
+            self.battery_soc = struct.unpack(">H", frame_data[6:8])[0] * SOC_COEFF
+            self.battery_soc = max(0.0, min(100.0, self.battery_soc))
 
-            # 数据范围过滤（防止异常值）
-            self.battery_soc = max(0.0, min(100.0, self.battery_soc))  # SOC限定0~100%
-            self.get_logger().info(f"BMS数据解析成功 | 总压：{self.total_volt:.1f}V | 电流：{self.battery_curr:.1f}A | SOC：{self.battery_soc:.1f}%")
+            self.get_logger().info(
+                "BMS数据解析成功 | 总压: %.1fV | 电流: %.1fA | SOC: %.1f%%"
+                % (self.total_volt, self.battery_curr, self.battery_soc)
+            )
+            return True
+        except Exception as exc:
+            self.get_logger().error(
+                f"接收/解析BMS帧失败 ({self._describe_port()}): {exc}"
+            )
+            self._close_serial()
+            return False
 
-        except Exception as e:
-            self.get_logger().error(f"接收/解析BMS帧失败：{str(e)}")
+    def _battery_status_from_current(self) -> int:
+        if self.battery_curr > self.status_current_threshold_a:
+            return BatteryState.POWER_SUPPLY_STATUS_CHARGING
+        if self.battery_curr < -self.status_current_threshold_a:
+            return BatteryState.POWER_SUPPLY_STATUS_DISCHARGING
+        return BatteryState.POWER_SUPPLY_STATUS_NOT_CHARGING
 
-    # 定时任务：发送查询指令 → 接收解析数据 → 发布ROS2话题
-    def bms_query_task(self):
-        self.send_bms_query_cmd()    # 发送查询指令
-        self.recv_and_parse_bms_frame()  # 接收并解析响应
-        self.publish_bms_data()      # 发布解析后的数据
-
-    # 发布ROS2话题：单独发布SOC + 批量发布总压/电流/SOC
-    def publish_bms_data(self):
-        # 发布SOC（Float32）
+    def publish_bms_data(self) -> None:
         soc_msg = Float32()
         soc_msg.data = self.battery_soc
         self.soc_pub.publish(soc_msg)
 
-        # 发布总压/电流/SOC（Float32MultiArray）
         bms_data_msg = Float32MultiArray()
         bms_data_msg.data = [self.total_volt, self.battery_curr, self.battery_soc]
         self.bms_data_pub.publish(bms_data_msg)
 
-    # 节点销毁：关闭RS485串口
+        battery_msg = BatteryState()
+        battery_msg.header.stamp = self.get_clock().now().to_msg()
+        battery_msg.header.frame_id = self.frame_id
+        battery_msg.voltage = float(self.total_volt)
+        battery_msg.current = float(self.battery_curr)
+        battery_msg.charge = math.nan
+        battery_msg.capacity = math.nan
+        battery_msg.design_capacity = math.nan
+        battery_msg.percentage = float(self.battery_soc / 100.0)
+        battery_msg.power_supply_status = self._battery_status_from_current()
+        battery_msg.power_supply_health = BatteryState.POWER_SUPPLY_HEALTH_UNKNOWN
+        battery_msg.power_supply_technology = BatteryState.POWER_SUPPLY_TECHNOLOGY_LION
+        battery_msg.present = True
+        self.battery_state_pub.publish(battery_msg)
+
+    def bms_query_task(self) -> None:
+        if not self._open_serial():
+            return
+        if not self.send_bms_query_cmd():
+            return
+        if not self.recv_and_parse_bms_frame():
+            return
+        self.publish_bms_data()
+
     def destroy_node(self):
-        if self.ser and self.ser.is_open:
-            self.ser.close()
-            self.get_logger().info("RS485串口已关闭")
+        self._close_serial()
+        self.get_logger().info("RS485串口已关闭")
         super().destroy_node()
 
-# 主函数
+
 def main(args=None):
     rclpy.init(args=args)
     node = BmsSocReaderNode()
@@ -172,6 +261,7 @@ def main(args=None):
     finally:
         node.destroy_node()
         rclpy.shutdown()
+
 
 if __name__ == "__main__":
     main()

@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <model name="textured_drug_005">
+    <static>false</static>
+    <self_collide>false</self_collide>
+    <link name="body">
+      <inertial>
+        <pose>0 0 0.046761 0 0 0</pose>
+        <mass>0.066502</mass>
+        <inertia>
+          <ixx>0.00005073</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.00019034</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.00014413</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <pose>0 0 0.046761 0 0 0</pose>
+        <geometry><box><size>0.160000 0.020201 0.093522</size></box></geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.300</mu>
+              <mu2>1.300</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <kp>120000.0</kp>
+              <kd>8.0</kd>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <pose>0 0 0.046761 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>meshes/model.obj</uri>
+            <scale>1 1.350000 1.000000</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>

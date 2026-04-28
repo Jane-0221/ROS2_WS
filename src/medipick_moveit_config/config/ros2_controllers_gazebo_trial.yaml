@@ -1,0 +1,261 @@
+controller_manager:
+  ros__parameters:
+    use_sim_time: true
+    update_rate: 100
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+    imu_sensor_broadcaster:
+      type: imu_sensor_broadcaster/IMUSensorBroadcaster
+
+gz_ros_control:
+  ros__parameters:
+    position_proportional_gain: 5.0
+
+/gz_ros_control:
+  ros__parameters:
+    position_proportional_gain: 5.0
+
+mobile_arm_controller:
+  ros__parameters:
+    joints:
+      - r1_joint
+      - r2_joint
+      - r3_joint
+      - r4_joint
+      - r5_joint
+      - r6_joint
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+    allow_partial_joints_goal: true
+    state_publish_rate: 50.0
+    action_monitor_rate: 20.0
+    constraints:
+      goal_time: 15.0
+      stopped_velocity_tolerance: 0.02
+      r1_joint:
+        trajectory: 0.45
+        goal: 0.02
+      r2_joint:
+        trajectory: 0.45
+        goal: 0.02
+      r3_joint:
+        trajectory: 0.45
+        goal: 0.02
+      r4_joint:
+        trajectory: 0.45
+        goal: 0.02
+      r5_joint:
+        trajectory: 0.45
+        goal: 0.02
+      r6_joint:
+        trajectory: 0.45
+        goal: 0.02
+
+/controller_manager/mobile_arm_controller:
+  ros__parameters:
+    joints:
+      - r1_joint
+      - r2_joint
+      - r3_joint
+      - r4_joint
+      - r5_joint
+      - r6_joint
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+    allow_partial_joints_goal: true
+    state_publish_rate: 50.0
+    action_monitor_rate: 20.0
+    constraints:
+      goal_time: 15.0
+      stopped_velocity_tolerance: 0.02
+      r1_joint:
+        trajectory: 0.45
+        goal: 0.02
+      r2_joint:
+        trajectory: 0.45
+        goal: 0.02
+      r3_joint:
+        trajectory: 0.45
+        goal: 0.02
+      r4_joint:
+        trajectory: 0.45
+        goal: 0.02
+      r5_joint:
+        trajectory: 0.45
+        goal: 0.02
+      r6_joint:
+        trajectory: 0.45
+        goal: 0.02
+
+base_controller:
+  ros__parameters:
+    joints:
+      - base_x
+      - base_y
+      - base_theta
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+    allow_partial_joints_goal: true
+    state_publish_rate: 50.0
+    action_monitor_rate: 20.0
+    constraints:
+      goal_time: 15.0
+      stopped_velocity_tolerance: 0.02
+      base_x:
+        trajectory: 0.25
+        goal: 0.08
+      base_y:
+        trajectory: 0.25
+        goal: 0.08
+      base_theta:
+        trajectory: 0.90
+        goal: 0.04
+
+/controller_manager/base_controller:
+  ros__parameters:
+    joints:
+      - base_x
+      - base_y
+      - base_theta
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+    allow_partial_joints_goal: true
+    state_publish_rate: 50.0
+    action_monitor_rate: 20.0
+    constraints:
+      goal_time: 15.0
+      stopped_velocity_tolerance: 0.02
+      base_x:
+        trajectory: 0.25
+        goal: 0.08
+      base_y:
+        trajectory: 0.25
+        goal: 0.08
+      base_theta:
+        trajectory: 0.90
+        goal: 0.04
+
+lift_velocity_controller:
+  ros__parameters:
+    joints:
+      - raise_joint
+    interface_name: velocity
+
+/controller_manager/lift_velocity_controller:
+  ros__parameters:
+    joints:
+      - raise_joint
+    interface_name: velocity
+
+imu_sensor_broadcaster:
+  ros__parameters:
+    sensor_name: base_imu
+    frame_id: base_imu_link
+    static_covariance_orientation: [0.0004, 0.0, 0.0, 0.0, 0.0004, 0.0, 0.0, 0.0, 0.0004]
+    static_covariance_angular_velocity: [0.0001, 0.0, 0.0, 0.0, 0.0001, 0.0, 0.0, 0.0, 0.0001]
+    static_covariance_linear_acceleration: [0.0004, 0.0, 0.0, 0.0, 0.0004, 0.0, 0.0, 0.0, 0.0004]
+
+/controller_manager/imu_sensor_broadcaster:
+  ros__parameters:
+    sensor_name: base_imu
+    frame_id: base_imu_link
+    static_covariance_orientation: [0.0004, 0.0, 0.0, 0.0, 0.0004, 0.0, 0.0, 0.0, 0.0004]
+    static_covariance_angular_velocity: [0.0001, 0.0, 0.0, 0.0, 0.0001, 0.0, 0.0, 0.0, 0.0001]
+    static_covariance_linear_acceleration: [0.0004, 0.0, 0.0, 0.0, 0.0004, 0.0, 0.0, 0.0, 0.0004]
+
+tool_controller:
+  ros__parameters:
+    joints:
+      - sucker_joint
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+    allow_partial_joints_goal: true
+    state_publish_rate: 50.0
+    action_monitor_rate: 20.0
+    constraints:
+      goal_time: 4.0
+      stopped_velocity_tolerance: 0.02
+      sucker_joint:
+        trajectory: 0.30
+        goal: 0.02
+
+/controller_manager/tool_controller:
+  ros__parameters:
+    joints:
+      - sucker_joint
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+    allow_partial_joints_goal: true
+    state_publish_rate: 50.0
+    action_monitor_rate: 20.0
+    constraints:
+      goal_time: 4.0
+      stopped_velocity_tolerance: 0.02
+      sucker_joint:
+        trajectory: 0.30
+        goal: 0.02
+
+head_controller:
+  ros__parameters:
+    joints:
+      - h1_joint
+      - h2_joint
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+    allow_partial_joints_goal: true
+    state_publish_rate: 50.0
+    action_monitor_rate: 20.0
+    constraints:
+      goal_time: 4.0
+      stopped_velocity_tolerance: 0.02
+      h1_joint:
+        trajectory: 0.60
+        goal: 0.03
+      h2_joint:
+        trajectory: 0.60
+        goal: 0.03
+
+/controller_manager/head_controller:
+  ros__parameters:
+    joints:
+      - h1_joint
+      - h2_joint
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+    allow_partial_joints_goal: true
+    state_publish_rate: 50.0
+    action_monitor_rate: 20.0
+    constraints:
+      goal_time: 4.0
+      stopped_velocity_tolerance: 0.02
+      h1_joint:
+        trajectory: 0.60
+        goal: 0.03
+      h2_joint:
+        trajectory: 0.60
+        goal: 0.03

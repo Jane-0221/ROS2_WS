@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 
 import time
 
@@ -9,6 +9,8 @@ from trajectory_msgs.msg import JointTrajectory
 
 
 class DefaultJointStatePublisher(Node):
+    DEFAULT_HEAD_PITCH_RAD = -0.5236
+
     def __init__(self) -> None:
         super().__init__("default_joint_state_publisher")
         self.declare_parameter("publish_rate", 20.0)
@@ -34,16 +36,16 @@ class DefaultJointStatePublisher(Node):
             "base_x": 0.0,
             "base_y": 0.0,
             "base_theta": 0.0,
-            "raise_joint": 0.302,
-            "r1_joint": -0.681,
-            "r2_joint": -1.309,
-            "r3_joint": -1.309,
-            "r4_joint": -1.571,
-            "r5_joint": 0.017,
-            "r6_joint": 0.087,
+            "raise_joint": 0.0,
+            "r1_joint": 0.0,
+            "r2_joint": 0.0,
+            "r3_joint": 0.0,
+            "r4_joint": 0.0,
+            "r5_joint": 0.0,
+            "r6_joint": 0.0,
             "sucker_joint": 0.0,
-            "h1_joint": -0.424124,
-            "h2_joint": 0.432157,
+            "h1_joint": 0.0,
+            "h2_joint": self.DEFAULT_HEAD_PITCH_RAD,
         }
         self.current_positions = dict(self.default_positions)
         self._active_trajectory = None

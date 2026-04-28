@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 
 from __future__ import annotations
 
@@ -608,7 +608,7 @@ class PlanningServer(Node):
 
         self.declare_parameter("backend", "auto")
         self.declare_parameter("default_group_name", "arm")
-        self.declare_parameter("default_pose_link", "sucker_link")
+        self.declare_parameter("default_pose_link", "sucker_contact_link")
         self.declare_parameter("default_planning_frame", "world")
         self.declare_parameter("goal_position_tolerance", 0.005)
         self.declare_parameter("goal_orientation_tolerance", 0.02)
@@ -617,8 +617,8 @@ class PlanningServer(Node):
         self.declare_parameter("default_pipeline_id", "")
         self.declare_parameter("default_planner_id", "")
         self.declare_parameter("ik_pose_link", "r6_link")
-        self.declare_parameter("tool_reference_link", "sucker_link")
-        self.declare_parameter("tool_to_ik_offset_x", 0.1112)
+        self.declare_parameter("tool_reference_link", "sucker_contact_link")
+        self.declare_parameter("tool_to_ik_offset_x", 0.1540)
         self.declare_parameter("tool_to_ik_offset_y", -0.0235)
         self.declare_parameter("tool_to_ik_offset_z", 0.0)
         self.declare_parameter("motion_plan_service_name", "/plan_kinematic_path")

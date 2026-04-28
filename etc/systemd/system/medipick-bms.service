@@ -1,0 +1,23 @@
+[Unit]
+Description=MediPick BMS Reader
+After=network.target
+Wants=network.target
+PartOf=medipick-stm32-base-chain.target
+
+[Service]
+Type=simple
+User=jszn
+Group=jszn
+WorkingDirectory=/home/jszn/robot_ros2_ws
+Environment=HOME=/home/jszn
+Environment=ROS_DISTRO=humble
+ExecStart=/bin/bash -lc 'source /opt/ros/humble/setup.bash && source /home/jszn/robot_ros2_ws/install/setup.bash && exec ros2 run robot_hardware bms_soc_reader_node --ros-args -p port:=/dev/ttyBattery -p battery_state_topic:=battery'
+Restart=always
+RestartSec=2
+KillSignal=SIGINT
+TimeoutStopSec=10
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=medipick-stm32-base-chain.target

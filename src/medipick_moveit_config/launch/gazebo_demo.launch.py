@@ -4,10 +4,10 @@ import re
 
 import yaml
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, SetEnvironmentVariable
+from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, SetEnvironmentVariable, TimerAction
 from launch.conditions import IfCondition, UnlessCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import LaunchConfiguration
+from launch.substitutions import LaunchConfiguration, PythonExpression, TextSubstitution
 from launch_ros.actions import Node
 from ament_index_python.packages import get_package_share_directory
 
@@ -55,11 +55,54 @@ def set_joint_type(urdf: str, joint_name: str, joint_type: str) -> str:
     return updated_urdf
 
 
+def add_raise_velocity_command_interface(urdf: str) -> str:
+    pattern = (
+        r'(<joint name="raise_joint">\s*'
+        r'<command_interface name="position" />\s*)'
+        r'(<state_interface name="position">\s*'
+        r'<param name="initial_value">[^<]+</param>\s*'
+        r'</state_interface>\s*'
+        r'<state_interface name="velocity" />\s*'
+        r'</joint>)'
+    )
+    replacement = r'\1<command_interface name="velocity" />\n      \2'
+    updated_urdf, count = re.subn(pattern, replacement, urdf, count=1)
+    if count == 0:
+        raise RuntimeError("Expected raise_joint ros2_control block in Gazebo URDF template")
+    return updated_urdf
+
+
+def build_spawner_arguments(
+    controller_name: str,
+    ros2_controllers_file: Path | None = None,
+    controller_type: str | None = None,
+) -> list[str]:
+    arguments = [
+        controller_name,
+        "--controller-manager",
+        "/controller_manager",
+        "--controller-manager-timeout",
+        "120.0",
+        "--service-call-timeout",
+        "120.0",
+        "--switch-timeout",
+        "120.0",
+    ]
+    if controller_type:
+        arguments.extend(["--controller-type", controller_type])
+    if ros2_controllers_file is not None:
+        arguments.extend(["--param-file", str(ros2_controllers_file)])
+    return arguments
+
+
 def build_gazebo_robot_description(description_package: str, moveit_package: str) -> str:
     description_share_dir = Path(get_package_share_directory(description_package))
     base_urdf = load_file(description_package, "urdf/simple3_moveit.urdf")
     ros2_controllers_file = (
         Path(get_package_share_directory(moveit_package)) / "config" / "ros2_controllers.yaml"
+    )
+    gz_ros2_control_file = (
+        Path(get_package_share_directory(moveit_package)) / "config" / "gz_ros2_control.yaml"
     )
 
     if "<plugin>mock_components/GenericSystem</plugin>" not in base_urdf:
@@ -68,6 +111,14 @@ def build_gazebo_robot_description(description_package: str, moveit_package: str
     gazebo_urdf = base_urdf.replace(
         "<plugin>mock_components/GenericSystem</plugin>",
         "<plugin>gz_ros2_control/GazeboSimSystem</plugin>",
+        1,
+    )
+    gazebo_urdf = add_raise_velocity_command_interface(gazebo_urdf)
+    gazebo_urdf = gazebo_urdf.replace(
+        "</hardware>",
+        "    <hold_joints>false</hold_joints>\n"
+        "    <position_proportional_gain>5.0</position_proportional_gain>\n"
+        "    </hardware>",
         1,
     )
 
@@ -103,51 +154,65 @@ def build_gazebo_robot_description(description_package: str, moveit_package: str
     )
 
     gazebo_suffix = f"""
-  <link name="head_camera_link">
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-      <box size="0.06 0.04 0.04" />
-      </geometry>
-      <material name="camera_gray">
-        <color rgba="0.2 0.2 0.2 1.0" />
-      </material>
-    </visual>
-  </link>
-  <joint name="head_camera_joint" type="fixed">
-    <origin xyz="0 0.08 0.03" rpy="1.5708 0 0" />
-    <parent link="h2_link" />
-    <child link="head_camera_link" />
-  </joint>
-  <gazebo reference="head_camera_link">
-    <sensor name="head_rgbd" type="rgbd_camera">
+  <gazebo reference="base_imu_link">
+    <sensor name="base_imu" type="imu">
       <always_on>true</always_on>
-      <update_rate>10</update_rate>
+      <update_rate>100</update_rate>
+      <topic>/medipick/imu</topic>
+    </sensor>
+  </gazebo>
+  <gazebo reference="cam_sensor_link">
+    <sensor name="head_rgbd" type="rgbd_camera">
+      <pose>0 0 0 0 0 0</pose>
+      <always_on>true</always_on>
+      <update_rate>30</update_rate>
       <visualize>true</visualize>
       <topic>/medipick/depth_camera</topic>
       <camera>
-        <horizontal_fov>1.047</horizontal_fov>
+        <horizontal_fov>1.5707963267948966</horizontal_fov>
         <image>
           <width>640</width>
-          <height>480</height>
+          <height>400</height>
           <format>R8G8B8</format>
         </image>
         <clip>
           <near>0.10</near>
-          <far>3.00</far>
+          <far>10.00</far>
         </clip>
       </camera>
       <depth_camera>
         <clip>
           <near>0.10</near>
-          <far>3.00</far>
+          <far>10.00</far>
         </clip>
       </depth_camera>
     </sensor>
   </gazebo>
   <gazebo>
+    <plugin
+      filename="ignition-gazebo-joint-position-controller-system"
+      name="gz::sim::systems::JointPositionController">
+      <joint_name>raise_joint</joint_name>
+      <topic>/medipick/task/lift_target_height</topic>
+      <p_gain>12000.0</p_gain>
+      <i_gain>40.0</i_gain>
+      <d_gain>250.0</d_gain>
+      <i_max>4000.0</i_max>
+      <i_min>-4000.0</i_min>
+      <cmd_max>30000.0</cmd_max>
+      <cmd_min>-30000.0</cmd_min>
+    </plugin>
+  </gazebo>
+  <gazebo>
     <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
       <parameters>{ros2_controllers_file}</parameters>
+      <ros>
+        <argument>--ros-args</argument>
+        <argument>--params-file</argument>
+        <argument>{gz_ros2_control_file}</argument>
+      </ros>
+      <robot_param>robot_description</robot_param>
+      <robot_param_node>medipick_robot_state_publisher</robot_param_node>
     </plugin>
   </gazebo>
 """
@@ -161,6 +226,7 @@ def generate_launch_description():
     world_file = str(
         Path(get_package_share_directory(description_package)) / "worlds" / "medipick_test.world.sdf"
     )
+    world_file_launch = LaunchConfiguration("world_file")
     rviz_config_file = str(Path(get_package_share_directory(moveit_package)) / "rviz" / "moveit.rviz")
     gz_sim_launch = str(Path(get_package_share_directory("ros_gz_sim")) / "launch" / "gz_sim.launch.py")
 
@@ -229,6 +295,7 @@ def generate_launch_description():
 
     resource_paths = [
         str(Path(get_package_share_directory(description_package))),
+        str(Path(get_package_share_directory(description_package)) / "models"),
         str(Path(get_package_share_directory(moveit_package))),
     ]
     existing_resource_path = os.environ.get("GZ_SIM_RESOURCE_PATH", "")
@@ -239,82 +306,178 @@ def generate_launch_description():
         [
             DeclareLaunchArgument("rviz", default_value="true"),
             DeclareLaunchArgument("gazebo_gui", default_value="false"),
+            DeclareLaunchArgument("with_move_group", default_value="true"),
+            DeclareLaunchArgument("bridge_pointcloud", default_value="false"),
+            DeclareLaunchArgument("world_file", default_value=world_file),
+            DeclareLaunchArgument("spawn_delay", default_value="2.0"),
+            DeclareLaunchArgument("state_publish_delay", default_value="2.5"),
+            DeclareLaunchArgument("robot_spawn_z", default_value="0.03"),
+            DeclareLaunchArgument("controller_spawn_delay", default_value="8.0"),
+            DeclareLaunchArgument("controller_spawn_stagger", default_value="2.0"),
             SetEnvironmentVariable("GZ_SIM_RESOURCE_PATH", ":".join(resource_paths)),
             IncludeLaunchDescription(
                 PythonLaunchDescriptionSource(gz_sim_launch),
-                launch_arguments={"gz_args": f"-r {world_file}"}.items(),
+                launch_arguments={
+                    "gz_args": [TextSubstitution(text="-r "), world_file_launch]
+                }.items(),
                 condition=IfCondition(LaunchConfiguration("gazebo_gui")),
             ),
             IncludeLaunchDescription(
                 PythonLaunchDescriptionSource(gz_sim_launch),
-                launch_arguments={"gz_args": f"-r -s {world_file}"}.items(),
+                launch_arguments={
+                    "gz_args": [TextSubstitution(text="-r -s "), world_file_launch]
+                }.items(),
                 condition=UnlessCondition(LaunchConfiguration("gazebo_gui")),
             ),
-            Node(
-                package="robot_state_publisher",
-                executable="robot_state_publisher",
-                name="robot_state_publisher",
-                parameters=[robot_description, {"use_sim_time": True}],
-                output="screen",
-            ),
-            Node(
-                package="ros_gz_sim",
-                executable="create",
-                arguments=[
-                    "-topic",
-                    "robot_description",
-                    "-name",
-                    "medipick",
-                    "-z",
-                    "0.02",
+            TimerAction(
+                period=LaunchConfiguration("state_publish_delay"),
+                actions=[
+                    Node(
+                        package=moveit_package,
+                        executable="joint_state_stamp_republisher.py",
+                        name="medipick_joint_state_stamp_republisher",
+                        parameters=[
+                            {
+                                "use_sim_time": True,
+                                "input_topic": "/joint_states",
+                                "output_topic": "/medipick/joint_states_sim",
+                            }
+                        ],
+                        output="screen",
+                    ),
+                    Node(
+                        package=moveit_package,
+                        executable="tf_stamp_republisher.py",
+                        name="medipick_tf_stamp_republisher",
+                        parameters=[
+                            {
+                                "use_sim_time": True,
+                                "input_tf_topic": "/medipick/raw_tf",
+                                "input_tf_static_topic": "/medipick/raw_tf_static",
+                                "output_tf_topic": "/tf",
+                                "output_tf_static_topic": "/tf_static",
+                            }
+                        ],
+                        output="screen",
+                    ),
+                    Node(
+                        package="robot_state_publisher",
+                        executable="robot_state_publisher",
+                        name="medipick_robot_state_publisher",
+                        parameters=[robot_description, {"use_sim_time": True}],
+                        remappings=[
+                            ("/joint_states", "/medipick/joint_states_sim"),
+                            ("/tf", "/medipick/raw_tf"),
+                            ("/tf_static", "/medipick/raw_tf_static"),
+                        ],
+                        output="screen",
+                    )
                 ],
-                output="screen",
             ),
-            Node(
-                package="controller_manager",
-                executable="spawner",
-                arguments=["joint_state_broadcaster", "--controller-manager", "/controller_manager"],
-                output="screen",
-            ),
-            Node(
-                package="controller_manager",
-                executable="spawner",
-                arguments=[
-                    "mobile_arm_controller",
-                    "--controller-manager",
-                    "/controller_manager",
-                    "--controller-type",
-                    "joint_trajectory_controller/JointTrajectoryController",
-                    "--param-file",
-                    str(Path(get_package_share_directory(moveit_package)) / "config" / "ros2_controllers.yaml"),
+            TimerAction(
+                period=LaunchConfiguration("spawn_delay"),
+                actions=[
+                    Node(
+                        package="ros_gz_sim",
+                        executable="create",
+                        parameters=[robot_description, {"use_sim_time": True}],
+                        arguments=[
+                            "-param",
+                            "robot_description",
+                            "-name",
+                            "medipick",
+                            "-z",
+                            LaunchConfiguration("robot_spawn_z"),
+                        ],
+                        output="screen",
+                    )
                 ],
-                output="screen",
             ),
-            Node(
-                package="controller_manager",
-                executable="spawner",
-                arguments=[
-                    "tool_controller",
-                    "--controller-manager",
-                    "/controller_manager",
-                    "--controller-type",
-                    "joint_trajectory_controller/JointTrajectoryController",
-                    "--param-file",
-                    str(Path(get_package_share_directory(moveit_package)) / "config" / "ros2_controllers.yaml"),
+            TimerAction(
+                period=LaunchConfiguration("controller_spawn_delay"),
+                actions=[
+                    Node(
+                        package="controller_manager",
+                        executable="spawner",
+                        arguments=build_spawner_arguments("joint_state_broadcaster"),
+                        output="screen",
+                    )
                 ],
-                output="screen",
+            ),
+            TimerAction(
+                period=PythonExpression(
+                    [LaunchConfiguration("controller_spawn_delay"), " + ", LaunchConfiguration("controller_spawn_stagger")]
+                ),
+                actions=[
+                    Node(
+                        package="controller_manager",
+                        executable="spawner",
+                        arguments=build_spawner_arguments("imu_sensor_broadcaster"),
+                        output="screen",
+                    )
+                ],
+            ),
+            TimerAction(
+                period=PythonExpression(
+                    [LaunchConfiguration("controller_spawn_delay"), " + 2 * ", LaunchConfiguration("controller_spawn_stagger")]
+                ),
+                actions=[
+                    Node(
+                        package="controller_manager",
+                        executable="spawner",
+                        arguments=build_spawner_arguments(
+                            "tool_controller",
+                            ros2_controllers_file=Path(get_package_share_directory(moveit_package)) / "config" / "ros2_controllers.yaml",
+                            controller_type="joint_trajectory_controller/JointTrajectoryController",
+                        ),
+                        output="screen",
+                    )
+                ],
+            ),
+            TimerAction(
+                period=PythonExpression(
+                    [LaunchConfiguration("controller_spawn_delay"), " + 3 * ", LaunchConfiguration("controller_spawn_stagger")]
+                ),
+                actions=[
+                    Node(
+                        package="controller_manager",
+                        executable="spawner",
+                        arguments=build_spawner_arguments(
+                            "head_controller",
+                            ros2_controllers_file=Path(get_package_share_directory(moveit_package)) / "config" / "ros2_controllers.yaml",
+                            controller_type="joint_trajectory_controller/JointTrajectoryController",
+                        ),
+                        output="screen",
+                    )
+                ],
+            ),
+            TimerAction(
+                period=PythonExpression(
+                    [LaunchConfiguration("controller_spawn_delay"), " + 4 * ", LaunchConfiguration("controller_spawn_stagger")]
+                ),
+                actions=[
+                    Node(
+                        package="controller_manager",
+                        executable="spawner",
+                        arguments=build_spawner_arguments(
+                            "mobile_arm_controller",
+                            ros2_controllers_file=Path(get_package_share_directory(moveit_package)) / "config" / "ros2_controllers.yaml",
+                            controller_type="joint_trajectory_controller/JointTrajectoryController",
+                        ),
+                        output="screen",
+                    )
+                ],
             ),
             Node(
-                package="controller_manager",
-                executable="spawner",
+                package="ros_gz_bridge",
+                executable="parameter_bridge",
                 arguments=[
-                    "head_controller",
-                    "--controller-manager",
-                    "/controller_manager",
-                    "--controller-type",
-                    "joint_trajectory_controller/JointTrajectoryController",
-                    "--param-file",
-                    str(Path(get_package_share_directory(moveit_package)) / "config" / "ros2_controllers.yaml"),
+                    "/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock",
+                    "/medipick/imu@sensor_msgs/msg/Imu[gz.msgs.IMU",
+                    "/medipick/depth_camera/image@sensor_msgs/msg/Image[gz.msgs.Image",
+                    "/medipick/depth_camera/depth_image@sensor_msgs/msg/Image[gz.msgs.Image",
+                    "/medipick/depth_camera/camera_info@sensor_msgs/msg/CameraInfo[gz.msgs.CameraInfo",
+                    "/medipick/task/lift_target_height@std_msgs/msg/Float64]gz.msgs.Double",
                 ],
                 output="screen",
             ),
@@ -322,10 +485,58 @@ def generate_launch_description():
                 package="ros_gz_bridge",
                 executable="parameter_bridge",
                 arguments=[
-                    "/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock",
                     "/medipick/depth_camera/points@sensor_msgs/msg/PointCloud2[gz.msgs.PointCloudPacked",
                 ],
                 output="screen",
+                condition=IfCondition(LaunchConfiguration("bridge_pointcloud")),
+            ),
+            TimerAction(
+                period=LaunchConfiguration("state_publish_delay"),
+                actions=[
+                    Node(
+                        package="tf2_ros",
+                        executable="static_transform_publisher",
+                        name="medipick_head_rgbd_frame_bridge",
+                        arguments=[
+                            "--x",
+                            "0.0",
+                            "--y",
+                            "0.0",
+                            "--z",
+                            "0.0",
+                            "--roll",
+                            "-1.5707963267948966",
+                            "--pitch",
+                            "0.0",
+                            "--yaw",
+                            "-1.5707963267948966",
+                            "--frame-id",
+                            "cam_sensor_link",
+                            "--child-frame-id",
+                            "medipick/h2_link/head_rgbd",
+                        ],
+                        parameters=[{"use_sim_time": True}],
+                        output="screen",
+                    )
+                ],
+            ),
+            TimerAction(
+                period=LaunchConfiguration("state_publish_delay"),
+                actions=[
+                    Node(
+                        package="tf2_ros",
+                        executable="static_transform_publisher",
+                        name="medipick_base_imu_frame_bridge",
+                        arguments=[
+                            "--frame-id",
+                            "base_link",
+                            "--child-frame-id",
+                            "medipick/base_theta_link/base_imu",
+                        ],
+                        parameters=[{"use_sim_time": True}],
+                        output="screen",
+                    )
+                ],
             ),
             Node(
                 package="moveit_ros_move_group",
@@ -344,6 +555,7 @@ def generate_launch_description():
                     planning_scene_monitor_parameters,
                     {"use_sim_time": True},
                 ],
+                condition=IfCondition(LaunchConfiguration("with_move_group")),
             ),
             Node(
                 package="rviz2",

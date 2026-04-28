@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+2134#!/usr/bin/env python3
 """兼容入口：转发到 voice_control 目录下的语音 launch。"""
 
 import os
